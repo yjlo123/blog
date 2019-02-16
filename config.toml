@@ -1,7 +1,11 @@
 baseURL = "https://blog.liusiwei.com"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Siwei's Blog"
 
 theme = "basics"
 
 publishDir = "docs"
+
+[params]
+	author = "Siwei"
+	github = "yjlo123"
