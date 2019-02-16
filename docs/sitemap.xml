@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.liusiwei.com/about/</loc>
+    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.liusiwei.com/post/hello/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
@@ -13,13 +18,13 @@
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/</loc>
+    <loc>https://blog.liusiwei.com/post/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/post/</loc>
+    <loc>https://blog.liusiwei.com/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
     <priority>0</priority>
   </url>
