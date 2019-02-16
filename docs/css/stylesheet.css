@@ -78,6 +78,38 @@ pre {
   background-color: #efefef
 }
 
-footer  {
+footer {
+  color: #999;
   text-align: center;
+}
+
+footer a {
+  color: #999;
+}
+
+footer a:hover {
+  color: #999;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.tags {
+  padding-left: 0;
+  margin: 5px 0;
+}
+
+.tags li {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.tags li a:before {
+  content: '#';
+}
+
+.tags li a {
+  color: #555;
+  font-size: 14px;
 }

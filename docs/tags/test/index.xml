@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Siwei&#39;s Blog</title>
-    <link>https://blog.liusiwei.com/</link>
-    <description>Recent content on Siwei&#39;s Blog</description>
+    <title>Test on Siwei&#39;s Blog</title>
+    <link>https://blog.liusiwei.com/tags/test/</link>
+    <description>Recent content in Test on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Feb 2019 01:17:33 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.liusiwei.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.liusiwei.com/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://blog.liusiwei.com/about/</link>
-      <pubDate>Sat, 16 Feb 2019 01:17:33 +0800</pubDate>
-      
-      <guid>https://blog.liusiwei.com/about/</guid>
-      <description>Liu Siwei
-liusiwei.com</description>
-    </item>
     
     <item>
       <title>Hello World</title>

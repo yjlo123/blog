@@ -6,9 +6,28 @@
     <description>Recent content in Tags on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 16 Feb 2019 01:17:33 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.liusiwei.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello</title>
+      <link>https://blog.liusiwei.com/tags/hello/</link>
+      <pubDate>Sat, 16 Feb 2019 01:17:33 +0800</pubDate>
+      
+      <guid>https://blog.liusiwei.com/tags/hello/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://blog.liusiwei.com/tags/test/</link>
+      <pubDate>Sat, 16 Feb 2019 01:17:33 +0800</pubDate>
+      
+      <guid>https://blog.liusiwei.com/tags/test/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
