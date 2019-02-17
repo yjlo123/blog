@@ -1,6 +1,6 @@
 ---
 title: "Captcha Service With Python and Redis"
-date: 2019-02-16T20:32:13+08:00
+date: 2019-02-17T18:27:13+08:00
 draft: false
 tags: ["captcha","python","redis","web"]
 ---
@@ -107,4 +107,4 @@ def verify_captcha(captcha_key, captcha_input):
 ## Conclusion
 This is one possible way to implement a Captcha service, at least it can protect my mail inbox to a certain extent. In addition, there can be some improvements on it, for example, adding IP limitations, so that users won’t be able to initialize a huge amount of Captcha data in your Redis cache.
 
-The full code example will be available at my Github soon.
+The full code example will be available at my GitHub soon.
