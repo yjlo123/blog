@@ -5,6 +5,7 @@ title = "Siwei's Blog"
 theme = "basics"
 
 publishDir = "docs"
+pygmentsStyle = "autumn"
 
 [params]
 	author = "Siwei"

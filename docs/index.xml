@@ -6,10 +6,20 @@
     <description>Recent content on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Feb 2019 01:17:33 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Feb 2019 20:32:13 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.liusiwei.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Captcha Service With Python and Redis</title>
+      <link>https://blog.liusiwei.com/post/captcha/</link>
+      <pubDate>Sat, 16 Feb 2019 20:32:13 +0800</pubDate>
+      
+      <guid>https://blog.liusiwei.com/post/captcha/</guid>
+      <description>Intro While implementing my new personal website, I added a Contact page, on which people can send messages to me by filling a form.
+This is a low-cost way to say something to the owner of the website. It can be anonymous, for instance, you can just type yo in the message box and click Send, then seconds later, I receive an email showing the message, and I have no idea who you are.</description>
+    </item>
     
     <item>
       <title>About</title>
