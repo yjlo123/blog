@@ -6,7 +6,7 @@
     <description>Recent content in Web on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Feb 2019 20:32:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Feb 2019 18:27:13 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.liusiwei.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Captcha Service With Python and Redis</title>
       <link>https://blog.liusiwei.com/post/captcha/</link>
-      <pubDate>Sat, 16 Feb 2019 20:32:13 +0800</pubDate>
+      <pubDate>Sun, 17 Feb 2019 18:27:13 +0800</pubDate>
       
       <guid>https://blog.liusiwei.com/post/captcha/</guid>
       <description>Intro While implementing my new personal website, I added a Contact page, on which people can send messages to me by filling a form.
