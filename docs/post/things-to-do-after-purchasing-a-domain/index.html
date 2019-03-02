@@ -198,6 +198,88 @@ Then the main server block:
 </div>
 </div></p>
 
+<h2 id="check-redirection">Check Redirection</h2>
+
+<p>The following Python programs checks if the https and subdomain redirections are correct.
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">requests</span>
+
+hosts = [
+    <span style="color:#aaa;font-style:italic">#(host_name, subdomains)</span>
+    (<span style="color:#a50">&#39;yjlo.xyz&#39;</span>, [<span style="color:#a50">&#39;page&#39;</span>]),
+    (<span style="color:#a50">&#39;runtime.xyz&#39;</span>, []),
+]
+
+<span style="color:#00a">def</span> <span style="color:#0a0">check_url</span>(domain, sub=None):
+    sub_domains = [<span style="color:#a50">&#39;&#39;</span>, <span style="color:#a50">&#39;www.&#39;</span>]
+    <span style="color:#00a">if</span> sub:
+        <span style="color:#00a">for</span> s <span style="color:#00a">in</span> sub:
+            sub_domains.append(s + <span style="color:#a50">&#39;.&#39;</span>)
+    failed_urls = []
+    <span style="color:#00a">for</span> schema <span style="color:#00a">in</span> [<span style="color:#a50">&#39;http&#39;</span>, <span style="color:#a50">&#39;https&#39;</span>]:
+        <span style="color:#00a">for</span> sub_domain <span style="color:#00a">in</span> sub_domains:
+            url = <span style="color:#a50">&#39;{}://{}{}&#39;</span>.format(schema, sub_domain, domain)
+            <span style="color:#00a">try</span>:
+                r = requests.get(url)
+                status = r.status_code
+                label = <span style="color:#a50">&#39; &#39;</span> <span style="color:#00a">if</span> status == <span style="color:#099">200</span> <span style="color:#00a">else</span> <span style="color:#a50">&#39;*&#39;</span>
+                <span style="color:#00a">print</span>(<span style="color:#a50">&#39;{}[{}] {}&#39;</span>.format(label, status, url))
+            <span style="color:#00a">except</span> Exception <span style="color:#00a">as</span> e:
+                <span style="color:#00a">print</span>(<span style="color:#a50">&#39;*[err] {} {}&#39;</span>.format(url, e))
+                failed_urls.append(url)
+    <span style="color:#00a">return</span> failed_urls
+
+<span style="color:#00a">if</span> __name__ == <span style="color:#a50">&#39;__main__&#39;</span>:
+    error_urls = []
+    <span style="color:#00a">for</span> d, s <span style="color:#00a">in</span> hosts:
+        error_urls.extend(check_url(d, s))
+
+    <span style="color:#00a">if</span> error_urls:
+        <span style="color:#00a">print</span>(<span style="color:#a50">&#39;</span><span style="color:#a50">\n</span><span style="color:#a50">===== [Failed URLs] =====&#39;</span>)
+        <span style="color:#00a">for</span> eus <span style="color:#00a">in</span> error_urls:
+            <span style="color:#00a">print</span>(eus)</code></pre></td></tr></table>
+</div>
+</div></p>
+
   </div>
 </div>
 

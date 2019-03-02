@@ -79,3 +79,45 @@ server {
     }
 }
 {{< / highlight >}}
+
+## Check Redirection
+The following Python programs checks if the https and subdomain redirections are correct.
+{{< highlight python "linenos=table" >}}
+import requests
+
+hosts = [
+    #(host_name, subdomains)
+    ('yjlo.xyz', ['page']),
+    ('runtime.xyz', []),
+]
+
+def check_url(domain, sub=None):
+    sub_domains = ['', 'www.']
+    if sub:
+        for s in sub:
+            sub_domains.append(s + '.')
+    failed_urls = []
+    for schema in ['http', 'https']:
+        for sub_domain in sub_domains:
+            url = '{}://{}{}'.format(schema, sub_domain, domain)
+            try:
+                r = requests.get(url)
+                status = r.status_code
+                label = ' ' if status == 200 else '*'
+                print('{}[{}] {}'.format(label, status, url))
+            except Exception as e:
+                print('*[err] {} {}'.format(url, e))
+                failed_urls.append(url)
+    return failed_urls
+
+if __name__ == '__main__':
+    error_urls = []
+    for d, s in hosts:
+        error_urls.extend(check_url(d, s))
+
+    if error_urls:
+        print('\n===== [Failed URLs] =====')
+        for eus in error_urls:
+            print(eus)
+
+{{< / highlight >}}
