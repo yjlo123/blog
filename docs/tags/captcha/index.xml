@@ -13,10 +13,10 @@
     
     <item>
       <title>Captcha Service With Python and Redis</title>
-      <link>https://blog.liusiwei.com/post/captcha/</link>
+      <link>https://blog.liusiwei.com/post/captcha-service-with-python-and-redis/</link>
       <pubDate>Sun, 17 Feb 2019 18:27:13 +0800</pubDate>
       
-      <guid>https://blog.liusiwei.com/post/captcha/</guid>
+      <guid>https://blog.liusiwei.com/post/captcha-service-with-python-and-redis/</guid>
       <description>Intro While implementing my new personal website, I added a Contact page, on which people can send messages to me by filling a form.
 This is a low-cost way to say something to the owner of the website. It can be anonymous, for instance, you can just type yo in the message box and click Send, then seconds later, I receive an email showing the message, and I have no idea who you are.</description>
     </item>

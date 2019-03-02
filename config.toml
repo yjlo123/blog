@@ -10,3 +10,6 @@ pygmentsStyle = "autumn"
 [params]
 	author = "Siwei"
 	github = "yjlo123"
+
+[permalinks]
+	post = "/post/:title/"
