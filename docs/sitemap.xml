@@ -3,80 +3,80 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.liusiwei.com/post/captcha-service-with-python-and-redis/</loc>
+    <loc>https://blog.siwei.dev/post/captcha-service-with-python-and-redis/</loc>
     <lastmod>2019-02-17T18:27:13+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/about/</loc>
+    <loc>https://blog.siwei.dev/about/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/post/hello-world/</loc>
+    <loc>https://blog.siwei.dev/post/hello-world/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/post/test/</loc>
+    <loc>https://blog.siwei.dev/post/test/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/tags/captcha/</loc>
+    <loc>https://blog.siwei.dev/tags/captcha/</loc>
     <lastmod>2019-02-17T18:27:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/categories/</loc>
+    <loc>https://blog.siwei.dev/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/tags/hello/</loc>
-    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.liusiwei.com/post/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.liusiwei.com/tags/python/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.liusiwei.com/tags/redis/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.liusiwei.com/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.liusiwei.com/tags/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.liusiwei.com/tags/test/</loc>
+    <loc>https://blog.siwei.dev/tags/hello/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.liusiwei.com/tags/web/</loc>
+    <loc>https://blog.siwei.dev/post/</loc>
+    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/python/</loc>
+    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/redis/</loc>
+    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/</loc>
+    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/</loc>
+    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/test/</loc>
+    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/web/</loc>
     <lastmod>2019-02-17T18:27:13+08:00</lastmod>
     <priority>0</priority>
   </url>
