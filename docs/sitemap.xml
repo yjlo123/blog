@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.siwei.dev/post/things-to-do-after-purchasing-a-domain/</loc>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/post/captcha-service-with-python-and-redis/</loc>
     <lastmod>2019-02-17T18:27:13+08:00</lastmod>
   </url>
@@ -34,14 +39,26 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/tags/domain/</loc>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/tags/hello/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/tags/nginx/</loc>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/post/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -59,7 +76,7 @@
   
   <url>
     <loc>https://blog.siwei.dev/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -77,7 +94,7 @@
   
   <url>
     <loc>https://blog.siwei.dev/tags/web/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   

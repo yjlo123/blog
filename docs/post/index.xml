@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Feb 2019 18:27:13 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 Mar 2019 00:22:40 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.siwei.dev/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Things to do After Purchasing a Domain</title>
+      <link>https://blog.siwei.dev/post/things-to-do-after-purchasing-a-domain/</link>
+      <pubDate>Sat, 02 Mar 2019 00:22:40 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/post/things-to-do-after-purchasing-a-domain/</guid>
+      <description>Yesterday, I purchased a new domain from Namecheap and realized there were a bunch of things to do to make the new webpage live. Here I listed some notes for future reference.
+Setup HTTPS For certain domain suffixes, HTTPS is compulsory. For instance, .dev is a secure namespace and the website requires HTTPS to work in browser.
+- Generate a new cert using certbot 1 2  # for example, your domain is domain.</description>
+    </item>
     
     <item>
       <title>Captcha Service With Python and Redis</title>

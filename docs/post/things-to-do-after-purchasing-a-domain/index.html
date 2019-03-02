@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
+
+        <title>Things to do After Purchasing a Domain</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/yjlo123" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>Things to do After Purchasing a Domain</h1>
+  <div class="blog-post-subheader">
+    <time>02 Mar 2019</time>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/domain">domain</a>
+   </li>
+  
+   <li>
+     <a href="/tags/nginx">nginx</a>
+   </li>
+  
+   <li>
+     <a href="/tags/web">web</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    
+
+<p>Yesterday, I purchased a new domain from Namecheap and realized there were a bunch of things to do to make the new webpage live. Here I listed some notes for future reference.</p>
+
+<h2 id="setup-https">Setup HTTPS</h2>
+
+<p>For certain domain suffixes, HTTPS is compulsory. For instance, <code>.dev</code> is a secure namespace and the website requires HTTPS to work in browser.</p>
+
+<h3 id="generate-a-new-cert-using-certbot">- Generate a new cert using certbot</h3>
+
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#aaa;font-style:italic"># for example, your domain is domain.com</span>
+sudo certbot --nginx -d domain.com -d www.doamin.com</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>If you see <code>Error getting validation data</code>, means the DNS settings have not take effect.
+It says it may take up to 48 hours to finish the propagation, but in my case, it only delayed about 3 minutes.</p>
+
+<h3 id="add-domains-to-an-existing-cert">- Add domains to an existing cert</h3>
+
+<p><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nginx -s stop
+certbot certonly --standalone -d domain.com -d www.domain.com -d abc.domain.com --expand
+nginx</code></pre></td></tr></table>
+</div>
+</div>
+Remember to stop Nginx, otherwise, the following message will be shown.</p>
+
+<pre><code>Problem binding to port 80: Could not bind to IPv4 or IPv6.
+</code></pre>
+
+<p>The genenrated cert files will be put at <code>/etc/letsencrypt/live/domain.com/</code></p>
+
+<h2 id="configure-nginx">Configure Nginx</h2>
+
+<p>Redirect <code>http</code> to <code>https</code>, and <code>www</code> to <code>non-www</code>:
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
+    <span style="color:#00a">listen</span> <span style="color:#099">80</span>;
+    <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span> <span style="color:#a50">www.domain.com</span>;
+    <span style="color:#00a">return</span> <span style="color:#099">301</span> <span style="color:#a50">https://domain.com</span><span style="color:#a00">$request_uri</span>;
+}
+
+<span style="color:#00a">server</span> {
+    <span style="color:#00a">listen</span> <span style="color:#099">443</span> <span style="color:#a50">ssl</span>;
+    <span style="color:#00a">server_name</span> <span style="color:#a50">www.domain.com</span>;
+    <span style="color:#00a">ssl_certificate</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/fullchain.pem</span>;
+    <span style="color:#00a">ssl_certificate_key</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/privkey.pem</span>;
+    <span style="color:#00a">include</span> <span style="color:#a50">/etc/letsencrypt/options-ssl-nginx.conf</span>;
+    <span style="color:#00a">ssl_dhparam</span> <span style="color:#a50">/etc/letsencrypt/ssl-dhparams.pem</span>;
+
+    <span style="color:#00a">return</span> <span style="color:#099">301</span> <span style="color:#a50">https://domain.com</span><span style="color:#a00">$request_uri</span>;
+}</code></pre></td></tr></table>
+</div>
+</div>
+Then the main server block:
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
+    <span style="color:#00a">listen</span> <span style="color:#099">443</span> <span style="color:#a50">ssl</span>;
+    <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span>;
+
+    <span style="color:#00a">ssl_certificate</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/fullchain.pem</span>;
+    <span style="color:#00a">ssl_certificate_key</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/privkey.pem</span>;
+
+    <span style="color:#00a">ssl_protocols</span> <span style="color:#a50">TLSv1</span> <span style="color:#a50">TLSv1.1</span> <span style="color:#a50">TLSv1.2</span>;
+    <span style="color:#00a">ssl_prefer_server_ciphers</span> <span style="color:#a00">on</span>;
+    <span style="color:#00a">ssl_ciphers</span> <span style="color:#a50">&#39;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&#39;</span>;
+
+    <span style="color:#00a">root</span> <span style="color:#a50">/var/www/home</span>;
+
+    <span style="color:#00a">error_page</span> <span style="color:#099">404</span> =<span style="color:#099">404</span> <span style="color:#a50">/404.html</span>;
+
+    <span style="color:#aaa;font-style:italic"># Add index.php to the list if you are using PHP
+</span><span style="color:#aaa;font-style:italic"></span>    <span style="color:#00a">index</span> <span style="color:#a50">index.html</span> <span style="color:#a50">index.htm</span> <span style="color:#a50">index.nginx-debian.html</span>;
+
+    <span style="color:#00a">location</span> <span style="color:#a50">/</span> {
+        <span style="color:#00a">try_files</span> <span style="color:#a00">$uri</span> <span style="color:#a00">$uri/</span> <span style="color:#a50">/index.html</span> <span style="color:#a50">/index</span><span style="color:#a00">$uri</span> <span style="color:#a50">/index</span><span style="color:#a00">$uri/</span> =<span style="color:#099">404</span>;
+    }
+}</code></pre></td></tr></table>
+</div>
+</div></p>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2019
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+
