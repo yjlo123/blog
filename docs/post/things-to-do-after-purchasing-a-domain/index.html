@@ -107,7 +107,11 @@ Remember to stop Nginx, otherwise, the following message will be shown.</p>
 
 <h2 id="configure-nginx">Configure Nginx</h2>
 
-<p>Redirect <code>http</code> to <code>https</code>, and <code>www</code> to <code>non-www</code>:
+<p>Since we already have the certs for https, we can redirect all http requests to https. Besides, we also redirect URLs with www to non-www, to make the URL cleaner as well as provide the only enter point for users, so that search engines can index the single URL for the website.</p>
+
+<p>If you are wondering in what situations we should use <code>www</code>, please refer to this <a href="https://www.yes-www.org/why-use-www/">article</a>.</p>
+
+<p>Redirect http to https, and www to non-www:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1

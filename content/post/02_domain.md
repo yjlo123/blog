@@ -35,7 +35,11 @@ Problem binding to port 80: Could not bind to IPv4 or IPv6.
 The genenrated cert files will be put at `/etc/letsencrypt/live/domain.com/`
 
 ## Configure Nginx
-Redirect `http` to `https`, and `www` to `non-www`:
+Since we already have the certs for https, we can redirect all http requests to https. Besides, we also redirect URLs with www to non-www, to make the URL cleaner as well as provide the only enter point for users, so that search engines can index the single URL for the website.
+
+If you are wondering in what situations we should use `www`, please refer to this [article](https://www.yes-www.org/why-use-www/).  
+
+Redirect http to https, and www to non-www:
 {{< highlight nginx "linenos=table" >}}
 server {
     listen 80;
