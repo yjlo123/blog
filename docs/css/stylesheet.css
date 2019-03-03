@@ -145,7 +145,7 @@ footer a:hover {
 
 @media screen and (max-width: 576px) {
   .posts_listing {
-    padding-inline-start: 0;
+    padding-left: 0;
   }
 
   .posts_listing li{
