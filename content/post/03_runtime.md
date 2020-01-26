@@ -59,4 +59,4 @@ In this manner, I can pause or delay the execution easily, because each iteratio
 
 After two sprints in 2019, the first complete version of Runtime Script is finished. All the planned major features are implemented. Besides, I drafted a [tutorial](https://siwei.dev/doc/runtime/) of this language.
 
-I know most likely I am the only user of the languages I created, but this won't hinder the process of implementing my own toys, which is dreamed for years by the younger version of me.
+I know most likely I am the only user of the languages I created, but this won't hinder the process of implementing my own toys, which was dreamed for years by the younger version of me.
