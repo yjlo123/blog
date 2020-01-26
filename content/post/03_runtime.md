@@ -15,7 +15,7 @@ So, have I fully completed YJLO Script? Well, I'm not willing to say I gave up m
 
 Half a year later, in 2019, I started a new programming language from scratch, called [Runtime Script](https://runtime.siwei.dev/).
 
-Runtime Script is very different from YJLO Script in many ways, for instance, Runtime Script is assembly-like, it has a minimal syntax (each statement consists of a keyword and an arbitrary number of arguments), and most importantly, it is an I/O blocking language, which makes it possible to write mini-games like Flappy Bird.
+Runtime Script is very different from YJLO Script in many ways, for instance, Runtime Script is assembly-like, it has a minimal syntax (each statement consists of a keyword and an arbitrary number of arguments), and most importantly, it is an I/O blocking language, which makes it possible to write mini-games like [Flappy Bird](https://runtime.siwei.dev/?src=bird).
 
 Since I'm inventing toy languages for fun, it would be more fascinating to write "cute" stuff using the language I created. Programming interactive graphical games is one of these cute things. And this requires the language to be I/O blocking so that the game UI can be refreshed in a certain interval.
 
