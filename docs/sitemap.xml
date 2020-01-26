@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.siwei.dev/post/why-i-created-runtime-script/</loc>
+    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/post/things-to-do-after-purchasing-a-domain/</loc>
     <lastmod>2019-03-02T00:22:40+08:00</lastmod>
   </url>
@@ -19,11 +24,6 @@
   
   <url>
     <loc>https://blog.siwei.dev/post/hello-world/</loc>
-    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/post/test/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
   
@@ -58,7 +58,13 @@
   
   <url>
     <loc>https://blog.siwei.dev/post/</loc>
-    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
+    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/programming-language/</loc>
+    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -76,7 +82,7 @@
   
   <url>
     <loc>https://blog.siwei.dev/</loc>
-    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
+    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   

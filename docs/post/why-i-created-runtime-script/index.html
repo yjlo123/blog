@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
+
+        <title>Why I Created Runtime Script</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/yjlo123" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>Why I Created Runtime Script</h1>
+  <div class="blog-post-subheader">
+    <time>26 Jan 2020</time>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/programming-language">programming language</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>In 2016, the year I graduated from my university, I started implementing a scripting language, <a href="https://yjlo123.github.io/yjlo-script/">YJLO Script</a>. It has a modern-style syntax since I borrowed a bunch of ideas from recent popular languages, such as Python, Golang, and Swift. It is implemented in JavaScript and interpreted directly in the browser.</p>
+
+<p>The development process of YJLO Script is fun, I tried to push some commits to the repo very day with no gap for more than half year. There are numerous exciting moments especially when I finished writing some code examples using my own programming language.</p>
+
+<p>It is also tedious and sometimes even irritating when I tried to add features to this language. I believe, debugging an issue in a programming language could be one of the most exhausting experiences among all the projects I have ever touched. This painful feeling got stronger when I was trying to add OOP support to it. For countless times, when I was writing an example program, I found a bug of the language, so I have to fix the language first, then continue with the example. I also finished adding a list of utility libraries, like Heap, Linked List, Hash Map, to imitate the standard libraries in other programming languages.</p>
+
+<p>So, have I fully completed YJLO Script? Well, I&rsquo;m not willing to say I gave up midway, but the development ends in mid-2018. It seems it is endless to add libraries and syntax sugars to make this language more convenient to use. However, at least YJLO Script is capable of implementing some projects which are complex enough. <a href="https://yjlo123.github.io/human-resource-machine-yjlo/">Human Resource Machine Simulator</a> is an example.</p>
+
+<p>Half a year later, in 2019, I started a new programming language from scratch, called <a href="https://runtime.siwei.dev/">Runtime Script</a>.</p>
+
+<p>Runtime Script is very different from YJLO Script in many ways, for instance, Runtime Script is assembly-like, it has a minimal syntax (each statement consists of a keyword and an arbitrary number of arguments), and most importantly, it is an I/O blocking language, which makes it possible to write mini-games like Flappy Bird.</p>
+
+<p>Since I&rsquo;m inventing toy languages for fun, it would be more fascinating to write &ldquo;cute&rdquo; stuff using the language I created. Programming interactive graphical games is one of these cute things. And this requires the language to be I/O blocking so that the game UI can be refreshed in a certain interval.</p>
+
+<p>I also considered to make YJLO Script a blocking language while I was implementing it, but at the moment I thought about this, I realized it was already too late unless I rewrite most part of the language.</p>
+
+<p>In YJLO Script, the evaluator main loop is like this:</p>
+
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a">function</span> evaluate(ast, env) {
+	<span style="color:#00a">switch</span> (typeOf(ast)) {
+		<span style="color:#00a">case</span> assignmentStatement:
+			<span style="color:#00a">return</span> evaluateAssignment(ast, env);	<span style="color:#aaa;font-style:italic">// evaluate() could be called in evaluateAssignment
+</span><span style="color:#aaa;font-style:italic"></span>		<span style="color:#00a">case</span> ifStatement:
+			<span style="color:#00a">return</span> evaluateIf(ast, env);
+		...
+	}
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>For example, in order to implement a blocking statement, e.g. <code>sleep(1000)</code>, which pauses the execution for one second, I should add a <code>setTimeout</code> with a callback function in the <code>evaluate()</code> function, since JavaScript is a non-blocking language. However, this requires each statement&rsquo;s execution is a callback of the previous statement. This change will dramatically change the existing structure of YJLO Script&rsquo;s implementation.</p>
+
+<p>As a result, I decided to keep YJLO Script as it is, while designed Runtime Script as a blocking language at the beginning:</p>
+
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a">function</span> loop() {
+	<span style="color:#00a">if</span> (env.pause) {
+		<span style="color:#00a">return</span>;
+	}
+	evaluate(nextStmt, env);
+	<span style="color:#00a">if</span> (env.sleep &gt; <span style="color:#099">0</span>) {
+		<span style="color:#00a">return</span> setTimeout(<span style="color:#00a">function</span> () {
+			env.sleep = <span style="color:#099">0</span>;
+			<span style="color:#00a">return</span> loop();
+		}, env.sleep);
+	}
+	<span style="color:#00a">return</span> loop();
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>In this manner, I can pause or delay the execution easily, because each iteration checks the value of <code>pause</code> and <code>sleep</code> and decides whether the next statement should be executed immediately or not.</p>
+
+<p>After two sprints in 2019, the first complete version of Runtime Script is finished. All the planned major features are implemented. Besides, I drafted a <a href="https://siwei.dev/doc/runtime/">tutorial</a> of this language.</p>
+
+<p>I know most likely I am the only user of the languages I created, but this won&rsquo;t hinder the process of implementing my own toys, which is dreamed for years by the younger version of me.</p>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2020
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+
