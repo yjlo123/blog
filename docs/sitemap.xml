@@ -1,10 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.siwei.dev/post/my-new-pc/</loc>
+    <lastmod>2020-02-04T11:30:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/pc/</loc>
+    <lastmod>2020-02-04T11:30:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/post/</loc>
+    <lastmod>2020-02-04T11:30:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/</loc>
+    <lastmod>2020-02-04T11:30:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/</loc>
+    <lastmod>2020-02-04T11:30:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/programming-language/</loc>
+    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/post/why-i-created-runtime-script/</loc>
     <lastmod>2020-01-26T11:30:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/domain/</loc>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/nginx/</loc>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
   </url>
   
   <url>
@@ -13,7 +53,27 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/tags/web/</loc>
+    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/captcha/</loc>
+    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/post/captcha-service-with-python-and-redis/</loc>
+    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/python/</loc>
+    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/redis/</loc>
     <lastmod>2019-02-17T18:27:13+08:00</lastmod>
   </url>
   
@@ -23,85 +83,22 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/tags/hello/</loc>
+    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/post/hello-world/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.siwei.dev/tags/captcha/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://blog.siwei.dev/tags/test/</loc>
+    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.siwei.dev/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/domain/</loc>
-    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/hello/</loc>
-    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/nginx/</loc>
-    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/post/</loc>
-    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/programming-language/</loc>
-    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/python/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/redis/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/</loc>
-    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/</loc>
-    <lastmod>2019-02-17T18:27:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/test/</loc>
-    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/web/</loc>
-    <lastmod>2019-03-02T00:22:40+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

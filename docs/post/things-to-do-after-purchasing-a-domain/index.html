@@ -62,61 +62,45 @@
   
 </ul>
 <div class="blog-post-content">
-    
-
-<p>Yesterday, I purchased a new domain from Namecheap and realized there were a bunch of things to do to make the new webpage live. Here I listed some notes for future reference.</p>
-
+    <p>Yesterday, I purchased a new domain from Namecheap and realized there were a bunch of things to do to make the new webpage live. Here I listed some notes for future reference.</p>
 <h2 id="setup-https">Setup HTTPS</h2>
-
 <p>For certain domain suffixes, HTTPS is compulsory. For instance, <code>.dev</code> is a secure namespace and the website requires HTTPS to work in browser.</p>
-
-<h3 id="generate-a-new-cert-using-certbot">- Generate a new cert using certbot</h3>
-
+<h3 id="--generate-a-new-cert-using-certbot">- Generate a new cert using certbot</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#aaa;font-style:italic"># for example, your domain is domain.com</span>
 sudo certbot --nginx -d domain.com -d www.doamin.com</code></pre></td></tr></table>
 </div>
 </div>
-
 <p>If you see <code>Error getting validation data</code>, means the DNS settings have not take effect.
 It says it may take up to 48 hours to finish the propagation, but in my case, it only delayed about 3 minutes.</p>
-
-<h3 id="add-domains-to-an-existing-cert">- Add domains to an existing cert</h3>
-
+<h3 id="--add-domains-to-an-existing-cert">- Add domains to an existing cert</h3>
 <p><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nginx -s stop
 certbot certonly --standalone -d domain.com -d www.domain.com -d abc.domain.com --expand
 nginx</code></pre></td></tr></table>
 </div>
 </div>
 Remember to stop Nginx, otherwise, the following message will be shown.</p>
-
 <pre><code>Problem binding to port 80: Could not bind to IPv4 or IPv6.
-</code></pre>
-
-<p>The genenrated cert files will be put at <code>/etc/letsencrypt/live/domain.com/</code></p>
-
+</code></pre><p>The genenrated cert files will be put at <code>/etc/letsencrypt/live/domain.com/</code></p>
 <h2 id="configure-nginx">Configure Nginx</h2>
-
 <p>Since we already have the certs for https, we can redirect all http requests to https. Besides, we also redirect URLs with www to non-www, to make the URL cleaner as well as provide the only enter point for users, so that search engines can index the single URL for the website.</p>
-
 <p>If you are wondering in what situations we should use <code>www</code>, please refer to this <a href="https://www.yes-www.org/why-use-www/">article</a>.</p>
-
 <p>Redirect http to https, and www to non-www:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -133,7 +117,7 @@ Remember to stop Nginx, otherwise, the following message will be shown.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
     <span style="color:#00a">listen</span> <span style="color:#099">80</span>;
     <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span> <span style="color:#a50">www.domain.com</span>;
@@ -155,7 +139,7 @@ Remember to stop Nginx, otherwise, the following message will be shown.</p>
 Then the main server block:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -178,7 +162,7 @@ Then the main server block:
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
     <span style="color:#00a">listen</span> <span style="color:#099">443</span> <span style="color:#a50">ssl</span>;
     <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span>;
@@ -203,13 +187,11 @@ Then the main server block:
 }</code></pre></td></tr></table>
 </div>
 </div></p>
-
 <h2 id="check-redirection">Check Redirection</h2>
-
 <p>The following Python programs checks if the https and subdomain redirections are correct.
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -246,7 +228,7 @@ Then the main server block:
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">requests</span>
 
 hosts = [
