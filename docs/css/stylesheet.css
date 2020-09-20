@@ -55,6 +55,21 @@ body {
   padding-bottom: 1em;
 }
 
+table{
+  width: 100%;
+  border: 1px solid black !important;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 7px;
+  font-size: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
 .posts_listing li {
   list-style-type: none;
 }
