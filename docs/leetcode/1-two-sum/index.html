@@ -45,7 +45,7 @@
 <div class="blog-post">
   <h1>1 Two Sum</h1>
   <div class="blog-post-subheader">
-    <time>16 Feb 2019</time>
+    <time>21 Sep 2020</time>
   </div><ul class="tags">
   
    <li>
@@ -54,28 +54,77 @@
   
 </ul>
 <div class="blog-post-content">
-    <pre><code>package main
+    <p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return indices of the two numbers such that they add up to <em><code>target</code></em>.</p>
+<p>You may assume that each input would have <em><strong>exactly</strong></em> <strong>one solution</strong>, and you may not use the same element twice.</p>
+<p>You can return the answer in any order.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Output: Because nums[0] + nums[1] == 9, we return [0, 1].
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: nums = [3,2,4], target = 6
+Output: [1,2]
+</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input: nums = [3,3], target = 6
+Output: [0,1]
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>2 &lt;= nums.length &lt;= 10<sup>5</sup></li>
+<li>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></li>
+<li>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></li>
+<li><strong>Only one valid answer exists.</strong></li>
+</ul>
+<h3 id="golang">Golang</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">package</span> main
 
-import (
-	&quot;fmt&quot;
+<span style="color:#00a">import</span> (
+	<span style="color:#a50">&#34;fmt&#34;</span>
 )
 
-func twoSum(nums []int, target int) []int {
-	d := make(map[int]int)
-	for idx, num := range nums {
-		if v, ok := d[num]; ok {
-			return []int{v, idx}
+<span style="color:#00a">func</span> <span style="color:#0a0">twoSum</span>(nums []<span style="color:#0aa">int</span>, target <span style="color:#0aa">int</span>) []<span style="color:#0aa">int</span> {
+	d := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">int</span>]<span style="color:#0aa">int</span>)
+	<span style="color:#00a">for</span> idx, num := <span style="color:#00a">range</span> nums {
+		<span style="color:#00a">if</span> v, ok := d[num]; ok {
+			<span style="color:#00a">return</span> []<span style="color:#0aa">int</span>{v, idx}
 		}
 		d[target-num] = idx
 	}
-	return nil
+	<span style="color:#00a">return</span> <span style="color:#00a">nil</span>
 }
 
-func main() {
-	arr := []int{2, 7, 11, 15}
-	fmt.Println(twoSum(arr, 9))
+<span style="color:#00a">func</span> <span style="color:#0a0">main</span>() {
+	arr := []<span style="color:#0aa">int</span>{<span style="color:#099">2</span>, <span style="color:#099">7</span>, <span style="color:#099">11</span>, <span style="color:#099">15</span>}
+	fmt.<span style="color:#0a0">Println</span>(<span style="color:#0a0">twoSum</span>(arr, <span style="color:#099">9</span>))
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
+
   </div>
 </div>
 

@@ -14,3 +14,8 @@ pygmentsStyle = "autumn"
 [permalinks]
 	post = "/post/:title/"
 	leetcode = "/leetcode/:title/"
+
+[markup]
+	[markup.goldmark]
+		[markup.goldmark.renderer]
+			unsafe = true
