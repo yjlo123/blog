@@ -10,7 +10,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
 
-        <title>About</title>
+        <title>1 Two Sum</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -32,7 +32,7 @@
               <a class="nav-item nav-link " href="/">Home</a>
               <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
               
-              <a class="nav-item nav-link active" href="/about/">About</a>
+              <a class="nav-item nav-link " href="/about/">About</a>
             </div>
           </div>
         </nav>
@@ -43,17 +43,39 @@
 
 
 <div class="blog-post">
-  <h1>About</h1>
+  <h1>1 Two Sum</h1>
   <div class="blog-post-subheader">
     <time>16 Feb 2019</time>
   </div><ul class="tags">
   
+   <li>
+     <a href="/tags/test">test</a>
+   </li>
+  
 </ul>
 <div class="blog-post-content">
-    <h3 id="liu-siwei">Liu Siwei</h3>
-<p>liusiwei.com<br>
-siwei.dev</p>
+    <pre><code>package main
 
+import (
+	&quot;fmt&quot;
+)
+
+func twoSum(nums []int, target int) []int {
+	d := make(map[int]int)
+	for idx, num := range nums {
+		if v, ok := d[num]; ok {
+			return []int{v, idx}
+		}
+		d[target-num] = idx
+	}
+	return nil
+}
+
+func main() {
+	arr := []int{2, 7, 11, 15}
+	fmt.Println(twoSum(arr, 9))
+}
+</code></pre>
   </div>
 </div>
 

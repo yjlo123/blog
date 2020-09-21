@@ -78,6 +78,16 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/leetcode/1-two-sum/</loc>
+    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/leetcode/2-add-two-number/</loc>
+    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/about/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
@@ -89,6 +99,11 @@
   
   <url>
     <loc>https://blog.siwei.dev/post/hello-world/</loc>
+    <lastmod>2019-02-16T01:17:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/leetcode/</loc>
     <lastmod>2019-02-16T01:17:33+08:00</lastmod>
   </url>
   

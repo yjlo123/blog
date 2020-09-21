@@ -13,3 +13,4 @@ pygmentsStyle = "autumn"
 
 [permalinks]
 	post = "/post/:title/"
+	leetcode = "/leetcode/:title/"
