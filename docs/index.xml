@@ -21,11 +21,11 @@ Input: nums = [2,7,11,15], target = 9Output: [0,1]Output: Because nums[0] + nu
     </item>
     
     <item>
-      <title>2 Add Two Number</title>
-      <link>https://blog.siwei.dev/leetcode/2-add-two-number/</link>
+      <title>2 Add Two Numbers</title>
+      <link>https://blog.siwei.dev/leetcode/2-add-two-numbers/</link>
       <pubDate>Mon, 21 Sep 2020 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.siwei.dev/leetcode/2-add-two-number/</guid>
+      <guid>https://blog.siwei.dev/leetcode/2-add-two-numbers/</guid>
       <description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 Example:

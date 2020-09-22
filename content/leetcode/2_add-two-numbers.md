@@ -1,5 +1,5 @@
 ---
-title: "2 Add Two Number"
+title: "2 Add Two Numbers"
 date: 2020-09-21T00:00:00+08:00
 draft: false
 tags: ["leetcode"]
