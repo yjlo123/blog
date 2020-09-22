@@ -112,7 +112,9 @@ pre {
   padding-left: 5px;
   padding-right: 5px;
   border: 1px solid lighten(#111, 90);
-  background-color: #efefef
+  background-color: #efefef;
+  font-size: 14px;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 pre code {
