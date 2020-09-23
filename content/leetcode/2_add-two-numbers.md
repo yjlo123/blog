@@ -17,8 +17,6 @@ Explanation: 342 + 465 = 807.
 ```
 ### Golang
 {{< highlight go "linenos=table" >}}
-package main
-
 import (
 	"fmt"
 )
@@ -27,8 +25,6 @@ type ListNode struct {
 	Val  int
 	Next *ListNode
 }
-
-type intArr []int
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	head := &ListNode{0, nil}
@@ -59,37 +55,4 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return result.Next
 }
 
-func (nums intArr) toList() *ListNode {
-	if len(nums) == 0 {
-		return nil
-	}
-	var head *ListNode = nil
-	length := len(nums)
-	for i, _ := range nums {
-		num := nums[length-i-1]
-		head = &ListNode{num, head}
-	}
-	return head
-}
-
-func (list *ListNode) toArr() []int {
-	if list == nil {
-		return []int{}
-	}
-	head := list
-	var s []int
-	for head != nil {
-		s = append(s, head.Val)
-		head = head.Next
-	}
-	return s
-}
-
-func main() {
-	nums1 := intArr{2, 4, 3}
-	nums2 := intArr{5, 6, 4}
-
-	result := addTwoNumbers(nums1.toList(), nums2.toList())
-	fmt.Println(result.toArr())
-}
 {{< / highlight >}}

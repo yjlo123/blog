@@ -36,11 +36,14 @@ Output: [0,1]
 * -10<sup>9</sup> <= target <= 10<sup>9</sup>
 * **Only one valid answer exists.**
 
-### Golang
-
+<div class="tabs">
+  <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
+  <div class="tab-btn" onclick="showLang(event, 'python')">Python</div>
+  <div class="tab-btn" onclick="showLang(event, 'java')">Java</div>
+</div>
+<div class="tab-content">
+<div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
-package main
-
 import (
 	"fmt"
 )
@@ -55,9 +58,33 @@ func twoSum(nums []int, target int) []int {
 	}
 	return nil
 }
+{{< / highlight >}}
+</div>
 
-func main() {
-	arr := []int{2, 7, 11, 15}
-	fmt.Println(twoSum(arr, 9))
+<div id="python" class="lang" style="display:none">
+{{< highlight python "linenos=table" >}}
+def twoSum(self, nums: 'List[int]', target: 'int') -> 'List[int]':
+	map = {}
+	for i, n in enumerate(nums):
+		if n in map:
+			return [map[n], i]
+		map[target-n] = i
+{{< / highlight >}}
+</div>
+
+<div id="java" class="lang" style="display:none">
+{{< highlight java "linenos=table" >}}
+public int[] twoSum(int[] nums, int target) {
+	Map<Integer, Integer> map = new HashMap<>();
+	for (int i = 0; i < nums.length; i++) {
+		int comp = target - nums[i];
+		if (map.containsKey(comp)) {
+			return new int[]{map.get(comp), i};
+		}
+		map.put(nums[i], i);
+	}
+	return new int[]{};
 }
 {{< / highlight >}}
+</div>
+</div>
