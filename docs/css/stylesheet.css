@@ -158,6 +158,32 @@ footer a:hover {
   font-size: 14px;
 }
 
+.tabs {
+  overflow: hidden;
+}
+
+.tab-btn {
+  display: block;
+  float: left;
+  background-color: rgb(240,240,240);
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tab-btn:hover {
+  background-color: rgb(200,200,200);
+}
+
+.tab-btn-active {
+  background-color: rgb(210,210,210);
+}
+
+.tab-content {
+  border: 2px solid rgb(210,210,210);
+  overflow: hidden;
+  padding-top: 10px;
+}
 
 @media screen and (max-width: 576px) {
   .posts_listing {

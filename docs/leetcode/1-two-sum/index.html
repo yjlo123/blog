@@ -74,7 +74,13 @@ Output: [0,1]
 <li>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></li>
 <li><strong>Only one valid answer exists.</strong></li>
 </ul>
-<h3 id="golang">Golang</h3>
+<div class="tabs">
+  <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
+  <div class="tab-btn" onclick="showLang(event, 'python')">Python</div>
+  <div class="tab-btn" onclick="showLang(event, 'java')">Java</div>
+</div>
+<div class="tab-content">
+<div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -91,18 +97,9 @@ Output: [0,1]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">package</span> main
-
-<span style="color:#00a">import</span> (
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">import</span> (
 	<span style="color:#a50">&#34;fmt&#34;</span>
 )
 
@@ -116,12 +113,59 @@ Output: [0,1]
 	}
 	<span style="color:#00a">return</span> <span style="color:#00a">nil</span>
 }
-
-<span style="color:#00a">func</span> <span style="color:#0a0">main</span>() {
-	arr := []<span style="color:#0aa">int</span>{<span style="color:#099">2</span>, <span style="color:#099">7</span>, <span style="color:#099">11</span>, <span style="color:#099">15</span>}
-	fmt.<span style="color:#0a0">Println</span>(<span style="color:#0a0">twoSum</span>(arr, <span style="color:#099">9</span>))
-}
 </code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<div id="python" class="lang" style="display:none">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">twoSum</span>(self, nums: <span style="color:#a50">&#39;List[int]&#39;</span>, target: <span style="color:#a50">&#39;int&#39;</span>) -&gt; <span style="color:#a50">&#39;List[int]&#39;</span>:
+	<span style="color:#0aa">map</span> = {}
+	<span style="color:#00a">for</span> i, n <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
+		<span style="color:#00a">if</span> n <span style="color:#00a">in</span> <span style="color:#0aa">map</span>:
+			<span style="color:#00a">return</span> [<span style="color:#0aa">map</span>[n], i]
+		<span style="color:#0aa">map</span>[target-n] = i</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<div id="java" class="lang" style="display:none">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a">public</span> <span style="color:#0aa">int</span>[] <span style="color:#0a0">twoSum</span>(<span style="color:#0aa">int</span>[] nums, <span style="color:#0aa">int</span> target) {
+	Map&lt;Integer, Integer&gt; map = <span style="color:#00a">new</span> HashMap&lt;&gt;();
+	<span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = 0; i &lt; nums.<span style="color:#1e90ff">length</span>; i++) {
+		<span style="color:#0aa">int</span> comp = target - nums[i];
+		<span style="color:#00a">if</span> (map.<span style="color:#1e90ff">containsKey</span>(comp)) {
+			<span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{map.<span style="color:#1e90ff">get</span>(comp), i};
+		}
+		map.<span style="color:#1e90ff">put</span>(nums[i], i);
+	}
+	<span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{};
+}</code></pre></td></tr></table>
+</div>
+</div>
 </div>
 </div>
 
@@ -141,6 +185,23 @@ Output: [0,1]
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
   </body>
 </html>
 
