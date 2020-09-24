@@ -15,7 +15,11 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 ```
-### Golang
+<div class="tabs">
+  <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
+</div>
+<div class="tab-content">
+<div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 import (
 	"fmt"
@@ -56,3 +60,5 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 
 {{< / highlight >}}
+</div>
+</div>
