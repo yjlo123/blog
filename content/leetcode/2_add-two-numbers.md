@@ -1,4 +1,5 @@
 ---
+weight: 2
 title: "2 Add Two Numbers"
 date: 2020-09-21T00:00:00+08:00
 draft: false
@@ -21,10 +22,6 @@ Explanation: 342 + 465 = 807.
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
-import (
-	"fmt"
-)
-
 type ListNode struct {
 	Val  int
 	Next *ListNode

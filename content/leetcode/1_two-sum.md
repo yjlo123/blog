@@ -1,4 +1,5 @@
 ---
+weight: 1
 title: "1 Two Sum"
 date: 2020-09-21T00:00:00+08:00
 draft: false
@@ -44,10 +45,6 @@ Output: [0,1]
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
-import (
-	"fmt"
-)
-
 func twoSum(nums []int, target int) []int {
 	d := make(map[int]int)
 	for idx, num := range nums {

@@ -1,4 +1,5 @@
 ---
+weight: 5
 title: "5 Longest Palindromic Substring"
 date: 2020-09-23T00:00:00+08:00
 draft: false
@@ -25,7 +26,6 @@ Output: "bb"
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
-// longest-palindromic-substring
 package main
 
 import (
