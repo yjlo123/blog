@@ -63,7 +63,7 @@ func twoSum(nums []int, target int) []int {
 
 <div id="python" class="lang" style="display:none">
 {{< highlight python "linenos=table" >}}
-def twoSum(self, nums: 'List[int]', target: 'int') -> 'List[int]':
+def twoSum(nums: 'List[int]', target: 'int') -> 'List[int]':
 	map = {}
 	for i, n in enumerate(nums):
 		if n in map:
