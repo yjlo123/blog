@@ -63,7 +63,6 @@ func fizzBuzz(n int) []string {
 func main() {
 	fmt.Println(fizzBuzz(15))
 }
-
 {{< / highlight >}}
 </div>
 </div>
