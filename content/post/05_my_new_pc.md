@@ -26,7 +26,7 @@ tags: ["pc"]
 
 Some thoughts before the purchase:
 1. **An mATX casing**  
-    prefer a smaller size PC, but not ITX which is much harder to configure
+    prefer a smaller size PC, but not ITX which is usually poorly ventilated and harder to configure
 2. **A cost-effective CPU**  
     AMD Ryzen 3000 series is a good option
 3. **A budget GPU**  
