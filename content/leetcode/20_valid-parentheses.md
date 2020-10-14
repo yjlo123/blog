@@ -50,6 +50,7 @@ Output: true
 
 <div class="tabs">
   <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
+  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
 </div>
 <div class="tab-content">
 <div id="golang" class="lang">
@@ -82,5 +83,10 @@ func main() {
 	fmt.Println(isValid("{[()]}"))
 }
 {{< / highlight >}}
+</div>
+<div id="runtime" class="lang" style="display:none">
+<div class="code-link">
+<a href="https://runtime.siwei.dev/?src=leetcode20" target="_blank">https://runtime.siwei.dev/?src=leetcode20</a>
+</div>
 </div>
 </div>
