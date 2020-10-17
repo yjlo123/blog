@@ -41,6 +41,7 @@ Output: [0,1]
   <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
   <div class="tab-btn" onclick="showLang(event, 'python')">Python</div>
   <div class="tab-btn" onclick="showLang(event, 'java')">Java</div>
+  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
 </div>
 <div class="tab-content">
 <div id="golang" class="lang">
@@ -83,5 +84,11 @@ public int[] twoSum(int[] nums, int target) {
 	return new int[]{};
 }
 {{< / highlight >}}
+</div>
+
+<div id="runtime" class="lang" style="display:none">
+<div class="code-link">
+<a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>
+</div>
 </div>
 </div>
