@@ -35,6 +35,7 @@ Return:
 ```
 <div class="tabs">
   <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
+  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
 </div>
 <div class="tab-content">
 <div id="golang" class="lang">
