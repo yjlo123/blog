@@ -29,18 +29,18 @@ Output: 4
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func singleNumber(nums []int) int {
-	set := make(map[int]bool)
-	for _, num := range nums {
-		if _, ok := set[num]; ok {
-			delete(set, num)
-		} else {
-			set[num] = true
-		}
-	}
-	for num, _ := range set {
-		return num
-	}
-	return -1
+    set := make(map[int]bool)
+    for _, num := range nums {
+        if _, ok := set[num]; ok {
+            delete(set, num)
+        } else {
+            set[num] = true
+        }
+    }
+    for num, _ := range set {
+        return num
+    }
+    return -1
 }
 {{< / highlight >}}
 </div>

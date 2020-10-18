@@ -23,37 +23,37 @@ Explanation: 342 + 465 = 807.
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 type ListNode struct {
-	Val  int
-	Next *ListNode
+    Val  int
+    Next *ListNode
 }
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	head := &ListNode{0, nil}
-	result := head
-	carry := 0
-	for l1 != nil || l2 != nil {
-		temp := carry
-		if l1 != nil && l2 != nil {
-			temp += l1.Val + l2.Val
-		} else if l1 != nil {
-			temp += l1.Val
-		} else {
-			temp += l2.Val
-		}
-		head.Next = &ListNode{temp % 10, nil}
-		carry = temp / 10
-		if l1 != nil {
-			l1 = l1.Next
-		}
-		if l2 != nil {
-			l2 = l2.Next
-		}
-		head = head.Next
-	}
-	if carry > 0 {
-		head.Next = &ListNode{carry, nil}
-	}
-	return result.Next
+    head := &ListNode{0, nil}
+    result := head
+    carry := 0
+    for l1 != nil || l2 != nil {
+        temp := carry
+        if l1 != nil && l2 != nil {
+            temp += l1.Val + l2.Val
+        } else if l1 != nil {
+            temp += l1.Val
+        } else {
+            temp += l2.Val
+        }
+        head.Next = &ListNode{temp % 10, nil}
+        carry = temp / 10
+        if l1 != nil {
+            l1 = l1.Next
+        }
+        if l2 != nil {
+            l2 = l2.Next
+        }
+        head = head.Next
+    }
+    if carry > 0 {
+        head.Next = &ListNode{carry, nil}
+    }
+    return result.Next
 }
 
 {{< / highlight >}}

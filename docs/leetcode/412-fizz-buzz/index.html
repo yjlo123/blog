@@ -111,32 +111,37 @@ Return:
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">import</span> (
-	<span style="color:#a50">&#34;fmt&#34;</span>
-	<span style="color:#a50">&#34;strconv&#34;</span>
+    <span style="color:#a50">&#34;fmt&#34;</span>
+    <span style="color:#a50">&#34;strconv&#34;</span>
 )
 
 <span style="color:#00a">func</span> <span style="color:#0a0">fizzBuzz</span>(n <span style="color:#0aa">int</span>) []<span style="color:#0aa">string</span> {
-	<span style="color:#00a">var</span> result []<span style="color:#0aa">string</span>
-	<span style="color:#00a">for</span> i := <span style="color:#099">1</span>; i &lt;= n; i++ {
-		<span style="color:#00a">if</span> i%<span style="color:#099">3</span> == <span style="color:#099">0</span> &amp;&amp; i%<span style="color:#099">5</span> == <span style="color:#099">0</span> {
-			result = <span style="color:#0aa">append</span>(result, <span style="color:#a50">&#34;FizzBuzz&#34;</span>)
-		} <span style="color:#00a">else</span> <span style="color:#00a">if</span> i%<span style="color:#099">3</span> == <span style="color:#099">0</span> {
-			result = <span style="color:#0aa">append</span>(result, <span style="color:#a50">&#34;Fizz&#34;</span>)
-		} <span style="color:#00a">else</span> <span style="color:#00a">if</span> i%<span style="color:#099">5</span> == <span style="color:#099">0</span> {
-			result = <span style="color:#0aa">append</span>(result, <span style="color:#a50">&#34;Buzz&#34;</span>)
-		} <span style="color:#00a">else</span> {
-			result = <span style="color:#0aa">append</span>(result, strconv.<span style="color:#0a0">Itoa</span>(i))
-		}
-	}
-	<span style="color:#00a">return</span> result
+    <span style="color:#00a">var</span> result []<span style="color:#0aa">string</span>
+    <span style="color:#00a">for</span> i := <span style="color:#099">1</span>; i &lt;= n; i++ {
+        <span style="color:#00a">if</span> i%<span style="color:#099">3</span> == <span style="color:#099">0</span> &amp;&amp; i%<span style="color:#099">5</span> == <span style="color:#099">0</span> {
+            result = <span style="color:#0aa">append</span>(result, <span style="color:#a50">&#34;FizzBuzz&#34;</span>)
+        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> i%<span style="color:#099">3</span> == <span style="color:#099">0</span> {
+            result = <span style="color:#0aa">append</span>(result, <span style="color:#a50">&#34;Fizz&#34;</span>)
+        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> i%<span style="color:#099">5</span> == <span style="color:#099">0</span> {
+            result = <span style="color:#0aa">append</span>(result, <span style="color:#a50">&#34;Buzz&#34;</span>)
+        } <span style="color:#00a">else</span> {
+            result = <span style="color:#0aa">append</span>(result, strconv.<span style="color:#0a0">Itoa</span>(i))
+        }
+    }
+    <span style="color:#00a">return</span> result
 }
 
 <span style="color:#00a">func</span> <span style="color:#0a0">main</span>() {
-	fmt.<span style="color:#0a0">Println</span>(<span style="color:#0a0">fizzBuzz</span>(<span style="color:#099">15</span>))
+    fmt.<span style="color:#0a0">Println</span>(<span style="color:#0a0">fizzBuzz</span>(<span style="color:#099">15</span>))
 }
 </code></pre></td></tr></table>
 </div>
 </div>
+</div>
+<div id="runtime" class="lang" style="display:none">
+    <div class="code-link">
+        <a href="https://runtime.siwei.dev/?src=leetcode412" target="_blank">https://runtime.siwei.dev/?src=leetcode412</a>
+    </div>
 </div>
 </div>
 

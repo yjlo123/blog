@@ -40,29 +40,34 @@ Return:
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 import (
-	"fmt"
-	"strconv"
+    "fmt"
+    "strconv"
 )
 
 func fizzBuzz(n int) []string {
-	var result []string
-	for i := 1; i <= n; i++ {
-		if i%3 == 0 && i%5 == 0 {
-			result = append(result, "FizzBuzz")
-		} else if i%3 == 0 {
-			result = append(result, "Fizz")
-		} else if i%5 == 0 {
-			result = append(result, "Buzz")
-		} else {
-			result = append(result, strconv.Itoa(i))
-		}
-	}
-	return result
+    var result []string
+    for i := 1; i <= n; i++ {
+        if i%3 == 0 && i%5 == 0 {
+            result = append(result, "FizzBuzz")
+        } else if i%3 == 0 {
+            result = append(result, "Fizz")
+        } else if i%5 == 0 {
+            result = append(result, "Buzz")
+        } else {
+            result = append(result, strconv.Itoa(i))
+        }
+    }
+    return result
 }
 
 func main() {
-	fmt.Println(fizzBuzz(15))
+    fmt.Println(fizzBuzz(15))
 }
 {{< / highlight >}}
+</div>
+<div id="runtime" class="lang" style="display:none">
+    <div class="code-link">
+        <a href="https://runtime.siwei.dev/?src=leetcode412" target="_blank">https://runtime.siwei.dev/?src=leetcode412</a>
+    </div>
 </div>
 </div>

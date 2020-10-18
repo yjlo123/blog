@@ -118,40 +118,40 @@ Output: true
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">import</span> (
-	<span style="color:#a50">&#34;fmt&#34;</span>
+    <span style="color:#a50">&#34;fmt&#34;</span>
 )
 
 <span style="color:#00a">func</span> <span style="color:#0a0">isValid</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">bool</span> {
-	<span style="color:#00a">var</span> stack []<span style="color:#0aa">byte</span>
+    <span style="color:#00a">var</span> stack []<span style="color:#0aa">byte</span>
 
-	<span style="color:#00a">for</span> i := <span style="color:#099">0</span>; i &lt; <span style="color:#0aa">len</span>(s); i++ {
-		c := s[i]
-		<span style="color:#00a">if</span> c == <span style="color:#a50">&#39;(&#39;</span> || c == <span style="color:#a50">&#39;[&#39;</span> || c == <span style="color:#a50">&#39;{&#39;</span> {
-			stack = <span style="color:#0aa">append</span>(stack, c)
-		} <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;)&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;(&#39;</span> {
-			stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
-		} <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;]&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;[&#39;</span> {
-			stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
-		} <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;}&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;{&#39;</span> {
-			stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
-		} <span style="color:#00a">else</span> {
-			<span style="color:#00a">return</span> <span style="color:#00a">false</span>
-		}
-	}
-	<span style="color:#00a">return</span> <span style="color:#00a">true</span>
+    <span style="color:#00a">for</span> i := <span style="color:#099">0</span>; i &lt; <span style="color:#0aa">len</span>(s); i++ {
+        c := s[i]
+        <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;(&#39;</span> || c == <span style="color:#a50">&#39;[&#39;</span> || c == <span style="color:#a50">&#39;{&#39;</span> {
+            stack = <span style="color:#0aa">append</span>(stack, c)
+        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;)&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;(&#39;</span> {
+            stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
+        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;]&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;[&#39;</span> {
+            stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
+        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;}&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;{&#39;</span> {
+            stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
+        } <span style="color:#00a">else</span> {
+            <span style="color:#00a">return</span> <span style="color:#00a">false</span>
+        }
+    }
+    <span style="color:#00a">return</span> <span style="color:#00a">true</span>
 }
 
 <span style="color:#00a">func</span> <span style="color:#0a0">main</span>() {
-	fmt.<span style="color:#0a0">Println</span>(<span style="color:#0a0">isValid</span>(<span style="color:#a50">&#34;{[()]}&#34;</span>))
+    fmt.<span style="color:#0a0">Println</span>(<span style="color:#0a0">isValid</span>(<span style="color:#a50">&#34;{[()]}&#34;</span>))
 }
 </code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="runtime" class="lang" style="display:none">
-<div class="code-link">
-<a href="https://runtime.siwei.dev/?src=leetcode20" target="_blank">https://runtime.siwei.dev/?src=leetcode20</a>
-</div>
+    <div class="code-link">
+        <a href="https://runtime.siwei.dev/?src=leetcode20" target="_blank">https://runtime.siwei.dev/?src=leetcode20</a>
+    </div>
 </div>
 </div>
 

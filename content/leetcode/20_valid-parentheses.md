@@ -56,37 +56,37 @@ Output: true
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 import (
-	"fmt"
+    "fmt"
 )
 
 func isValid(s string) bool {
-	var stack []byte
+    var stack []byte
 
-	for i := 0; i < len(s); i++ {
-		c := s[i]
-		if c == '(' || c == '[' || c == '{' {
-			stack = append(stack, c)
-		} else if c == ')' && len(stack) > 0 && stack[len(stack)-1] == '(' {
-			stack = stack[:len(stack)-1]
-		} else if c == ']' && len(stack) > 0 && stack[len(stack)-1] == '[' {
-			stack = stack[:len(stack)-1]
-		} else if c == '}' && len(stack) > 0 && stack[len(stack)-1] == '{' {
-			stack = stack[:len(stack)-1]
-		} else {
-			return false
-		}
-	}
-	return true
+    for i := 0; i < len(s); i++ {
+        c := s[i]
+        if c == '(' || c == '[' || c == '{' {
+            stack = append(stack, c)
+        } else if c == ')' && len(stack) > 0 && stack[len(stack)-1] == '(' {
+            stack = stack[:len(stack)-1]
+        } else if c == ']' && len(stack) > 0 && stack[len(stack)-1] == '[' {
+            stack = stack[:len(stack)-1]
+        } else if c == '}' && len(stack) > 0 && stack[len(stack)-1] == '{' {
+            stack = stack[:len(stack)-1]
+        } else {
+            return false
+        }
+    }
+    return true
 }
 
 func main() {
-	fmt.Println(isValid("{[()]}"))
+    fmt.Println(isValid("{[()]}"))
 }
 {{< / highlight >}}
 </div>
 <div id="runtime" class="lang" style="display:none">
-<div class="code-link">
-<a href="https://runtime.siwei.dev/?src=leetcode20" target="_blank">https://runtime.siwei.dev/?src=leetcode20</a>
-</div>
+    <div class="code-link">
+        <a href="https://runtime.siwei.dev/?src=leetcode20" target="_blank">https://runtime.siwei.dev/?src=leetcode20</a>
+    </div>
 </div>
 </div>

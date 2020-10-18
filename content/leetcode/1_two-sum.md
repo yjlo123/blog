@@ -47,14 +47,14 @@ Output: [0,1]
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func twoSum(nums []int, target int) []int {
-	d := make(map[int]int)
-	for idx, num := range nums {
-		if v, ok := d[num]; ok {
-			return []int{v, idx}
-		}
-		d[target-num] = idx
-	}
-	return nil
+    d := make(map[int]int)
+    for idx, num := range nums {
+        if v, ok := d[num]; ok {
+            return []int{v, idx}
+        }
+        d[target-num] = idx
+    }
+    return nil
 }
 {{< / highlight >}}
 </div>
@@ -62,33 +62,33 @@ func twoSum(nums []int, target int) []int {
 <div id="python" class="lang" style="display:none">
 {{< highlight python "linenos=table" >}}
 def twoSum(nums: 'List[int]', target: 'int') -> 'List[int]':
-	map = {}
-	for i, n in enumerate(nums):
-		if n in map:
-			return [map[n], i]
-		map[target-n] = i
+    map = {}
+    for i, n in enumerate(nums):
+        if n in map:
+            return [map[n], i]
+        map[target-n] = i
 {{< / highlight >}}
 </div>
 
 <div id="java" class="lang" style="display:none">
 {{< highlight java "linenos=table" >}}
 public int[] twoSum(int[] nums, int target) {
-	Map<Integer, Integer> map = new HashMap<>();
-	for (int i = 0; i < nums.length; i++) {
-		int comp = target - nums[i];
-		if (map.containsKey(comp)) {
-			return new int[]{map.get(comp), i};
-		}
-		map.put(nums[i], i);
-	}
-	return new int[]{};
+    Map<Integer, Integer> map = new HashMap<>();
+    for (int i = 0; i < nums.length; i++) {
+        int comp = target - nums[i];
+        if (map.containsKey(comp)) {
+            return new int[]{map.get(comp), i};
+        }
+        map.put(nums[i], i);
+    }
+    return new int[]{};
 }
 {{< / highlight >}}
 </div>
 
 <div id="runtime" class="lang" style="display:none">
-<div class="code-link">
-<a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>
-</div>
+    <div class="code-link">
+        <a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>
+    </div>
 </div>
 </div>

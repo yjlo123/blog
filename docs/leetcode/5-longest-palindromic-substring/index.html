@@ -115,43 +115,43 @@ Output: &quot;bb&quot;
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">package</span> main
 
 <span style="color:#00a">import</span> (
-	<span style="color:#a50">&#34;fmt&#34;</span>
+    <span style="color:#a50">&#34;fmt&#34;</span>
 )
 
 <span style="color:#00a">func</span> <span style="color:#0a0">longestPalindrome</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">string</span> {
-	<span style="color:#00a">if</span> <span style="color:#0aa">len</span>(s) &lt; <span style="color:#099">1</span> {
-		<span style="color:#00a">return</span> <span style="color:#a50">&#34;&#34;</span>
-	}
-	start := <span style="color:#099">0</span>
-	end := <span style="color:#099">0</span>
-	<span style="color:#00a">for</span> i := <span style="color:#00a">range</span> s {
-		len1 := <span style="color:#0a0">expandAroundCenter</span>(s, i, i)
-		len2 := <span style="color:#0a0">expandAroundCenter</span>(s, i, i+<span style="color:#099">1</span>)
-		lenMax := -<span style="color:#099">1</span>
-		<span style="color:#00a">if</span> len1 &gt; len2 {
-			lenMax = len1
-		} <span style="color:#00a">else</span> {
-			lenMax = len2
-		}
+    <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(s) &lt; <span style="color:#099">1</span> {
+        <span style="color:#00a">return</span> <span style="color:#a50">&#34;&#34;</span>
+    }
+    start := <span style="color:#099">0</span>
+    end := <span style="color:#099">0</span>
+    <span style="color:#00a">for</span> i := <span style="color:#00a">range</span> s {
+        len1 := <span style="color:#0a0">expandAroundCenter</span>(s, i, i)
+        len2 := <span style="color:#0a0">expandAroundCenter</span>(s, i, i+<span style="color:#099">1</span>)
+        lenMax := -<span style="color:#099">1</span>
+        <span style="color:#00a">if</span> len1 &gt; len2 {
+            lenMax = len1
+        } <span style="color:#00a">else</span> {
+            lenMax = len2
+        }
 
-		<span style="color:#00a">if</span> lenMax &gt; end-start+<span style="color:#099">1</span> {
-			start = i - (lenMax-<span style="color:#099">1</span>)/<span style="color:#099">2</span>
-			end = i + lenMax/<span style="color:#099">2</span>
-		}
-	}
-	<span style="color:#00a">return</span> s[start : end+<span style="color:#099">1</span>]
+        <span style="color:#00a">if</span> lenMax &gt; end-start+<span style="color:#099">1</span> {
+            start = i - (lenMax-<span style="color:#099">1</span>)/<span style="color:#099">2</span>
+            end = i + lenMax/<span style="color:#099">2</span>
+        }
+    }
+    <span style="color:#00a">return</span> s[start : end+<span style="color:#099">1</span>]
 }
 
 <span style="color:#00a">func</span> <span style="color:#0a0">expandAroundCenter</span>(s <span style="color:#0aa">string</span>, left <span style="color:#0aa">int</span>, right <span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
-	<span style="color:#00a">for</span> left &gt;= <span style="color:#099">0</span> &amp;&amp; right &lt; <span style="color:#0aa">len</span>(s) &amp;&amp; s[left] == s[right] {
-		left--
-		right++
-	}
-	<span style="color:#00a">return</span> right - left - <span style="color:#099">1</span>
+    <span style="color:#00a">for</span> left &gt;= <span style="color:#099">0</span> &amp;&amp; right &lt; <span style="color:#0aa">len</span>(s) &amp;&amp; s[left] == s[right] {
+        left--
+        right++
+    }
+    <span style="color:#00a">return</span> right - left - <span style="color:#099">1</span>
 }
 
 <span style="color:#00a">func</span> <span style="color:#0a0">main</span>() {
-	fmt.<span style="color:#0a0">Println</span>(<span style="color:#0a0">longestPalindrome</span>(<span style="color:#a50">&#34;babad&#34;</span>))
+    fmt.<span style="color:#0a0">Println</span>(<span style="color:#0a0">longestPalindrome</span>(<span style="color:#a50">&#34;babad&#34;</span>))
 }
 </code></pre></td></tr></table>
 </div>

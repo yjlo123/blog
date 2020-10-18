@@ -97,14 +97,14 @@ Output: [0,1]
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">twoSum</span>(nums []<span style="color:#0aa">int</span>, target <span style="color:#0aa">int</span>) []<span style="color:#0aa">int</span> {
-	d := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">int</span>]<span style="color:#0aa">int</span>)
-	<span style="color:#00a">for</span> idx, num := <span style="color:#00a">range</span> nums {
-		<span style="color:#00a">if</span> v, ok := d[num]; ok {
-			<span style="color:#00a">return</span> []<span style="color:#0aa">int</span>{v, idx}
-		}
-		d[target-num] = idx
-	}
-	<span style="color:#00a">return</span> <span style="color:#00a">nil</span>
+    d := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">int</span>]<span style="color:#0aa">int</span>)
+    <span style="color:#00a">for</span> idx, num := <span style="color:#00a">range</span> nums {
+        <span style="color:#00a">if</span> v, ok := d[num]; ok {
+            <span style="color:#00a">return</span> []<span style="color:#0aa">int</span>{v, idx}
+        }
+        d[target-num] = idx
+    }
+    <span style="color:#00a">return</span> <span style="color:#00a">nil</span>
 }
 </code></pre></td></tr></table>
 </div>
@@ -122,11 +122,11 @@ Output: [0,1]
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">twoSum</span>(nums: <span style="color:#a50">&#39;List[int]&#39;</span>, target: <span style="color:#a50">&#39;int&#39;</span>) -&gt; <span style="color:#a50">&#39;List[int]&#39;</span>:
-	<span style="color:#0aa">map</span> = {}
-	<span style="color:#00a">for</span> i, n <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
-		<span style="color:#00a">if</span> n <span style="color:#00a">in</span> <span style="color:#0aa">map</span>:
-			<span style="color:#00a">return</span> [<span style="color:#0aa">map</span>[n], i]
-		<span style="color:#0aa">map</span>[target-n] = i</code></pre></td></tr></table>
+    <span style="color:#0aa">map</span> = {}
+    <span style="color:#00a">for</span> i, n <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
+        <span style="color:#00a">if</span> n <span style="color:#00a">in</span> <span style="color:#0aa">map</span>:
+            <span style="color:#00a">return</span> [<span style="color:#0aa">map</span>[n], i]
+        <span style="color:#0aa">map</span>[target-n] = i</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -147,23 +147,23 @@ Output: [0,1]
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a">public</span> <span style="color:#0aa">int</span>[] <span style="color:#0a0">twoSum</span>(<span style="color:#0aa">int</span>[] nums, <span style="color:#0aa">int</span> target) {
-	Map&lt;Integer, Integer&gt; map = <span style="color:#00a">new</span> HashMap&lt;&gt;();
-	<span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = 0; i &lt; nums.<span style="color:#1e90ff">length</span>; i++) {
-		<span style="color:#0aa">int</span> comp = target - nums[i];
-		<span style="color:#00a">if</span> (map.<span style="color:#1e90ff">containsKey</span>(comp)) {
-			<span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{map.<span style="color:#1e90ff">get</span>(comp), i};
-		}
-		map.<span style="color:#1e90ff">put</span>(nums[i], i);
-	}
-	<span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{};
+    Map&lt;Integer, Integer&gt; map = <span style="color:#00a">new</span> HashMap&lt;&gt;();
+    <span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = 0; i &lt; nums.<span style="color:#1e90ff">length</span>; i++) {
+        <span style="color:#0aa">int</span> comp = target - nums[i];
+        <span style="color:#00a">if</span> (map.<span style="color:#1e90ff">containsKey</span>(comp)) {
+            <span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{map.<span style="color:#1e90ff">get</span>(comp), i};
+        }
+        map.<span style="color:#1e90ff">put</span>(nums[i], i);
+    }
+    <span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{};
 }</code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="runtime" class="lang" style="display:none">
-<div class="code-link">
-<a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>
-</div>
+    <div class="code-link">
+        <a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>
+    </div>
 </div>
 </div>
 

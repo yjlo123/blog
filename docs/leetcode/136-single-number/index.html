@@ -87,18 +87,18 @@ Output: 4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">singleNumber</span>(nums []<span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
-	set := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">int</span>]<span style="color:#0aa">bool</span>)
-	<span style="color:#00a">for</span> _, num := <span style="color:#00a">range</span> nums {
-		<span style="color:#00a">if</span> _, ok := set[num]; ok {
-			<span style="color:#0aa">delete</span>(set, num)
-		} <span style="color:#00a">else</span> {
-			set[num] = <span style="color:#00a">true</span>
-		}
-	}
-	<span style="color:#00a">for</span> num, _ := <span style="color:#00a">range</span> set {
-		<span style="color:#00a">return</span> num
-	}
-	<span style="color:#00a">return</span> -<span style="color:#099">1</span>
+    set := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">int</span>]<span style="color:#0aa">bool</span>)
+    <span style="color:#00a">for</span> _, num := <span style="color:#00a">range</span> nums {
+        <span style="color:#00a">if</span> _, ok := set[num]; ok {
+            <span style="color:#0aa">delete</span>(set, num)
+        } <span style="color:#00a">else</span> {
+            set[num] = <span style="color:#00a">true</span>
+        }
+    }
+    <span style="color:#00a">for</span> num, _ := <span style="color:#00a">range</span> set {
+        <span style="color:#00a">return</span> num
+    }
+    <span style="color:#00a">return</span> -<span style="color:#099">1</span>
 }
 </code></pre></td></tr></table>
 </div>
