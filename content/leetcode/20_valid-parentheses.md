@@ -55,10 +55,6 @@ Output: true
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
-import (
-    "fmt"
-)
-
 func isValid(s string) bool {
     var stack []byte
 
@@ -77,10 +73,6 @@ func isValid(s string) bool {
         }
     }
     return true
-}
-
-func main() {
-    fmt.Println(isValid("{[()]}"))
 }
 {{< / highlight >}}
 </div>

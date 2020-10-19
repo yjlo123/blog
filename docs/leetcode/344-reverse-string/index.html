@@ -10,7 +10,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
 
-        <title>20 Valid Parentheses</title>
+        <title>344 Reverse String</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -43,9 +43,9 @@
 
 
 <div class="blog-post">
-  <h1>20 Valid Parentheses</h1>
+  <h1>344 Reverse String</h1>
   <div class="blog-post-subheader">
-    <time>25 Sep 2020</time>
+    <time>20 Oct 2020</time>
   </div><ul class="tags">
   
    <li>
@@ -54,34 +54,18 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>Given a string <code>s</code> containing just the characters <code>'('</code>, <code>')'</code>, <code>'{'</code>, <code>'}'</code>, <code>'['</code> and <code>']'</code>, determine if the input string is valid.</p>
-<p>An input string is valid if:</p>
-<ol>
-<li>Open brackets must be closed by the same type of brackets.</li>
-<li>Open brackets must be closed in the correct order.</li>
-</ol>
+    <p>Write a function that reverses a string. The input string is given as an array of characters <code>char[]</code>.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm">in-place</a></strong> with O(1) extra memory.</p>
+<p>You may assume all the characters consist of <code>printable ascii characters</code>.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: s = &quot;()&quot;
-Output: true
+<pre><code>Input: [&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;]
+Output: [&quot;o&quot;,&quot;l&quot;,&quot;l&quot;,&quot;e&quot;,&quot;h&quot;]
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: s = &quot;()[]{}&quot;
-Output: true
-</code></pre><p><strong>Example 3:</strong></p>
-<pre><code>Input: s = &quot;(]&quot;
-Output: false
-</code></pre><p><strong>Example 4:</strong></p>
-<pre><code>Input: s = &quot;([)]&quot;
-Output: false
-</code></pre><p><strong>Example 5:</strong></p>
-<pre><code>Input: s = &quot;{[]}&quot;
-Output: true
-</code></pre><p><strong>Constraints:</strong></p>
-<ul>
-<li>1 &lt;= s.length &lt;= 10<sup>4</sup></li>
-<li><code>s</code> consists of parentheses only <code>'()[]{}'</code>.</li>
-</ul>
-<div class="tabs">
+<pre><code>Input: [&quot;H&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;h&quot;]
+Output: [&quot;h&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;H&quot;]
+</code></pre><div class="tabs">
   <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
+  <div class="tab-btn" onclick="showLang(event, 'java')">Java</div>
   <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
 </div>
 <div class="tab-content">
@@ -99,46 +83,57 @@ Output: true
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">isValid</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">bool</span> {
-    <span style="color:#00a">var</span> stack []<span style="color:#0aa">byte</span>
-
-    <span style="color:#00a">for</span> i := <span style="color:#099">0</span>; i &lt; <span style="color:#0aa">len</span>(s); i++ {
-        c := s[i]
-        <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;(&#39;</span> || c == <span style="color:#a50">&#39;[&#39;</span> || c == <span style="color:#a50">&#39;{&#39;</span> {
-            stack = <span style="color:#0aa">append</span>(stack, c)
-        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;)&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;(&#39;</span> {
-            stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
-        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;]&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;[&#39;</span> {
-            stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
-        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;}&#39;</span> &amp;&amp; <span style="color:#0aa">len</span>(stack) &gt; <span style="color:#099">0</span> &amp;&amp; stack[<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>] == <span style="color:#a50">&#39;{&#39;</span> {
-            stack = stack[:<span style="color:#0aa">len</span>(stack)-<span style="color:#099">1</span>]
-        } <span style="color:#00a">else</span> {
-            <span style="color:#00a">return</span> <span style="color:#00a">false</span>
-        }
-    }
-    <span style="color:#00a">return</span> <span style="color:#00a">true</span>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">reverseString</span>(s []<span style="color:#0aa">byte</span>]) {
+	i , j := <span style="color:#099">0</span>, <span style="color:#0aa">len</span>(s) - <span style="color:#099">1</span>
+	<span style="color:#00a">for</span> i &lt; j {
+		temp := s[i]
+		s[i] = s[j]
+		i++
+		s[j] = temp
+		j--
+	}
+	fmt.<span style="color:#0a0">Println</span>(s)
 }
 </code></pre></td></tr></table>
 </div>
 </div>
 </div>
+<div id="java" class="lang" style="display:none">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a">public</span> <span style="color:#0aa">void</span> <span style="color:#0a0">reverseString</span>(<span style="color:#0aa">char</span>[] s) {
+    <span style="color:#0aa">int</span> i = 0;
+    <span style="color:#0aa">int</span> j = s.<span style="color:#1e90ff">length</span> - 1;
+    <span style="color:#00a">while</span> (i &lt; j) {
+        <span style="color:#0aa">char</span> temp = s[i];
+        s[i++] = s[j];
+        s[j--] = temp;
+    }
+    System.<span style="color:#1e90ff">out</span>.<span style="color:#1e90ff">println</span>(s);
+}</code></pre></td></tr></table>
+</div>
+</div>
+</div>
 <div id="runtime" class="lang" style="display:none">
     <div class="code-link">
-        <a href="https://runtime.siwei.dev/?src=leetcode20" target="_blank">https://runtime.siwei.dev/?src=leetcode20</a>
+        <a href="https://runtime.siwei.dev/?src=leetcode344" target="_blank">https://runtime.siwei.dev/?src=leetcode344</a>
     </div>
 </div>
 </div>
-
   </div>
 </div>
 

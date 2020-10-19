@@ -40,11 +40,6 @@ Return:
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
-import (
-    "fmt"
-    "strconv"
-)
-
 func fizzBuzz(n int) []string {
     var result []string
     for i := 1; i <= n; i++ {
@@ -59,10 +54,6 @@ func fizzBuzz(n int) []string {
         }
     }
     return result
-}
-
-func main() {
-    fmt.Println(fizzBuzz(15))
 }
 {{< / highlight >}}
 </div>

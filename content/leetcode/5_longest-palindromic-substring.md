@@ -26,12 +26,6 @@ Output: "bb"
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
-package main
-
-import (
-    "fmt"
-)
-
 func longestPalindrome(s string) string {
     if len(s) < 1 {
         return ""
@@ -62,10 +56,6 @@ func expandAroundCenter(s string, left int, right int) int {
         right++
     }
     return right - left - 1
-}
-
-func main() {
-    fmt.Println(longestPalindrome("babad"))
 }
 {{< / highlight >}}
 </div>
