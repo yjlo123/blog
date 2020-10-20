@@ -17,7 +17,7 @@
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
 Example 1:
-Input: nums = [2,7,11,15], target = 9Output: [0,1]Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
+Input: nums = [2,7,11,15], target = 9 Output: [0,1] Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ Input: nums = [2,7,11,15], target = 9Output: [0,1]Output: Because nums[0] + nu
       <description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 Example:
-Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)Output: 7 -&amp;gt; 0 -&amp;gt; 8Explanation: 342 + 465 = 807.</description>
+Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) Output: 7 -&amp;gt; 0 -&amp;gt; 8 Explanation: 342 + 465 = 807.</description>
     </item>
     
     <item>
@@ -40,8 +40,8 @@ Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)Output: 7 -&amp
       <guid>https://blog.siwei.dev/leetcode/5-longest-palindromic-substring/</guid>
       <description>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 Example1:
-Input: &amp;quot;babad&amp;quot;Output: &amp;quot;bab&amp;quot;Note: &amp;quot;aba&amp;quot; is also a valid answer.Example2:
-Input: &amp;quot;cbbd&amp;quot;Output: &amp;quot;bb&amp;quot;Golang1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  func longestPalindrome(s string) string { if len(s) &amp;lt; 1 { return &amp;#34;&amp;#34; } start := 0 end := 0 for i := range s { len1 := expandAroundCenter(s, i, i) len2 := expandAroundCenter(s, i, i+1) lenMax := -1 if len1 &amp;gt; len2 { lenMax = len1 } else { lenMax = len2 } if lenMax &amp;gt; end-start+1 { start = i - (lenMax-1)/2 end = i + lenMax/2 } } return s[start : end+1] } func expandAroundCenter(s string, left int, right int) int { for left &amp;gt;= 0 &amp;amp;&amp;amp; right &amp;lt; len(s) &amp;amp;&amp;amp; s[left] == s[right] { left-- right++ } return right - left - 1 }   </description>
+Input: &amp;quot;babad&amp;quot; Output: &amp;quot;bab&amp;quot; Note: &amp;quot;aba&amp;quot; is also a valid answer. Example2:
+Input: &amp;quot;cbbd&amp;quot; Output: &amp;quot;bb&amp;quot; Golang  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  func longestPalindrome(s string) string { if len(s) &amp;lt; 1 { return &amp;#34;&amp;#34; } start := 0 end := 0 for i := range s { len1 := expandAroundCenter(s, i, i) len2 := expandAroundCenter(s, i, i+1) lenMax := -1 if len1 &amp;gt; len2 { lenMax = len1 } else { lenMax = len2 } if lenMax &amp;gt; end-start+1 { start = i - (lenMax-1)/2 end = i + lenMax/2 } } return s[start : end+1] } func expandAroundCenter(s string, left int, right int) int { for left &amp;gt;= 0 &amp;amp;&amp;amp; right &amp;lt; len(s) &amp;amp;&amp;amp; s[left] == s[right] { left-- right++ } return right - left - 1 }      </description>
     </item>
     
     <item>
@@ -53,9 +53,9 @@ Input: &amp;quot;cbbd&amp;quot;Output: &amp;quot;bb&amp;quot;Golang1 2 3 4 5
       <description>Given a string s containing just the characters &#39;(&#39;, &#39;)&#39;, &#39;{&#39;, &#39;}&#39;, &#39;[&#39; and &#39;]&#39;, determine if the input string is valid.
 An input string is valid if:
  Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order.  Example 1:
-Input: s = &amp;quot;()&amp;quot;Output: trueExample 2:
-Input: s = &amp;quot;()[]{}&amp;quot;Output: trueExample 3:
-Input: s = &amp;quot;(]&amp;quot;Output: falseExample 4:</description>
+Input: s = &amp;quot;()&amp;quot; Output: true Example 2:
+Input: s = &amp;quot;()[]{}&amp;quot; Output: true Example 3:
+Input: s = &amp;quot;(]&amp;quot; Output: false Example 4:</description>
     </item>
     
     <item>
@@ -66,9 +66,9 @@ Input: s = &amp;quot;(]&amp;quot;Output: falseExample 4:</description>
       <guid>https://blog.siwei.dev/leetcode/21-merge-two-sorted-lists/</guid>
       <description>Merge two sorted linked lists and return it as a new sorted list. The new list should be made by splicing together the nodes of the first two lists.
 Example 1:
-Input: l1 = [1,2,4], l2 = [1,3,4]Output: [1,1,2,3,4,4]Example 2:
-Input: l1 = [], l2 = []Output: []Example 3:
-Input: l1 = [], l2 = [0]Output: [0]Constraints:
+Input: l1 = [1,2,4], l2 = [1,3,4] Output: [1,1,2,3,4,4] Example 2:
+Input: l1 = [], l2 = [] Output: [] Example 3:
+Input: l1 = [], l2 = [0] Output: [0] Constraints:
  The number of nodes in both lists is in the range [0, 50].</description>
     </item>
     
@@ -82,8 +82,8 @@ Input: l1 = [], l2 = [0]Output: [0]Constraints:
 Note:
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 Example 1:
-Input: [2,2,1]Output: 1Example 2:
-Input: [4,1,2,1,2]Output: 4Golang1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumber(nums []int) int { set := make(map[int]bool) for _, num := range nums { if _, ok := set[num]; ok { delete(set, num) } else { set[num] = true } } for num, _ := range set { return num } return -1 }   </description>
+Input: [2,2,1] Output: 1 Example 2:
+Input: [4,1,2,1,2] Output: 4 Golang  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumber(nums []int) int { set := make(map[int]bool) for _, num := range nums { if _, ok := set[num]; ok { delete(set, num) } else { set[num] = true } } for num, _ := range set { return num } return -1 }      </description>
     </item>
     
     <item>
@@ -96,8 +96,8 @@ Input: [4,1,2,1,2]Output: 4Golang1 2 3 4 5 6 7 8 9 10 11 12 13 14  func sing
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 You may assume all the characters consist of printable ascii characters.
 Example 1:
-Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;o&amp;quot;]Output: [&amp;quot;o&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;h&amp;quot;]Example 2:
-Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;h&amp;quot;]Output: [&amp;quot;h&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;H&amp;quot;]GolangJavaRuntime1 2 3 4 5 6 7 8 9 10 11  func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
+Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;o&amp;quot;] Output: [&amp;quot;o&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;h&amp;quot;] Example 2:
+Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;h&amp;quot;] Output: [&amp;quot;h&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;H&amp;quot;] Golang Java Runtime  1 2 3 4 5 6 7 8 9 10 11  func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
     </item>
     
     <item>
@@ -109,7 +109,7 @@ Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;q
       <description>Write a program that outputs the string representation of numbers from 1 to n.
 But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.
 Example:
-n = 15,Return:[&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;Fizz&amp;quot;,&amp;quot;4&amp;quot;,&amp;quot;Buzz&amp;quot;,&amp;quot;Fizz&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;Fizz&amp;quot;,&amp;quot;Buzz&amp;quot;,&amp;quot;11&amp;quot;,&amp;quot;Fizz&amp;quot;,&amp;quot;13&amp;quot;,&amp;quot;14&amp;quot;,&amp;quot;FizzBuzz&amp;quot;]GolangRuntime1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  func fizzBuzz(n int) []string { var result []string for i := 1; i &amp;lt;= n; i++ { if i%3 == 0 &amp;amp;&amp;amp; i%5 == 0 { result = append(result, &amp;#34;FizzBuzz&amp;#34;) } else if i%3 == 0 { result = append(result, &amp;#34;Fizz&amp;#34;) } else if i%5 == 0 { result = append(result, &amp;#34;Buzz&amp;#34;) } else { result = append(result, strconv.</description>
+n = 15, Return: [ &amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;4&amp;quot;, &amp;quot;Buzz&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;7&amp;quot;, &amp;quot;8&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;Buzz&amp;quot;, &amp;quot;11&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;13&amp;quot;, &amp;quot;14&amp;quot;, &amp;quot;FizzBuzz&amp;quot; ] Golang Runtime  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  func fizzBuzz(n int) []string { var result []string for i := 1; i &amp;lt;= n; i++ { if i%3 == 0 &amp;amp;&amp;amp; i%5 == 0 { result = append(result, &amp;#34;FizzBuzz&amp;#34;) } else if i%3 == 0 { result = append(result, &amp;#34;Fizz&amp;#34;) } else if i%5 == 0 { result = append(result, &amp;#34;Buzz&amp;#34;) } else { result = append(result, strconv.</description>
     </item>
     
   </channel>
