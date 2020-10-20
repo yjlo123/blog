@@ -87,6 +87,15 @@ Input: [4,1,2,1,2] Output: 4 Golang  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func sing
     </item>
     
     <item>
+      <title>231 Power of Two</title>
+      <link>https://blog.siwei.dev/leetcode/231-power-of-two/</link>
+      <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/231-power-of-two/</guid>
+      <description>test</description>
+    </item>
+    
+    <item>
       <title>344 Reverse String</title>
       <link>https://blog.siwei.dev/leetcode/344-reverse-string/</link>
       <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
