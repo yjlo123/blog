@@ -24,6 +24,7 @@ Output: 4
 ```
 <div class="tabs">
   <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
+  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
 </div>
 <div class="tab-content">
 <div id="golang" class="lang">
@@ -43,5 +44,10 @@ func singleNumber(nums []int) int {
     return -1
 }
 {{< / highlight >}}
+</div>
+<div id="runtime" class="lang" style="display:none">
+    <div class="code-link">
+        <a href="https://runtime.siwei.dev/?src=leetcode136" target="_blank">https://runtime.siwei.dev/?src=leetcode136</a>
+    </div>
 </div>
 </div>
