@@ -37,12 +37,7 @@ Output: [0,1]
 * -10<sup>9</sup> <= target <= 10<sup>9</sup>
 * **Only one valid answer exists.**
 
-<div class="tabs">
-  <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
-  <div class="tab-btn" onclick="showLang(event, 'python')">Python</div>
-  <div class="tab-btn" onclick="showLang(event, 'java')">Java</div>
-  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
-</div>
+<div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
@@ -59,7 +54,7 @@ func twoSum(nums []int, target int) []int {
 {{< / highlight >}}
 </div>
 
-<div id="python" class="lang" style="display:none">
+<div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
 def twoSum(nums: 'List[int]', target: 'int') -> 'List[int]':
     map = {}
@@ -70,7 +65,7 @@ def twoSum(nums: 'List[int]', target: 'int') -> 'List[int]':
 {{< / highlight >}}
 </div>
 
-<div id="java" class="lang" style="display:none">
+<div id="java" class="lang">
 {{< highlight java "linenos=table" >}}
 public int[] twoSum(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
@@ -86,7 +81,7 @@ public int[] twoSum(int[] nums, int target) {
 {{< / highlight >}}
 </div>
 
-<div id="runtime" class="lang" style="display:none">
+<div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>
     </div>

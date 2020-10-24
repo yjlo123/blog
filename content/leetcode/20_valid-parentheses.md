@@ -48,10 +48,7 @@ Output: true
 - 1 <= s.length <= 10<sup>4</sup>
 - `s` consists of parentheses only `'()[]{}'`.
 
-<div class="tabs">
-  <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
-  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
-</div>
+<div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}

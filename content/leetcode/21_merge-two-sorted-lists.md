@@ -32,11 +32,7 @@ Output: [0]
 - `-100 <= Node.val <= 100`
 - Both `l1` and `l2` are sorted in **non-decreasing** order.
 
-<div class="tabs">
-  <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
-  <div class="tab-btn" onclick="showLang(event, 'java')">Java</div>
-  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
-</div>
+<div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}

@@ -182,11 +182,11 @@ footer a:hover {
 }
 
 .tab-btn:hover {
-  background-color: rgb(200,200,200);
+  background-color: rgb(210,210,210);
 }
 
 .tab-btn-active {
-  background-color: rgb(210,210,210);
+  background-color: rgb(220,220,220);
 }
 
 .tab-content {

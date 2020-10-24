@@ -22,10 +22,7 @@ Output: 1
 Input: [4,1,2,1,2]
 Output: 4
 ```
-<div class="tabs">
-  <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
-  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
-</div>
+<div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}

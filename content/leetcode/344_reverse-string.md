@@ -25,11 +25,7 @@ Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
 ```
 
-<div class="tabs">
-  <div class="tab-btn tab-btn-active" onclick="showLang(event, 'golang')">Golang</div>
-  <div class="tab-btn" onclick="showLang(event, 'java')">Java</div>
-  <div class="tab-btn" onclick="showLang(event, 'runtime')">Runtime</div>
-</div>
+<div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
