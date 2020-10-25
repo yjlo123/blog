@@ -120,7 +120,7 @@ Output: [0]
 </div>
 </div>
 </div>
-<div id="java" class="lang" style="display:none">
+<div id="java" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -166,7 +166,7 @@ Output: [0]
 </div>
 </div>
 </div>
-<div id="runtime" class="lang" style="display:none">
+<div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode21" target="_blank">https://runtime.siwei.dev/?src=leetcode21</a>
     </div>
@@ -196,7 +196,8 @@ Output: [0]
         let first = true;
         $(".tab-content").children(".lang").each(function () {
           let tabId = $(this).attr("id");
-          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabId}</div>`));
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
           first = false;
         });
 

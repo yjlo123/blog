@@ -13,7 +13,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
 
-        <title>2 Add Two Numbers</title>
+        <title>122 Best Time to Buy and Sell Stock II</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -46,9 +46,9 @@
 
 
 <div class="blog-post">
-  <h1>2 Add Two Numbers</h1>
+  <h1>122 Best Time to Buy and Sell Stock II</h1>
   <div class="blog-post-subheader">
-    <time>21 Sep 2020</time>
+    <time>25 Oct 2020</time>
   </div><ul class="tags">
   
    <li>
@@ -57,13 +57,30 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong> and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p><strong>Example:</strong></p>
-<pre><code>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-Output: 7 -&gt; 0 -&gt; 8
-Explanation: 342 + 465 = 807.
-</code></pre><div class="tabs"></div>
+    <p>Say you have an array <code>prices</code> for which the <em>i<sup>th</sup></em> element is the price of a given stock on day <em>i</em>.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).</p>
+<p><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [7,1,5,3,6,4]
+Output: 7
+Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+             Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: [1,2,3,4,5]
+Output: 4
+Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
+             engaging multiple transactions at the same time. You must sell before buying again.
+</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input: [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transaction is done, i.e. max profit = 0.
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= prices.length &lt;= 3 * 10<sup>4</sup></li>
+<li>0 &lt;= prices[i] &lt;= 10<sup>4</sup></li>
+</ul>
+<div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -81,64 +98,29 @@ Explanation: 342 + 465 = 807.
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">type</span> ListNode <span style="color:#00a">struct</span> {
-    Val  <span style="color:#0aa">int</span>
-    Next *ListNode
-}
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">maxProfit</span>(prices []<span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
+    <span style="color:#00a">if</span> prices == <span style="color:#00a">nil</span> || <span style="color:#0aa">len</span>(prices) == <span style="color:#099">0</span> {
+        <span style="color:#00a">return</span> <span style="color:#099">0</span>
+    }
 
-<span style="color:#00a">func</span> <span style="color:#0a0">addTwoNumbers</span>(l1 *ListNode, l2 *ListNode) *ListNode {
-    head := &amp;ListNode{<span style="color:#099">0</span>, <span style="color:#00a">nil</span>}
-    result := head
-    carry := <span style="color:#099">0</span>
-    <span style="color:#00a">for</span> l1 != <span style="color:#00a">nil</span> || l2 != <span style="color:#00a">nil</span> {
-        temp := carry
-        <span style="color:#00a">if</span> l1 != <span style="color:#00a">nil</span> &amp;&amp; l2 != <span style="color:#00a">nil</span> {
-            temp += l1.Val + l2.Val
-        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> l1 != <span style="color:#00a">nil</span> {
-            temp += l1.Val
-        } <span style="color:#00a">else</span> {
-            temp += l2.Val
+    profit := <span style="color:#099">0</span>
+    <span style="color:#00a">for</span> i := <span style="color:#099">0</span>; i &lt; <span style="color:#0aa">len</span>(prices)-<span style="color:#099">1</span>; i++ {
+        <span style="color:#00a">if</span> prices[i+<span style="color:#099">1</span>] &gt; prices[i] {
+            profit += prices[i+<span style="color:#099">1</span>] - prices[i]
         }
-        head.Next = &amp;ListNode{temp % <span style="color:#099">10</span>, <span style="color:#00a">nil</span>}
-        carry = temp / <span style="color:#099">10</span>
-        <span style="color:#00a">if</span> l1 != <span style="color:#00a">nil</span> {
-            l1 = l1.Next
-        }
-        <span style="color:#00a">if</span> l2 != <span style="color:#00a">nil</span> {
-            l2 = l2.Next
-        }
-        head = head.Next
     }
-    <span style="color:#00a">if</span> carry &gt; <span style="color:#099">0</span> {
-        head.Next = &amp;ListNode{carry, <span style="color:#00a">nil</span>}
-    }
-    <span style="color:#00a">return</span> result.Next
+    <span style="color:#00a">return</span> profit
 }
 </code></pre></td></tr></table>
 </div>
 </div>
+</div>
+<div id="runtime" class="lang">
+    <div class="code-link">
+        <a href="https://runtime.siwei.dev/?src=leetcode122" target="_blank">https://runtime.siwei.dev/?src=leetcode122</a>
+    </div>
 </div>
 </div>
 

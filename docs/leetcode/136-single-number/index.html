@@ -105,7 +105,7 @@ Output: 4
 </div>
 </div>
 </div>
-<div id="runtime" class="lang" style="display:none">
+<div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode136" target="_blank">https://runtime.siwei.dev/?src=leetcode136</a>
     </div>
@@ -135,7 +135,8 @@ Output: 4
         let first = true;
         $(".tab-content").children(".lang").each(function () {
           let tabId = $(this).attr("id");
-          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabId}</div>`));
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
           first = false;
         });
 

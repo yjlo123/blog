@@ -123,6 +123,17 @@
           <li>
             <div class="row" id="posts">
               <div class="d-none d-sm-block col-sm-3 date-time-title">
+                <time>25 Oct 2020</time>
+              </div>
+              <div class="col-sm date-time-title post">
+                <a href="/leetcode/122-best-time-to-buy-and-sell-stock-ii/">122 Best Time to Buy and Sell Stock II</a>
+              </div>
+            </div>
+          </li>
+          
+          <li>
+            <div class="row" id="posts">
+              <div class="d-none d-sm-block col-sm-3 date-time-title">
                 <time>26 Sep 2020</time>
               </div>
               <div class="col-sm date-time-title post">
@@ -188,7 +199,8 @@
         let first = true;
         $(".tab-content").children(".lang").each(function () {
           let tabId = $(this).attr("id");
-          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabId}</div>`));
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
           first = false;
         });
 

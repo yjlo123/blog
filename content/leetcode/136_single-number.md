@@ -42,7 +42,7 @@ func singleNumber(nums []int) int {
 }
 {{< / highlight >}}
 </div>
-<div id="runtime" class="lang" style="display:none">
+<div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode136" target="_blank">https://runtime.siwei.dev/?src=leetcode136</a>
     </div>

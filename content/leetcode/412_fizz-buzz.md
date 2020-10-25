@@ -54,7 +54,7 @@ func fizzBuzz(n int) []string {
 }
 {{< / highlight >}}
 </div>
-<div id="runtime" class="lang" style="display:none">
+<div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode412" target="_blank">https://runtime.siwei.dev/?src=leetcode412</a>
     </div>

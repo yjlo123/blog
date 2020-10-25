@@ -43,7 +43,7 @@ func reverseString(s []byte]) {
 {{< / highlight >}}
 </div>
 
-<div id="java" class="lang" style="display:none">
+<div id="java" class="lang">
 {{< highlight java "linenos=table" >}}
 public void reverseString(char[] s) {
     int i = 0;
@@ -58,7 +58,7 @@ public void reverseString(char[] s) {
 {{< / highlight >}}
 </div>
 
-<div id="runtime" class="lang" style="display:none">
+<div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode344" target="_blank">https://runtime.siwei.dev/?src=leetcode344</a>
     </div>

@@ -56,7 +56,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 {{< / highlight >}}
 </div>
-<div id="java" class="lang" style="display:none">
+<div id="java" class="lang">
 {{< highlight java "linenos=table" >}}
 public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     if(l1 == null){
@@ -79,7 +79,7 @@ public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 }
 {{< / highlight >}}
 </div>
-<div id="runtime" class="lang" style="display:none">
+<div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode21" target="_blank">https://runtime.siwei.dev/?src=leetcode21</a>
     </div>

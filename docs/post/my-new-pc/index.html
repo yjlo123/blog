@@ -175,7 +175,8 @@ just don&rsquo;t want my PC to be overheated</li>
         let first = true;
         $(".tab-content").children(".lang").each(function () {
           let tabId = $(this).attr("id");
-          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabId}</div>`));
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
           first = false;
         });
 
