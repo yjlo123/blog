@@ -2,7 +2,7 @@
 title: "Why I Created Runtime Script"
 date: 2020-01-26T11:30:40+08:00
 draft: false
-tags: ["programming language"]
+tags: ["programming language", "runtime script"]
 ---
 
 In 2016, the year I graduated from my university, I started implementing a scripting language, [YJLO Script](https://yjlo123.github.io/yjlo-script/). It has a modern-style syntax since I borrowed a bunch of ideas from recent popular languages, such as Python, Golang, and Swift. It is implemented in JavaScript and interpreted directly in the browser.

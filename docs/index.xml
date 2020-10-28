@@ -6,7 +6,7 @@
     <description>Recent content on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Oct 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Oct 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -138,6 +138,19 @@ You may assume all the characters consist of printable ascii characters.
 Example 1:
 Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;o&amp;quot;]Output: [&amp;quot;o&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;h&amp;quot;]Example 2:
 Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;h&amp;quot;]Output: [&amp;quot;h&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;H&amp;quot;]1 2 3 4 5 6 7 8 9 10 11  func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
+    </item>
+    
+    <item>
+      <title>400 Nth Digit</title>
+      <link>https://blog.siwei.dev/leetcode/400-nth-digit/</link>
+      <pubDate>Wed, 28 Oct 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/400-nth-digit/</guid>
+      <description>Find the nth digit of the infinite integer sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &amp;hellip;
+Note: n is positive and will fit within the range of a 32-bit signed integer (n &amp;lt; 231).
+Example 1:
+Input:3Output:3Example 2:
+Input:11Output:0Explanation:The 11th digit of the sequence1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...is a 0, which is part of the number 10.</description>
     </item>
     
     <item>
