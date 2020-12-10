@@ -13,7 +13,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
 
-        <title>400 Nth Digit</title>
+        <title>476 Number Complement</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -46,9 +46,9 @@
 
 
 <div class="blog-post">
-  <h1>400 Nth Digit</h1>
+  <h1>476 Number Complement</h1>
   <div class="blog-post-subheader">
-    <time>28 Oct 2020</time>
+    <time>10 Dec 2020</time>
   </div><ul class="tags">
   
    <li>
@@ -57,29 +57,27 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>Find the n<sup>th</sup> digit of the infinite integer sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &hellip;</p>
-<p><strong>Note:</strong>
-<em>n</em> is positive and will fit within the range of a 32-bit signed integer (n &lt; 2<sup>31</sup>).</p>
+    <p>Given a <strong>positive</strong> integer <code>num</code>, output its complement number. The complement strategy is to flip the bits of its binary representation.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input:
-3
-
-Output:
-3
+<pre><code>Input: num = 5
+Output: 2
+Explanation: The binary representation of 5 is 101 (no leading zero bits),
+and its complement is 010. So you need to output 2.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input:
-11
-
-Output:
-0
-
-Explanation:
-The 11th digit of the sequence
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...
-  is a 0, which is part of the number 10.
-</code></pre><div class="tabs"></div>
+<pre><code>Input: num = 1
+Output: 0
+Explanation: The binary representation of 1 is 1 (no leading zero bits),
+and its complement is 0. So you need to output 0.
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>The given integer num is guaranteed to fit within the range of a 32-bit signed integer.</li>
+<li>num &gt;= 1</li>
+<li>You could assume no leading zero bit in the integer’s binary representation.</li>
+<li>This question is the same as 1009</li>
+</ul>
+<div class="tabs"></div>
 <div class="tab-content">
-<div id="python" class="lang">
+<div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -92,20 +90,19 @@ The 11th digit of the sequence
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">findNthDigit</span>(n: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
-    length = <span style="color:#099">1</span>       <span style="color:#aaa;font-style:italic"># number of digits: 1, 2, 3 ...</span>
-    range_count = <span style="color:#099">9</span>  <span style="color:#aaa;font-style:italic"># count of numbers for current length: 9, 90, 900 ...</span>
-    num = <span style="color:#099">1</span>          <span style="color:#aaa;font-style:italic"># current number: 1, 10, 100, 1000 ...</span>
-    <span style="color:#00a">while</span> n &gt; length * range_count:
-        n -= length * range_count
-        length += <span style="color:#099">1</span>
-        range_count *= <span style="color:#099">10</span>
-        num *= <span style="color:#099">10</span>
-    num += (n-<span style="color:#099">1</span>) / length
-    <span style="color:#00a">return</span> <span style="color:#0aa">int</span>(<span style="color:#0aa">str</span>(num)[(n-<span style="color:#099">1</span>) % length])</code></pre></td></tr></table>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">findComplement</span>(num <span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
+	result := <span style="color:#099">0</span>
+	power := <span style="color:#099">1</span>
+	<span style="color:#00a">for</span> num &gt; <span style="color:#099">0</span> {
+		result += (num % <span style="color:#099">2</span> ^ <span style="color:#099">1</span>) * power
+		power &lt;&lt;= <span style="color:#099">1</span>
+		num &gt;&gt;= <span style="color:#099">1</span>
+	}
+	<span style="color:#00a">return</span> result
+}
+</code></pre></td></tr></table>
 </div>
 </div>
 </div>
