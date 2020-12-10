@@ -140,6 +140,20 @@ Input: n = 5Output: falseConstraints:
     </item>
     
     <item>
+      <title>242 Valid Anagram</title>
+      <link>https://blog.siwei.dev/leetcode/242-valid-anagram/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/242-valid-anagram/</guid>
+      <description>Given two strings s and t , write a function to determine if t is an anagram of s.
+Example 1:
+Input: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot;Output: trueExample 2:
+Input: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car&amp;quot;Output: falseNote: You may assume the string contains only lowercase alphabets.
+Follow up: What if the inputs contain unicode characters? How would you adapt your solution to such case?
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  func isAnagram(s string, t string) bool { if len(s) !</description>
+    </item>
+    
+    <item>
       <title>344 Reverse String</title>
       <link>https://blog.siwei.dev/leetcode/344-reverse-string/</link>
       <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
