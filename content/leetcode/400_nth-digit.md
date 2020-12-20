@@ -35,6 +35,23 @@ The 11th digit of the sequence
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="golang" class="lang">
+{{< highlight go "linenos=table" >}}
+func findNthDigit(n int) int {
+	length := 1
+	rangeCount := 9
+	num := 1
+	for n > length*rangeCount {
+		n -= length * rangeCount
+		length += 1
+		rangeCount *= 10
+		num *= 10
+	}
+	num += (n - 1) / length
+	return int(strconv.Itoa(num)[(n-1)%length] - '0')
+}
+{{< / highlight >}}
+</div>
 <div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
 def findNthDigit(n: int) -> int:

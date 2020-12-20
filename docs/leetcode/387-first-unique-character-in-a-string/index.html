@@ -13,7 +13,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
 
-        <title>400 Nth Digit</title>
+        <title>387 First Unique Character in a String</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -46,9 +46,9 @@
 
 
 <div class="blog-post">
-  <h1>400 Nth Digit</h1>
+  <h1>387 First Unique Character in a String</h1>
   <div class="blog-post-subheader">
-    <time>28 Oct 2020</time>
+    <time>20 Dec 2020</time>
   </div><ul class="tags">
   
    <li>
@@ -57,27 +57,15 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>Find the n<sup>th</sup> digit of the infinite integer sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &hellip;</p>
-<p><strong>Note:</strong>
-<em>n</em> is positive and will fit within the range of a 32-bit signed integer (n &lt; 2<sup>31</sup>).</p>
-<p><strong>Example 1:</strong></p>
-<pre><code>Input:
-3
+    <p>Given a string, find the first non-repeating character in it and return its index. If it doesn&rsquo;t exist, return -1.</p>
+<p><strong>Examples:</strong></p>
+<pre><code>s = &quot;leetcode&quot;
+return 0.
 
-Output:
-3
-</code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input:
-11
-
-Output:
-0
-
-Explanation:
-The 11th digit of the sequence
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...
-  is a 0, which is part of the number 10.
-</code></pre><div class="tabs"></div>
+s = &quot;loveleetcode&quot;
+return 2.
+</code></pre><p><strong>Note:</strong> You may assume the string contains only lowercase English letters.</p>
+<div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -95,52 +83,40 @@ The 11th digit of the sequence
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">findNthDigit</span>(n <span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
-	length := <span style="color:#099">1</span>
-	rangeCount := <span style="color:#099">9</span>
-	num := <span style="color:#099">1</span>
-	<span style="color:#00a">for</span> n &gt; length*rangeCount {
-		n -= length * rangeCount
-		length += <span style="color:#099">1</span>
-		rangeCount *= <span style="color:#099">10</span>
-		num *= <span style="color:#099">10</span>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">firstUniqChar</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">int</span> {
+	m := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">rune</span>]<span style="color:#0aa">int</span>)
+	<span style="color:#00a">for</span> i, c := <span style="color:#00a">range</span> s {
+		_, has := m[c]
+		<span style="color:#00a">if</span> has {
+			m[c] = -<span style="color:#099">1</span>
+		} <span style="color:#00a">else</span> {
+			m[c] = i
+		}
 	}
-	num += (n - <span style="color:#099">1</span>) / length
-	<span style="color:#00a">return</span> <span style="color:#0aa">int</span>(strconv.<span style="color:#0a0">Itoa</span>(num)[(n-<span style="color:#099">1</span>)%length] - <span style="color:#a50">&#39;0&#39;</span>)
+	<span style="color:#00a">const</span> maxInt = <span style="color:#0aa">int</span>(^<span style="color:#0aa">uint</span>(<span style="color:#099">0</span>) &gt;&gt; <span style="color:#099">1</span>)
+	min := maxInt
+	<span style="color:#00a">for</span> _, i := <span style="color:#00a">range</span> m {
+		<span style="color:#00a">if</span> i &gt; -<span style="color:#099">1</span> &amp;&amp; i &lt; min {
+			min = i
+		}
+	}
+	<span style="color:#00a">if</span> min == maxInt {
+		<span style="color:#00a">return</span> -<span style="color:#099">1</span>
+	}
+	<span style="color:#00a">return</span> min
 }
 </code></pre></td></tr></table>
-</div>
-</div>
-</div>
-<div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">findNthDigit</span>(n: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
-    length = <span style="color:#099">1</span>       <span style="color:#aaa;font-style:italic"># number of digits: 1, 2, 3 ...</span>
-    range_count = <span style="color:#099">9</span>  <span style="color:#aaa;font-style:italic"># count of numbers for current length: 9, 90, 900 ...</span>
-    num = <span style="color:#099">1</span>          <span style="color:#aaa;font-style:italic"># current number: 1, 10, 100, 1000 ...</span>
-    <span style="color:#00a">while</span> n &gt; length * range_count:
-        n -= length * range_count
-        length += <span style="color:#099">1</span>
-        range_count *= <span style="color:#099">10</span>
-        num *= <span style="color:#099">10</span>
-    num += (n-<span style="color:#099">1</span>) / length
-    <span style="color:#00a">return</span> <span style="color:#0aa">int</span>(<span style="color:#0aa">str</span>(num)[(n-<span style="color:#099">1</span>) % length])</code></pre></td></tr></table>
 </div>
 </div>
 </div>
