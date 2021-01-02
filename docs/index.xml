@@ -6,7 +6,7 @@
     <description>Recent content on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -214,6 +214,18 @@ n = 15,Return:[&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;Fizz&a
 Example 1:
 Input: num = 5Output: 2Explanation: The binary representation of 5 is 101 (no leading zero bits),and its complement is 010. So you need to output 2.Example 2:
 Input: num = 1Output: 0Explanation: The binary representation of 1 is 1 (no leading zero bits),and its complement is 0.</description>
+    </item>
+    
+    <item>
+      <title>Implementing Linked Lists in Vlang</title>
+      <link>https://blog.siwei.dev/post/implementing-linked-lists-in-vlang/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/post/implementing-linked-lists-in-vlang/</guid>
+      <description>In V&amp;rsquo;s documentation, it says:
+ V&amp;rsquo;s references are similar to Go pointers and C++ references.
+For example, a generic tree structure definition would look like this:
+ 1 2 3 4 5  struct Node&amp;lt;T&amp;gt;{valTleft&amp;amp;Noderight&amp;amp;Node}   However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.</description>
     </item>
     
     <item>

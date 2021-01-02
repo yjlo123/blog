@@ -132,6 +132,16 @@ pre code {
   font-size: 14px;
 }
 
+blockquote {
+  background: #f6f6f6;
+  padding: 10px;
+  border-left: 5px solid #ccc;
+}
+
+blockquote>p {
+  margin-bottom: 0;
+}
+
 footer {
   color: #999;
   text-align: center;
