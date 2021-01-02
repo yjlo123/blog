@@ -6,7 +6,7 @@
     <description>Recent content on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -219,7 +219,7 @@ Input: num = 1Output: 0Explanation: The binary representation of 1 is 1 (no le
     <item>
       <title>Implementing Linked Lists in Vlang</title>
       <link>https://blog.siwei.dev/post/implementing-linked-lists-in-vlang/</link>
-      <pubDate>Sat, 02 Jan 2021 00:00:00 +0800</pubDate>
+      <pubDate>Fri, 25 Dec 2020 00:00:00 +0800</pubDate>
       
       <guid>https://blog.siwei.dev/post/implementing-linked-lists-in-vlang/</guid>
       <description>In V&amp;rsquo;s documentation, it says:

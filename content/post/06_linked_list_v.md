@@ -1,6 +1,6 @@
 ---
 title: "Implementing Linked Lists in Vlang"
-date: 2021-01-02T00:00:00+08:00
+date: 2020-12-25T00:00:00+08:00
 draft: false
 tags: ["vlang", "data structure"]
 ---
@@ -24,12 +24,28 @@ For most of the cases, we only want to create a new node with its children undef
 
 I don't think this safety feature makes sense, and it is even kind of stupid. As far as I know, all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as such empty values.
 
-But since V's reference is similar to C++ reference, I was wondering if I can set the integer `0` as the null pointer, and found it worked.
+### First Attempt
+{{< highlight rust "linenos=table" >}}
+struct ValueNode {
+pub mut:
+	val   int
+	left  &Node
+	right &Node
+}
+
+struct EmptyNode {}
+
+type Node = ValueNode | EmptyNode
+
+{{< / highlight >}}
+
+### Second Attempt
+Since V's reference is similar to C++ reference, I was wondering if I can set the integer `0` as the null pointer, and found it worked.
 
 {{< highlight rust "linenos=table" >}}
 struct Node {
 pub mut:
-	val   &Value
+	val   int
 	left  &Node
 	right &Node
 }
@@ -43,12 +59,13 @@ mut node := &Node {
 
 But obviously, it is tricky and unsafe to do so. No surprise, this is prohibited since V 0.2.
 
-Therefore, I have to find another way to represent empty in V. After going through the V doc, the only "empty thing" I could found is an empty array. So here we go:
+### Final Attempt
+I have to find another way to represent empty in V. After going through the V doc, the only "empty thing" I could found is an empty array. So here we go:
 
 {{< highlight rust "linenos=table" >}}
 struct Node {
 pub mut:
-	val   &Value
+	val   int
 	left  []&Node
 	right []&Node
 }

@@ -48,7 +48,7 @@
 <div class="blog-post">
   <h1>Implementing Linked Lists in Vlang</h1>
   <div class="blog-post-subheader">
-    <time>02 Jan 2021</time>
+    <time>25 Dec 2020</time>
   </div><ul class="tags">
   
    <li>
@@ -86,7 +86,36 @@ For example, a generic tree structure definition would look like this:</p>
 <p>However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.</p>
 <p>For most of the cases, we only want to create a new node with its children undefined, and then assign values to them after some preparations. But this not feasible in V, since, for the safety purpose, V has no null, no undefined values or behavior.</p>
 <p>I don&rsquo;t think this safety feature makes sense, and it is even kind of stupid. As far as I know, all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as such empty values.</p>
-<p>But since V&rsquo;s reference is similar to C++ reference, I was wondering if I can set the integer <code>0</code> as the null pointer, and found it worked.</p>
+<h3 id="first-attempt">First Attempt</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">ValueNode</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#00a">pub</span><span style="color:#bbb"> </span><span style="color:#00a">mut</span>:
+	<span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">   </span>int<span style="color:#bbb">
+</span><span style="color:#bbb">	</span>left<span style="color:#bbb">  </span>&amp;Node<span style="color:#bbb">
+</span><span style="color:#bbb">	</span>right<span style="color:#bbb"> </span>&amp;Node<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">EmptyNode</span><span style="color:#bbb"> </span>{}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#00a">type</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>ValueNode<span style="color:#bbb"> </span>|<span style="color:#bbb"> </span>EmptyNode<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="second-attempt">Second Attempt</h3>
+<p>Since V&rsquo;s reference is similar to C++ reference, I was wondering if I can set the integer <code>0</code> as the null pointer, and found it worked.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -105,7 +134,7 @@ For example, a generic tree structure definition would look like this:</p>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#00a">pub</span><span style="color:#bbb"> </span><span style="color:#00a">mut</span>:
-	<span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">   </span>&amp;Value<span style="color:#bbb">
+	<span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">   </span>int<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>left<span style="color:#bbb">  </span>&amp;Node<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>right<span style="color:#bbb"> </span>&amp;Node<span style="color:#bbb">
 </span><span style="color:#bbb"></span>}<span style="color:#bbb">
@@ -119,7 +148,8 @@ For example, a generic tree structure definition would look like this:</p>
 </div>
 </div>
 <p>But obviously, it is tricky and unsafe to do so. No surprise, this is prohibited since V 0.2.</p>
-<p>Therefore, I have to find another way to represent empty in V. After going through the V doc, the only &ldquo;empty thing&rdquo; I could found is an empty array. So here we go:</p>
+<h3 id="final-attempt">Final Attempt</h3>
+<p>I have to find another way to represent empty in V. After going through the V doc, the only &ldquo;empty thing&rdquo; I could found is an empty array. So here we go:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -132,7 +162,7 @@ For example, a generic tree structure definition would look like this:</p>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#00a">pub</span><span style="color:#bbb"> </span><span style="color:#00a">mut</span>:
-	<span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">   </span>&amp;Value<span style="color:#bbb">
+	<span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">   </span>int<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>left<span style="color:#bbb">  </span>[]&amp;Node<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>right<span style="color:#bbb"> </span>[]&amp;Node<span style="color:#bbb">
 </span><span style="color:#bbb"></span>}<span style="color:#bbb">
