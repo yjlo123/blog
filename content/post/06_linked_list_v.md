@@ -20,12 +20,12 @@ struct Node<T> {
 
 However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.
 
-For most of the scenarios, we only want to create a new node with its children undefined, and then assign values to them after some preparations. But this not feasible in V, since, for the safety purpose, V has no null, no undefined values. 
+For most of the scenarios, we only want to create a new node with its children undefined, and then assign values to them after some preparations. But this is not feasible in V, since, for the safety purpose, V has no null, no undefined values. 
 
-As far as I know, all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as such empty values.
+It seems to me that all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as an empty value.
 
 ## First Attempt
-Since V's reference is similar to C++ reference, I was wondering if I can set the integer `0` as the null pointer, and found it worked.
+Since V's reference is similar to C++ reference, I was wondering if I can set the integer `0` as the null pointer, and then found it worked.
 
 {{< highlight rust "linenos=table" >}}
 struct Node {
@@ -40,7 +40,7 @@ mut node := &Node {
 }
 {{< / highlight >}}
 
-But obviously, it is tricky and also unsafe to do so. No surprise, this is prohibited since V 0.2.
+But obviously, it is tricky and also unsafe to do so. With no surprise, this is prohibited since V 0.2.
 
 ## Second Attempt
 I have to find another way to represent `empty` in V. After going through the V doc, the only "empty thing" I could found is an empty array. So here we go:
@@ -76,7 +76,7 @@ fn (mut node Node) set_next(next &Node) {
 }
 {{< / highlight >}}
 
-This method works well and will not likely be affected by future versions of V. But it is an overkill for linked lists, since it is more suitable for implementing tree structures.
+This method works well and will not likely be affected by future versions of V. But it is an overkill for linked lists, and it is more suitable for implementing tree structures.
 
 ## A Better Way?
 V supports `sum type`, a sum type instance can hold a value of different types.
@@ -97,7 +97,7 @@ type Node = EmptyNode | ValueNode
 
 {{< / highlight >}}
 
-Similar to the second attempt, let's define its `checker`, `getter` and `setter`:
+Similar to the previous attempt, let's define its `checker`, `getter` and `setter`:
 
 {{< highlight rust "linenos=table" >}}
 fn (node &ValueNode) has_next() bool {

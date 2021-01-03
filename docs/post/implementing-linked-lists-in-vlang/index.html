@@ -84,10 +84,10 @@ For example, a generic tree structure definition would look like this:</p>
 </div>
 </div>
 <p>However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.</p>
-<p>For most of the scenarios, we only want to create a new node with its children undefined, and then assign values to them after some preparations. But this not feasible in V, since, for the safety purpose, V has no null, no undefined values.</p>
-<p>As far as I know, all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as such empty values.</p>
+<p>For most of the scenarios, we only want to create a new node with its children undefined, and then assign values to them after some preparations. But this is not feasible in V, since, for the safety purpose, V has no null, no undefined values.</p>
+<p>It seems to me that all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as an empty value.</p>
 <h2 id="first-attempt">First Attempt</h2>
-<p>Since V&rsquo;s reference is similar to C++ reference, I was wondering if I can set the integer <code>0</code> as the null pointer, and found it worked.</p>
+<p>Since V&rsquo;s reference is similar to C++ reference, I was wondering if I can set the integer <code>0</code> as the null pointer, and then found it worked.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -115,7 +115,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span></code></pre></td></tr></table>
 </div>
 </div>
-<p>But obviously, it is tricky and also unsafe to do so. No surprise, this is prohibited since V 0.2.</p>
+<p>But obviously, it is tricky and also unsafe to do so. With no surprise, this is prohibited since V 0.2.</p>
 <h2 id="second-attempt">Second Attempt</h2>
 <p>I have to find another way to represent <code>empty</code> in V. After going through the V doc, the only &ldquo;empty thing&rdquo; I could found is an empty array. So here we go:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -177,7 +177,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span></code></pre></td></tr></table>
 </div>
 </div></p>
-<p>This method works well and will not likely be affected by future versions of V. But it is an overkill for linked lists, since it is more suitable for implementing tree structures.</p>
+<p>This method works well and will not likely be affected by future versions of V. But it is an overkill for linked lists, and it is more suitable for implementing tree structures.</p>
 <h2 id="a-better-way">A Better Way?</h2>
 <p>V supports <code>sum type</code>, a sum type instance can hold a value of different types.</p>
 <p>For our linked list nodes, we can categorize them into two types: a normal node with its value and a pointer to the next node, and an empty node used at the end of a linked list.</p>
@@ -208,7 +208,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Similar to the second attempt, let&rsquo;s define its <code>checker</code>, <code>getter</code> and <code>setter</code>:</p>
+<p>Similar to the previous attempt, let&rsquo;s define its <code>checker</code>, <code>getter</code> and <code>setter</code>:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
