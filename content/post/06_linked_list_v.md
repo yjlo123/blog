@@ -20,78 +20,115 @@ struct Node<T> {
 
 However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.
 
-For most of the cases, we only want to create a new node with its children undefined, and then assign values to them after some preparations. But this not feasible in V, since, for the safety purpose, V has no null, no undefined values or behavior. 
+For most of the scenarios, we only want to create a new node with its children undefined, and then assign values to them after some preparations. But this not feasible in V, since, for the safety purpose, V has no null, no undefined values. 
 
-I don't think this safety feature makes sense, and it is even kind of stupid. As far as I know, all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as such empty values.
+As far as I know, all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as such empty values.
 
-### First Attempt
-{{< highlight rust "linenos=table" >}}
-struct ValueNode {
-pub mut:
-	val   int
-	left  &Node
-	right &Node
-}
-
-struct EmptyNode {}
-
-type Node = ValueNode | EmptyNode
-
-{{< / highlight >}}
-
-### Second Attempt
+## First Attempt
 Since V's reference is similar to C++ reference, I was wondering if I can set the integer `0` as the null pointer, and found it worked.
 
 {{< highlight rust "linenos=table" >}}
 struct Node {
-pub mut:
+mut:
 	val   int
-	left  &Node
-	right &Node
+	next  &Node
 }
 
 mut node := &Node {
     val:   100
-    left:  0
-    right: 0
+    next:  0
 }
 {{< / highlight >}}
 
-But obviously, it is tricky and unsafe to do so. No surprise, this is prohibited since V 0.2.
+But obviously, it is tricky and also unsafe to do so. No surprise, this is prohibited since V 0.2.
 
-### Final Attempt
-I have to find another way to represent empty in V. After going through the V doc, the only "empty thing" I could found is an empty array. So here we go:
+## Second Attempt
+I have to find another way to represent `empty` in V. After going through the V doc, the only "empty thing" I could found is an empty array. So here we go:
 
 {{< highlight rust "linenos=table" >}}
 struct Node {
-pub mut:
+mut:
 	val   int
-	left  []&Node
-	right []&Node
+	next  []&Node
 }
 {{< / highlight >}}
 
-Let's take the left child as an example, to check if the lift child is empty:
+To check if the next node is empty:
 
 {{< highlight rust "linenos=table" >}}
-fn (node &Node) has_left() bool {
-	return node.left.len != 0
+fn (node &Node) has_next() bool {
+	return node.next.len != 0
 }
 {{< / highlight >}}
 
-to get the left child:
+to get the next node:
 {{< highlight rust "linenos=table" >}}
-fn (node &Node) get_left() &Node {
-	return node.left[0]
+fn (node &Node) get_next() &Node {
+	return node.next[0]
 }
 {{< / highlight >}}
 
 
-and to set the left child:
+and to set the next node:
 {{< highlight rust "linenos=table" >}}
-fn (mut node Node) set_left(left &Node) {
-	node.left = [left]
+fn (mut node Node) set_next(next &Node) {
+	node.next = [next]
 }
 {{< / highlight >}}
 
-This is still not a neat manner to deal with the `no null` limitation in V, but I haven't found a better way.
+This method works well and will not likely be affected by future versions of V. But it is an overkill for linked lists, since it is more suitable for implementing tree structures.
+
+## A Better Way?
+V supports `sum type`, a sum type instance can hold a value of different types.
+
+For our linked list nodes, we can categorize them into two types: a normal node with its value and a pointer to the next node, and an empty node used at the end of a linked list.
+
+{{< highlight rust "linenos=table" >}}
+struct ValueNode {
+mut:
+	val  int
+	next &Node
+}
+
+struct EmptyNode {
+}
+
+type Node = EmptyNode | ValueNode
+
+{{< / highlight >}}
+
+Similar to the second attempt, let's define its `checker`, `getter` and `setter`:
+
+{{< highlight rust "linenos=table" >}}
+fn (node &ValueNode) has_next() bool {
+	return !(node.next is EmptyNode)
+}
+
+fn (node &ValueNode) get_next() &ValueNode {
+	next := *node.next as ValueNode
+	return &next
+}
+
+fn (mut node ValueNode) set_next(next &ValueNode) {
+	node.next = next
+}
+{{< / highlight >}}
+
+Next step, let's do some testing:
+{{< highlight rust "linenos=table" >}}
+fn new_node(val int) &ValueNode {
+	return &ValueNode{
+		val: val
+		next: &EmptyNode{}
+	}
+}
+
+fn main() {
+	mut node := new_node(100)
+	mut node2 := new_node(101)
+	node.set_next(node2)
+	assert node.has_next() == true
+	assert node.get_next().has_next() == false
+}
+
+{{< / highlight >}}
