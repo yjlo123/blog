@@ -3,7 +3,7 @@ weight: 20
 title: "20 Valid Parentheses"
 date: 2020-09-25T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.

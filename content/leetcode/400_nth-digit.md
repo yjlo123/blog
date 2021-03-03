@@ -3,7 +3,7 @@ weight: 400
 title: "400 Nth Digit"
 date: 2020-10-28T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_medium"]
 ---
 
 Find the n<sup>th</sup> digit of the infinite integer sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...

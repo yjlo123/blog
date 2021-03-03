@@ -3,7 +3,7 @@ weight: 21
 title: "21 Merge Two Sorted Lists"
 date: 2020-10-18T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Merge two sorted linked lists and return it as a new **sorted** list. The new list should be made by splicing together the nodes of the first two lists.

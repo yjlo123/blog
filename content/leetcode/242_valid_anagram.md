@@ -3,7 +3,7 @@ weight: 242
 title: "242 Valid Anagram"
 date: 2020-12-10T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Given two strings _s_ and _t_ , write a function to determine if _t_ is an anagram of _s_.

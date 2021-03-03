@@ -123,6 +123,11 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/tags/lc_easy/</loc>
+    <lastmod>2020-12-20T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/tags/leetcode/</loc>
     <lastmod>2020-12-20T00:00:00+08:00</lastmod>
   </url>
@@ -130,6 +135,26 @@
   <url>
     <loc>https://blog.siwei.dev/leetcode/</loc>
     <lastmod>2020-12-20T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/lc_medium/</loc>
+    <lastmod>2020-12-10T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
+    <lastmod>2020-10-24T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/lc_string/</loc>
+    <lastmod>2020-10-20T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
+    <lastmod>2020-09-21T00:00:00+08:00</lastmod>
   </url>
   
   <url>

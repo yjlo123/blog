@@ -3,7 +3,7 @@ weight: 476
 title: "476 Number Complement"
 date: 2020-12-10T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Given a **positive** integer `num`, output its complement number. The complement strategy is to flip the bits of its binary representation.

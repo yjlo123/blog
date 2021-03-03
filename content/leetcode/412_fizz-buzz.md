@@ -3,7 +3,7 @@ weight: 412
 title: "412 Fizz Buzz"
 date: 2020-09-24T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Write a program that outputs the string representation of numbers from 1 to _n_.

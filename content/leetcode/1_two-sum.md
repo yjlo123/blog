@@ -3,7 +3,7 @@ weight: 1
 title: "1 Two Sum"
 date: 2020-09-21T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to _`target`_.

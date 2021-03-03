@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lc_medium on Siwei&#39;s Blog</title>
+    <link>https://blog.siwei.dev/tags/lc_medium/</link>
+    <description>Recent content in lc_medium on Siwei&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2 Add Two Numbers</title>
+      <link>https://blog.siwei.dev/leetcode/2-add-two-numbers/</link>
+      <pubDate>Mon, 21 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/2-add-two-numbers/</guid>
+      <description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Example:
+Input: (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)Output: 7 -&amp;gt; 0 -&amp;gt; 8Explanation: 342 + 465 = 807.</description>
+    </item>
+    
+    <item>
+      <title>5 Longest Palindromic Substring</title>
+      <link>https://blog.siwei.dev/leetcode/5-longest-palindromic-substring/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/5-longest-palindromic-substring/</guid>
+      <description>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+Example1:
+Input: &amp;quot;babad&amp;quot;Output: &amp;quot;bab&amp;quot;Note: &amp;quot;aba&amp;quot; is also a valid answer.Example2:
+Input: &amp;quot;cbbd&amp;quot;Output: &amp;quot;bb&amp;quot;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  func longestPalindrome(s string) string { if len(s) &amp;lt; 1 { return &amp;#34;&amp;#34; } start := 0 end := 0 for i := range s { len1 := expandAroundCenter(s, i, i) len2 := expandAroundCenter(s, i, i+1) lenMax := -1 if len1 &amp;gt; len2 { lenMax = len1 } else { lenMax = len2 } if lenMax &amp;gt; end-start+1 { start = i - (lenMax-1)/2 end = i + lenMax/2 } } return s[start : end+1] } func expandAroundCenter(s string, left int, right int) int { for left &amp;gt;= 0 &amp;amp;&amp;amp; right &amp;lt; len(s) &amp;amp;&amp;amp; s[left] == s[right] { left-- right++ } return right - left - 1 }   https://runtime.</description>
+    </item>
+    
+    <item>
+      <title>200 Number of Islands</title>
+      <link>https://blog.siwei.dev/leetcode/200-number-of-islands/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/200-number-of-islands/</guid>
+      <description>Given an m x n 2d grid map of &#39;1&#39;s (land) and &#39;0&#39;s (water), return the number of islands.
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+Example 1:
+Input: grid = [[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;]]Output: 1Example 2:
+Input: grid = [[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;]]Output: 3Constraints:</description>
+    </item>
+    
+    <item>
+      <title>400 Nth Digit</title>
+      <link>https://blog.siwei.dev/leetcode/400-nth-digit/</link>
+      <pubDate>Wed, 28 Oct 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/400-nth-digit/</guid>
+      <description>Find the nth digit of the infinite integer sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, &amp;hellip;
+Note: n is positive and will fit within the range of a 32-bit signed integer (n &amp;lt; 231).
+Example 1:
+Input:3Output:3Example 2:
+Input:11Output:0Explanation:The 11th digit of the sequence1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...is a 0, which is part of the number 10.</description>
+    </item>
+    
+  </channel>
+</rss>

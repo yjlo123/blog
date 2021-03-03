@@ -3,7 +3,7 @@ weight: 122
 title: "122 Best Time to Buy and Sell Stock II"
 date: 2020-10-25T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Say you have an array `prices` for which the _i<sup>th</sup>_ element is the price of a given stock on day _i_.

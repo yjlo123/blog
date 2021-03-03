@@ -3,7 +3,7 @@ weight: 136
 title: "136 Single Number"
 date: 2020-09-26T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Given a **non-empty** array of integers, every element appears twice except for one. Find that single one.

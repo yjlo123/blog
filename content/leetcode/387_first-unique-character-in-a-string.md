@@ -3,7 +3,7 @@ weight: 387
 title: "387 First Unique Character in a String"
 date: 2020-12-20T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_easy"]
 ---
 
 Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, return -1.

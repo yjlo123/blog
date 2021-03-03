@@ -3,7 +3,7 @@ weight: 200
 title: "200 Number of Islands"
 date: 2020-12-10T00:00:00+08:00
 draft: false
-tags: ["leetcode"]
+tags: ["leetcode", "lc_medium"]
 ---
 
 Given an `m x n` 2d `grid` map of `'1'`s (land) and `'0'`s (water), return _the number of islands_.

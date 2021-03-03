@@ -209,6 +209,13 @@ footer a:hover {
   padding: 0px 10px 10px 10px;
 }
 
+.tag_cat a {
+  padding: 2px;
+  margin-right: 3px;
+  font-size: 14px;
+  color: #555;
+}
+
 @media screen and (max-width: 576px) {
   .posts_listing {
     padding-left: 0;
