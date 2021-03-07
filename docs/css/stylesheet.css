@@ -216,6 +216,25 @@ footer a:hover {
   color: #555;
 }
 
+.lc-difficulty {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.lc-easy {
+  background-color: rgb(143, 238, 143);
+}
+
+.lc-medium {
+  background-color: rgb(248, 224, 147);
+}
+
+.lc-hard {
+  background-color: rgb(247, 168, 162);
+}
+
 @media screen and (max-width: 576px) {
   .posts_listing {
     padding-left: 0;
