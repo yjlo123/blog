@@ -3,7 +3,7 @@ weight: 4
 title: "4 Median of Two Sorted Arrays"
 date: 2020-10-24T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_hard"]
+tags: ["leetcode", "lc_hard", "lc_binary_search"]
 ---
 
 Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return **the median** of the two sorted arrays.

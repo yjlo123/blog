@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lc_binary_search on Siwei&#39;s Blog</title>
+    <link>https://blog.siwei.dev/tags/lc_binary_search/</link>
+    <description>Recent content in lc_binary_search on Siwei&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Oct 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_binary_search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4 Median of Two Sorted Arrays</title>
+      <link>https://blog.siwei.dev/leetcode/4-median-of-two-sorted-arrays/</link>
+      <pubDate>Sat, 24 Oct 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/4-median-of-two-sorted-arrays/</guid>
+      <description>Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+Follow up: The overall run time complexity should be O(log (m+n)).
+Example 1:
+Input: nums1 = [1,3], nums2 = [2]Output: 2.00000Explanation: merged array = [1,2,3] and median is 2.Example 2:
+Input: nums1 = [1,2], nums2 = [3,4]Output: 2.50000Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.</description>
+    </item>
+    
+  </channel>
+</rss>

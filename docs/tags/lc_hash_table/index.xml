@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lc_hash_table on Siwei&#39;s Blog</title>
+    <link>https://blog.siwei.dev/tags/lc_hash_table/</link>
+    <description>Recent content in lc_hash_table on Siwei&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Sep 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_hash_table/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 Two Sum</title>
+      <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
+      <pubDate>Mon, 21 Sep 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1-two-sum/</guid>
+      <description>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.
+Example 1:
+Input: nums = [2,7,11,15], target = 9Output: [0,1]Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
+    </item>
+    
+  </channel>
+</rss>

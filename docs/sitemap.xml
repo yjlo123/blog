@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/leetcode/3-longest-substring-without-repeating-characters/</loc>
+    <lastmod>2020-01-01T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/leetcode/4-median-of-two-sorted-arrays/</loc>
     <lastmod>2020-10-24T00:00:00+08:00</lastmod>
   </url>
@@ -143,6 +148,11 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
+    <lastmod>2020-10-24T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
     <lastmod>2020-10-24T00:00:00+08:00</lastmod>
   </url>
@@ -150,6 +160,11 @@
   <url>
     <loc>https://blog.siwei.dev/tags/lc_string/</loc>
     <lastmod>2020-10-20T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/lc_hash_table/</loc>
+    <lastmod>2020-09-21T00:00:00+08:00</lastmod>
   </url>
   
   <url>
