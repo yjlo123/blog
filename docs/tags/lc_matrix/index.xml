@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lc_matrix on Siwei&#39;s Blog</title>
+    <link>https://blog.siwei.dev/tags/lc_matrix/</link>
+    <description>Recent content in lc_matrix on Siwei&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_matrix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>200 Number of Islands</title>
+      <link>https://blog.siwei.dev/leetcode/200-number-of-islands/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/200-number-of-islands/</guid>
+      <description>Given an m x n 2d grid map of &#39;1&#39;s (land) and &#39;0&#39;s (water), return the number of islands.
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+Example 1:
+Input: grid = [[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;]]Output: 1Example 2:
+Input: grid = [[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;]]Output: 3Constraints:</description>
+    </item>
+    
+  </channel>
+</rss>

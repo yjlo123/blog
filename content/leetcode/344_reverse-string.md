@@ -3,7 +3,7 @@ weight: 344
 title: "344 Reverse String"
 date: 2020-10-20T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_easy", "lc_string"]
+tags: ["leetcode", "lc_easy", "lc_string", "lc_array"]
 ---
 
 Write a function that reverses a string. The input string is given as an array of characters `char[]`.
