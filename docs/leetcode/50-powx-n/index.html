@@ -103,13 +103,13 @@ Explanation: 2-2 = 1/22 = 1/4 = 0.25
         <span style="color:#00a">return</span> <span style="color:#099">1</span>
     }
     <span style="color:#00a">if</span> n &lt; <span style="color:#099">0</span> {
-        n = -n
-        x = <span style="color:#099">1</span> / x
+        <span style="color:#00a">return</span> <span style="color:#0a0">myPow</span>(<span style="color:#099">1</span>/x, -n)
     }
-    <span style="color:#00a">if</span> n % <span style="color:#099">2</span> == <span style="color:#099">0</span> {
-        <span style="color:#00a">return</span> <span style="color:#0a0">myPow</span>(x*x, n/<span style="color:#099">2</span>)
+    result := <span style="color:#0a0">myPow</span>(x*x, n/<span style="color:#099">2</span>)
+    <span style="color:#00a">if</span> n % <span style="color:#099">2</span> == <span style="color:#099">1</span> {
+        result *= x
     }
-    <span style="color:#00a">return</span> x * <span style="color:#0a0">myPow</span>(x*x, n/<span style="color:#099">2</span>)
+    <span style="color:#00a">return</span> result
 }
 </code></pre></td></tr></table>
 </div>

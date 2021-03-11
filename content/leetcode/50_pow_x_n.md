@@ -43,13 +43,13 @@ func myPow(x float64, n int) float64 {
         return 1
     }
     if n < 0 {
-        n = -n
-        x = 1 / x
+        return myPow(1/x, -n)
     }
-    if n % 2 == 0 {
-        return myPow(x*x, n/2)
+    result := myPow(x*x, n/2)
+    if n % 2 == 1 {
+        result *= x
     }
-    return x * myPow(x*x, n/2)
+    return result
 }
 {{< / highlight >}}
 </div>
