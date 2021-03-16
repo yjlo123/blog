@@ -6,7 +6,7 @@
     <description>Recent content in Leetcodes on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -192,6 +192,19 @@ You may assume all the characters consist of printable ascii characters.
 Example 1:
 Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;o&amp;quot;]Output: [&amp;quot;o&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;h&amp;quot;]Example 2:
 Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;h&amp;quot;]Output: [&amp;quot;h&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;H&amp;quot;]1 2 3 4 5 6 7 8 9 10 11  func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
+    </item>
+    
+    <item>
+      <title>347 Top K Frequent Elements</title>
+      <link>https://blog.siwei.dev/leetcode/347-top-k-frequent-elements/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/347-top-k-frequent-elements/</guid>
+      <description>Given a non-empty array of integers, return the k most frequent elements.
+Example 1:
+Input: nums = [1,1,1,2,2,3], k = 2Output: [1,2]Example 2:
+Input: nums = [1], k = 1Output: [1]Note:
+ You may assume k is always valid, 1 ≤ k ≤ number of unique elements. Your algorithm&amp;rsquo;s time complexity must be better than O(n log n), where n is the array&amp;rsquo;s size. It&amp;rsquo;s guaranteed that the answer is unique, in other words the set of the top k frequent elements is unique.</description>
     </item>
     
     <item>
