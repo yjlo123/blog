@@ -68,6 +68,11 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/leetcode/247-h-index/</loc>
+    <lastmod>2021-03-17T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/leetcode/344-reverse-string/</loc>
     <lastmod>2020-10-20T00:00:00+08:00</lastmod>
   </url>
@@ -98,6 +103,11 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/tags/lc_bucket_sort/</loc>
+    <lastmod>2021-03-17T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/tags/lc_heap/</loc>
     <lastmod>2021-03-17T00:00:00+08:00</lastmod>
   </url>
@@ -109,6 +119,11 @@
   
   <url>
     <loc>https://blog.siwei.dev/tags/leetcode/</loc>
+    <lastmod>2021-03-17T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/leetcode0/</loc>
     <lastmod>2021-03-17T00:00:00+08:00</lastmod>
   </url>
   

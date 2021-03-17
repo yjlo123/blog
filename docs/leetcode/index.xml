@@ -181,6 +181,17 @@ Follow up: What if the inputs contain unicode characters? How would you adapt yo
     </item>
     
     <item>
+      <title>247 H-Index</title>
+      <link>https://blog.siwei.dev/leetcode/247-h-index/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/247-h-index/</guid>
+      <description>Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper, return compute the researcher&amp;rsquo;s h-index.
+According to the definition of h-index on Wikipedia: A scientist has an index h if h of their n papers have at least h citations each, and the other n − h papers have no more than h citations each.
+If there are several possible values for h, the maximum one is taken as the h-index.</description>
+    </item>
+    
+    <item>
       <title>344 Reverse String</title>
       <link>https://blog.siwei.dev/leetcode/344-reverse-string/</link>
       <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
