@@ -6,7 +6,7 @@
     <description>Recent content in lc_medium on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2 Add Two Numbers</title>
       <link>https://blog.siwei.dev/leetcode/2-add-two-numbers/</link>
@@ -56,6 +56,20 @@ Input: x = 2.00000, n = 10Output: 1024.00000Example 2:
 Input: x = 2.10000, n = 3Output: 9.26100Example 3:
 Input: x = 2.00000, n = -2Output: 0.25000Explanation: 2-2 = 1/22 = 1/4 = 0.25Constraints:
  -100.0 &amp;lt; x &amp;lt; 100.0 -231 &amp;lt;= n &amp;lt;= 231-1 -104 &amp;lt;= xn &amp;lt;= 104  1 2 3 4 5 6 7 8 9 10 11 12 13  func myPow(x float64, n int) float64 { if n == 0 { return 1 } if n &amp;lt; 0 { return myPow(1/x, -n) } result := myPow(x*x, n/2) if n % 2 == 1 { result *= x } return result }   </description>
+    </item>
+    
+    <item>
+      <title>55 Jump Game</title>
+      <link>https://blog.siwei.dev/leetcode/55-jump-game/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/55-jump-game/</guid>
+      <description>Given an array of non-negative integers nums, you are initially positioned at the first index of the array.
+Each element in the array represents your maximum jump length at that position.
+Determine if you are able to reach the last index.
+Example 1:
+Input: nums = [2,3,1,1,4]Output: trueExplanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.Example 2:
+Input: nums = [3,2,1,0,4]Output: falseExplanation: You will always arrive at index 3 no matter what.</description>
     </item>
     
     <item>

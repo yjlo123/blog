@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lc_greedy on Siwei&#39;s Blog</title>
+    <link>https://blog.siwei.dev/tags/lc_greedy/</link>
+    <description>Recent content in lc_greedy on Siwei&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_greedy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>55 Jump Game</title>
+      <link>https://blog.siwei.dev/leetcode/55-jump-game/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/55-jump-game/</guid>
+      <description>Given an array of non-negative integers nums, you are initially positioned at the first index of the array.
+Each element in the array represents your maximum jump length at that position.
+Determine if you are able to reach the last index.
+Example 1:
+Input: nums = [2,3,1,1,4]Output: trueExplanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.Example 2:
+Input: nums = [3,2,1,0,4]Output: falseExplanation: You will always arrive at index 3 no matter what.</description>
+    </item>
+    
+  </channel>
+</rss>
