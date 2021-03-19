@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
+
+        <title>48 Rotate Image</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>48 Rotate Image</h1>
+  <div class="blog-post-subheader">
+    <time>19 Mar 2021</time>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_medium">lc_medium</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_matrix">lc_matrix</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>You are given an <em>n x n</em> 2D <code>matrix</code> representing an image, rotate the image by 90 degrees (clockwise).</p>
+<p>You have to rotate the image <strong>in-place</strong>, which means you have to modify the input 2D matrix directly. <strong>DO NOT</strong> allocate another 2D matrix and do the rotation.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>1 2 3      7 4 1
+4 5 6  =&gt;  8 5 2
+7 8 9      9 6 3
+
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [[7,4,1],[8,5,2],[9,6,3]]
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>5  1  9  11      15 13 2  5
+2  4  8  10  =&gt;  14 3  4  1
+13 3  6  7       12 6  8  9
+15 14 12 16      16 7  10 11
+
+Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input: matrix = [[1]]
+Output: [[1]]
+</code></pre><p><strong>Example 4:</strong></p>
+<pre><code>Input: matrix = [[1,2],[3,4]]
+Output: [[3,1],[4,2]]
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>matrix.length == n</li>
+<li>matrix[i].length == n</li>
+<li>1 &lt;= n &lt;= 20</li>
+<li>-1000 &lt;= matrix[i][j] &lt;= 1000</li>
+</ul>
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="golang" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">rotate</span>(matrix [][]<span style="color:#0aa">int</span>) {
+	n := <span style="color:#0aa">len</span>(matrix) - <span style="color:#099">1</span>
+	<span style="color:#aaa;font-style:italic">// reverse up to down
+</span><span style="color:#aaa;font-style:italic"></span>	<span style="color:#00a">for</span> i := <span style="color:#099">0</span>; i &lt; <span style="color:#0aa">len</span>(matrix)/<span style="color:#099">2</span>; i++ {
+		<span style="color:#00a">for</span> j := <span style="color:#099">0</span>; j &lt; <span style="color:#0aa">len</span>(matrix); j++ {
+			<span style="color:#aaa;font-style:italic">// swap (i, j), (n-i, j)
+</span><span style="color:#aaa;font-style:italic"></span>			matrix[i][j], matrix[n-i][j] = matrix[n-i][j], matrix[i][j]
+		}
+	}
+	<span style="color:#aaa;font-style:italic">// swap the symmetry
+</span><span style="color:#aaa;font-style:italic"></span>	<span style="color:#00a">for</span> i := <span style="color:#099">0</span>; i &lt; <span style="color:#0aa">len</span>(matrix); i++ {
+		<span style="color:#00a">for</span> j := i + <span style="color:#099">1</span>; j &lt; <span style="color:#0aa">len</span>(matrix); j++ {
+			<span style="color:#aaa;font-style:italic">// swap (i, j), (j, i)
+</span><span style="color:#aaa;font-style:italic"></span>			matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+		}
+	}
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2021
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+      <br/>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+
+      (function(){
+        let first = true;
+        $(".tab-content").children(".lang").each(function () {
+          let tabId = $(this).attr("id");
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          first = false;
+        });
+
+        $(".lang").slice(1).each(function() {
+          $(this).hide();
+        })
+      })();
+
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
+  </body>
+</html>
+

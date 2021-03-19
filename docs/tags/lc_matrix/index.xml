@@ -6,7 +6,19 @@
     <description>Recent content in lc_matrix on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_matrix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_matrix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>48 Rotate Image</title>
+      <link>https://blog.siwei.dev/leetcode/48-rotate-image/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/48-rotate-image/</guid>
+      <description>You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+Example 1:
+1 2 3 7 4 14 5 6 =&amp;gt; 8 5 27 8 9 9 6 3Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]Output: [[7,4,1],[8,5,2],[9,6,3]]Example 2:</description>
+    </item>
+    
     <item>
       <title>200 Number of Islands</title>
       <link>https://blog.siwei.dev/leetcode/200-number-of-islands/</link>
