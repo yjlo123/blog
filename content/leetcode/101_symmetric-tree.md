@@ -11,14 +11,24 @@ Given the `root` of a binary tree, _check whether it is a mirror of itself_ (i.e
  
 
 **Example 1:**
-
 ```
+      1
+    /   \
+  2       2
+ / \     / \
+3   4   4   3
+
 Input: root = [1,2,2,3,4,4,3]
 Output: true
 ```
 **Example 2:**
-
 ```
+      1
+    /   \
+  2       2
+   \       \
+    3       3
+
 Input: root = [1,2,2,null,3,null,3]
 Output: false
 ```
@@ -32,6 +42,14 @@ Output: false
 <div class="tab-content">
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
 func isSymmetric(root *TreeNode) bool {
 	return root != nil && checkSymmetry(root.Left, root.Right)
 }
@@ -49,6 +67,21 @@ func checkSymmetry(left *TreeNode, right *TreeNode) bool {
 </div>
 <div id="java" class="lang">
 {{< highlight java "linenos=table" >}}
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 public class Solution {
     public boolean isSymmetric(TreeNode root) {
         return (root == null) || help(root.left, root.right);

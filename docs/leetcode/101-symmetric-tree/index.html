@@ -67,10 +67,22 @@
 <div class="blog-post-content">
     <p>Given the <code>root</code> of a binary tree, <em>check whether it is a mirror of itself</em> (i.e., symmetric around its center).</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: root = [1,2,2,3,4,4,3]
+<pre><code>      1
+    /   \
+  2       2
+ / \     / \
+3   4   4   3
+
+Input: root = [1,2,2,3,4,4,3]
 Output: true
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: root = [1,2,2,null,3,null,3]
+<pre><code>      1
+    /   \
+  2       2
+   \       \
+    3       3
+
+Input: root = [1,2,2,null,3,null,3]
 Output: false
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -95,9 +107,25 @@ Output: false
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">isSymmetric</span>(root *TreeNode) <span style="color:#0aa">bool</span> {
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#aaa;font-style:italic">/**
+</span><span style="color:#aaa;font-style:italic"> * Definition for a binary tree node.
+</span><span style="color:#aaa;font-style:italic"> * type TreeNode struct {
+</span><span style="color:#aaa;font-style:italic"> *     Val int
+</span><span style="color:#aaa;font-style:italic"> *     Left *TreeNode
+</span><span style="color:#aaa;font-style:italic"> *     Right *TreeNode
+</span><span style="color:#aaa;font-style:italic"> * }
+</span><span style="color:#aaa;font-style:italic"> */</span>
+<span style="color:#00a">func</span> <span style="color:#0a0">isSymmetric</span>(root *TreeNode) <span style="color:#0aa">bool</span> {
 	<span style="color:#00a">return</span> root != <span style="color:#00a">nil</span> &amp;&amp; <span style="color:#0a0">checkSymmetry</span>(root.Left, root.Right)
 }
 
@@ -128,9 +156,39 @@ Output: false
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a">public</span> <span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span> {
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#aaa;font-style:italic">/**
+</span><span style="color:#aaa;font-style:italic"> * Definition for a binary tree node.
+</span><span style="color:#aaa;font-style:italic"> * public class TreeNode {
+</span><span style="color:#aaa;font-style:italic"> *     int val;
+</span><span style="color:#aaa;font-style:italic"> *     TreeNode left;
+</span><span style="color:#aaa;font-style:italic"> *     TreeNode right;
+</span><span style="color:#aaa;font-style:italic"> *     TreeNode() {}
+</span><span style="color:#aaa;font-style:italic"> *     TreeNode(int val) { this.val = val; }
+</span><span style="color:#aaa;font-style:italic"> *     TreeNode(int val, TreeNode left, TreeNode right) {
+</span><span style="color:#aaa;font-style:italic"> *         this.val = val;
+</span><span style="color:#aaa;font-style:italic"> *         this.left = left;
+</span><span style="color:#aaa;font-style:italic"> *         this.right = right;
+</span><span style="color:#aaa;font-style:italic"> *     }
+</span><span style="color:#aaa;font-style:italic"> * }
+</span><span style="color:#aaa;font-style:italic"> */</span>
+<span style="color:#00a">public</span> <span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span> {
     <span style="color:#00a">public</span> <span style="color:#0aa">boolean</span> <span style="color:#0a0">isSymmetric</span>(TreeNode root) {
         <span style="color:#00a">return</span> (root == <span style="color:#00a">null</span>) || help(root.<span style="color:#1e90ff">left</span>, root.<span style="color:#1e90ff">right</span>);
     }
