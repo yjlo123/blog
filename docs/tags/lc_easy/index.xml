@@ -6,7 +6,7 @@
     <description>Recent content in lc_easy on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -46,6 +46,19 @@ Input: l1 = [1,2,4], l2 = [1,3,4]Output: [1,1,2,3,4,4]Example 2:
 Input: l1 = [], l2 = []Output: []Example 3:
 Input: l1 = [], l2 = [0]Output: [0]Constraints:
  The number of nodes in both lists is in the range [0, 50].</description>
+    </item>
+    
+    <item>
+      <title>101 Symmetric Tree</title>
+      <link>https://blog.siwei.dev/leetcode/101-symmetric-tree/</link>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/101-symmetric-tree/</guid>
+      <description>Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+Example 1:
+Input: root = [1,2,2,3,4,4,3]Output: trueExample 2:
+Input: root = [1,2,2,null,3,null,3]Output: falseConstraints:
+ The number of nodes in the tree is in the range [1, 1000]. -100 &amp;lt;= Node.val &amp;lt;= 100  1 2 3 4 5 6 7 8 9 10 11 12 13  func isSymmetric(root *TreeNode) bool { return root !</description>
     </item>
     
     <item>
