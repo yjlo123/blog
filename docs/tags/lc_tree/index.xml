@@ -6,7 +6,7 @@
     <description>Recent content in lc_tree on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_tree/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_tree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>101 Symmetric Tree</title>
       <link>https://blog.siwei.dev/leetcode/101-symmetric-tree/</link>
@@ -44,6 +44,16 @@ Input: root = []Output: []Constraints:
 For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
 Example 1:
 -10 -&amp;gt; -3 -&amp;gt; 0 -&amp;gt; 5 -&amp;gt; 90 0/ \ / \-10 5 or -3 9\ \ / /-3 9 -10 5Input: head = [-10,-3,0,5,9]Output: [0,-3,9,-10,null,5]Explanation: One possible answer is [0,-3,9,-10,null,5], which represents the shown height balanced BST.</description>
+    </item>
+    
+    <item>
+      <title>1022 Sum of Root To Leaf Binary Numbers</title>
+      <link>https://blog.siwei.dev/leetcode/1022-sum-of-root-to-leaf-binary-numbers/</link>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1022-sum-of-root-to-leaf-binary-numbers/</guid>
+      <description>You are given the root of a binary tree where each node has a value 0 or 1. Each root-to-leaf path represents a binary number starting with the most significant bit. For example, if the path is 0 -&amp;gt; 1 -&amp;gt; 1 -&amp;gt; 0 -&amp;gt; 1, then this could represent 01101 in binary, which is 13.
+For all leaves in the tree, consider the numbers represented by the path from the root to that leaf.</description>
     </item>
     
   </channel>
