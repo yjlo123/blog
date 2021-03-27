@@ -6,7 +6,7 @@
     <description>Recent content in lc_array on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_array/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_array/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>57 Insert Interval</title>
       <link>https://blog.siwei.dev/leetcode/57-insert-interval/</link>
@@ -44,6 +44,18 @@ You may assume all the characters consist of printable ascii characters.
 Example 1:
 Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;o&amp;quot;]Output: [&amp;quot;o&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;h&amp;quot;]Example 2:
 Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;h&amp;quot;]Output: [&amp;quot;h&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;H&amp;quot;]1 2 3 4 5 6 7 8 9 10 11  func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
+    </item>
+    
+    <item>
+      <title>525 Contiguous Array</title>
+      <link>https://blog.siwei.dev/leetcode/525-contiguous-array/</link>
+      <pubDate>Sat, 27 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/525-contiguous-array/</guid>
+      <description>Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
+Example 1:
+Input: [0,1]Output: 2Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.Example 2:
+Input: [0,1,0]Output: 2Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.Note: The length of the given binary array will not exceed 50,000.</description>
     </item>
     
   </channel>
