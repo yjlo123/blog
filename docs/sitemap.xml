@@ -198,6 +198,21 @@
   </url>
   
   <url>
+    <loc>https://blog.siwei.dev/post/make-a-game-in-runtime-script-part-1/</loc>
+    <lastmod>2021-03-28T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/post/</loc>
+    <lastmod>2021-03-28T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.siwei.dev/tags/runtime-script/</loc>
+    <lastmod>2021-03-28T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.siwei.dev/</loc>
     <lastmod>2021-03-28T00:00:00+08:00</lastmod>
   </url>
@@ -244,11 +259,6 @@
   
   <url>
     <loc>https://blog.siwei.dev/tags/pc/</loc>
-    <lastmod>2021-01-15T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/post/</loc>
     <lastmod>2021-01-15T00:00:00+08:00</lastmod>
   </url>
   
@@ -304,11 +314,6 @@
   
   <url>
     <loc>https://blog.siwei.dev/tags/programming-language/</loc>
-    <lastmod>2020-01-26T11:30:40+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.siwei.dev/tags/runtime-script/</loc>
     <lastmod>2020-01-26T11:30:40+08:00</lastmod>
   </url>
   

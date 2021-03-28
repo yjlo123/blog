@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jan 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Make a Game in Runtime Script (Part 1)</title>
+      <link>https://blog.siwei.dev/post/make-a-game-in-runtime-script-part-1/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/post/make-a-game-in-runtime-script-part-1/</guid>
+      <description>Creating mini-games is one of the purposes of developing Runtime Script. Although it is not a convenient language to write games, Runtime Script provides the basic features, such as drawing pixels and monitoring key events, for building playable and publishable games.
+I&amp;rsquo;ve created several games while implementing Runtime Script and found making games is an effective way to test this language. Here are some examples: Flappy Bird, Sliding Puzzle, Sokoban, (More &amp;hellip;).</description>
+    </item>
+    
     <item>
       <title>装机问题总结</title>
       <link>https://blog.siwei.dev/post/%E8%A3%85%E6%9C%BA%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</link>
