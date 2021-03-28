@@ -6,7 +6,7 @@
     <description>Recent content in lc_medium on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2 Add Two Numbers</title>
       <link>https://blog.siwei.dev/leetcode/2-add-two-numbers/</link>
@@ -197,6 +197,18 @@ Input:11Output:0Explanation:The 11th digit of the sequence1, 2, 3, 4, 5, 6
 Example 1:
 Input: [0,1]Output: 2Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.Example 2:
 Input: [0,1,0]Output: 2Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.Note: The length of the given binary array will not exceed 50,000.</description>
+    </item>
+    
+    <item>
+      <title>1325 Delete Leaves With a Given Value</title>
+      <link>https://blog.siwei.dev/leetcode/1325-delete-leaves-with-a-given-value/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1325-delete-leaves-with-a-given-value/</guid>
+      <description>Given a binary tree root and an integer target, delete all the leaf nodes with value target.
+Note that once you delete a leaf node with value target, if it&amp;rsquo;s parent node becomes a leaf node and has the value target, it should also be deleted (you need to continue doing that until you can&amp;rsquo;t).
+Example 1:
+ 1 1 1/ \ / \ \2 3 =&amp;gt; (2) 3 =&amp;gt; 3/ / \ \ \(2) (2) 4 4 4Input: root = [1,2,3,2,null,2,4], target = 2Output: [1,null,3,null,4]Explanation: Leaf nodes in green with value (target = 2) are removed (Picture in left).</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
     <description>Recent content on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -402,6 +402,31 @@ For all leaves in the tree, consider the numbers represented by the path from th
       <guid>https://blog.siwei.dev/leetcode/1114-print-in-order/</guid>
       <description>Suppose we have a class:
 public class Foo {public void first() { print(&amp;quot;first&amp;quot;); }public void second() { print(&amp;quot;second&amp;quot;); }public void third() { print(&amp;quot;third&amp;quot;); }}The same instance of Foo will be passed to three different threads. Thread A will call first(), thread B will call second(), and thread C will call third(). Design a mechanism and modify the program to ensure that second() is executed after first(), and third() is executed after second().</description>
+    </item>
+    
+    <item>
+      <title>1325 Delete Leaves With a Given Value</title>
+      <link>https://blog.siwei.dev/leetcode/1325-delete-leaves-with-a-given-value/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1325-delete-leaves-with-a-given-value/</guid>
+      <description>Given a binary tree root and an integer target, delete all the leaf nodes with value target.
+Note that once you delete a leaf node with value target, if it&amp;rsquo;s parent node becomes a leaf node and has the value target, it should also be deleted (you need to continue doing that until you can&amp;rsquo;t).
+Example 1:
+ 1 1 1/ \ / \ \2 3 =&amp;gt; (2) 3 =&amp;gt; 3/ / \ \ \(2) (2) 4 4 4Input: root = [1,2,3,2,null,2,4], target = 2Output: [1,null,3,null,4]Explanation: Leaf nodes in green with value (target = 2) are removed (Picture in left).</description>
+    </item>
+    
+    <item>
+      <title>1413 Minimum Value to Get Positive Step by Step Sum</title>
+      <link>https://blog.siwei.dev/leetcode/1413-minimum-value-to-get-positive-step-by-step-sum/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1413-minimum-value-to-get-positive-step-by-step-sum/</guid>
+      <description>Given an array of integers nums, you start with an initial positive value startValue.
+In each iteration, you calculate the step by step sum of startValue plus elements in nums (from left to right).
+Return the minimum positive value of startValue such that the step by step sum is never less than 1.
+Example 1:
+Input: nums = [-3,2,-3,4,2]Output: 5Explanation: If you choose startValue = 4, in the third iteration your step by step sum is less than 1.</description>
     </item>
     
     <item>
