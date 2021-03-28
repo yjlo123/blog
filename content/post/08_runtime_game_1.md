@@ -88,9 +88,9 @@ jmp continue
 
 Here we check conditions using two `jump` commands, `jne` and `jmp`. This manner is definitely not very readable, but it is commonly used before the `if` commands are introduced.
 
-We are almost done. Let's put all of the above into a loop, called `main loop` so that the program can keep reading user input and updating the white pixel's position. At the end of the loop, we clear the canvas and redraw the white pixel.
+We are almost done. Let's put all of the above into a loop called `main loop` so that the program can keep reading user input and updating the white pixel's position. At the end of the loop, we clear the canvas and redraw the white pixel.
 
-CAUTION! the `main loop` is an infinite loop! Remember to add a `slp` interval inside the loop to control the refresh rate. For example, `slp 100` will have a refresh rate of 10Hz (1000 / 10 = 10Hz).
+CAUTION! the `main loop` is an infinite loop! Remember to add a `slp` interval inside the loop to control the refresh rate. For example, `slp 100` will have a refresh rate of 10Hz (1000 / 100 = 10Hz).
 
 The final program:  
 (You can try it yourself at [Runtime Script Playground](https://runtime.siwei.dev/))
