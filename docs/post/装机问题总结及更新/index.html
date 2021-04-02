@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
+
+        <title>装机问题总结（及更新）</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>装机问题总结（及更新）</h1>
+  <div class="blog-post-subheader">
+    <time>15 Jan 2021</time>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/pc">pc</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>满怀期待地配了一台台式机，却要经受电脑各种各种的问题。这次装机也让我认识到了硬件的不可靠。</p>
+<p>总结一下遇到的闹心问题：</p>
+<ol>
+<li>Cooler Master的电源（Cooler Master Gold 550 Full Modular）风扇做工极差。开启和关闭时会发出类似风扇被卡到的噪音。（闹心指数：**）</li>
+<li>Asus主板（ASUS TUF Gaming B550M-PLUS）有很严重的兼容性问题，导致装好的电脑随机断电重启。（闹心指数：*****）</li>
+<li>Zotac显卡（ZOTAC Gaming GTX 1660 Super）闪屏问题。每隔几分钟屏幕的上半部分就会闪烁一下。（闹心指数：****）</li>
+</ol>
+<p>下面详细介绍下每个问题</p>
+<hr>
+<h3 id="电源问题风扇噪音">电源问题（风扇噪音）</h3>
+<p>装机前还很看好全模组（Full Modular）的电源，感觉是个很让处女座舒心的设计。然而装机后却觉得全模组对于我是没必要的。因为电源一定是要有两个线分别给主板和CPU供电，而且我也没有定制机箱内电源线的需求。</p>
+<p>但这也不是重点。严重的问题是买的这个Cooler Master的电源风扇在启动和断电时有很明显的噪音。</p>
+<p>找售后换了一个全新的后，在关机时风扇仍有很明显的停转噪音，但算是在一个能忍的范围了。</p>
+<hr>
+<h3 id="主板问题自动重启">主板问题（自动重启）</h3>
+<p>千挑万选的主板，却给我带来了最大的麻烦。从装好机的第一天开始，电脑就会在轻工作量的时候突然断电重启，在运行大型游戏或者软件时反倒没有重启过。寻找问题的四个多月几乎让人生无可恋。</p>
+<p>重启几乎毫无规律，有时一天重启多次，有时却能够保持一天不出问题。这也导致了每次验证尝试解决问题的周期很长。</p>
+<h4 id="-怀疑软件的问题"># 怀疑软件的问题</h4>
+<p>Google搜索一下random reboot问题，大量的视频和文章介绍怎么更改Windows的某些系统设置或者关闭屏幕保护来解决，然而这些方法一点作用没有。</p>
+<p>然后我卸载掉了一系列软件和驱动，包括AutoHotkey，CPU chipset驱动，Ryzen Master，Nvidia显卡驱动等等，每次都要待机个一两天来验证，但是每次都以失败和沮丧告终。</p>
+<p>我也曾想要重装Windows系统或者安装Ubuntu系统，但是因为重装系统很麻烦而且也觉得不太可能是系统的问题，也就没有尝试。</p>
+<h4 id="-怀疑机箱部件没插好"># 怀疑机箱部件没插好</h4>
+<p>把CPU风扇，内存，电源，显卡和机箱按钮的连线全都重新插了一遍，折腾一番后，问题依旧。</p>
+<h4 id="-怀疑电压不稳"># 怀疑电压不稳</h4>
+<p>电脑突然断电重启是在我小的时候偶尔遇到过的，那时家乡的电压很不稳定，每次伴随着电灯忽暗忽明，电脑就跟着重启。而我能做的只有换个插线板和电源插座来排除一下是连接的问题。</p>
+<h4 id="-怀疑电源的问题"># 怀疑电源的问题</h4>
+<p>在Windows的Event Viewer里可以查看每次重启的系统日志。每次重启的记录里都标记着：</p>
+<blockquote>
+<p>Event ID 41
+The system has rebooted without cleanly shutting down first. This error could be caused if the system stopped responding, crashed, or lost power unexpectedly.</p>
+</blockquote>
+<p>相应的Details里所有EventData都是0，根据Windows的文档
+<a href="https://docs.microsoft.com/en-us/windows/client-management/troubleshoot-event-id-41-restart#scen3">https://docs.microsoft.com/en-us/windows/client-management/troubleshoot-event-id-41-restart#scen3</a>，是系统突然断电重启时根本来不及记录任何参数。</p>
+<p>这就让我不得不怀疑是电源的问题，加上电源启动和断电时的风扇噪音，越想越觉得这个很可能是断电的原因。找售后换了新的电源后，神奇般地一周没有再重启。</p>
+<p>本以为找到了问题所在，然后就在一周后，再一次的突然重启让我又开始怀疑人生。</p>
+<h4 id="-最终bios"># 最终：BIOS</h4>
+<p>在Asus的论坛上的一个用户描述了和我很类似的问题</p>
+<p><a href="https://rog.asus.com/forum/showthread.php?119670-B550-Semi-random-hard-reboots-with-DOCP-enabled-Don-t-know-what-to-else-to-try">https://rog.asus.com/forum/showthread.php?119670-B550-Semi-random-hard-reboots-with-DOCP-enabled-Don-t-know-what-to-else-to-try</a></p>
+<p>这个帖子的讨论最终止于BIOS更新，这让我又看到新的光明，马上去Asus官网下载刷BIOS的工具和最新的BIOS稳定版本。同时也发现在最近一年里，Asus给这版主板更新了十余次，并且多次改善系统稳定性和硬件兼容性。</p>
+<p>Asus提供了EZ Update工具，可以方便地刷BIOS。
+<a href="https://www.asus.com/support/FAQ/1012152/">https://www.asus.com/support/FAQ/1012152/</a></p>
+<p>即使官方工具仍在推荐使用<code>Version 0603 2020/06/11</code>的BIOS版本，但我刷到了<code>Version 1401 2020/12/08</code>.</p>
+<p>从此电脑就不再随机重启，终于。</p>
+<hr>
+<h3 id="显卡问题屏幕闪烁">显卡问题（屏幕闪烁）</h3>
+<p>装机的烦恼并没结束，最后一个明显的问题仍然让人头痛，屏幕的上半部分会随机地闪烁一下。</p>
+<p>把显卡拿到售后服务中心，在他们的电脑上也复现了一样的问题，于是他们给了我一个临时的1650 Super用来等新卡到货。在用1650 Super期间并没有遇到类似闪烁的问题，然而拿到的新1660 Super问题依旧。难道这个型号都有问题？或者我倒霉地拿到了两个次品？</p>
+<p>==== 以下是3个月后的更新 ====</p>
+<p>和本地售后反映了情况，售后仍然要求把卡带到店里重新检查，而不能更换到其他model。和电源的售后一样，这些店大多都在新加坡极为偏远的地方，而且周末不营业，我理智地放弃了再跑去一趟。在我看来问题很可能在兼容性上，只要是同款显卡，问题就还会存在。</p>
+<p>发邮件咨询了下Zotac官方，官方让我检查是不是显示器或者连接线的问题来试图甩锅。我回复了显示器型号和我测试的结果后他们就不再理会了，明显他们也毫无头绪。</p>
+<p>Nvidia的GeForce Experience软件定期会推送驱动更新，每次我也都及时更新到最新版本。其实我明白大多数情况这些更新和我并不相关，他们只是为了更好地支持新型号的显卡做的统一常规更新。</p>
+<p>突然有几天我发现屏幕不再闪了，在不久前刚刚更新了一次驱动，所以我猜测很有可能是当前的这个驱动版本里修复了这个闪烁问题。</p>
+<blockquote>
+<p>GeForce Game Ready Driver<br>
+Version: 461.92<br>
+Release date: 03/16/2021</p>
+</blockquote>
+<p>观察了一周，闪烁的问题确实没再出现。虽然之后又被推送了新的驱动版本，但我并没有再去更新，因为担心更新后闪烁问题被“回归”。</p>
+<p>这次装机，BIOS和显卡驱动都遇到了兼容问题。虽然现在以上问题都已被解决（基本都是被动解决的），但是已经过去大半年了。明显某些硬件厂商对自家的产品测试非常不足，导致对已经发布了超过一年的产品还在修补一些严重的问题。</p>
+<p>下次装机，有办法避开这些坑吗？</p>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2021
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+      <br/>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+
+      (function(){
+        let first = true;
+        $(".tab-content").children(".lang").each(function () {
+          let tabId = $(this).attr("id");
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          first = false;
+        });
+
+        $(".lang").slice(1).each(function() {
+          $(this).hide();
+        })
+      })();
+
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
+  </body>
+</html>
+
