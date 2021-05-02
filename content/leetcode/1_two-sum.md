@@ -81,6 +81,23 @@ public int[] twoSum(int[] nums, int target) {
 {{< / highlight >}}
 </div>
 
+<div id="c++" class="lang">
+{{< highlight cpp "linenos=table" >}}
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> imap;
+
+    for (int i = 0;; ++i) {
+        auto it = imap.find(target - nums[i]);
+
+        if (it != imap.end()) 
+            return vector<int> {i, it->second};
+
+        imap[nums[i]] = i;
+    }
+}
+{{< / highlight >}}
+</div>
+
 <div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>

@@ -166,6 +166,39 @@ Output: [0,1]
 </div>
 </div>
 </div>
+<div id="c++" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#0aa">int</span>&gt; twoSum(vector&lt;<span style="color:#0aa">int</span>&gt;&amp; nums, <span style="color:#0aa">int</span> target) {
+    unordered_map&lt;<span style="color:#0aa">int</span>, <span style="color:#0aa">int</span>&gt; imap;
+
+    <span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = <span style="color:#099">0</span>;; ++i) {
+        <span style="color:#00a">auto</span> it = imap.find(target - nums[i]);
+
+        <span style="color:#00a">if</span> (it != imap.end()) 
+            <span style="color:#00a">return</span> vector&lt;<span style="color:#0aa">int</span>&gt; {i, it-&gt;second};
+
+        imap[nums[i]] = i;
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</div>
 <div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>
