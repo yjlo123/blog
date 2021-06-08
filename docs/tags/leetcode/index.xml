@@ -6,7 +6,7 @@
     <description>Recent content in leetcode on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -370,6 +370,19 @@ n = 15,Return:[&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;Fizz&a
 Example 1:
 Input: num = 5Output: 2Explanation: The binary representation of 5 is 101 (no leading zero bits),and its complement is 010. So you need to output 2.Example 2:
 Input: num = 1Output: 0Explanation: The binary representation of 1 is 1 (no leading zero bits),and its complement is 0.</description>
+    </item>
+    
+    <item>
+      <title>504 Base 7</title>
+      <link>https://blog.siwei.dev/leetcode/504-base-7/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/504-base-7/</guid>
+      <description>Given an integer num, return a string of its base 7 representation.
+Example 1:
+Input: num = 100Output: &amp;quot;202&amp;quot;Example 2:
+Input: num = -7Output: &amp;quot;-10&amp;quot;Constraints:
+ -107 &amp;lt;= num &amp;lt;= 107  1 2 3 4 5 6 7 8 9  func convertToBase7(num int) string { if num &amp;lt; 0 { return &amp;#34;-&amp;#34; + convertToBase7(-num) } if num &amp;lt; 7 { return strconv.Itoa(num) } return convertToBase7(num/7) + strconv.</description>
     </item>
     
     <item>
