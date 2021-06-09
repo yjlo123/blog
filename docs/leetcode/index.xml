@@ -6,7 +6,7 @@
     <description>Recent content in Leetcodes on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -150,6 +150,19 @@ Example 1:
 Input: intervals = [[1,3],[6,9]], newInterval = [2,5]Output: [[1,5],[6,9]]Example 2:
 Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]Output: [[1,2],[3,10],[12,16]]Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].Example 3:
 Input: intervals = [], newInterval = [5,7]Output: [[5,7]]Example 4:</description>
+    </item>
+    
+    <item>
+      <title>100 Same Tree</title>
+      <link>https://blog.siwei.dev/leetcode/100-same-tree/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/100-same-tree/</guid>
+      <description>Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+Example 1:
+ 1 1/ \ / \2 3 2 3Input: p = [1,2,3], q = [1,2,3]Output: trueExample 2:
+ 1 1/ \2 2Input: p = [1,2], q = [1,null,2]Output: falseExample 3:</description>
     </item>
     
     <item>

@@ -6,7 +6,7 @@
     <description>Recent content in lc_easy on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -46,6 +46,19 @@ Input: l1 = [1,2,4], l2 = [1,3,4]Output: [1,1,2,3,4,4]Example 2:
 Input: l1 = [], l2 = []Output: []Example 3:
 Input: l1 = [], l2 = [0]Output: [0]Constraints:
  The number of nodes in both lists is in the range [0, 50].</description>
+    </item>
+    
+    <item>
+      <title>100 Same Tree</title>
+      <link>https://blog.siwei.dev/leetcode/100-same-tree/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/100-same-tree/</guid>
+      <description>Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+Example 1:
+ 1 1/ \ / \2 3 2 3Input: p = [1,2,3], q = [1,2,3]Output: trueExample 2:
+ 1 1/ \2 2Input: p = [1,2], q = [1,null,2]Output: falseExample 3:</description>
     </item>
     
     <item>
