@@ -68,21 +68,21 @@
     <p>Given two sorted arrays <code>nums1</code> and <code>nums2</code> of size <code>m</code> and <code>n</code> respectively, return <strong>the median</strong> of the two sorted arrays.</p>
 <p><strong>Follow up</strong>: The overall run time complexity should be <code>O(log (m+n))</code>.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: nums1 = [1,3], nums2 = [2]
+<pre tabindex="0"><code>Input: nums1 = [1,3], nums2 = [2]
 Output: 2.00000
 Explanation: merged array = [1,2,3] and median is 2.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: nums1 = [1,2], nums2 = [3,4]
+<pre tabindex="0"><code>Input: nums1 = [1,2], nums2 = [3,4]
 Output: 2.50000
 Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 </code></pre><p><strong>Example 3:</strong></p>
-<pre><code>Input: nums1 = [0,0], nums2 = [0,0]
+<pre tabindex="0"><code>Input: nums1 = [0,0], nums2 = [0,0]
 Output: 0.00000
 </code></pre><p><strong>Example 4:</strong></p>
-<pre><code>Input: nums1 = [], nums2 = [1]
+<pre tabindex="0"><code>Input: nums1 = [], nums2 = [1]
 Output: 1.00000
 </code></pre><p><strong>Example 5:</strong></p>
-<pre><code>Input: nums1 = [2], nums2 = []
+<pre tabindex="0"><code>Input: nums1 = [2], nums2 = []
 Output: 2.00000
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -98,7 +98,7 @@ Output: 2.00000
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -143,7 +143,7 @@ Output: 2.00000
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">findMedianSortedArrays</span>(nums1 []<span style="color:#0aa">int</span>, nums2 []<span style="color:#0aa">int</span>) <span style="color:#0aa">float64</span> {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">findMedianSortedArrays</span>(nums1 []<span style="color:#0aa">int</span>, nums2 []<span style="color:#0aa">int</span>) <span style="color:#0aa">float64</span> {
     m := <span style="color:#0aa">len</span>(nums1)
     n := <span style="color:#0aa">len</span>(nums2)
     <span style="color:#00a">if</span> m &gt; n {
@@ -185,8 +185,7 @@ Output: 2.00000
         }
     }
     <span style="color:#00a">return</span> <span style="color:#099">0.0</span>
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>

@@ -69,14 +69,14 @@
 <p>You may assume that each input would have <em><strong>exactly</strong></em> <strong>one solution</strong>, and you may not use the same element twice.</p>
 <p>You can return the answer in any order.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: nums = [2,7,11,15], target = 9
+<pre tabindex="0"><code>Input: nums = [2,7,11,15], target = 9
 Output: [0,1]
 Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: nums = [3,2,4], target = 6
+<pre tabindex="0"><code>Input: nums = [3,2,4], target = 6
 Output: [1,2]
 </code></pre><p><strong>Example 3:</strong></p>
-<pre><code>Input: nums = [3,3], target = 6
+<pre tabindex="0"><code>Input: nums = [3,3], target = 6
 Output: [0,1]
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -90,7 +90,7 @@ Output: [0,1]
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -102,7 +102,7 @@ Output: [0,1]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">twoSum</span>(nums []<span style="color:#0aa">int</span>, target <span style="color:#0aa">int</span>) []<span style="color:#0aa">int</span> {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">twoSum</span>(nums []<span style="color:#0aa">int</span>, target <span style="color:#0aa">int</span>) []<span style="color:#0aa">int</span> {
     d := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">int</span>]<span style="color:#0aa">int</span>)
     <span style="color:#00a">for</span> idx, num := <span style="color:#00a">range</span> nums {
         <span style="color:#00a">if</span> v, ok := d[num]; ok {
@@ -111,15 +111,14 @@ Output: [0,1]
         d[target-num] = idx
     }
     <span style="color:#00a">return</span> <span style="color:#00a">nil</span>
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -127,7 +126,7 @@ Output: [0,1]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">twoSum</span>(nums: <span style="color:#a50">&#39;List[int]&#39;</span>, target: <span style="color:#a50">&#39;int&#39;</span>) -&gt; <span style="color:#a50">&#39;List[int]&#39;</span>:
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">twoSum</span>(nums: <span style="color:#a50">&#39;List[int]&#39;</span>, target: <span style="color:#a50">&#39;int&#39;</span>) -&gt; <span style="color:#a50">&#39;List[int]&#39;</span>:
     <span style="color:#0aa">map</span> = {}
     <span style="color:#00a">for</span> i, n <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
         <span style="color:#00a">if</span> n <span style="color:#00a">in</span> <span style="color:#0aa">map</span>:
@@ -139,7 +138,7 @@ Output: [0,1]
 <div id="java" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -152,7 +151,7 @@ Output: [0,1]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a">public</span> <span style="color:#0aa">int</span>[] <span style="color:#0a0">twoSum</span>(<span style="color:#0aa">int</span>[] nums, <span style="color:#0aa">int</span> target) {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a">public</span> <span style="color:#0aa">int</span>[] <span style="color:#0a0">twoSum</span>(<span style="color:#0aa">int</span>[] nums, <span style="color:#0aa">int</span> target) {
     Map&lt;Integer, Integer&gt; map = <span style="color:#00a">new</span> HashMap&lt;&gt;();
     <span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = 0; i &lt; nums.<span style="color:#1e90ff">length</span>; i++) {
         <span style="color:#0aa">int</span> comp = target - nums[i];
@@ -169,7 +168,7 @@ Output: [0,1]
 <div id="c++" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -183,7 +182,7 @@ Output: [0,1]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#0aa">int</span>&gt; twoSum(vector&lt;<span style="color:#0aa">int</span>&gt;&amp; nums, <span style="color:#0aa">int</span> target) {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#0aa">int</span>&gt; twoSum(vector&lt;<span style="color:#0aa">int</span>&gt;&amp; nums, <span style="color:#0aa">int</span> target) {
     unordered_map&lt;<span style="color:#0aa">int</span>, <span style="color:#0aa">int</span>&gt; imap;
 
     <span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = <span style="color:#099">0</span>;; ++i) {
@@ -194,8 +193,7 @@ Output: [0,1]
 
         imap[nums[i]] = i;
     }
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>

@@ -68,7 +68,7 @@
     <p>Given the <code>head</code> of a singly linked list where elements are <strong>sorted in ascending order</strong>, convert it to a height balanced BST.</p>
 <p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of <em>every</em> node never differ by more than 1.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>-10 -&gt; -3 -&gt; 0 -&gt; 5 -&gt; 9
+<pre tabindex="0"><code>-10 -&gt; -3 -&gt; 0 -&gt; 5 -&gt; 9
 
        0                   0
      /   \               /   \
@@ -80,13 +80,13 @@ Input: head = [-10,-3,0,5,9]
 Output: [0,-3,9,-10,null,5]
 Explanation: One possible answer is [0,-3,9,-10,null,5], which represents the shown height balanced BST.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: head = []
+<pre tabindex="0"><code>Input: head = []
 Output: []
 </code></pre><p><strong>Example 3:</strong></p>
-<pre><code>Input: head = [0]
+<pre tabindex="0"><code>Input: head = [0]
 Output: [0]
 </code></pre><p><strong>Example 4:</strong></p>
-<pre><code>Input: head = [1,3]
+<pre tabindex="0"><code>Input: head = [1,3]
 Output: [3,1]
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -98,7 +98,7 @@ Output: [3,1]
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -145,7 +145,7 @@ Output: [3,1]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#aaa;font-style:italic">/**
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#aaa;font-style:italic">/**
 </span><span style="color:#aaa;font-style:italic"> * Definition for singly-linked list.
 </span><span style="color:#aaa;font-style:italic"> * type ListNode struct {
 </span><span style="color:#aaa;font-style:italic"> *     Val int
@@ -189,15 +189,14 @@ Output: [3,1]
 	list = head
 	size := <span style="color:#0a0">findSize</span>(head)
 	<span style="color:#00a">return</span> <span style="color:#0a0">convert</span>(<span style="color:#099">0</span>, size-<span style="color:#099">1</span>)
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -251,7 +250,7 @@ Output: [3,1]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#aaa;font-style:italic"># Definition for singly-linked list.</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#aaa;font-style:italic"># Definition for singly-linked list.</span>
 <span style="color:#aaa;font-style:italic"># class ListNode:</span>
 <span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, next=None):</span>
 <span style="color:#aaa;font-style:italic">#         self.val = val</span>
@@ -280,11 +279,11 @@ Output: [3,1]
 
         <span style="color:#aaa;font-style:italic"># Recursively form a BST out of linked list from l --&gt; r</span>
         <span style="color:#00a">def</span> <span style="color:#0a0">convert</span>(l, r):
-            nonlocal head
+            <span style="color:#00a">nonlocal</span> head
 
             <span style="color:#aaa;font-style:italic"># Invalid case</span>
             <span style="color:#00a">if</span> l &gt; r:
-                <span style="color:#00a">return</span> None
+                <span style="color:#00a">return</span> <span style="color:#00a">None</span>
 
             mid = (l + r) // <span style="color:#099">2</span>
 

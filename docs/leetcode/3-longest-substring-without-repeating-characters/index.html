@@ -67,20 +67,20 @@
 <div class="blog-post-content">
     <p>Given a string <code>s</code>, find the length of the <strong>longest substring</strong> without repeating characters.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: s = &quot;abcabcbb&quot;
+<pre tabindex="0"><code>Input: s = &quot;abcabcbb&quot;
 Output: 3
 Explanation: The answer is &quot;abc&quot;, with the length of 3.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: s = &quot;bbbbb&quot;
+<pre tabindex="0"><code>Input: s = &quot;bbbbb&quot;
 Output: 1
 Explanation: The answer is &quot;b&quot;, with the length of 1.
 </code></pre><p><strong>Example 3:</strong></p>
-<pre><code>Input: s = &quot;pwwkew&quot;
+<pre tabindex="0"><code>Input: s = &quot;pwwkew&quot;
 Output: 3
 Explanation: The answer is &quot;wke&quot;, with the length of 3.
 Notice that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.
 </code></pre><p><strong>Example 4:</strong></p>
-<pre><code>Input: s = &quot;&quot;
+<pre tabindex="0"><code>Input: s = &quot;&quot;
 Output: 0
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -92,7 +92,7 @@ Output: 0
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -113,7 +113,7 @@ Output: 0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">lengthOfLongestSubstring</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">int</span> {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">lengthOfLongestSubstring</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">int</span> {
 	ans := <span style="color:#099">0</span> 
 	m := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">byte</span>]<span style="color:#0aa">int</span>)  <span style="color:#aaa;font-style:italic">// &#34;last occurred&#34; map
 </span><span style="color:#aaa;font-style:italic"></span>	i := <span style="color:#099">0</span>
@@ -131,8 +131,7 @@ Output: 0
 		m[v] = j + <span style="color:#099">1</span>
 	}
 	<span style="color:#00a">return</span> ans
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>

@@ -68,7 +68,7 @@
     <p>Given a binary tree <code>root</code> and an integer <code>target</code>, delete all the <strong>leaf nodes</strong> with value <code>target</code>.</p>
 <p>Note that once you delete a leaf node with value <code>target</code>, if it&rsquo;s parent node becomes a leaf node and has the value <code>target</code>, it should also be deleted (you need to continue doing that until you can&rsquo;t).</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>     1               1           1
+<pre tabindex="0"><code>     1               1           1
     / \             / \           \
    2   3     =&gt;   (2)  3     =&gt;    3
   /   / \               \           \
@@ -79,7 +79,7 @@ Output: [1,null,3,null,4]
 Explanation: Leaf nodes in green with value (target = 2) are removed (Picture in left). 
 After removing, new nodes become leaf nodes with value (target = 2) (Picture in center).
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>     1             1
+<pre tabindex="0"><code>     1             1
     / \           /
    3  (3)   =&gt;   3
   / \             \
@@ -88,7 +88,7 @@ After removing, new nodes become leaf nodes with value (target = 2) (Picture in 
 Input: root = [1,3,3,3,2], target = 3
 Output: [1,3,null,null,2]
 </code></pre><p><strong>Example 3:</strong></p>
-<pre><code>       1            1           1          1
+<pre tabindex="0"><code>       1            1           1          1
       /            /           /
      2            2          (2)
     /      =&gt;    /      =&gt;           =&gt;
@@ -100,10 +100,10 @@ Input: root = [1,2,null,2,null,2], target = 2
 Output: [1]
 Explanation: Leaf nodes in green with value (target = 2) are removed at each step.
 </code></pre><p><strong>Example 4:</strong></p>
-<pre><code>Input: root = [1,1,1], target = 1
+<pre tabindex="0"><code>Input: root = [1,1,1], target = 1
 Output: []
 </code></pre><p><strong>Example 5:</strong></p>
-<pre><code>Input: root = [1,2,3], target = 1
+<pre tabindex="0"><code>Input: root = [1,2,3], target = 1
 Output: [1,2,3]
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -116,7 +116,7 @@ Output: [1,2,3]
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -133,7 +133,7 @@ Output: [1,2,3]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">removeLeafNodes</span>(root *TreeNode, target <span style="color:#0aa">int</span>) *TreeNode {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">removeLeafNodes</span>(root *TreeNode, target <span style="color:#0aa">int</span>) *TreeNode {
 	<span style="color:#00a">if</span> root.Left != <span style="color:#00a">nil</span> {
 		root.Left = <span style="color:#0a0">removeLeafNodes</span>(root.Left, target)
 	}
@@ -147,8 +147,7 @@ Output: [1,2,3]
 	}
 
 	<span style="color:#00a">return</span> root
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>

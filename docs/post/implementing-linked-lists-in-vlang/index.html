@@ -68,19 +68,18 @@ For example, a generic tree structure definition would look like this:</p>
 </blockquote>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">Node</span>&lt;T&gt;<span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">Node</span>&lt;T&gt;<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>val<span style="color:#bbb">   </span>T<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>left<span style="color:#bbb">  </span>&amp;Node<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>right<span style="color:#bbb"> </span>&amp;Node<span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div>
 <p>However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.</p>
@@ -90,7 +89,7 @@ For example, a generic tree structure definition would look like this:</p>
 <p>Since V&rsquo;s reference is similar to C++ reference, I was wondering if I can set the integer <code>0</code> as the null pointer, and then found it worked.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -102,7 +101,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#00a">mut</span>:
 	<span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">   </span>int<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>next<span style="color:#bbb">  </span>&amp;Node<span style="color:#bbb">
@@ -111,8 +110,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span><span style="color:#bbb"></span><span style="color:#00a">mut</span><span style="color:#bbb"> </span>node<span style="color:#bbb"> </span>:=<span style="color:#bbb"> </span>&amp;Node<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb">    </span>val:   <span style="color:#099">100</span><span style="color:#bbb">
 </span><span style="color:#bbb">    </span>next:  <span style="color:#099">0</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div>
 <p>But obviously, it is tricky and also unsafe to do so. With no surprise, this is prohibited since V 0.2.</p>
@@ -120,61 +118,57 @@ For example, a generic tree structure definition would look like this:</p>
 <p>I have to find another way to represent <code>empty</code> in V. After going through the V doc, the only &ldquo;empty thing&rdquo; I could found is an empty array. So here we go:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#00a">mut</span>:
 	<span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">   </span>int<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>next<span style="color:#bbb">  </span>[]&amp;Node<span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div>
 <p>To check if the next node is empty:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> (node<span style="color:#bbb"> </span>&amp;Node)<span style="color:#bbb"> </span>has_next()<span style="color:#bbb"> </span><span style="color:#0aa">bool</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> (node<span style="color:#bbb"> </span>&amp;Node)<span style="color:#bbb"> </span>has_next()<span style="color:#bbb"> </span><span style="color:#0aa">bool</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb">	</span><span style="color:#00a">return</span><span style="color:#bbb"> </span>node.next.len<span style="color:#bbb"> </span>!=<span style="color:#bbb"> </span><span style="color:#099">0</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div>
 <p>to get the next node:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> (node<span style="color:#bbb"> </span>&amp;Node)<span style="color:#bbb"> </span>get_next()<span style="color:#bbb"> </span>&amp;Node<span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> (node<span style="color:#bbb"> </span>&amp;Node)<span style="color:#bbb"> </span>get_next()<span style="color:#bbb"> </span>&amp;Node<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb">	</span><span style="color:#00a">return</span><span style="color:#bbb"> </span>node.next[<span style="color:#099">0</span>]<span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div></p>
 <p>and to set the next node:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> (<span style="color:#00a">mut</span><span style="color:#bbb"> </span>node<span style="color:#bbb"> </span>Node)<span style="color:#bbb"> </span>set_next(next<span style="color:#bbb"> </span>&amp;Node)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> (<span style="color:#00a">mut</span><span style="color:#bbb"> </span>node<span style="color:#bbb"> </span>Node)<span style="color:#bbb"> </span>set_next(next<span style="color:#bbb"> </span>&amp;Node)<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>node.next<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>[next]<span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div></p>
 <p>This method works well and will not likely be affected by future versions of V. But it is an overkill for linked lists, and it is more suitable for implementing tree structures.</p>
@@ -183,7 +177,7 @@ For example, a generic tree structure definition would look like this:</p>
 <p>For our linked list nodes, we can categorize them into two types: a normal node with its value and a pointer to the next node, and an empty node used at the end of a linked list.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -195,7 +189,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">ValueNode</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">ValueNode</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#00a">mut</span>:
 	<span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">  </span>int<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>next<span style="color:#bbb"> </span>&amp;Node<span style="color:#bbb">
@@ -204,14 +198,13 @@ For example, a generic tree structure definition would look like this:</p>
 </span><span style="color:#bbb"></span><span style="color:#00a">struct</span> <span style="color:#0a0;text-decoration:underline">EmptyNode</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb"></span>}<span style="color:#bbb">
 </span><span style="color:#bbb">
-</span><span style="color:#bbb"></span><span style="color:#00a">type</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>EmptyNode<span style="color:#bbb"> </span>|<span style="color:#bbb"> </span>ValueNode<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span><span style="color:#00a">type</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>EmptyNode<span style="color:#bbb"> </span>|<span style="color:#bbb"> </span>ValueNode</code></pre></td></tr></table>
 </div>
 </div>
 <p>Similar to the previous attempt, let&rsquo;s define its <code>checker</code>, <code>getter</code> and <code>setter</code>:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -225,7 +218,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> (node<span style="color:#bbb"> </span>&amp;ValueNode)<span style="color:#bbb"> </span>has_next()<span style="color:#bbb"> </span><span style="color:#0aa">bool</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> (node<span style="color:#bbb"> </span>&amp;ValueNode)<span style="color:#bbb"> </span>has_next()<span style="color:#bbb"> </span><span style="color:#0aa">bool</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb">	</span><span style="color:#00a">return</span><span style="color:#bbb"> </span>!(node.next<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>EmptyNode)<span style="color:#bbb">
 </span><span style="color:#bbb"></span>}<span style="color:#bbb">
 </span><span style="color:#bbb">
@@ -236,14 +229,13 @@ For example, a generic tree structure definition would look like this:</p>
 </span><span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#00a">fn</span> (<span style="color:#00a">mut</span><span style="color:#bbb"> </span>node<span style="color:#bbb"> </span>ValueNode)<span style="color:#bbb"> </span>set_next(next<span style="color:#bbb"> </span>&amp;ValueNode)<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>node.next<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>next<span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div>
 <p>Next step, let&rsquo;s do some testing:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -259,7 +251,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> <span style="color:#0a0">new_node</span>(val<span style="color:#bbb"> </span>int)<span style="color:#bbb"> </span>&amp;ValueNode<span style="color:#bbb"> </span>{<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">fn</span> <span style="color:#0a0">new_node</span>(val<span style="color:#bbb"> </span>int)<span style="color:#bbb"> </span>&amp;ValueNode<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span><span style="color:#bbb">	</span><span style="color:#00a">return</span><span style="color:#bbb"> </span>&amp;ValueNode{<span style="color:#bbb">
 </span><span style="color:#bbb">		</span>val: <span style="color:#0a0;text-decoration:underline">val</span><span style="color:#bbb">
 </span><span style="color:#bbb">		</span>next: <span style="color:#00a">&amp;</span><span style="color:#0a0;text-decoration:underline">EmptyNode</span>{}<span style="color:#bbb">
@@ -272,8 +264,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span><span style="color:#bbb">	</span>node.set_next(node2)<span style="color:#bbb">
 </span><span style="color:#bbb">	</span>assert<span style="color:#bbb"> </span>node.has_next()<span style="color:#bbb"> </span>==<span style="color:#bbb"> </span><span style="color:#00a">true</span><span style="color:#bbb">
 </span><span style="color:#bbb">	</span>assert<span style="color:#bbb"> </span>node.get_next().has_next()<span style="color:#bbb"> </span>==<span style="color:#bbb"> </span><span style="color:#00a">false</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span>}<span style="color:#bbb">
-</span></code></pre></td></tr></table>
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div></p>
 

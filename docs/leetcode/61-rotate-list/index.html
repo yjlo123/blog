@@ -67,14 +67,14 @@
 <div class="blog-post-content">
     <p>Given the <code>head</code> of a linked list, rotate the list to the right by <code>k</code> places.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>          1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5
+<pre tabindex="0"><code>          1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5
 rotate 1: 5 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4
 rotate 2: 4 -&gt; 5 -&gt; 1 -&gt; 2 -&gt; 3
 
 Input: head = [1,2,3,4,5], k = 2
 Output: [4,5,1,2,3]
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>          0 -&gt; 1 -&gt; 2
+<pre tabindex="0"><code>          0 -&gt; 1 -&gt; 2
 rotate 1: 2 -&gt; 0 -&gt; 1
 rotate 2: 1 -&gt; 2 -&gt; 0
 rotate 3: 0 -&gt; 1 -&gt; 2
@@ -93,7 +93,7 @@ Output: [2,0,1]
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -126,7 +126,7 @@ Output: [2,0,1]
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#aaa;font-style:italic">/**
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#aaa;font-style:italic">/**
 </span><span style="color:#aaa;font-style:italic"> * Definition for singly-linked list.
 </span><span style="color:#aaa;font-style:italic"> * type ListNode struct {
 </span><span style="color:#aaa;font-style:italic"> *     Val int
@@ -156,8 +156,7 @@ Output: [2,0,1]
     newHead := tail.Next
     tail.Next = <span style="color:#00a">nil</span>
     <span style="color:#00a">return</span> newHead
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>

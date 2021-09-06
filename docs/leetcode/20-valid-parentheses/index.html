@@ -68,19 +68,19 @@
 <li>Open brackets must be closed in the correct order.</li>
 </ol>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: s = &quot;()&quot;
+<pre tabindex="0"><code>Input: s = &quot;()&quot;
 Output: true
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: s = &quot;()[]{}&quot;
+<pre tabindex="0"><code>Input: s = &quot;()[]{}&quot;
 Output: true
 </code></pre><p><strong>Example 3:</strong></p>
-<pre><code>Input: s = &quot;(]&quot;
+<pre tabindex="0"><code>Input: s = &quot;(]&quot;
 Output: false
 </code></pre><p><strong>Example 4:</strong></p>
-<pre><code>Input: s = &quot;([)]&quot;
+<pre tabindex="0"><code>Input: s = &quot;([)]&quot;
 Output: false
 </code></pre><p><strong>Example 5:</strong></p>
-<pre><code>Input: s = &quot;{[]}&quot;
+<pre tabindex="0"><code>Input: s = &quot;{[]}&quot;
 Output: true
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -92,7 +92,7 @@ Output: true
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -113,7 +113,7 @@ Output: true
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">isValid</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">bool</span> {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">isValid</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">bool</span> {
     <span style="color:#00a">var</span> stack []<span style="color:#0aa">byte</span>
 
     <span style="color:#00a">for</span> i := <span style="color:#099">0</span>; i &lt; <span style="color:#0aa">len</span>(s); i++ {
@@ -131,8 +131,7 @@ Output: true
         }
     }
     <span style="color:#00a">return</span> <span style="color:#00a">true</span>
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>

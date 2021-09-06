@@ -66,20 +66,20 @@
 </ul>
 <div class="blog-post-content">
     <p>Suppose we have a class:</p>
-<pre><code>public class Foo {
+<pre tabindex="0"><code>public class Foo {
   public void first() { print(&quot;first&quot;); }
   public void second() { print(&quot;second&quot;); }
   public void third() { print(&quot;third&quot;); }
 }
 </code></pre><p>The same instance of <code>Foo</code> will be passed to three different threads. Thread A will call <code>first()</code>, thread B will call <code>second()</code>, and thread C will call <code>third()</code>. Design a mechanism and modify the program to ensure that <code>second()</code> is executed after <code>first()</code>, and <code>third()</code> is executed after <code>second()</code>.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: [1,2,3]
+<pre tabindex="0"><code>Input: [1,2,3]
 Output: &quot;firstsecondthird&quot;
 Explanation: There are three threads being fired asynchronously.
 The input [1,2,3] means thread A calls first(), thread B calls second(), and thread C calls third().
 &quot;firstsecondthird&quot; is the correct output.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: [1,3,2]
+<pre tabindex="0"><code>Input: [1,3,2]
 Output: &quot;firstsecondthird&quot;
 Explanation: The input [1,3,2] means thread A calls first(), thread B calls third(),
 and thread C calls second(). &quot;firstsecondthird&quot; is the correct output.
@@ -90,7 +90,7 @@ We do not know how the threads will be scheduled in the operating system, even t
 <div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -120,21 +120,21 @@ We do not know how the threads will be scheduled in the operating system, even t
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">threading</span> <span style="color:#00a">import</span> Event
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">threading</span> <span style="color:#00a">import</span> Event
 
 <span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Foo</span>:
     <span style="color:#00a">def</span> __init__(self):
         self.done = (Event(), Event())
 
 
-    <span style="color:#00a">def</span> <span style="color:#0a0">first</span>(self, printFirst: <span style="color:#a50">&#39;Callable[[], None]&#39;</span>) -&gt; None:
+    <span style="color:#00a">def</span> <span style="color:#0a0">first</span>(self, printFirst: <span style="color:#a50">&#39;Callable[[], None]&#39;</span>) -&gt; <span style="color:#00a">None</span>:
         
         <span style="color:#aaa;font-style:italic"># printFirst() outputs &#34;first&#34;. Do not change or remove this line.</span>
         printFirst()
         self.done[<span style="color:#099">0</span>].set()
 
 
-    <span style="color:#00a">def</span> <span style="color:#0a0">second</span>(self, printSecond: <span style="color:#a50">&#39;Callable[[], None]&#39;</span>) -&gt; None:
+    <span style="color:#00a">def</span> <span style="color:#0a0">second</span>(self, printSecond: <span style="color:#a50">&#39;Callable[[], None]&#39;</span>) -&gt; <span style="color:#00a">None</span>:
         
         self.done[<span style="color:#099">0</span>].wait()
         <span style="color:#aaa;font-style:italic"># printSecond() outputs &#34;second&#34;. Do not change or remove this line.</span>
@@ -142,7 +142,7 @@ We do not know how the threads will be scheduled in the operating system, even t
         self.done[<span style="color:#099">1</span>].set()
 
 
-    <span style="color:#00a">def</span> <span style="color:#0a0">third</span>(self, printThird: <span style="color:#a50">&#39;Callable[[], None]&#39;</span>) -&gt; None:
+    <span style="color:#00a">def</span> <span style="color:#0a0">third</span>(self, printThird: <span style="color:#a50">&#39;Callable[[], None]&#39;</span>) -&gt; <span style="color:#00a">None</span>:
         
         self.done[<span style="color:#099">1</span>].wait()
         <span style="color:#aaa;font-style:italic"># printThird() outputs &#34;third&#34;. Do not change or remove this line.</span>

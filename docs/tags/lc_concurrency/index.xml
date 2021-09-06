@@ -14,7 +14,7 @@
       
       <guid>https://blog.siwei.dev/leetcode/1114-print-in-order/</guid>
       <description>Suppose we have a class:
-public class Foo {public void first() { print(&amp;quot;first&amp;quot;); }public void second() { print(&amp;quot;second&amp;quot;); }public void third() { print(&amp;quot;third&amp;quot;); }}The same instance of Foo will be passed to three different threads. Thread A will call first(), thread B will call second(), and thread C will call third(). Design a mechanism and modify the program to ensure that second() is executed after first(), and third() is executed after second().</description>
+public class Foo { public void first() { print(&amp;quot;first&amp;quot;); } public void second() { print(&amp;quot;second&amp;quot;); } public void third() { print(&amp;quot;third&amp;quot;); } } The same instance of Foo will be passed to three different threads. Thread A will call first(), thread B will call second(), and thread C will call third(). Design a mechanism and modify the program to ensure that second() is executed after first(), and third() is executed after second().</description>
     </item>
     
   </channel>

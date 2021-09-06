@@ -65,13 +65,13 @@
 <p><strong>Note:</strong>
 <em>n</em> is positive and will fit within the range of a 32-bit signed integer (n &lt; 2<sup>31</sup>).</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input:
+<pre tabindex="0"><code>Input:
 3
 
 Output:
 3
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input:
+<pre tabindex="0"><code>Input:
 11
 
 Output:
@@ -86,7 +86,7 @@ The 11th digit of the sequence
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -101,7 +101,7 @@ The 11th digit of the sequence
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">findNthDigit</span>(n <span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">findNthDigit</span>(n <span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
 	length := <span style="color:#099">1</span>
 	rangeCount := <span style="color:#099">9</span>
 	num := <span style="color:#099">1</span>
@@ -113,15 +113,14 @@ The 11th digit of the sequence
 	}
 	num += (n - <span style="color:#099">1</span>) / length
 	<span style="color:#00a">return</span> <span style="color:#0aa">int</span>(strconv.<span style="color:#0a0">Itoa</span>(num)[(n-<span style="color:#099">1</span>)%length] - <span style="color:#a50">&#39;0&#39;</span>)
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -134,7 +133,7 @@ The 11th digit of the sequence
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">findNthDigit</span>(n: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">findNthDigit</span>(n: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
     length = <span style="color:#099">1</span>       <span style="color:#aaa;font-style:italic"># number of digits: 1, 2, 3 ...</span>
     range_count = <span style="color:#099">9</span>  <span style="color:#aaa;font-style:italic"># count of numbers for current length: 9, 90, 900 ...</span>
     num = <span style="color:#099">1</span>          <span style="color:#aaa;font-style:italic"># current number: 1, 10, 100, 1000 ...</span>

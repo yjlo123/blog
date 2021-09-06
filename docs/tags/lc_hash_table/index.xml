@@ -17,7 +17,7 @@
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
 Example 1:
-Input: nums = [2,7,11,15], target = 9Output: [0,1]Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
+Input: nums = [2,7,11,15], target = 9 Output: [0,1] Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
     </item>
     
     <item>
@@ -30,8 +30,8 @@ Input: nums = [2,7,11,15], target = 9Output: [0,1]Output: Because nums[0] + nu
 Note:
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 Example 1:
-Input: [2,2,1]Output: 1Example 2:
-Input: [4,1,2,1,2]Output: 41 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumber(nums []int) int { set := make(map[int]bool) for _, num := range nums { if _, ok := set[num]; ok { delete(set, num) } else { set[num] = true } } for num, _ := range set { return num } return -1 }   https://runtime.</description>
+Input: [2,2,1] Output: 1 Example 2:
+Input: [4,1,2,1,2] Output: 4  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumber(nums []int) int { set := make(map[int]bool) for _, num := range nums { if _, ok := set[num]; ok { delete(set, num) } else { set[num] = true } } for num, _ := range set { return num } return -1 }    https://runtime.</description>
     </item>
     
     <item>
@@ -42,8 +42,8 @@ Input: [4,1,2,1,2]Output: 41 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumbe
       <guid>https://blog.siwei.dev/leetcode/387-first-unique-character-in-a-string/</guid>
       <description>Given a string, find the first non-repeating character in it and return its index. If it doesn&amp;rsquo;t exist, return -1.
 Examples:
-s = &amp;quot;leetcode&amp;quot;return 0.s = &amp;quot;loveleetcode&amp;quot;return 2.Note: You may assume the string contains only lowercase English letters.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  func firstUniqChar(s string) int { m := make(map[rune]int) for i, c := range s { _, has := m[c] if has { m[c] = -1 } else { m[c] = i } } const maxInt = int(^uint(0) &amp;gt;&amp;gt; 1) min := maxInt for _, i := range m { if i &amp;gt; -1 &amp;amp;&amp;amp; i &amp;lt; min { min = i } } if min == maxInt { return -1 } return min }   </description>
+s = &amp;quot;leetcode&amp;quot; return 0. s = &amp;quot;loveleetcode&amp;quot; return 2. Note: You may assume the string contains only lowercase English letters.
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  func firstUniqChar(s string) int { m := make(map[rune]int) for i, c := range s { _, has := m[c] if has { m[c] = -1 } else { m[c] = i } } const maxInt = int(^uint(0) &amp;gt;&amp;gt; 1) min := maxInt for _, i := range m { if i &amp;gt; -1 &amp;amp;&amp;amp; i &amp;lt; min { min = i } } if min == maxInt { return -1 } return min }     </description>
     </item>
     
   </channel>

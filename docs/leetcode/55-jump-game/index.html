@@ -69,11 +69,11 @@
 <p>Each element in the array represents your maximum jump length at that position.</p>
 <p>Determine if you are able to reach the last index.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: nums = [2,3,1,1,4]
+<pre tabindex="0"><code>Input: nums = [2,3,1,1,4]
 Output: true
 Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: nums = [3,2,1,0,4]
+<pre tabindex="0"><code>Input: nums = [3,2,1,0,4]
 Output: false
 Explanation: You will always arrive at index 3 no matter what.
 Its maximum jump length is 0, which makes it impossible to reach the last index.
@@ -87,7 +87,7 @@ Its maximum jump length is 0, which makes it impossible to reach the last index.
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -98,7 +98,7 @@ Its maximum jump length is 0, which makes it impossible to reach the last index.
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">canJump</span>(nums []<span style="color:#0aa">int</span>) <span style="color:#0aa">bool</span> {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">canJump</span>(nums []<span style="color:#0aa">int</span>) <span style="color:#0aa">bool</span> {
 	lastPos := <span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>
 	<span style="color:#00a">for</span> i := <span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>; i &gt;= <span style="color:#099">0</span>; i-- {
 		<span style="color:#00a">if</span> i+nums[i] &gt;= lastPos {
@@ -106,8 +106,7 @@ Its maximum jump length is 0, which makes it impossible to reach the last index.
 		}
 	}
 	<span style="color:#00a">return</span> lastPos == <span style="color:#099">0</span>
-}
-</code></pre></td></tr></table>
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>

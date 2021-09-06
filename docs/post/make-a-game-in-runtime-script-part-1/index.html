@@ -60,15 +60,15 @@
     <p>Creating mini-games is one of the purposes of developing Runtime Script. Although it is not a convenient language to write games, Runtime Script provides the basic features, such as drawing pixels and monitoring key events, for building playable and publishable games.</p>
 <p>I&rsquo;ve created several games while implementing Runtime Script and found making games is an effective way to test this language. Here are some examples: <a href="https://runtime.siwei.dev/?src=bird">Flappy Bird</a>,
 <a href="https://runtime.siwei.dev/?src=puzzle">Sliding Puzzle</a>,
-<a href="https://siwei.dev/app/sokoban/">Sokoban</a>, 
+<a href="https://siwei.dev/app/sokoban/">Sokoban</a>,
 <a href="https://github.com/yjlo123/runtime-script#examples">(More &hellip;)</a>. Since some of them are created at an early stage of Runtime Script,   they may not have used the latest supported syntax.</p>
 <p>All the games I created using Runtime Script share the same necessary components, i.e. status variables, main loop, key events, sleep intervals, and redrawing pixels. In this blog, we are going to write such a boilerplate that can be modified to various mini-games.</p>
 <p>In the program that we are going to write, you can move a white pixel on the canvas by pressing arrow keys.</p>
 <p>First of all, we need two variables to represent the current position of the white pixel.</p>
-<pre><code>let cur_c 10
+<pre tabindex="0"><code>let cur_c 10
 let cur_r 10
 </code></pre><p>The initial position of the pixel is (10, 10). Then we can show it on the canvas by using the <code>drw</code> command:</p>
-<pre><code>drw $cur_c $cur_r 1
+<pre tabindex="0"><code>drw $cur_c $cur_r 1
 </code></pre><p>Be careful that the first argument of <code>drw</code> is the column, the second one is the row, and <code>1</code> means white color. For the details of the <code>drw</code> command and the complete list of colors, you can refer to <a href="https://siwei.dev/doc/runtime/#canvas">this session</a> in the documentation.</p>
 <p>To move the pixel in the game, we can press an arrow key, but how does Runtime Script know it? <code>$lastkey</code> is a sepcial value that contains a queue of user pressed keys, and each key is represented by a number. For instance, the keycodes of the arrow keys are listed below:</p>
 <table>
@@ -99,7 +99,7 @@ let cur_r 10
 </table>
 <p>Every time we try to get a value from <code>$lastkey</code>, a user key event is consumed from the queue.</p>
 <p>Let continue with the program. When the user presses the left arrow key, the program should print <code>left</code> and subtract the variable <code>cur_c</code> by <code>1</code>.</p>
-<pre><code>slp 3000
+<pre tabindex="0"><code>slp 3000
 
 let key $lastkey
 ife $key 37
@@ -108,7 +108,7 @@ ife $key 37
 fin
 </code></pre><p>The first line is for waiting for 3 seconds so that you have the chance to press the key before <code>$lastkey</code> is evaluated. Without the waiting time, the program finishes immediately.</p>
 <p>To detect all four directions, you can write four similar <code>ife</code> blocks like the one above. There is another way to do this without using <code>if</code> commands:</p>
-<pre><code>let key $lastkey
+<pre tabindex="0"><code>let key $lastkey
 jne $key 37 check_up
 / left
 sub cur_c $cur_c 1
@@ -142,7 +142,7 @@ jmp continue
 <p>CAUTION! the <code>main loop</code> is an infinite loop! Remember to add a <code>slp</code> interval inside the loop to control the refresh rate. For example, <code>slp 100</code> will have a refresh rate of 10Hz (1000 / 100 = 10Hz).</p>
 <p>The final program:<br>
 (You can try it yourself at <a href="https://runtime.siwei.dev/">Runtime Script Playground</a>)</p>
-<pre><code>let cur_c 10
+<pre tabindex="0"><code>let cur_c 10
 let cur_r 10
 
 jmp draw

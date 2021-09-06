@@ -16,9 +16,9 @@
       <description>Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
 You may assume that the intervals were initially sorted according to their start times.
 Example 1:
-Input: intervals = [[1,3],[6,9]], newInterval = [2,5]Output: [[1,5],[6,9]]Example 2:
-Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]Output: [[1,2],[3,10],[12,16]]Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].Example 3:
-Input: intervals = [], newInterval = [5,7]Output: [[5,7]]Example 4:</description>
+Input: intervals = [[1,3],[6,9]], newInterval = [2,5] Output: [[1,5],[6,9]] Example 2:
+Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8] Output: [[1,2],[3,10],[12,16]] Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10]. Example 3:
+Input: intervals = [], newInterval = [5,7] Output: [[5,7]] Example 4:</description>
     </item>
     
     <item>
@@ -42,8 +42,8 @@ Note: You may not engage in multiple transactions at the same time (i.e., you mu
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 You may assume all the characters consist of printable ascii characters.
 Example 1:
-Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;o&amp;quot;]Output: [&amp;quot;o&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;h&amp;quot;]Example 2:
-Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;h&amp;quot;]Output: [&amp;quot;h&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;H&amp;quot;]1 2 3 4 5 6 7 8 9 10 11  func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
+Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;o&amp;quot;] Output: [&amp;quot;o&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;h&amp;quot;] Example 2:
+Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;h&amp;quot;] Output: [&amp;quot;h&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;H&amp;quot;]  1 2 3 4 5 6 7 8 9 10 11  func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
     </item>
     
     <item>
@@ -54,8 +54,8 @@ Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;q
       <guid>https://blog.siwei.dev/leetcode/525-contiguous-array/</guid>
       <description>Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
 Example 1:
-Input: [0,1]Output: 2Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.Example 2:
-Input: [0,1,0]Output: 2Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.Note: The length of the given binary array will not exceed 50,000.</description>
+Input: [0,1] Output: 2 Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1. Example 2:
+Input: [0,1,0] Output: 2 Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1. Note: The length of the given binary array will not exceed 50,000.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ Input: [0,1,0]Output: 2Explanation: [0, 1] (or [1, 0]) is a longest contiguous
 In each iteration, you calculate the step by step sum of startValue plus elements in nums (from left to right).
 Return the minimum positive value of startValue such that the step by step sum is never less than 1.
 Example 1:
-Input: nums = [-3,2,-3,4,2]Output: 5Explanation: If you choose startValue = 4, in the third iteration your step by step sum is less than 1.</description>
+Input: nums = [-3,2,-3,4,2] Output: 5 Explanation: If you choose startValue = 4, in the third iteration your step by step sum is less than 1.</description>
     </item>
     
   </channel>

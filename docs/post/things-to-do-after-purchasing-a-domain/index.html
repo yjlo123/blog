@@ -71,11 +71,11 @@
 <h3 id="--generate-a-new-cert-using-certbot">- Generate a new cert using certbot</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#aaa;font-style:italic"># for example, your domain is domain.com</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#aaa;font-style:italic"># for example, your domain is domain.com</span>
 sudo certbot --nginx -d domain.com -d www.doamin.com</code></pre></td></tr></table>
 </div>
 </div>
@@ -84,18 +84,18 @@ It says it may take up to 48 hours to finish the propagation, but in my case, it
 <h3 id="--add-domains-to-an-existing-cert">- Add domains to an existing cert</h3>
 <p><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nginx -s stop
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nginx -s stop
 certbot certonly --standalone -d domain.com -d www.domain.com -d abc.domain.com --expand
 nginx</code></pre></td></tr></table>
 </div>
 </div>
 Remember to stop Nginx, otherwise, the following message will be shown.</p>
-<pre><code>Problem binding to port 80: Could not bind to IPv4 or IPv6.
+<pre tabindex="0"><code>Problem binding to port 80: Could not bind to IPv4 or IPv6.
 </code></pre><p>The genenrated cert files will be put at <code>/etc/letsencrypt/live/domain.com/</code></p>
 <h2 id="configure-nginx">Configure Nginx</h2>
 <p>Since we already have the certs for https, we can redirect all http requests to https. Besides, we also redirect URLs with www to non-www, to make the URL cleaner as well as provide the only enter point for users, so that search engines can index the single URL for the website.</p>
@@ -103,7 +103,7 @@ Remember to stop Nginx, otherwise, the following message will be shown.</p>
 <p>Redirect http to https, and www to non-www:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -121,7 +121,7 @@ Remember to stop Nginx, otherwise, the following message will be shown.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
     <span style="color:#00a">listen</span> <span style="color:#099">80</span>;
     <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span> <span style="color:#a50">www.domain.com</span>;
     <span style="color:#00a">return</span> <span style="color:#099">301</span> <span style="color:#a50">https://domain.com</span><span style="color:#a00">$request_uri</span>;
@@ -142,7 +142,7 @@ Remember to stop Nginx, otherwise, the following message will be shown.</p>
 Then the main server block:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -166,7 +166,7 @@ Then the main server block:
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
     <span style="color:#00a">listen</span> <span style="color:#099">443</span> <span style="color:#a50">ssl</span>;
     <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span>;
 
@@ -194,7 +194,7 @@ Then the main server block:
 <p>The following Python programs checks if the https and subdomain redirections are correct.
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -232,7 +232,7 @@ Then the main server block:
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">requests</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">requests</span>
 
 hosts = [
     <span style="color:#aaa;font-style:italic">#(host_name, subdomains)</span>
@@ -240,7 +240,7 @@ hosts = [
     (<span style="color:#a50">&#39;runtime.xyz&#39;</span>, []),
 ]
 
-<span style="color:#00a">def</span> <span style="color:#0a0">check_url</span>(domain, sub=None):
+<span style="color:#00a">def</span> <span style="color:#0a0">check_url</span>(domain, sub=<span style="color:#00a">None</span>):
     sub_domains = [<span style="color:#a50">&#39;&#39;</span>, <span style="color:#a50">&#39;www.&#39;</span>]
     <span style="color:#00a">if</span> sub:
         <span style="color:#00a">for</span> s <span style="color:#00a">in</span> sub:
@@ -248,14 +248,14 @@ hosts = [
     failed_urls = []
     <span style="color:#00a">for</span> schema <span style="color:#00a">in</span> [<span style="color:#a50">&#39;http&#39;</span>, <span style="color:#a50">&#39;https&#39;</span>]:
         <span style="color:#00a">for</span> sub_domain <span style="color:#00a">in</span> sub_domains:
-            url = <span style="color:#a50">&#39;{}://{}{}&#39;</span>.format(schema, sub_domain, domain)
+            url = <span style="color:#a50">&#39;</span><span style="color:#a50">{}</span><span style="color:#a50">://</span><span style="color:#a50">{}{}</span><span style="color:#a50">&#39;</span>.format(schema, sub_domain, domain)
             <span style="color:#00a">try</span>:
                 r = requests.get(url)
                 status = r.status_code
                 label = <span style="color:#a50">&#39; &#39;</span> <span style="color:#00a">if</span> status == <span style="color:#099">200</span> <span style="color:#00a">else</span> <span style="color:#a50">&#39;*&#39;</span>
-                <span style="color:#00a">print</span>(<span style="color:#a50">&#39;{}[{}] {}&#39;</span>.format(label, status, url))
+                <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;</span><span style="color:#a50">{}</span><span style="color:#a50">[</span><span style="color:#a50">{}</span><span style="color:#a50">] </span><span style="color:#a50">{}</span><span style="color:#a50">&#39;</span>.format(label, status, url))
             <span style="color:#00a">except</span> Exception <span style="color:#00a">as</span> e:
-                <span style="color:#00a">print</span>(<span style="color:#a50">&#39;*[err] {} {}&#39;</span>.format(url, e))
+                <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;*[err] </span><span style="color:#a50">{}</span><span style="color:#a50"> </span><span style="color:#a50">{}</span><span style="color:#a50">&#39;</span>.format(url, e))
                 failed_urls.append(url)
     <span style="color:#00a">return</span> failed_urls
 
@@ -265,9 +265,9 @@ hosts = [
         error_urls.extend(check_url(d, s))
 
     <span style="color:#00a">if</span> error_urls:
-        <span style="color:#00a">print</span>(<span style="color:#a50">&#39;</span><span style="color:#a50">\n</span><span style="color:#a50">===== [Failed URLs] =====&#39;</span>)
+        <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;</span><span style="color:#a50">\n</span><span style="color:#a50">===== [Failed URLs] =====&#39;</span>)
         <span style="color:#00a">for</span> eus <span style="color:#00a">in</span> error_urls:
-            <span style="color:#00a">print</span>(eus)</code></pre></td></tr></table>
+            <span style="color:#0aa">print</span>(eus)</code></pre></td></tr></table>
 </div>
 </div></p>
 
