@@ -23,6 +23,9 @@
     <loc>https://blog.siwei.dev/leetcode/21-merge-two-sorted-lists/</loc>
     <lastmod>2020-10-18T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/35-search-insert-position/</loc>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/42-trapping-rain-water/</loc>
     <lastmod>2021-06-26T00:00:00+08:00</lastmod>
   </url><url>
@@ -77,6 +80,9 @@
     <loc>https://blog.siwei.dev/leetcode/247-h-index/</loc>
     <lastmod>2021-03-17T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/278-first-bad-version/</loc>
+    <lastmod>2021-09-17T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/344-reverse-string/</loc>
     <lastmod>2020-10-20T00:00:00+08:00</lastmod>
   </url><url>
@@ -104,6 +110,9 @@
     <loc>https://blog.siwei.dev/leetcode/525-contiguous-array/</loc>
     <lastmod>2021-03-27T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/704-binary-search/</loc>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1022-sum-of-root-to-leaf-binary-numbers/</loc>
     <lastmod>2021-03-24T00:00:00+08:00</lastmod>
   </url><url>
@@ -116,19 +125,25 @@
     <loc>https://blog.siwei.dev/leetcode/1413-minimum-value-to-get-positive-step-by-step-sum/</loc>
     <lastmod>2021-03-28T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
-    <lastmod>2021-06-26T00:00:00+08:00</lastmod>
+    <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_easy/</loc>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/leetcode/</loc>
-    <lastmod>2021-06-26T00:00:00+08:00</lastmod>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/</loc>
-    <lastmod>2021-06-26T00:00:00+08:00</lastmod>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/</loc>
-    <lastmod>2021-06-26T00:00:00+08:00</lastmod>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/</loc>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
     <lastmod>2021-06-26T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
@@ -136,9 +151,6 @@
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_medium/</loc>
     <lastmod>2021-06-14T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_easy/</loc>
-    <lastmod>2021-06-09T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_tree/</loc>
     <lastmod>2021-06-09T00:00:00+08:00</lastmod>
@@ -196,9 +208,6 @@
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bit/</loc>
     <lastmod>2020-12-10T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
-    <lastmod>2020-10-24T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/post/my-new-pc/</loc>
     <lastmod>2020-09-08T11:30:40+08:00</lastmod>

@@ -6,7 +6,7 @@
     <description>Recent content in leetcode on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -96,6 +96,20 @@ Input: l1 = [1,2,4], l2 = [1,3,4] Output: [1,1,2,3,4,4] Example 2:
 Input: l1 = [], l2 = [] Output: [] Example 3:
 Input: l1 = [], l2 = [0] Output: [0] Constraints:
  The number of nodes in both lists is in the range [0, 50].</description>
+    </item>
+    
+    <item>
+      <title>35 Search Insert Position</title>
+      <link>https://blog.siwei.dev/leetcode/35-search-insert-position/</link>
+      <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/35-search-insert-position/</guid>
+      <description>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You must write an algorithm with O(log n) runtime complexity.
+Example 1:
+Input: nums = [1,3,5,6], target = 5 Output: 2 Example 2:
+Input: nums = [1,3,5,6], target = 2 Output: 1 Example 3:
+Input: nums = [1,3,5,6], target = 7 Output: 4 Example 4:</description>
     </item>
     
     <item>
@@ -324,6 +338,16 @@ Follow up: What if the inputs contain unicode characters? How would you adapt yo
     </item>
     
     <item>
+      <title>278  First Bad Version</title>
+      <link>https://blog.siwei.dev/leetcode/278-first-bad-version/</link>
+      <pubDate>Fri, 17 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/278-first-bad-version/</guid>
+      <description>You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
+Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.</description>
+    </item>
+    
+    <item>
       <title>344 Reverse String</title>
       <link>https://blog.siwei.dev/leetcode/344-reverse-string/</link>
       <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
@@ -433,6 +457,19 @@ Input: num = -7 Output: &amp;quot;-10&amp;quot; Constraints:
 Example 1:
 Input: [0,1] Output: 2 Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1. Example 2:
 Input: [0,1,0] Output: 2 Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1. Note: The length of the given binary array will not exceed 50,000.</description>
+    </item>
+    
+    <item>
+      <title>704 Binary Search</title>
+      <link>https://blog.siwei.dev/leetcode/704-binary-search/</link>
+      <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/704-binary-search/</guid>
+      <description>Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+You must write an algorithm with O(log n) runtime complexity.
+Example 1:
+Input: nums = [-1,0,3,5,9,12], target = 9 Output: 4 Explanation: 9 exists in nums and its index is 4 Example 2:
+Input: nums = [-1,0,3,5,9,12], target = 2 Output: -1 Explanation: 2 does not exist in nums so return -1 Constraints:</description>
     </item>
     
     <item>
