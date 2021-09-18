@@ -209,11 +209,19 @@ footer a:hover {
   padding: 0px 10px 10px 10px;
 }
 
+.tag_cat .tag_cat_label {
+  font-size: 14px;
+  margin-right: 3px;
+}
+
+.tag_cat .tag_cat_count {
+  font-size: 14px;
+  color: #888;
+}
+
 .tag_cat a {
   padding: 2px;
-  margin-right: 3px;
-  font-size: 14px;
-  color: #555;
+  color: #444;
 }
 
 .lc-difficulty {
