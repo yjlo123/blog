@@ -68,6 +68,9 @@
     <loc>https://blog.siwei.dev/leetcode/136-single-number/</loc>
     <lastmod>2020-09-26T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/189-rotate-array/</loc>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/200-number-of-islands/</loc>
     <lastmod>2020-12-10T00:00:00+08:00</lastmod>
   </url><url>
@@ -113,6 +116,9 @@
     <loc>https://blog.siwei.dev/leetcode/704-binary-search/</loc>
     <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/977-squares-of-a-sorted-array/</loc>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1022-sum-of-root-to-leaf-binary-numbers/</loc>
     <lastmod>2021-03-24T00:00:00+08:00</lastmod>
   </url><url>
@@ -129,6 +135,9 @@
     <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_easy/</loc>
+    <lastmod>2021-09-18T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_two_pointers/</loc>
     <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/leetcode/</loc>

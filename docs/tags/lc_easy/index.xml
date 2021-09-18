@@ -114,6 +114,18 @@ Input: [4,1,2,1,2] Output: 4  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumbe
     </item>
     
     <item>
+      <title>189 Rotate Array</title>
+      <link>https://blog.siwei.dev/leetcode/189-rotate-array/</link>
+      <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/189-rotate-array/</guid>
+      <description>Given an array, rotate the array to the right by k steps, where k is non-negative.
+Example 1:
+Input: nums = [1,2,3,4,5,6,7], k = 3 Output: [5,6,7,1,2,3,4] Explanation: rotate 1 steps to the right: [7,1,2,3,4,5,6] rotate 2 steps to the right: [6,7,1,2,3,4,5] rotate 3 steps to the right: [5,6,7,1,2,3,4] Example 2:
+Input: nums = [-1,-100,3,99], k = 2 Output: [3,99,-1,-100] Explanation: rotate 1 steps to the right: [99,-1,-100,3] rotate 2 steps to the right: [3,99,-1,-100] Constraints:</description>
+    </item>
+    
+    <item>
       <title>231 Power of Two</title>
       <link>https://blog.siwei.dev/leetcode/231-power-of-two/</link>
       <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
@@ -238,6 +250,19 @@ You must write an algorithm with O(log n) runtime complexity.
 Example 1:
 Input: nums = [-1,0,3,5,9,12], target = 9 Output: 4 Explanation: 9 exists in nums and its index is 4 Example 2:
 Input: nums = [-1,0,3,5,9,12], target = 2 Output: -1 Explanation: 2 does not exist in nums so return -1 Constraints:</description>
+    </item>
+    
+    <item>
+      <title>977 Squares of a Sorted Array</title>
+      <link>https://blog.siwei.dev/leetcode/977-squares-of-a-sorted-array/</link>
+      <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/977-squares-of-a-sorted-array/</guid>
+      <description>Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+Example 1:
+Input: nums = [-4,-1,0,3,10] Output: [0,1,9,16,100] Explanation: After squaring, the array becomes [16,1,0,9,100]. After sorting, it becomes [0,1,9,16,100]. Example 2:
+Input: nums = [-7,-3,2,3,11] Output: [4,9,9,49,121] Constraints:
+ 1 &amp;lt;= nums.length &amp;lt;= 104 -104 &amp;lt;= nums[i] &amp;lt;= 104 nums is sorted in non-decreasing order.  Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?</description>
     </item>
     
     <item>

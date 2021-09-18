@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
 
-        <title>2 Add Two Numbers</title>
+        <title>977 Squares of a Sorted Array</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -48,9 +48,9 @@
 
 
 <div class="blog-post">
-  <h1>2 Add Two Numbers</h1>
+  <h1>977 Squares of a Sorted Array</h1>
   <div class="blog-post-subheader">
-    <time>21 Sep 2020</time>
+    <time>18 Sep 2021</time>
   </div><ul class="tags">
   
    <li>
@@ -58,24 +58,34 @@
    </li>
   
    <li>
-     <a href="/tags/lc_medium">lc_medium</a>
+     <a href="/tags/lc_easy">lc_easy</a>
    </li>
   
    <li>
-     <a href="/tags/lc_linked_list">lc_linked_list</a>
+     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong> and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p><strong>Example:</strong></p>
-<pre tabindex="0"><code>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-Output: 7 -&gt; 0 -&gt; 8
-Explanation: 342 + 465 = 807.
-</code></pre><div class="tabs"></div>
+    <p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing</strong> order, return <em>an array of <strong>the squares of each number</strong> sorted in non-decreasing order</em>.</p>
+<p><strong>Example 1:</strong></p>
+<pre tabindex="0"><code>Input: nums = [-4,-1,0,3,10]
+Output: [0,1,9,16,100]
+Explanation: After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>Input: nums = [-7,-3,2,3,11]
+Output: [4,9,9,49,121]
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= nums.length &lt;= 10<sup>4</sup></li>
+<li>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></li>
+<li><code>nums</code> is sorted in non-decreasing order.</li>
+</ul>
+<p>Follow up: Squaring each element and sorting the new array is very trivial, could you find an <code>O(n)</code> solution using a different approach?</p>
+<div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
+<div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -95,57 +105,25 @@ Explanation: 342 + 465 = 807.
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">type</span> ListNode <span style="color:#00a">struct</span> {
-    Val  <span style="color:#0aa">int</span>
-    Next *ListNode
-}
-
-<span style="color:#00a">func</span> <span style="color:#0a0">addTwoNumbers</span>(l1 *ListNode, l2 *ListNode) *ListNode {
-    head := &amp;ListNode{<span style="color:#099">0</span>, <span style="color:#00a">nil</span>}
-    result := head
-    carry := <span style="color:#099">0</span>
-    <span style="color:#00a">for</span> l1 != <span style="color:#00a">nil</span> || l2 != <span style="color:#00a">nil</span> {
-        temp := carry
-        <span style="color:#00a">if</span> l1 != <span style="color:#00a">nil</span> &amp;&amp; l2 != <span style="color:#00a">nil</span> {
-            temp += l1.Val + l2.Val
-        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> l1 != <span style="color:#00a">nil</span> {
-            temp += l1.Val
-        } <span style="color:#00a">else</span> {
-            temp += l2.Val
-        }
-        head.Next = &amp;ListNode{temp % <span style="color:#099">10</span>, <span style="color:#00a">nil</span>}
-        carry = temp / <span style="color:#099">10</span>
-        <span style="color:#00a">if</span> l1 != <span style="color:#00a">nil</span> {
-            l1 = l1.Next
-        }
-        <span style="color:#00a">if</span> l2 != <span style="color:#00a">nil</span> {
-            l2 = l2.Next
-        }
-        head = head.Next
-    }
-    <span style="color:#00a">if</span> carry &gt; <span style="color:#099">0</span> {
-        head.Next = &amp;ListNode{carry, <span style="color:#00a">nil</span>}
-    }
-    <span style="color:#00a">return</span> result.Next
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+    <span style="color:#00a">def</span> <span style="color:#0a0">sortedSquares</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; List[<span style="color:#0aa">int</span>]:
+        n = <span style="color:#0aa">len</span>(nums)
+        result = [<span style="color:#099">0</span>] * n
+        left = <span style="color:#099">0</span>
+        right = n - <span style="color:#099">1</span>
+        
+        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n):
+            <span style="color:#00a">if</span> <span style="color:#0aa">abs</span>(nums[left]) &lt; <span style="color:#0aa">abs</span>(nums[right]):
+                num = nums[right]
+                right -= <span style="color:#099">1</span>
+            <span style="color:#00a">else</span>:
+                num = nums[left]
+                left += <span style="color:#099">1</span>
+            result[n-i-<span style="color:#099">1</span>] = num * num
+        
+        <span style="color:#00a">return</span> result</code></pre></td></tr></table>
 </div>
 </div>
 </div>
