@@ -6,7 +6,7 @@
     <description>Recent content in lc_string on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_string/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_string/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>3 Longest Substring Without Repeating Characters</title>
       <link>https://blog.siwei.dev/leetcode/3-longest-substring-without-repeating-characters/</link>
@@ -47,20 +47,6 @@ Follow up: What if the inputs contain unicode characters? How would you adapt yo
     </item>
     
     <item>
-      <title>344 Reverse String</title>
-      <link>https://blog.siwei.dev/leetcode/344-reverse-string/</link>
-      <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/344-reverse-string/</guid>
-      <description>Write a function that reverses a string. The input string is given as an array of characters char[].
-Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
-You may assume all the characters consist of printable ascii characters.
-Example 1:
-Input: [&amp;quot;h&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;o&amp;quot;] Output: [&amp;quot;o&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;l&amp;quot;,&amp;quot;e&amp;quot;,&amp;quot;h&amp;quot;] Example 2:
-Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;h&amp;quot;] Output: [&amp;quot;h&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;n&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;H&amp;quot;]  1 2 3 4 5 6 7 8 9 10 11  func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
-    </item>
-    
-    <item>
       <title>387 First Unique Character in a String</title>
       <link>https://blog.siwei.dev/leetcode/387-first-unique-character-in-a-string/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0800</pubDate>
@@ -70,6 +56,19 @@ Input: [&amp;quot;H&amp;quot;,&amp;quot;a&amp;quot;,&amp;quot;n&amp;quot;,&amp;q
 Examples:
 s = &amp;quot;leetcode&amp;quot; return 0. s = &amp;quot;loveleetcode&amp;quot; return 2. Note: You may assume the string contains only lowercase English letters.
  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22  func firstUniqChar(s string) int { m := make(map[rune]int) for i, c := range s { _, has := m[c] if has { m[c] = -1 } else { m[c] = i } } const maxInt = int(^uint(0) &amp;gt;&amp;gt; 1) min := maxInt for _, i := range m { if i &amp;gt; -1 &amp;amp;&amp;amp; i &amp;lt; min { min = i } } if min == maxInt { return -1 } return min }     </description>
+    </item>
+    
+    <item>
+      <title>557 Reverse Words in a String III</title>
+      <link>https://blog.siwei.dev/leetcode/557-reverse-words-in-a-string-iii/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/557-reverse-words-in-a-string-iii/</guid>
+      <description>Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+Example 1:
+Input: s = &amp;quot;Let&#39;s take LeetCode contest&amp;quot; Output: &amp;quot;s&#39;teL ekat edoCteeL tsetnoc&amp;quot; Example 2:
+Input: s = &amp;quot;God Ding&amp;quot; Output: &amp;quot;doG gniD&amp;quot; Constraints:
+ 1 &amp;lt;= s.length &amp;lt;= 5 * 104 s contains printable ASCII characters. s does not contain any leading or trailing spaces. There is at least one word in s.</description>
     </item>
     
   </channel>

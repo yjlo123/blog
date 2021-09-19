@@ -62,11 +62,11 @@
    </li>
   
    <li>
-     <a href="/tags/lc_string">lc_string</a>
+     <a href="/tags/lc_array">lc_array</a>
    </li>
   
    <li>
-     <a href="/tags/lc_array">lc_array</a>
+     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
    </li>
   
 </ul>
@@ -109,6 +109,30 @@ Output: [&quot;h&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&
 	}
 	fmt.<span style="color:#0a0">Println</span>(s)
 }</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+    <span style="color:#00a">def</span> <span style="color:#0a0">reverseString</span>(self, s: List[<span style="color:#0aa">str</span>]) -&gt; <span style="color:#00a">None</span>:
+        <span style="color:#a50">&#34;&#34;&#34;
+</span><span style="color:#a50">        Do not return anything, modify s in-place instead.
+</span><span style="color:#a50">        &#34;&#34;&#34;</span>
+        n = <span style="color:#0aa">len</span>(s)
+        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n//<span style="color:#099">2</span>):
+            s[i], s[n-i-<span style="color:#099">1</span>] = s[n-i-<span style="color:#099">1</span>], s[i]</code></pre></td></tr></table>
 </div>
 </div>
 </div>

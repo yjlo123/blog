@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
-        <title>lc_two_pointers</title>
+        <title>557 Reverse Words in a String III</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -47,95 +47,61 @@
         </section>
 
 
-  <article class="cf pa3 pa4-m pa4-l">
-    <div>
-      <p class="page-title">#lc_two_pointers</p>
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section>
-      <ul class="posts_listing">
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>19 Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/19-remove-nth-node-from-end-of-list/">19 Remove Nth Node From End of List</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>18 Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/167-two-sum-ii-input-array-is-sorted/">167 Two Sum II - Input array is sorted</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>18 Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/189-rotate-array/">189 Rotate Array</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>18 Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/283-move-zeroes/">283 Move Zeroes</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>20 Oct 2020</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/344-reverse-string/">344 Reverse String</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>19 Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/876-middle-of-the-linked-list/">876 Middle of the Linked List</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>18 Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/977-squares-of-a-sorted-array/">977 Squares of a Sorted Array</a>
-              </div>
-            </div>
-          </li>
-          
-        </ul>
-    </section>
+<div class="blog-post">
+  <h1>557 Reverse Words in a String III</h1>
+  <div class="blog-post-subheader">
+    <time>19 Sep 2021</time>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_easy">lc_easy</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_string">lc_string</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>Given a string <code>s</code>, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.</p>
+<p><strong>Example 1:</strong></p>
+<pre tabindex="0"><code>Input: s = &quot;Let's take LeetCode contest&quot;
+Output: &quot;s'teL ekat edoCteeL tsetnoc&quot;
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>Input: s = &quot;God Ding&quot;
+Output: &quot;doG gniD&quot;
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></li>
+<li><code>s</code> contains printable <strong>ASCII</strong> characters.</li>
+<li><code>s</code> does not contain any leading or trailing spaces.</li>
+<li>There is <strong>at least one</strong> word in <code>s</code>.</li>
+<li>All the words in <code>s</code> are separated by a single space.</li>
+</ul>
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+    <span style="color:#00a">def</span> <span style="color:#0a0">reverseWords</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">str</span>:
+        <span style="color:#00a">return</span> <span style="color:#a50">&#39; &#39;</span>.join([w[::-<span style="color:#099">1</span>] <span style="color:#00a">for</span> w <span style="color:#00a">in</span> s.split(<span style="color:#a50">&#39; &#39;</span>)])</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
   </div>
+</div>
 
       <footer>
         <hr>

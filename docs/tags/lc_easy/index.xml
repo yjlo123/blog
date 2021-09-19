@@ -6,7 +6,7 @@
     <description>Recent content in lc_easy on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -266,6 +266,19 @@ Input: num = -7 Output: &amp;quot;-10&amp;quot; Constraints:
     </item>
     
     <item>
+      <title>557 Reverse Words in a String III</title>
+      <link>https://blog.siwei.dev/leetcode/557-reverse-words-in-a-string-iii/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/557-reverse-words-in-a-string-iii/</guid>
+      <description>Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+Example 1:
+Input: s = &amp;quot;Let&#39;s take LeetCode contest&amp;quot; Output: &amp;quot;s&#39;teL ekat edoCteeL tsetnoc&amp;quot; Example 2:
+Input: s = &amp;quot;God Ding&amp;quot; Output: &amp;quot;doG gniD&amp;quot; Constraints:
+ 1 &amp;lt;= s.length &amp;lt;= 5 * 104 s contains printable ASCII characters. s does not contain any leading or trailing spaces. There is at least one word in s.</description>
+    </item>
+    
+    <item>
       <title>704 Binary Search</title>
       <link>https://blog.siwei.dev/leetcode/704-binary-search/</link>
       <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
@@ -276,6 +289,19 @@ You must write an algorithm with O(log n) runtime complexity.
 Example 1:
 Input: nums = [-1,0,3,5,9,12], target = 9 Output: 4 Explanation: 9 exists in nums and its index is 4 Example 2:
 Input: nums = [-1,0,3,5,9,12], target = 2 Output: -1 Explanation: 2 does not exist in nums so return -1 Constraints:</description>
+    </item>
+    
+    <item>
+      <title>876 Middle of the Linked List</title>
+      <link>https://blog.siwei.dev/leetcode/876-middle-of-the-linked-list/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/876-middle-of-the-linked-list/</guid>
+      <description>Given the head of a singly linked list, return the middle node of the linked list.
+If there are two middle nodes, return the second middle node.
+Example 1:
+1 -&amp;gt; 2 -&amp;gt; (3) -&amp;gt; 4 -&amp;gt; 5 Input: head = [1,2,3,4,5] Output: [3,4,5] Explanation: The middle node of the list is node 3. Example 2:
+1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; (4) -&amp;gt; 5 -&amp;gt; 6 Input: head = [1,2,3,4,5,6] Output: [4,5,6] Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.</description>
     </item>
     
     <item>

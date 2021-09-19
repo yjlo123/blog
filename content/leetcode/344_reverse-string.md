@@ -3,7 +3,7 @@ weight: 344
 title: "344 Reverse String"
 date: 2020-10-20T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_easy", "lc_string", "lc_array"]
+tags: ["leetcode", "lc_easy", "lc_array", "lc_two_pointers"]
 ---
 
 Write a function that reverses a string. The input string is given as an array of characters `char[]`.
@@ -40,6 +40,19 @@ func reverseString(s []byte]) {
 	}
 	fmt.Println(s)
 }
+{{< / highlight >}}
+</div>
+
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        n = len(s)
+        for i in range(n//2):
+            s[i], s[n-i-1] = s[n-i-1], s[i]
 {{< / highlight >}}
 </div>
 
