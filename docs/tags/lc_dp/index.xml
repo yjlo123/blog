@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lc_dp on Siwei&#39;s Blog</title>
+    <link>https://blog.siwei.dev/tags/lc_dp/</link>
+    <description>Recent content in lc_dp on Siwei&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>509 Fibonacci Number</title>
+      <link>https://blog.siwei.dev/leetcode/509-fibonacci-number/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/509-fibonacci-number/</guid>
+      <description>The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
+F(0) = 0, F(1) = 1 F(n) = F(n - 1) + F(n - 2), for n &amp;gt; 1. Given n, calculate F(n).
+Example 1:
+Input: n = 2 Output: 1 Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.</description>
+    </item>
+    
+    <item>
+      <title>1137 N-th Tribonacci Number</title>
+      <link>https://blog.siwei.dev/leetcode/1137-n-th-tribonacci-number/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1137-n-th-tribonacci-number/</guid>
+      <description>The Tribonacci sequence Tn is defined as follows:
+T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n &amp;gt;= 0.
+Given n, return the value of Tn.
+Example 1:
+Input: n = 4 Output: 4 Explanation: T_3 = 0 + 1 + 1 = 2 T_4 = 1 + 1 + 2 = 4 Example 2:
+Input: n = 25 Output: 1389537 Constraints:</description>
+    </item>
+    
+  </channel>
+</rss>
