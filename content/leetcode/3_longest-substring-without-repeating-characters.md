@@ -3,7 +3,7 @@ weight: 3
 title: "3 Longest Substring Without Repeating Characters"
 date: 2020-01-01T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_string"]
+tags: ["leetcode", "lc_medium", "lc_string", "lc_sliding_window"]
 ---
 
 Given a string `s`, find the length of the **longest substring** without repeating characters.
@@ -67,6 +67,22 @@ func lengthOfLongestSubstring(s string) int {
 	}
 	return ans
 }
+{{< / highlight >}}
+</div>
+
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        longest = 0
+        d = {}
+        start = 0
+        for i, c in enumerate(s):
+            if c in d and d[c] >= start:
+                start = d[c] + 1
+            d[c] = i
+            longest = max(longest, i - start + 1)
+        return longest
 {{< / highlight >}}
 </div>
 </div>

@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
-        <title>3 Longest Substring Without Repeating Characters</title>
+        <title>567 Permutation in String</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -48,9 +48,9 @@
 
 
 <div class="blog-post">
-  <h1>3 Longest Substring Without Repeating Characters</h1>
+  <h1>567 Permutation in String</h1>
   <div class="blog-post-subheader">
-    <time>01 Jan 2020</time>
+    <time>19 Sep 2021</time>
   </div><ul class="tags">
   
    <li>
@@ -62,40 +62,28 @@
    </li>
   
    <li>
-     <a href="/tags/lc_string">lc_string</a>
-   </li>
-  
-   <li>
      <a href="/tags/lc_sliding_window">lc_sliding_window</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given a string <code>s</code>, find the length of the <strong>longest substring</strong> without repeating characters.</p>
+    <p>Given two strings <code>s1</code> and <code>s2</code>, return <code>true</code> if <code>s2</code> contains a permutation of <code>s1</code>, or <code>false</code> otherwise.</p>
+<p>In other words, return <code>true</code> if one of <code>s1</code>&rsquo;s permutations is the substring of <code>s2</code>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;abcabcbb&quot;
-Output: 3
-Explanation: The answer is &quot;abc&quot;, with the length of 3.
+<pre tabindex="0"><code>Input: s1 = &quot;ab&quot;, s2 = &quot;eidbaooo&quot;
+Output: true
+Explanation: s2 contains one permutation of s1 (&quot;ba&quot;).
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;bbbbb&quot;
-Output: 1
-Explanation: The answer is &quot;b&quot;, with the length of 1.
-</code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;pwwkew&quot;
-Output: 3
-Explanation: The answer is &quot;wke&quot;, with the length of 3.
-Notice that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.
-</code></pre><p><strong>Example 4:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;&quot;
-Output: 0
+<pre tabindex="0"><code>Input: s1 = &quot;ab&quot;, s2 = &quot;eidboaoo&quot;
+Output: false
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>0 &lt;= s.length &lt;= 5 * 10<sup>4</sup></li>
-<li><code>s</code> consists of English letters, digits, symbols and spaces.</li>
+<li>1 &lt;= s1.length, s2.length &lt;= 10<sup>4</sup></li>
+<li><code>s1</code> and <code>s2</code> consist of lowercase English letters.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
+<div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -112,62 +100,22 @@ Output: 0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">lengthOfLongestSubstring</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">int</span> {
-	ans := <span style="color:#099">0</span> 
-	m := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">byte</span>]<span style="color:#0aa">int</span>)  <span style="color:#aaa;font-style:italic">// &#34;last occurred&#34; map
-</span><span style="color:#aaa;font-style:italic"></span>	i := <span style="color:#099">0</span>
-    <span style="color:#00a">for</span> j, v := <span style="color:#00a">range</span> []<span style="color:#0aa">byte</span>(s) {
-		<span style="color:#00a">if</span> v, ok := m[v]; ok &amp;&amp; v &gt; i {
-			i = v
-		}
-        <span style="color:#aaa;font-style:italic">// e.g.
-</span><span style="color:#aaa;font-style:italic"></span>        <span style="color:#aaa;font-style:italic">// &#34;a&#34;: i=0, j=0, len is 0-0+1=1
-</span><span style="color:#aaa;font-style:italic"></span>        <span style="color:#aaa;font-style:italic">// &#34;ab&#34;: i=0, j=1, len is 1-0+1=2
-</span><span style="color:#aaa;font-style:italic"></span>        <span style="color:#aaa;font-style:italic">// &#34;aba&#34;: i=1, j=2, len is 2-1+1=2
-</span><span style="color:#aaa;font-style:italic"></span>		<span style="color:#00a">if</span> j - i + <span style="color:#099">1</span> &gt; ans {
-			ans = j - i + <span style="color:#099">1</span>
-		}
-		m[v] = j + <span style="color:#099">1</span>
-	}
-	<span style="color:#00a">return</span> ans
-}</code></pre></td></tr></table>
-</div>
-</div>
-</div>
-<div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">lengthOfLongestSubstring</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-        longest = <span style="color:#099">0</span>
-        d = {}
-        start = <span style="color:#099">0</span>
-        <span style="color:#00a">for</span> i, c <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(s):
-            <span style="color:#00a">if</span> c <span style="color:#00a">in</span> d <span style="color:#00a">and</span> d[c] &gt;= start:
-                start = d[c] + <span style="color:#099">1</span>
-            d[c] = i
-            longest = <span style="color:#0aa">max</span>(longest, i - start + <span style="color:#099">1</span>)
-        <span style="color:#00a">return</span> longest</code></pre></td></tr></table>
+    <span style="color:#00a">def</span> <span style="color:#0a0">checkInclusion</span>(self, s1: <span style="color:#0aa">str</span>, s2: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">bool</span>:
+        l1 = [<span style="color:#099">0</span>]*<span style="color:#099">26</span>
+        l2 = [<span style="color:#099">0</span>]*<span style="color:#099">26</span>
+        <span style="color:#00a">for</span> x <span style="color:#00a">in</span> s1:
+            l1[<span style="color:#0aa">ord</span>(x) - <span style="color:#0aa">ord</span>(<span style="color:#a50">&#39;a&#39;</span>)] += <span style="color:#099">1</span>
+        
+        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(s2)):
+            l2[<span style="color:#0aa">ord</span>(s2[i]) - <span style="color:#0aa">ord</span>(<span style="color:#a50">&#39;a&#39;</span>)] += <span style="color:#099">1</span>
+            <span style="color:#00a">if</span> i &gt;= <span style="color:#0aa">len</span>(s1):
+                l2[<span style="color:#0aa">ord</span>(s2[i-<span style="color:#0aa">len</span>(s1)]) - <span style="color:#0aa">ord</span>(<span style="color:#a50">&#39;a&#39;</span>)] -= <span style="color:#099">1</span>
+            <span style="color:#00a">if</span> l1 == l2:
+                <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+        <span style="color:#00a">return</span> <span style="color:#00a">False</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
