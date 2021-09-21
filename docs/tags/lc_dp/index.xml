@@ -6,7 +6,20 @@
     <description>Recent content in lc_dp on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>70 Climbing Stairs</title>
+      <link>https://blog.siwei.dev/leetcode/70-climbing-stairs/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/70-climbing-stairs/</guid>
+      <description>You are climbing a staircase. It takes n steps to reach the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Example 1:
+Input: n = 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2. 2 steps Example 2:
+Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</description>
+    </item>
+    
     <item>
       <title>509 Fibonacci Number</title>
       <link>https://blog.siwei.dev/leetcode/509-fibonacci-number/</link>

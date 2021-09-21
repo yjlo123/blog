@@ -6,7 +6,7 @@
     <description>Recent content in leetcode on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -232,6 +232,19 @@ Input: intervals = [], newInterval = [5,7] Output: [[5,7]] Example 4:</descripti
 Example 1:
  1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 rotate 1: 5 -&amp;gt; 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 rotate 2: 4 -&amp;gt; 5 -&amp;gt; 1 -&amp;gt; 2 -&amp;gt; 3 Input: head = [1,2,3,4,5], k = 2 Output: [4,5,1,2,3] Example 2:
  0 -&amp;gt; 1 -&amp;gt; 2 rotate 1: 2 -&amp;gt; 0 -&amp;gt; 1 rotate 2: 1 -&amp;gt; 2 -&amp;gt; 0 rotate 3: 0 -&amp;gt; 1 -&amp;gt; 2 rotate 4: 2 -&amp;gt; 0 -&amp;gt; 1 Input: head = [0,1,2], k = 4 Output: [2,0,1] Constraints:</description>
+    </item>
+    
+    <item>
+      <title>70 Climbing Stairs</title>
+      <link>https://blog.siwei.dev/leetcode/70-climbing-stairs/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/70-climbing-stairs/</guid>
+      <description>You are climbing a staircase. It takes n steps to reach the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Example 1:
+Input: n = 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2. 2 steps Example 2:
+Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</description>
     </item>
     
     <item>
