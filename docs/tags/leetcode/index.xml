@@ -248,6 +248,17 @@ Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</d
     </item>
     
     <item>
+      <title>88 Merge Sorted Array</title>
+      <link>https://blog.siwei.dev/leetcode/88-merge-sorted-array/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/88-merge-sorted-array/</guid>
+      <description>You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored.</description>
+    </item>
+    
+    <item>
       <title>100 Same Tree</title>
       <link>https://blog.siwei.dev/leetcode/100-same-tree/</link>
       <pubDate>Wed, 09 Jun 2021 00:00:00 +0800</pubDate>
