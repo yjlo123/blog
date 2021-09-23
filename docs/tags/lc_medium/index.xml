@@ -6,7 +6,7 @@
     <description>Recent content in lc_medium on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2 Add Two Numbers</title>
       <link>https://blog.siwei.dev/leetcode/2-add-two-numbers/</link>
@@ -236,6 +236,17 @@ Example 1:
 Input: s1 = &amp;quot;ab&amp;quot;, s2 = &amp;quot;eidbaooo&amp;quot; Output: true Explanation: s2 contains one permutation of s1 (&amp;quot;ba&amp;quot;). Example 2:
 Input: s1 = &amp;quot;ab&amp;quot;, s2 = &amp;quot;eidboaoo&amp;quot; Output: false Constraints:
  1 &amp;lt;= s1.length, s2.length &amp;lt;= 104 s1 and s2 consist of lowercase English letters.</description>
+    </item>
+    
+    <item>
+      <title>695 Max Area of Island</title>
+      <link>https://blog.siwei.dev/leetcode/695-max-area-of-island/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/695-max-area-of-island/</guid>
+      <description>You are given an m x n binary matrix grid. An island is a group of 1&amp;rsquo;s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
+The area of an island is the number of cells with a value 1 in the island.
+Return the maximum area of an island in grid. If there is no island, return 0.</description>
     </item>
     
     <item>

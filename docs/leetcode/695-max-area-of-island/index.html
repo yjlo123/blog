@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+        <title>695 Max Area of Island</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>695 Max Area of Island</h1>
+  <div class="blog-post-subheader">
+    <time>23 Sep 2021</time>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_medium">lc_medium</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_matrix">lc_matrix</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_dfs">lc_dfs</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>You are given an <code>m x n</code> binary matrix <code>grid</code>. An island is a group of 1&rsquo;s (representing land) connected <strong>4-directionally</strong> (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
+<p>The <strong>area</strong> of an island is the number of cells with a value <code>1</code> in the island.</p>
+<p><em>Return the maximum <strong>area</strong> of an island in</em> <code>grid</code>. If there is no island, return <code>0</code>.</p>
+<p><strong>Example 1:</strong>
+<img src="https://assets.leetcode.com/uploads/2021/05/01/maxarea1-grid.jpg" style="width: 100%;"/></p>
+<pre tabindex="0"><code>Input: grid = [
+    [0,0,1,0,0,0,0,1,0,0,0,0,0],
+    [0,0,0,0,0,0,0,1,1,1,0,0,0],
+    [0,1,1,0,1,0,0,0,0,0,0,0,0],
+    [0,1,0,0,1,1,0,0,1,0,1,0,0],
+    [0,1,0,0,1,1,0,0,1,1,1,0,0],
+    [0,0,0,0,0,0,0,0,0,0,1,0,0],
+    [0,0,0,0,0,0,0,1,1,1,0,0,0],
+    [0,0,0,0,0,0,0,1,1,0,0,0,0]]
+Output: 6
+Explanation: The answer is not 11, because the island must be connected 4-directionally.
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>Input: grid = [[0,0,0,0,0,0,0,0]]
+Output: 0
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>m == grid.length</li>
+<li>n == grid[i].length</li>
+<li>1 &lt;= m, n &lt;= 50</li>
+<li><code>grid[i][j]</code> is either <code>0</code> or <code>1</code>.</li>
+</ul>
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+    <span style="color:#00a">def</span> <span style="color:#0a0">maxAreaOfIsland</span>(self, grid: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
+        max_area = <span style="color:#099">0</span>
+        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(grid)):
+            <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(grid[<span style="color:#099">0</span>])):
+                <span style="color:#00a">if</span> grid[i][j] == <span style="color:#099">1</span>:
+                    max_area = <span style="color:#0aa">max</span>(self.dfs(grid, i, j), max_area)
+        <span style="color:#00a">return</span> max_area
+        
+    <span style="color:#00a">def</span> <span style="color:#0a0">dfs</span>(self, grid: List[List[<span style="color:#0aa">int</span>]], x: <span style="color:#0aa">int</span>, y: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+        count = <span style="color:#099">0</span>
+        stack = [(x, y)]
+        <span style="color:#00a">while</span> stack:
+            i, j = stack.pop()
+            <span style="color:#00a">if</span> grid[i][j] == <span style="color:#099">1</span>:
+                grid[i][j] = <span style="color:#099">2</span>
+                count += <span style="color:#099">1</span>
+                <span style="color:#00a">if</span> i &gt; <span style="color:#099">0</span>:
+                    stack.append((i-<span style="color:#099">1</span>, j))
+                <span style="color:#00a">if</span> i &lt; <span style="color:#0aa">len</span>(grid) - <span style="color:#099">1</span>:
+                    stack.append((i+<span style="color:#099">1</span>, j))
+                <span style="color:#00a">if</span> j &gt; <span style="color:#099">0</span>:
+                    stack.append((i, j-<span style="color:#099">1</span>))
+                <span style="color:#00a">if</span> j &lt; <span style="color:#0aa">len</span>(grid[<span style="color:#099">0</span>]) - <span style="color:#099">1</span>:
+                    stack.append((i, j+<span style="color:#099">1</span>))
+        <span style="color:#00a">return</span> count</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2021
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+      <br/>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+
+      (function(){
+        let first = true;
+        $(".tab-content").children(".lang").each(function () {
+          let tabId = $(this).attr("id");
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          first = false;
+        });
+
+        $(".lang").slice(1).each(function() {
+          $(this).hide();
+        })
+      })();
+
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
+  </body>
+</html>
+
