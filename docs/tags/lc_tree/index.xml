@@ -6,7 +6,7 @@
     <description>Recent content in lc_tree on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_tree/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_tree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>100 Same Tree</title>
       <link>https://blog.siwei.dev/leetcode/100-same-tree/</link>
@@ -70,6 +70,16 @@ A leaf is a node with no children.
 Example 1:
  5 / \ 4 8 / / \ 11 13 4 / \ / \ 7 2 5 1 Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22 Output: [[5,4,11,2],[5,8,4,5]] Example 2:
  1 / \ 2 3 Input: root = [1,2,3], targetSum = 5 Output: [] Example 3:</description>
+    </item>
+    
+    <item>
+      <title>617 Merge Two Binary Trees</title>
+      <link>https://blog.siwei.dev/leetcode/617-merge-two-binary-trees/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/617-merge-two-binary-trees/</guid>
+      <description>You are given two binary trees root1 and root2.
+Imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not. You need to merge the two trees into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of the new tree.</description>
     </item>
     
     <item>

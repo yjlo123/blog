@@ -6,7 +6,7 @@
     <description>Recent content in lc_easy on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -125,6 +125,19 @@ Example 1:
  1 / \ 2 2 / \ / \ 3 4 4 3 Input: root = [1,2,2,3,4,4,3] Output: true Example 2:
  1 / \ 2 2 \ \ 3 3 Input: root = [1,2,2,null,3,null,3] Output: false Constraints:
  The number of nodes in the tree is in the range [1, 1000].</description>
+    </item>
+    
+    <item>
+      <title>121 Best Time to Buy and Sell Stock</title>
+      <link>https://blog.siwei.dev/leetcode/121-best-time-to-buy-and-sell-stock/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/121-best-time-to-buy-and-sell-stock/</guid>
+      <description>You are given an array prices where prices[i] is the price of a given stock on the ith day.
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+Example 1:
+Input: prices = [7,1,5,3,6,4] Output: 5 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.</description>
     </item>
     
     <item>
@@ -344,6 +357,16 @@ Input: s = &amp;quot;God Ding&amp;quot; Output: &amp;quot;doG gniD&amp;quot; Con
     </item>
     
     <item>
+      <title>617 Merge Two Binary Trees</title>
+      <link>https://blog.siwei.dev/leetcode/617-merge-two-binary-trees/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/617-merge-two-binary-trees/</guid>
+      <description>You are given two binary trees root1 and root2.
+Imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not. You need to merge the two trees into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of the new tree.</description>
+    </item>
+    
+    <item>
       <title>704 Binary Search</title>
       <link>https://blog.siwei.dev/leetcode/704-binary-search/</link>
       <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
@@ -354,6 +377,17 @@ You must write an algorithm with O(log n) runtime complexity.
 Example 1:
 Input: nums = [-1,0,3,5,9,12], target = 9 Output: 4 Explanation: 9 exists in nums and its index is 4 Example 2:
 Input: nums = [-1,0,3,5,9,12], target = 2 Output: -1 Explanation: 2 does not exist in nums so return -1 Constraints:</description>
+    </item>
+    
+    <item>
+      <title>733 Flood Fill</title>
+      <link>https://blog.siwei.dev/leetcode/733-flood-fill/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/733-flood-fill/</guid>
+      <description>An image is represented by an m x n integer grid image where image[i][j] represents the pixel value of the image.
+You are also given three integers sr, sc, and newColor. You should perform a flood fill on the image starting from the pixel image[sr][sc].
+To perform a flood fill, consider the starting pixel, plus any pixels connected 4-directionally to the starting pixel of the same color as the starting pixel, plus any pixels connected 4-directionally to those pixels (also with the same color), and so on.</description>
     </item>
     
     <item>

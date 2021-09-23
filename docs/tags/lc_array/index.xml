@@ -6,7 +6,7 @@
     <description>Recent content in lc_array on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_array/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_array/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>53 Maximum Subarray</title>
       <link>https://blog.siwei.dev/leetcode/53-maximum-subarray/</link>
@@ -45,6 +45,19 @@ Input: intervals = [], newInterval = [5,7] Output: [[5,7]] Example 4:</descripti
       <description>You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 Merge nums1 and nums2 into a single array sorted in non-decreasing order.
 The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored.</description>
+    </item>
+    
+    <item>
+      <title>121 Best Time to Buy and Sell Stock</title>
+      <link>https://blog.siwei.dev/leetcode/121-best-time-to-buy-and-sell-stock/</link>
+      <pubDate>Thu, 23 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/121-best-time-to-buy-and-sell-stock/</guid>
+      <description>You are given an array prices where prices[i] is the price of a given stock on the ith day.
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+Example 1:
+Input: prices = [7,1,5,3,6,4] Output: 5 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.</description>
     </item>
     
     <item>
