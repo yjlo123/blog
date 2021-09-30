@@ -6,7 +6,7 @@
     <description>Recent content in lc_dp on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_dp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>70 Climbing Stairs</title>
       <link>https://blog.siwei.dev/leetcode/70-climbing-stairs/</link>
@@ -18,6 +18,20 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 Example 1:
 Input: n = 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2. 2 steps Example 2:
 Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</description>
+    </item>
+    
+    <item>
+      <title>118 Pascal&#39;s Triangle</title>
+      <link>https://blog.siwei.dev/leetcode/118-pascals-triangle/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/118-pascals-triangle/</guid>
+      <description>Given an integer numRows, return the first numRows of Pascal&amp;rsquo;s triangle.
+In Pascal&amp;rsquo;s triangle, each number is the sum of the two numbers directly above it as shown:
+ 1 1 1 1 2 1 1 3 3 1 1 4 6 4 1 Example 1:
+Input: numRows = 5 Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]] Example 2:
+Input: numRows = 1 Output: [[1]] Constraints:
+ 1 &amp;lt;= numRows &amp;lt;= 30   1 2 3 4 5 6 7 8 9 10 11 12 13  class Solution: def __init__(self): self.</description>
     </item>
     
     <item>

@@ -43,10 +43,10 @@ Output: [[3,1],[4,2]]
 ```
 
 **Constraints:**
-- matrix.length == n
-- matrix[i].length == n
+- `matrix.length` == n
+- `matrix[i].length` == n
 - 1 <= n <= 20
-- -1000 <= matrix[i][j] <= 1000
+- -1000 <= `matrix[i][j]` <= 1000
 
 <div class="tabs"></div>
 <div class="tab-content">

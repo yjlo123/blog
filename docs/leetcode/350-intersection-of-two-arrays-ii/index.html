@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
-        <title>695 Max Area of Island</title>
+        <title>350 Intersection of Two Arrays II</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -48,9 +48,9 @@
 
 
 <div class="blog-post">
-  <h1>695 Max Area of Island</h1>
+  <h1>350 Intersection of Two Arrays II</h1>
   <div class="blog-post-subheader">
-    <time>23 Sep 2021</time>
+    <time>30 Sep 2021</time>
   </div><ul class="tags">
   
    <li>
@@ -58,44 +58,37 @@
    </li>
   
    <li>
-     <a href="/tags/lc_medium">lc_medium</a>
+     <a href="/tags/lc_easy">lc_easy</a>
    </li>
   
    <li>
-     <a href="/tags/lc_matrix">lc_matrix</a>
+     <a href="/tags/lc_array">lc_array</a>
    </li>
   
    <li>
-     <a href="/tags/lc_dfs">lc_dfs</a>
+     <a href="/tags/lc_hash_table">lc_hash_table</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given an <code>m x n</code> binary matrix <code>grid</code>. An island is a group of 1&rsquo;s (representing land) connected <strong>4-directionally</strong> (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
-<p>The <strong>area</strong> of an island is the number of cells with a value <code>1</code> in the island.</p>
-<p><em>Return the maximum <strong>area</strong> of an island in</em> <code>grid</code>. If there is no island, return <code>0</code>.</p>
-<p><strong>Example 1:</strong>
-<img src="https://assets.leetcode.com/uploads/2021/05/01/maxarea1-grid.jpg" style="width: 100%;"/></p>
-<pre tabindex="0"><code>Input: grid = [
-    [0,0,1,0,0,0,0,1,0,0,0,0,0],
-    [0,0,0,0,0,0,0,1,1,1,0,0,0],
-    [0,1,1,0,1,0,0,0,0,0,0,0,0],
-    [0,1,0,0,1,1,0,0,1,0,1,0,0],
-    [0,1,0,0,1,1,0,0,1,1,1,0,0],
-    [0,0,0,0,0,0,0,0,0,0,1,0,0],
-    [0,0,0,0,0,0,0,1,1,1,0,0,0],
-    [0,0,0,0,0,0,0,1,1,0,0,0,0]]
-Output: 6
-Explanation: The answer is not 11, because the island must be connected 4-directionally.
+    <p>Given two integer arrays <code>nums1</code> and <code>nums2</code>, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in <strong>any order</strong>.</p>
+<p><strong>Example 1:</strong></p>
+<pre tabindex="0"><code>Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2,2]
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: grid = [[0,0,0,0,0,0,0,0]]
-Output: 0
+<pre tabindex="0"><code>Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [4,9]
+Explanation: [9,4] is also accepted.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>m == <code>grid.length</code></li>
-<li>n == <code>grid[i].length</code></li>
-<li>1 &lt;= m, n &lt;= 50</li>
-<li><code>grid[i][j]</code> is either <code>0</code> or <code>1</code>.</li>
+<li>1 &lt;= <code>nums1.length</code>, <code>nums2.length</code> &lt;= 1000</li>
+<li>0 &lt;= <code>nums1[i]</code>, <code>nums2[i]</code> &lt;= 1000</li>
+</ul>
+<p><strong>Follow up:</strong></p>
+<ul>
+<li>What if the given array is already sorted? How would you optimize your algorithm?</li>
+<li>What if <code>nums1</code>&rsquo;s size is small compared to <code>nums2</code>&rsquo;s size? Which algorithm is better?</li>
+<li>What if elements of <code>nums2</code> are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -119,43 +112,25 @@ Output: 0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">maxAreaOfIsland</span>(self, grid: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
-        max_area = <span style="color:#099">0</span>
-        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(grid)):
-            <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(grid[<span style="color:#099">0</span>])):
-                <span style="color:#00a">if</span> grid[i][j] == <span style="color:#099">1</span>:
-                    max_area = <span style="color:#0aa">max</span>(self.dfs(grid, i, j), max_area)
-        <span style="color:#00a">return</span> max_area
-        
-    <span style="color:#00a">def</span> <span style="color:#0a0">dfs</span>(self, grid: List[List[<span style="color:#0aa">int</span>]], x: <span style="color:#0aa">int</span>, y: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
-        count = <span style="color:#099">0</span>
-        stack = [(x, y)]
-        <span style="color:#00a">while</span> stack:
-            i, j = stack.pop()
-            <span style="color:#00a">if</span> grid[i][j] == <span style="color:#099">1</span>:
-                grid[i][j] = <span style="color:#099">2</span>
-                count += <span style="color:#099">1</span>
-                <span style="color:#00a">if</span> i &gt; <span style="color:#099">0</span>:
-                    stack.append((i-<span style="color:#099">1</span>, j))
-                <span style="color:#00a">if</span> i &lt; <span style="color:#0aa">len</span>(grid) - <span style="color:#099">1</span>:
-                    stack.append((i+<span style="color:#099">1</span>, j))
-                <span style="color:#00a">if</span> j &gt; <span style="color:#099">0</span>:
-                    stack.append((i, j-<span style="color:#099">1</span>))
-                <span style="color:#00a">if</span> j &lt; <span style="color:#0aa">len</span>(grid[<span style="color:#099">0</span>]) - <span style="color:#099">1</span>:
-                    stack.append((i, j+<span style="color:#099">1</span>))
-        <span style="color:#00a">return</span> count</code></pre></td></tr></table>
+    <span style="color:#00a">def</span> <span style="color:#0a0">intersect</span>(self, nums1: List[<span style="color:#0aa">int</span>], nums2: List[<span style="color:#0aa">int</span>]) -&gt; List[<span style="color:#0aa">int</span>]:
+        <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(nums1) &gt; <span style="color:#0aa">len</span>(nums2):
+            <span style="color:#00a">return</span> self.intersect(nums2, nums1)
+
+        m1 = {}
+        <span style="color:#00a">for</span> n <span style="color:#00a">in</span> nums1:
+            <span style="color:#00a">if</span> n <span style="color:#00a">in</span> m1:
+                m1[n] += <span style="color:#099">1</span>
+            <span style="color:#00a">else</span>:
+                m1[n] = <span style="color:#099">1</span>
+        result = []
+        <span style="color:#00a">for</span> n <span style="color:#00a">in</span> nums2:
+            <span style="color:#00a">if</span> n <span style="color:#00a">in</span> m1 <span style="color:#00a">and</span> m1[n] &gt; <span style="color:#099">0</span>:
+                result.append(n)
+                m1[n] -= <span style="color:#099">1</span>
+        <span style="color:#00a">return</span> result</code></pre></td></tr></table>
 </div>
 </div>
 </div>
