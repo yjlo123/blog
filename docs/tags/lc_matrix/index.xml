@@ -43,6 +43,18 @@ Example 1:
     </item>
     
     <item>
+      <title>79 Word Search</title>
+      <link>https://blog.siwei.dev/leetcode/79-word-search/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/79-word-search/</guid>
+      <description>Given an m x n grid of characters board and a string word, return true if word exists in the grid.
+The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+Example 1:
+(A) (B) (C) E S F (C) S A (D) (E) E Input: board = [[&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;E&amp;quot;],[&amp;quot;S&amp;quot;,&amp;quot;F&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;S&amp;quot;],[&amp;quot;A&amp;quot;,&amp;quot;D&amp;quot;,&amp;quot;E&amp;quot;,&amp;quot;E&amp;quot;]], word = &amp;quot;ABCCED&amp;quot; Output: true Example 2:</description>
+    </item>
+    
+    <item>
       <title>200 Number of Islands</title>
       <link>https://blog.siwei.dev/leetcode/200-number-of-islands/</link>
       <pubDate>Thu, 10 Dec 2020 00:00:00 +0800</pubDate>

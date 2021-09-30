@@ -147,6 +147,18 @@ Example 1:
     </item>
     
     <item>
+      <title>79 Word Search</title>
+      <link>https://blog.siwei.dev/leetcode/79-word-search/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/79-word-search/</guid>
+      <description>Given an m x n grid of characters board and a string word, return true if word exists in the grid.
+The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+Example 1:
+(A) (B) (C) E S F (C) S A (D) (E) E Input: board = [[&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;E&amp;quot;],[&amp;quot;S&amp;quot;,&amp;quot;F&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;S&amp;quot;],[&amp;quot;A&amp;quot;,&amp;quot;D&amp;quot;,&amp;quot;E&amp;quot;,&amp;quot;E&amp;quot;]], word = &amp;quot;ABCCED&amp;quot; Output: true Example 2:</description>
+    </item>
+    
+    <item>
       <title>103 Binary Tree Zigzag Level Order Traversal</title>
       <link>https://blog.siwei.dev/leetcode/103-binary-tree-zigzag-level-order-traversal/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0800</pubDate>
@@ -186,6 +198,17 @@ Example 1:
     </item>
     
     <item>
+      <title>146 LRU Cache</title>
+      <link>https://blog.siwei.dev/leetcode/146-lru-cache/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/146-lru-cache/</guid>
+      <description>Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+Implement the LRUCache class:
+ LRUCache(int capacity) Initialize the LRU cache with positive size capacity. int get(int key) Return the value of the key if the key exists, otherwise return -1. void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.</description>
+    </item>
+    
+    <item>
       <title>200 Number of Islands</title>
       <link>https://blog.siwei.dev/leetcode/200-number-of-islands/</link>
       <pubDate>Thu, 10 Dec 2020 00:00:00 +0800</pubDate>
@@ -207,6 +230,19 @@ Input: grid = [ [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quo
       <description>Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper, return compute the researcher&amp;rsquo;s h-index.
 According to the definition of h-index on Wikipedia: A scientist has an index h if h of their n papers have at least h citations each, and the other n − h papers have no more than h citations each.
 If there are several possible values for h, the maximum one is taken as the h-index.</description>
+    </item>
+    
+    <item>
+      <title>253 Meeting Rooms II</title>
+      <link>https://blog.siwei.dev/leetcode/253-meeting-rooms-ii/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/253-meeting-rooms-ii/</guid>
+      <description>Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
+Example 1:
+Input: intervals = [[0,30],[5,10],[15,20]] Output: 2 Example 2:
+Input: intervals = [[7,10],[2,4]] Output: 1 Constraints:
+ 1 &amp;lt;= intervals.length &amp;lt;= 104 0 &amp;lt;= starti &amp;lt; endi &amp;lt;= 106   1 2 3 4 5 6 7 8 9 10 11 12 13  class Solution: def minMeetingRooms(self, intervals: List[List[int]]) -&amp;gt; int: free_rooms = [] intervals.</description>
     </item>
     
     <item>

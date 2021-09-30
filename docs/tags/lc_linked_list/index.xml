@@ -6,7 +6,7 @@
     <description>Recent content in lc_linked_list on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_linked_list/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_linked_list/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2 Add Two Numbers</title>
       <link>https://blog.siwei.dev/leetcode/2-add-two-numbers/</link>
@@ -71,6 +71,17 @@ Input: lists = [[]] Output: [] Constraints:
 Example 1:
  1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 rotate 1: 5 -&amp;gt; 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 rotate 2: 4 -&amp;gt; 5 -&amp;gt; 1 -&amp;gt; 2 -&amp;gt; 3 Input: head = [1,2,3,4,5], k = 2 Output: [4,5,1,2,3] Example 2:
  0 -&amp;gt; 1 -&amp;gt; 2 rotate 1: 2 -&amp;gt; 0 -&amp;gt; 1 rotate 2: 1 -&amp;gt; 2 -&amp;gt; 0 rotate 3: 0 -&amp;gt; 1 -&amp;gt; 2 rotate 4: 2 -&amp;gt; 0 -&amp;gt; 1 Input: head = [0,1,2], k = 4 Output: [2,0,1] Constraints:</description>
+    </item>
+    
+    <item>
+      <title>146 LRU Cache</title>
+      <link>https://blog.siwei.dev/leetcode/146-lru-cache/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/146-lru-cache/</guid>
+      <description>Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+Implement the LRUCache class:
+ LRUCache(int capacity) Initialize the LRU cache with positive size capacity. int get(int key) Return the value of the key if the key exists, otherwise return -1. void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.</description>
     </item>
     
     <item>

@@ -47,6 +47,17 @@ Input: [4,1,2,1,2] Output: 4  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumbe
     </item>
     
     <item>
+      <title>146 LRU Cache</title>
+      <link>https://blog.siwei.dev/leetcode/146-lru-cache/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/146-lru-cache/</guid>
+      <description>Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+Implement the LRUCache class:
+ LRUCache(int capacity) Initialize the LRU cache with positive size capacity. int get(int key) Return the value of the key if the key exists, otherwise return -1. void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.</description>
+    </item>
+    
+    <item>
       <title>350 Intersection of Two Arrays II</title>
       <link>https://blog.siwei.dev/leetcode/350-intersection-of-two-arrays-ii/</link>
       <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>

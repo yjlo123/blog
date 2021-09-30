@@ -6,7 +6,7 @@
     <description>Recent content in lc_greedy on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_greedy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_greedy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>55 Jump Game</title>
       <link>https://blog.siwei.dev/leetcode/55-jump-game/</link>
@@ -19,6 +19,19 @@ Determine if you are able to reach the last index.
 Example 1:
 Input: nums = [2,3,1,1,4] Output: true Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index. Example 2:
 Input: nums = [3,2,1,0,4] Output: false Explanation: You will always arrive at index 3 no matter what.</description>
+    </item>
+    
+    <item>
+      <title>253 Meeting Rooms II</title>
+      <link>https://blog.siwei.dev/leetcode/253-meeting-rooms-ii/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/253-meeting-rooms-ii/</guid>
+      <description>Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
+Example 1:
+Input: intervals = [[0,30],[5,10],[15,20]] Output: 2 Example 2:
+Input: intervals = [[7,10],[2,4]] Output: 1 Constraints:
+ 1 &amp;lt;= intervals.length &amp;lt;= 104 0 &amp;lt;= starti &amp;lt; endi &amp;lt;= 106   1 2 3 4 5 6 7 8 9 10 11 12 13  class Solution: def minMeetingRooms(self, intervals: List[List[int]]) -&amp;gt; int: free_rooms = [] intervals.</description>
     </item>
     
   </channel>

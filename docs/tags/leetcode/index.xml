@@ -271,6 +271,18 @@ Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</d
     </item>
     
     <item>
+      <title>79 Word Search</title>
+      <link>https://blog.siwei.dev/leetcode/79-word-search/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/79-word-search/</guid>
+      <description>Given an m x n grid of characters board and a string word, return true if word exists in the grid.
+The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+Example 1:
+(A) (B) (C) E S F (C) S A (D) (E) E Input: board = [[&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;E&amp;quot;],[&amp;quot;S&amp;quot;,&amp;quot;F&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;S&amp;quot;],[&amp;quot;A&amp;quot;,&amp;quot;D&amp;quot;,&amp;quot;E&amp;quot;,&amp;quot;E&amp;quot;]], word = &amp;quot;ABCCED&amp;quot; Output: true Example 2:</description>
+    </item>
+    
+    <item>
       <title>88 Merge Sorted Array</title>
       <link>https://blog.siwei.dev/leetcode/88-merge-sorted-array/</link>
       <pubDate>Tue, 21 Sep 2021 00:00:00 -0400</pubDate>
@@ -412,6 +424,17 @@ Input: [4,1,2,1,2] Output: 4  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumbe
     </item>
     
     <item>
+      <title>146 LRU Cache</title>
+      <link>https://blog.siwei.dev/leetcode/146-lru-cache/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/146-lru-cache/</guid>
+      <description>Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+Implement the LRUCache class:
+ LRUCache(int capacity) Initialize the LRU cache with positive size capacity. int get(int key) Return the value of the key if the key exists, otherwise return -1. void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.</description>
+    </item>
+    
+    <item>
       <title>167 Two Sum II - Input array is sorted</title>
       <link>https://blog.siwei.dev/leetcode/167-two-sum-ii-input-array-is-sorted/</link>
       <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
@@ -490,6 +513,19 @@ Input: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot; Output: 
 Input: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car&amp;quot; Output: false Note: You may assume the string contains only lowercase alphabets.
 Follow up: What if the inputs contain unicode characters? How would you adapt your solution to such case?
  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  func isAnagram(s string, t string) bool { if len(s) !</description>
+    </item>
+    
+    <item>
+      <title>253 Meeting Rooms II</title>
+      <link>https://blog.siwei.dev/leetcode/253-meeting-rooms-ii/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/253-meeting-rooms-ii/</guid>
+      <description>Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
+Example 1:
+Input: intervals = [[0,30],[5,10],[15,20]] Output: 2 Example 2:
+Input: intervals = [[7,10],[2,4]] Output: 1 Constraints:
+ 1 &amp;lt;= intervals.length &amp;lt;= 104 0 &amp;lt;= starti &amp;lt; endi &amp;lt;= 106   1 2 3 4 5 6 7 8 9 10 11 12 13  class Solution: def minMeetingRooms(self, intervals: List[List[int]]) -&amp;gt; int: free_rooms = [] intervals.</description>
     </item>
     
     <item>
