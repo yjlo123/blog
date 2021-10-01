@@ -6,7 +6,7 @@
     <description>Recent content in lc_linked_list on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_linked_list/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_linked_list/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2 Add Two Numbers</title>
       <link>https://blog.siwei.dev/leetcode/2-add-two-numbers/</link>
@@ -71,6 +71,16 @@ Input: lists = [[]] Output: [] Constraints:
 Example 1:
  1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 rotate 1: 5 -&amp;gt; 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 rotate 2: 4 -&amp;gt; 5 -&amp;gt; 1 -&amp;gt; 2 -&amp;gt; 3 Input: head = [1,2,3,4,5], k = 2 Output: [4,5,1,2,3] Example 2:
  0 -&amp;gt; 1 -&amp;gt; 2 rotate 1: 2 -&amp;gt; 0 -&amp;gt; 1 rotate 2: 1 -&amp;gt; 2 -&amp;gt; 0 rotate 3: 0 -&amp;gt; 1 -&amp;gt; 2 rotate 4: 2 -&amp;gt; 0 -&amp;gt; 1 Input: head = [0,1,2], k = 4 Output: [2,0,1] Constraints:</description>
+    </item>
+    
+    <item>
+      <title>141 Linked List Cycle</title>
+      <link>https://blog.siwei.dev/leetcode/141-linked-list-cycle/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/141-linked-list-cycle/</guid>
+      <description>Given head, the head of a linked list, determine if the linked list has a cycle in it.
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail&amp;rsquo;s next pointer is connected to. Note that pos is not passed as a parameter.</description>
     </item>
     
     <item>

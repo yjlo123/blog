@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
-        <title>387 First Unique Character in a String</title>
+        <title>383 Ransom Note</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -48,9 +48,9 @@
 
 
 <div class="blog-post">
-  <h1>387 First Unique Character in a String</h1>
+  <h1>383 Ransom Note</h1>
   <div class="blog-post-subheader">
-    <time>20 Dec 2020</time>
+    <time>01 Oct 2021</time>
   </div><ul class="tags">
   
    <li>
@@ -62,79 +62,52 @@
    </li>
   
    <li>
-     <a href="/tags/lc_hash_table">lc_hash_table</a>
-   </li>
-  
-   <li>
      <a href="/tags/lc_string">lc_string</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given a string <code>s</code>, <em>find the first non-repeating character in it and return its index</em>. If it does not exist, return <code>-1</code>.</p>
+    <p>Given two stings <code>ransomNote</code> and <code>magazine</code>, return <code>true</code> if <code>ransomNote</code> can be constructed from <code>magazine</code> and <code>false</code> otherwise.</p>
+<p>Each letter in <code>magazine</code> can only be used once in <code>ransomNote</code>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;leetcode&quot;
-Output: 0
+<pre tabindex="0"><code>Input: ransomNote = &quot;a&quot;, magazine = &quot;b&quot;
+Output: false
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;loveleetcode&quot;
-Output: 2
+<pre tabindex="0"><code>Input: ransomNote = &quot;aa&quot;, magazine = &quot;ab&quot;
+Output: false
 </code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;aabb&quot;
-Output: -1
+<pre tabindex="0"><code>Input: ransomNote = &quot;aa&quot;, magazine = &quot;aab&quot;
+Output: true
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>1 &lt;= <code>s.length</code> &lt;= 10<sup>5</sup></li>
-<li><code>s</code> consists of only lowercase English letters.</li>
+<li>1 &lt;= <code>ransomNote.length</code>, <code>magazine.length</code> &lt;= 10<sup>5</sup></li>
+<li><code>ransomNote</code> and <code>magazine</code> consist of lowercase English letters.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">firstUniqChar</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">int</span> {
-	m := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">rune</span>]<span style="color:#0aa">int</span>)
-	<span style="color:#00a">for</span> _, c := <span style="color:#00a">range</span> s {
-		_, has := m[c]
-		<span style="color:#00a">if</span> has {
-			m[c]++
-		} <span style="color:#00a">else</span> {
-			m[c] = <span style="color:#099">1</span>
-		}
-	}
-
-	<span style="color:#00a">for</span> i, c := <span style="color:#00a">range</span> s {
-		<span style="color:#00a">if</span> m[c] == <span style="color:#099">1</span> {
-			<span style="color:#00a">return</span> i
-		}
-	}
-	<span style="color:#00a">return</span> -<span style="color:#099">1</span>
-}</code></pre></td></tr></table>
-</div>
-</div>
-</div>
 <div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+    <span style="color:#00a">def</span> <span style="color:#0a0">canConstruct</span>(self, ransomNote: <span style="color:#0aa">str</span>, magazine: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">bool</span>:
+        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">set</span>(ransomNote):
+            <span style="color:#00a">if</span> ransomNote.count(i) &gt; magazine.count(i):
+                <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+        <span style="color:#00a">return</span> <span style="color:#00a">True</span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<div id="java" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
@@ -150,25 +123,23 @@ Output: -1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">firstUniqChar</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-        count = collections.Counter(s)
-
-        <span style="color:#00a">for</span> idx, ch <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(s):
-            <span style="color:#00a">if</span> count[ch] == <span style="color:#099">1</span>:
-                <span style="color:#00a">return</span> idx     
-        <span style="color:#00a">return</span> -<span style="color:#099">1</span>
-
-
-<span style="color:#a50">&#39;&#39;&#39; Fast version &#39;&#39;&#39;</span>
-<span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">firstUniqChar</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-        letters=<span style="color:#a50">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
-        index=[s.index(l) <span style="color:#00a">for</span> l <span style="color:#00a">in</span> letters <span style="color:#00a">if</span> s.count(l) == <span style="color:#099">1</span>]
-        <span style="color:#00a">return</span> <span style="color:#0aa">min</span>(index) <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(index) &gt; <span style="color:#099">0</span> <span style="color:#00a">else</span> -<span style="color:#099">1</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a">public</span> <span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span> {
+    <span style="color:#00a">public</span> <span style="color:#0aa">boolean</span> <span style="color:#0a0">canConstruct</span>(String ransomNote, String magazine) {
+        <span style="color:#0aa">int</span>[] count = <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[26];
+        <span style="color:#0aa">char</span>[] mag = magazine.<span style="color:#1e90ff">toCharArray</span>();
+        <span style="color:#00a">for</span>(<span style="color:#0aa">char</span> c : mag){
+            count[c-<span style="color:#a50">&#39;a&#39;</span>]++;
+        }
+        
+        <span style="color:#0aa">char</span>[] ran = ransomNote.<span style="color:#1e90ff">toCharArray</span>();
+        <span style="color:#00a">for</span>(<span style="color:#0aa">char</span> r : ran){
+            <span style="color:#00a">if</span>(--count[r-<span style="color:#a50">&#39;a&#39;</span>] &lt; 0) <span style="color:#00a">return</span> <span style="color:#00a">false</span>;
+        }
+        <span style="color:#00a">return</span> <span style="color:#00a">true</span>;
+    }
+}</code></pre></td></tr></table>
 </div>
 </div>
 </div>

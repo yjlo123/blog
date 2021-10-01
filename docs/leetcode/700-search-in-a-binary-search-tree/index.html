@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
-        <title>387 First Unique Character in a String</title>
+        <title>700 Search in a Binary Search Tree</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -48,9 +48,9 @@
 
 
 <div class="blog-post">
-  <h1>387 First Unique Character in a String</h1>
+  <h1>700 Search in a Binary Search Tree</h1>
   <div class="blog-post-subheader">
-    <time>20 Dec 2020</time>
+    <time>01 Oct 2021</time>
   </div><ul class="tags">
   
    <li>
@@ -62,76 +62,41 @@
    </li>
   
    <li>
-     <a href="/tags/lc_hash_table">lc_hash_table</a>
-   </li>
-  
-   <li>
-     <a href="/tags/lc_string">lc_string</a>
+     <a href="/tags/lc_tree">lc_tree</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given a string <code>s</code>, <em>find the first non-repeating character in it and return its index</em>. If it does not exist, return <code>-1</code>.</p>
+    <p>You are given the <code>root</code> of a binary search tree (BST) and an integer <code>val</code>.</p>
+<p>Find the node in the BST that the node&rsquo;s value equals <code>val</code> and return the subtree rooted with that node. If such a node does not exist, return <code>null</code>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;leetcode&quot;
-Output: 0
+<pre tabindex="0"><code>      4
+     / \
+   (2)  7
+  /  \
+(1)  (3)
+
+Input: root = [4,2,7,1,3], val = 2
+Output: [2,1,3]
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;loveleetcode&quot;
-Output: 2
-</code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;aabb&quot;
-Output: -1
+<pre tabindex="0"><code>     4
+    / \
+   2   7
+  / \
+ 1   3
+
+Input: root = [4,2,7,1,3], val = 5
+Output: []
+
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>1 &lt;= <code>s.length</code> &lt;= 10<sup>5</sup></li>
-<li><code>s</code> consists of only lowercase English letters.</li>
+<li>The number of nodes in the tree is in the range <code>[1, 5000]</code>.</li>
+<li>1 &lt;= <code>Node.val</code> &lt;= 10<sup>7</sup></li>
+<li><code>root</code> is a binary search tree.</li>
+<li>1 &lt;= <code>val</code> &lt;= 10<sup>7</sup></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">firstUniqChar</span>(s <span style="color:#0aa">string</span>) <span style="color:#0aa">int</span> {
-	m := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">rune</span>]<span style="color:#0aa">int</span>)
-	<span style="color:#00a">for</span> _, c := <span style="color:#00a">range</span> s {
-		_, has := m[c]
-		<span style="color:#00a">if</span> has {
-			m[c]++
-		} <span style="color:#00a">else</span> {
-			m[c] = <span style="color:#099">1</span>
-		}
-	}
-
-	<span style="color:#00a">for</span> i, c := <span style="color:#00a">range</span> s {
-		<span style="color:#00a">if</span> m[c] == <span style="color:#099">1</span> {
-			<span style="color:#00a">return</span> i
-		}
-	}
-	<span style="color:#00a">return</span> -<span style="color:#099">1</span>
-}</code></pre></td></tr></table>
-</div>
-</div>
-</div>
 <div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -148,27 +113,21 @@ Output: -1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">firstUniqChar</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-        count = collections.Counter(s)
-
-        <span style="color:#00a">for</span> idx, ch <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(s):
-            <span style="color:#00a">if</span> count[ch] == <span style="color:#099">1</span>:
-                <span style="color:#00a">return</span> idx     
-        <span style="color:#00a">return</span> -<span style="color:#099">1</span>
-
-
-<span style="color:#a50">&#39;&#39;&#39; Fast version &#39;&#39;&#39;</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
+<span style="color:#aaa;font-style:italic"># class TreeNode:</span>
+<span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, left=None, right=None):</span>
+<span style="color:#aaa;font-style:italic">#         self.val = val</span>
+<span style="color:#aaa;font-style:italic">#         self.left = left</span>
+<span style="color:#aaa;font-style:italic">#         self.right = right</span>
 <span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">firstUniqChar</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-        letters=<span style="color:#a50">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
-        index=[s.index(l) <span style="color:#00a">for</span> l <span style="color:#00a">in</span> letters <span style="color:#00a">if</span> s.count(l) == <span style="color:#099">1</span>]
-        <span style="color:#00a">return</span> <span style="color:#0aa">min</span>(index) <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(index) &gt; <span style="color:#099">0</span> <span style="color:#00a">else</span> -<span style="color:#099">1</span></code></pre></td></tr></table>
+    <span style="color:#00a">def</span> <span style="color:#0a0">searchBST</span>(self, root: Optional[TreeNode], val: <span style="color:#0aa">int</span>) -&gt; Optional[TreeNode]:
+        <span style="color:#00a">if</span> root <span style="color:#00a">is</span> <span style="color:#00a">None</span> <span style="color:#00a">or</span> root.val == val:
+            <span style="color:#00a">return</span> root
+        <span style="color:#00a">if</span> root.val &gt; val:
+            <span style="color:#00a">return</span> self.searchBST(root.left, val)
+        <span style="color:#00a">return</span> self.searchBST(root.right, val)</code></pre></td></tr></table>
 </div>
 </div>
 </div>

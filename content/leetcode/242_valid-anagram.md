@@ -20,8 +20,9 @@ Input: s = "rat", t = "car"
 Output: false
 ```
 
-**Note:**
-You may assume the string contains only lowercase alphabets.
+**Constraints:**
+- 1 <= `s.length`, `t.length` <= 5 * 10<sup>4</sup>
+- `s` and `t` consist of lowercase English letters.
 
 **Follow up:**
 What if the inputs contain unicode characters? How would you adapt your solution to such case?
@@ -47,6 +48,36 @@ func isAnagram(s string, t string) bool {
 	}
 	return true
 }
+{{< / highlight >}}
+</div>
+
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        m = [0] * 26
+        for ch in s:
+            m[ord(ch) - 97] += 1
+        for ch in t:
+            m[ord(ch) - 97] -= 1
+        for i in m:
+            if i != 0:
+                return False
+        return True
+
+
+''' Fast version '''
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return set(Counter(s).items()) == set(Counter(t).items())
+
+
+''' Short version '''
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
 {{< / highlight >}}
 </div>
 </div>
