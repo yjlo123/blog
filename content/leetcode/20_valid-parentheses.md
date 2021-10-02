@@ -45,7 +45,7 @@ Output: true
 
 **Constraints:**
 
-- 1 <= s.length <= 10<sup>4</sup>
+- 1 <= `s.length` <= 10<sup>4</sup>
 - `s` consists of parentheses only `'()[]{}'`.
 
 <div class="tabs"></div>
@@ -73,6 +73,24 @@ func isValid(s string) bool {
 }
 {{< / highlight >}}
 </div>
+
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        mapping = {')': '(', '}': '{', ']': '['}
+        for ch in list(s):
+            if ch in mapping:
+                if not stack or stack[-1] != mapping[ch]:
+                    return False
+                stack.pop()
+            else:
+                stack.append(ch)
+        return not stack
+{{< / highlight >}}
+</div>
+
 <div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode20" target="_blank">https://runtime.siwei.dev/?src=leetcode20</a>
