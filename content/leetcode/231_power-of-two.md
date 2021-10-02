@@ -8,8 +8,6 @@ tags: ["leetcode", "lc_easy"]
 
 Given an integer n, write a function to determine if it is a power of two.
 
- 
-
 **Example 1:**
 ```
 Input: n = 1
@@ -29,18 +27,20 @@ Explanation: 24 = 16
 Input: n = 3
 Output: false
 ```
+
 **Example 4:**
 ```
 Input: n = 4
 Output: true
 ```
+
 **Example 5:**
 ```
 Input: n = 5
 Output: false
- ```
-**Constraints:**
+```
 
+**Constraints:**
 - -2<sup>31</sup> <= n <= 2<sup>31</sup> - 1
 
 

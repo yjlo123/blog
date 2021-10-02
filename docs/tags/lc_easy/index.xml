@@ -6,7 +6,7 @@
     <description>Recent content in lc_easy on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -86,6 +86,19 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 Example 1:
 Input: n = 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2. 2 steps Example 2:
 Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</description>
+    </item>
+    
+    <item>
+      <title>83 Remove Duplicates from Sorted List</title>
+      <link>https://blog.siwei.dev/leetcode/83-remove-duplicates-from-sorted-list/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/83-remove-duplicates-from-sorted-list/</guid>
+      <description>Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+Example 1:
+1 -&amp;gt; 1 -&amp;gt; 2 | v 1 -&amp;gt; 2 Input: head = [1,1,2] Output: [1,2] Example 2:
+1 -&amp;gt; 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 3 | v 1 -&amp;gt; 2 -&amp;gt; 3 Input: head = [1,1,2,3,3] Output: [1,2,3] Constraints:
+ The number of nodes in the list is in the range [0, 300].</description>
     </item>
     
     <item>
@@ -219,8 +232,22 @@ Input: nums = [-1,-100,3,99], k = 2 Output: [3,99,-1,-100] Explanation: rotate 1
       <guid>https://blog.siwei.dev/leetcode/203-remove-linked-list-elements/</guid>
       <description>Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
 Example 1:
-1 -&amp;gt; 2 -&amp;gt; (6) -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; (6) | v 1 -&amp;gt; 2 -&amp;gt; 3-&amp;gt; 4 -&amp;gt; 5 Input: head = [1,2,6,3,4,5,6], val = 6 Output: [1,2,3,4,5] Example 2:
+1 -&amp;gt; 2 -&amp;gt; (6) -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; (6) | v 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 Input: head = [1,2,6,3,4,5,6], val = 6 Output: [1,2,3,4,5] Example 2:
 Input: head = [], val = 1 Output: [] Example 3:</description>
+    </item>
+    
+    <item>
+      <title>206 Reverse Linked List</title>
+      <link>https://blog.siwei.dev/leetcode/206-reverse-linked-list/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/206-reverse-linked-list/</guid>
+      <description>Given the head of a singly linked list, reverse the list, and return the reversed list.
+Example 1:
+1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 | v 5 -&amp;gt; 4 -&amp;gt; 3 -&amp;gt; 2 -&amp;gt; 1 Input: head = [1,2,3,4,5] Output: [5,4,3,2,1] Example 2:
+1 -&amp;gt; 2 2 -&amp;gt; 1 Input: head = [1,2] Output: [2,1] Example 3:
+Input: head = [] Output: [] Constraints:
+ The number of nodes in the list is the range [0, 5000].</description>
     </item>
     
     <item>
@@ -251,6 +278,17 @@ Input: n = 3 Output: false Example 4:
 Input: n = 4 Output: true Example 5:
 Input: n = 5 Output: false Constraints:
  -231 &amp;lt;= n &amp;lt;= 231 - 1   1 2 3 4 5 6 7  func isPowerOfTwo(n int) bool { i := 1 for i &amp;lt; n { i *= 2 } return i == n }    https://runtime.</description>
+    </item>
+    
+    <item>
+      <title>232 Implement Queue using Stacks</title>
+      <link>https://blog.siwei.dev/leetcode/232-implement-queue-using-stacks/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/232-implement-queue-using-stacks/</guid>
+      <description>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
+Implement the MyQueue class:
+ void push(int x) Pushes element x to the back of the queue. int pop() Removes the element from the front of the queue and returns it. int peek() Returns the element at the front of the queue.</description>
     </item>
     
     <item>

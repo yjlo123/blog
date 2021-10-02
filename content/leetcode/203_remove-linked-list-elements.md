@@ -12,7 +12,7 @@ Given the `head` of a linked list and an integer `val`, remove all the nodes of 
 1 -> 2 -> (6) -> 3 -> 4 -> 5 -> (6)
                |
                v
-      1 -> 2 -> 3-> 4 -> 5
+      1 -> 2 -> 3 -> 4 -> 5
 
 Input: head = [1,2,6,3,4,5,6], val = 6
 Output: [1,2,3,4,5]

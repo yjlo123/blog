@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
-        <title>203 Remove Linked List Elements</title>
+        <title>232 Implement Queue using Stacks</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -48,9 +48,9 @@
 
 
 <div class="blog-post">
-  <h1>203 Remove Linked List Elements</h1>
+  <h1>232 Implement Queue using Stacks</h1>
   <div class="blog-post-subheader">
-    <time>01 Oct 2021</time>
+    <time>02 Oct 2021</time>
   </div><ul class="tags">
   
    <li>
@@ -62,32 +62,49 @@
    </li>
   
    <li>
-     <a href="/tags/lc_linked_list">lc_linked_list</a>
+     <a href="/tags/lc_queue">lc_queue</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_stack">lc_stack</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given the <code>head</code> of a linked list and an integer <code>val</code>, remove all the nodes of the linked list that has <code>Node.val == val</code>, and return <em>the new head</em>.</p>
+    <p>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (<code>push</code>, <code>peek</code>, <code>pop</code>, and <code>empty</code>).</p>
+<p>Implement the <code>MyQueue</code> class:</p>
+<ul>
+<li><code>void push(int x)</code> Pushes element x to the back of the queue.</li>
+<li><code>int pop()</code> Removes the element from the front of the queue and returns it.</li>
+<li><code>int peek()</code> Returns the element at the front of the queue.</li>
+<li><code>boolean empty()</code> Returns <code>true</code> if the queue is empty, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>You must use only standard operations of a stack, which means only <code>push to top</code>, <code>peek/pop from top</code>, <code>size</code>, and <code>is empty</code> operations are valid.</li>
+<li>Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack&rsquo;s standard operations.</li>
+</ul>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>1 -&gt; 2 -&gt; (6) -&gt; 3 -&gt; 4 -&gt; 5 -&gt; (6)
-               |
-               v
-      1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5
+<pre tabindex="0"><code>Input
+[&quot;MyQueue&quot;, &quot;push&quot;, &quot;push&quot;, &quot;peek&quot;, &quot;pop&quot;, &quot;empty&quot;]
+[[], [1], [2], [], [], []]
+Output
+[null, null, null, 1, 1, false]
 
-Input: head = [1,2,6,3,4,5,6], val = 6
-Output: [1,2,3,4,5]
-</code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: head = [], val = 1
-Output: []
-</code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: head = [7,7,7,7], val = 7
-Output: []
+Explanation
+MyQueue myQueue = new MyQueue();
+myQueue.push(1); // queue is: [1]
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+myQueue.peek(); // return 1
+myQueue.pop(); // return 1, queue is [2]
+myQueue.empty(); // return false
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>The number of nodes in the list is in the range [0, 10<sup>4</sup>].</li>
-<li>1 &lt;= <code>Node.val</code> &lt;= 50</li>
-<li>0 &lt;= val &lt;= 50</li>
+<li>1 &lt;= x &lt;= 9</li>
+<li>At most <code>100</code> calls will be made to <code>push</code>, <code>pop</code>, <code>peek</code>, and <code>empty</code>.</li>
+<li>All the calls to <code>pop</code> and <code>peek</code> are valid.</li>
 </ul>
+<p><strong>Follow-up</strong>: Can you implement the queue such that each operation is <a href="https://en.wikipedia.org/wiki/Amortized_analysis">amortized</a> <code>O(1)</code> time complexity? In other words, performing n operations will take overall <code>O(n)</code> time even if one of those operations may take longer.</p>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -122,37 +139,41 @@ Output: []
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#aaa;font-style:italic"># Definition for singly-linked list.</span>
-<span style="color:#aaa;font-style:italic"># class ListNode:</span>
-<span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, next=None):</span>
-<span style="color:#aaa;font-style:italic">#         self.val = val</span>
-<span style="color:#aaa;font-style:italic">#         self.next = next</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">MyQueue</span>:
 
-<span style="color:#a50">&#39;&#39;&#39; Recursive &#39;&#39;&#39;</span>
-<span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">removeElements</span>(self, head: Optional[ListNode], val: <span style="color:#0aa">int</span>) -&gt; Optional[ListNode]:
-        <span style="color:#00a">if</span> <span style="color:#00a">not</span> head:
-            <span style="color:#00a">return</span> head
-        head.next = self.removeElements(head.next, val)
-        <span style="color:#00a">return</span> head.next <span style="color:#00a">if</span> head.val == val <span style="color:#00a">else</span> head
+    <span style="color:#00a">def</span> __init__(self):
+        self.inbox = []
+        self.outbox = []
 
-<span style="color:#a50">&#39;&#39;&#39; Iterative &#39;&#39;&#39;</span>
-<span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">removeElements</span>(self, head: Optional[ListNode], val: <span style="color:#0aa">int</span>) -&gt; Optional[ListNode]:
-        sentinel = ListNode(<span style="color:#099">0</span>)
-        sentinel.next = head
-        
-        prev, curr = sentinel, head
-        <span style="color:#00a">while</span> curr:
-            <span style="color:#00a">if</span> curr.val == val:
-                prev.next = curr.next
-            <span style="color:#00a">else</span>:
-                prev = curr
-            curr = curr.next
-        
-        <span style="color:#00a">return</span> sentinel.next</code></pre></td></tr></table>
+    <span style="color:#00a">def</span> <span style="color:#0a0">push</span>(self, x: <span style="color:#0aa">int</span>) -&gt; <span style="color:#00a">None</span>:
+        self.inbox.append(x)
+
+    <span style="color:#00a">def</span> <span style="color:#0a0">pop</span>(self) -&gt; <span style="color:#0aa">int</span>:
+        self._move()
+        <span style="color:#00a">return</span> self.outbox.pop()
+
+    <span style="color:#00a">def</span> <span style="color:#0a0">peek</span>(self) -&gt; <span style="color:#0aa">int</span>:
+        self._move()
+        <span style="color:#00a">return</span> self.outbox[-<span style="color:#099">1</span>]
+
+    <span style="color:#00a">def</span> <span style="color:#0a0">empty</span>(self) -&gt; <span style="color:#0aa">bool</span>:
+        <span style="color:#00a">return</span> <span style="color:#00a">not</span> self.inbox <span style="color:#00a">and</span> <span style="color:#00a">not</span> self.outbox
+
+    <span style="color:#00a">def</span> <span style="color:#0a0">_move</span>(self) -&gt; <span style="color:#00a">None</span>:
+        <span style="color:#00a">if</span> <span style="color:#00a">not</span> self.outbox:
+            <span style="color:#00a">while</span> self.inbox:
+                self.outbox.append(self.inbox.pop())
+
+<span style="color:#aaa;font-style:italic"># Your MyQueue object will be instantiated and called as such:</span>
+<span style="color:#aaa;font-style:italic"># obj = MyQueue()</span>
+<span style="color:#aaa;font-style:italic"># obj.push(x)</span>
+<span style="color:#aaa;font-style:italic"># param_2 = obj.pop()</span>
+<span style="color:#aaa;font-style:italic"># param_3 = obj.peek()</span>
+<span style="color:#aaa;font-style:italic"># param_4 = obj.empty()</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
