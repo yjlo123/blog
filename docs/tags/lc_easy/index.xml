@@ -113,6 +113,21 @@ The final sorted array should not be returned by the function, but instead be st
     </item>
     
     <item>
+      <title>94 Binary Tree Inorder Traversal</title>
+      <link>https://blog.siwei.dev/leetcode/94-binary-tree-inorder-traversal/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/94-binary-tree-inorder-traversal/</guid>
+      <description>Given the root of a binary tree, return the inorder traversal of its nodes&#39; values.
+Example 1:
+ 1 \ 2 / 3 Input: root = [1,null,2,3] Output: [1,3,2] Example 2:
+Input: root = [] Output: [] Example 3:
+Input: root = [1] Output: [1] Example 4:
+ 1 / 2 Input: root = [1,2] Output: [2,1] Example 5:
+ 1 \ 2 Input: root = [1,null,2] Output: [1,2] Constraints:</description>
+    </item>
+    
+    <item>
       <title>100 Same Tree</title>
       <link>https://blog.siwei.dev/leetcode/100-same-tree/</link>
       <pubDate>Wed, 09 Jun 2021 00:00:00 +0800</pubDate>
@@ -136,6 +151,20 @@ Example 1:
  1 / \ 2 2 / \ / \ 3 4 4 3 Input: root = [1,2,2,3,4,4,3] Output: true Example 2:
  1 / \ 2 2 \ \ 3 3 Input: root = [1,2,2,null,3,null,3] Output: false Constraints:
  The number of nodes in the tree is in the range [1, 1000].</description>
+    </item>
+    
+    <item>
+      <title>104 Maximum Depth of Binary Tree</title>
+      <link>https://blog.siwei.dev/leetcode/104-maximum-depth-of-binary-tree/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/104-maximum-depth-of-binary-tree/</guid>
+      <description>Given the root of a binary tree, return its maximum depth.
+A binary tree&amp;rsquo;s maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+Example 1:
+ 3 / \ 9 20 / \ 15 7 Input: root = [3,9,20,null,null,15,7] Output: 3 Example 2:
+Input: root = [1,null,2] Output: 2 Example 3:
+Input: root = [] Output: 0 Example 4:</description>
     </item>
     
     <item>
@@ -198,6 +227,36 @@ Input: [4,1,2,1,2] Output: 4  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumbe
       <guid>https://blog.siwei.dev/leetcode/141-linked-list-cycle/</guid>
       <description>Given head, the head of a linked list, determine if the linked list has a cycle in it.
 There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail&amp;rsquo;s next pointer is connected to. Note that pos is not passed as a parameter.</description>
+    </item>
+    
+    <item>
+      <title>144 Binary Tree Preorder Traversal</title>
+      <link>https://blog.siwei.dev/leetcode/144-binary-tree-preorder-traversal/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/144-binary-tree-preorder-traversal/</guid>
+      <description>Given the root of a binary tree, return the preorder traversal of its nodes&#39; values.
+Example 1:
+ 1 \ 2 / 3 Input: root = [1,null,2,3] Output: [1,2,3] Example 2:
+Input: root = [] Output: [] Example 3:
+Input: root = [1] Output: [1] Example 4:
+ 1 / 2 Input: root = [1,2] Output: [1,2] Example 5:
+ 1 \ 2 Input: root = [1,null,2] Output: [1,2] Constraints:</description>
+    </item>
+    
+    <item>
+      <title>145 Binary Tree Postorder Traversal</title>
+      <link>https://blog.siwei.dev/leetcode/145-binary-tree-postorder-traversal/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/145-binary-tree-postorder-traversal/</guid>
+      <description>Given the root of a binary tree, return the postorder traversal of its nodes&#39; values.
+Example 1:
+ 1 \ 2 / 3 Input: root = [1,null,2,3] Output: [3,2,1] Example 2:
+Input: root = [] Output: [] Example 3:
+Input: root = [1] Output: [1] Example 4:
+ 1 / 2 Input: root = [1,2] Output: [2,1] Example 5:
+ 1 \ 2 Input: root = [1,null,2] Output: [2,1] Constraints:</description>
     </item>
     
     <item>

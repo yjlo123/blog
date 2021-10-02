@@ -65,6 +65,26 @@ func checkSymmetry(left *TreeNode, right *TreeNode) bool {
 }
 {{< / highlight >}}
 </div>
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        def checkSymmetry(left: Optional[TreeNode], right: Optional[TreeNode]) -> bool:
+            if not left or not right:
+                return left == right
+            if left.val != right.val:
+                return False
+            return checkSymmetry(left.left, right.right) and checkSymmetry(left.right, right.left)
+
+        return checkSymmetry(root.left, root.right)
+{{< / highlight >}}
+</div>
 <div id="java" class="lang">
 {{< highlight java "linenos=table" >}}
 /**

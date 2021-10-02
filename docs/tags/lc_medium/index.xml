@@ -6,7 +6,7 @@
     <description>Recent content in lc_medium on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2 Add Two Numbers</title>
       <link>https://blog.siwei.dev/leetcode/2-add-two-numbers/</link>
@@ -156,6 +156,20 @@ Example 1:
 The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
 Example 1:
 (A) (B) (C) E S F (C) S A (D) (E) E Input: board = [[&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;E&amp;quot;],[&amp;quot;S&amp;quot;,&amp;quot;F&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;S&amp;quot;],[&amp;quot;A&amp;quot;,&amp;quot;D&amp;quot;,&amp;quot;E&amp;quot;,&amp;quot;E&amp;quot;]], word = &amp;quot;ABCCED&amp;quot; Output: true Example 2:</description>
+    </item>
+    
+    <item>
+      <title>102 Binary Tree Level Order Traversal</title>
+      <link>https://blog.siwei.dev/leetcode/102-binary-tree-level-order-traversal/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/102-binary-tree-level-order-traversal/</guid>
+      <description>Given the root of a binary tree, return the level order traversal of its nodes&#39; values. (i.e., from left to right, level by level).
+Example 1:
+ 3 / \ 9 20 / \ 15 7 Input: root = [3,9,20,null,null,15,7] Output: [[3],[9,20],[15,7]] Example 2:
+Input: root = [1] Output: [[1]] Example 3:
+Input: root = [] Output: [] Constraints:
+ The number of nodes in the tree is in the range [0, 2000].</description>
     </item>
     
     <item>
