@@ -3,7 +3,7 @@ weight: 53
 title: "53 Maximum Subarray"
 date: 2021-09-19T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_easy", "lc_array"]
+tags: ["leetcode", "lc_easy", "lc_array", "lc_dp"]
 ---
 
 Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return _its sum_.

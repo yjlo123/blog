@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
-        <title>113 Path Sum II</title>
+        <title>112 Path Sum</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -48,9 +48,9 @@
 
 
 <div class="blog-post">
-  <h1>113 Path Sum II</h1>
+  <h1>112 Path Sum</h1>
   <div class="blog-post-subheader">
-    <time>25 Mar 2021</time>
+    <time>02 Oct 2021</time>
   </div><ul class="tags">
   
    <li>
@@ -58,7 +58,7 @@
    </li>
   
    <li>
-     <a href="/tags/lc_medium">lc_medium</a>
+     <a href="/tags/lc_easy">lc_easy</a>
    </li>
   
    <li>
@@ -67,7 +67,7 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>Given the <code>root</code> of a binary tree and an integer <code>targetSum</code>, return all <strong>root-to-leaf</strong> paths where each path&rsquo;s sum equals <code>targetSum</code>.</p>
+    <p>Given the <code>root</code> of a binary tree and an integer <code>targetSum</code>, return <code>true</code> if the tree has a <strong>root-to-leaf</strong> path such that adding up all the values along the path equals <code>targetSum</code>.</p>
 <p>A <strong>leaf</strong> is a node with no children.</p>
 <p><strong>Example 1:</strong></p>
 <pre tabindex="0"><code>      5
@@ -75,21 +75,21 @@
     4   8
    /   / \
   11  13  4
- /  \    / \
-7    2  5   1
+ /  \      \
+7    2      1
 
-Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
-Output: [[5,4,11,2],[5,8,4,5]]
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+Output: true
 </code></pre><p><strong>Example 2:</strong></p>
 <pre tabindex="0"><code>    1
    / \
   2   3
 
 Input: root = [1,2,3], targetSum = 5
-Output: []
+Output: false
 </code></pre><p><strong>Example 3:</strong></p>
 <pre tabindex="0"><code>Input: root = [1,2], targetSum = 0
-Output: []
+Output: false
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
 <li>The number of nodes in the tree is in the range <code>[0, 5000]</code>.</li>
@@ -98,7 +98,7 @@ Output: []
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
+<div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -115,72 +115,22 @@ Output: []
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#aaa;font-style:italic">/**
-</span><span style="color:#aaa;font-style:italic"> * Definition for a binary tree node.
-</span><span style="color:#aaa;font-style:italic"> * type TreeNode struct {
-</span><span style="color:#aaa;font-style:italic"> *     Val int
-</span><span style="color:#aaa;font-style:italic"> *     Left *TreeNode
-</span><span style="color:#aaa;font-style:italic"> *     Right *TreeNode
-</span><span style="color:#aaa;font-style:italic"> * }
-</span><span style="color:#aaa;font-style:italic"> */</span>
-
-<span style="color:#00a">func</span> <span style="color:#0a0">pathSum</span>(root *TreeNode, targetSum <span style="color:#0aa">int</span>) [][]<span style="color:#0aa">int</span> {
-	<span style="color:#00a">var</span> result [][]<span style="color:#0aa">int</span>
-	<span style="color:#0a0">sum</span>(root, targetSum, <span style="color:#099">0</span>, <span style="color:#00a">nil</span>, &amp;result)
-	<span style="color:#00a">return</span> result
-}
-
-<span style="color:#00a">func</span> <span style="color:#0a0">sum</span>(t *TreeNode, target, curSum <span style="color:#0aa">int</span>, curPath []<span style="color:#0aa">int</span>, result *[][]<span style="color:#0aa">int</span>) {
-	<span style="color:#00a">if</span> t == <span style="color:#00a">nil</span> {
-		<span style="color:#00a">return</span>
-	}
-	curPath = <span style="color:#0aa">append</span>(curPath, t.Val)
-	<span style="color:#00a">if</span> t.Left == <span style="color:#00a">nil</span> &amp;&amp; t.Right == <span style="color:#00a">nil</span> {
-		<span style="color:#00a">if</span> curSum+t.Val == target {
-            <span style="color:#aaa;font-style:italic">// Important!
-</span><span style="color:#aaa;font-style:italic"></span>            <span style="color:#aaa;font-style:italic">// func arg curPath is a slice reference
-</span><span style="color:#aaa;font-style:italic"></span>            <span style="color:#aaa;font-style:italic">// its underlying data could be changed in another resursion
-</span><span style="color:#aaa;font-style:italic"></span>            <span style="color:#aaa;font-style:italic">// so we make a copy
-</span><span style="color:#aaa;font-style:italic"></span>			res := <span style="color:#0aa">make</span>([]<span style="color:#0aa">int</span>, <span style="color:#0aa">len</span>(curPath))
-			<span style="color:#0aa">copy</span>(res, curPath)
-			*result = <span style="color:#0aa">append</span>(*result, res)
-		}
-		<span style="color:#00a">return</span>
-	}
-	<span style="color:#00a">if</span> t.Left != <span style="color:#00a">nil</span> {
-		<span style="color:#0a0">sum</span>(t.Left, target, curSum+t.Val, curPath, result)
-	}
-	<span style="color:#00a">if</span> t.Right != <span style="color:#00a">nil</span> {
-		<span style="color:#0a0">sum</span>(t.Right, target, curSum+t.Val, curPath, result)
-	}
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
+<span style="color:#aaa;font-style:italic"># class TreeNode:</span>
+<span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, left=None, right=None):</span>
+<span style="color:#aaa;font-style:italic">#         self.val = val</span>
+<span style="color:#aaa;font-style:italic">#         self.left = left</span>
+<span style="color:#aaa;font-style:italic">#         self.right = right</span>
+<span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+    <span style="color:#00a">def</span> <span style="color:#0a0">hasPathSum</span>(self, root: Optional[TreeNode], targetSum: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">bool</span>:
+        <span style="color:#00a">if</span> <span style="color:#00a">not</span> root :
+            <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+        remain_val = targetSum - root.val
+        <span style="color:#00a">if</span> <span style="color:#00a">not</span> root.left <span style="color:#00a">and</span> <span style="color:#00a">not</span> root.right:
+            <span style="color:#00a">return</span> remain_val == <span style="color:#099">0</span>
+        <span style="color:#00a">return</span> self.hasPathSum(root.left, remain_val) <span style="color:#00a">or</span> self.hasPathSum(root.right, remain_val)</code></pre></td></tr></table>
 </div>
 </div>
 </div>

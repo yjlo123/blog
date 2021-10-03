@@ -323,6 +323,16 @@ Return the maximum area of an island in grid. If there is no island, return 0.</
     </item>
     
     <item>
+      <title>701 Insert into a Binary Search Tree</title>
+      <link>https://blog.siwei.dev/leetcode/701-insert-into-a-binary-search-tree/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/701-insert-into-a-binary-search-tree/</guid>
+      <description>You are given the root node of a binary search tree (BST) and a value to insert into the tree. Return the root node of the BST after the insertion. It is guaranteed that the new value does not exist in the original BST.
+Notice that there may exist multiple valid ways for the insertion, as long as the tree remains a BST after insertion. You can return any of them.</description>
+    </item>
+    
+    <item>
       <title>1325 Delete Leaves With a Given Value</title>
       <link>https://blog.siwei.dev/leetcode/1325-delete-leaves-with-a-given-value/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0800</pubDate>
