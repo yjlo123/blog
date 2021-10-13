@@ -6,7 +6,19 @@
     <description>Recent content in lc_heap on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_heap/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_heap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>295 Find Median from Data Stream</title>
+      <link>https://blog.siwei.dev/leetcode/295-find-median-from-data-stream/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/295-find-median-from-data-stream/</guid>
+      <description>The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value and the median is the mean of the two middle values.
+  For example, for arr = [2,3,4], the median is 3.
+  For example, for arr = [2,3], the median is (2 + 3) / 2 = 2.5. Implement the MedianFinder class:
+  MedianFinder() initializes the MedianFinder object.</description>
+    </item>
+    
     <item>
       <title>347 Top K Frequent Elements</title>
       <link>https://blog.siwei.dev/leetcode/347-top-k-frequent-elements/</link>

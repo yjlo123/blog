@@ -6,7 +6,7 @@
     <description>Recent content in lc_hard on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_hard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_hard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>4 Median of Two Sorted Arrays</title>
       <link>https://blog.siwei.dev/leetcode/4-median-of-two-sorted-arrays/</link>
@@ -58,6 +58,18 @@ Find the maximum profit you can achieve. You may complete at most two transactio
 Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
 Example 1:
 Input: prices = [3,3,5,0,0,3,1,4] Output: 6 Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.</description>
+    </item>
+    
+    <item>
+      <title>295 Find Median from Data Stream</title>
+      <link>https://blog.siwei.dev/leetcode/295-find-median-from-data-stream/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/295-find-median-from-data-stream/</guid>
+      <description>The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value and the median is the mean of the two middle values.
+  For example, for arr = [2,3,4], the median is 3.
+  For example, for arr = [2,3], the median is (2 + 3) / 2 = 2.5. Implement the MedianFinder class:
+  MedianFinder() initializes the MedianFinder object.</description>
     </item>
     
   </channel>
