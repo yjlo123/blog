@@ -6,7 +6,7 @@
     <description>Recent content in Leetcodes on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -1083,6 +1083,16 @@ In each iteration, you calculate the step by step sum of startValue plus element
 Return the minimum positive value of startValue such that the step by step sum is never less than 1.
 Example 1:
 Input: nums = [-3,2,-3,4,2] Output: 5 Explanation: If you choose startValue = 4, in the third iteration your step by step sum is less than 1.</description>
+    </item>
+    
+    <item>
+      <title>Autoscale Policy</title>
+      <link>https://blog.siwei.dev/leetcode/autoscale-policy/</link>
+      <pubDate>Sun, 17 Oct 2021 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/autoscale-policy/</guid>
+      <description>Given an integer, instances, and an array, arr[] of size N representing the average utilization percentage of the computing system at each second, the task is to find the number of instances at the end of the time frame such that the computing system auto-scales the number of instances according to the following rules:
+ Average utilization &amp;lt; 25%: Reduce the number of instances by half if the number of instances is greater than 1.</description>
     </item>
     
   </channel>
