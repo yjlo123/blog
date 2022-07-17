@@ -135,7 +135,8 @@ pre {
 pre code {
 	border: none;
   background: none;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'JetBrains Mono', 'Ubuntu Mono', monospace;
+  font-variant-ligatures: none;
   font-size: 15px;
   padding: 0;
 }

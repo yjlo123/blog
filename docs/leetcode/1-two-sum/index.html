@@ -14,6 +14,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
         <title>1 Two Sum</title>
 
@@ -196,6 +197,38 @@ Output: [0,1]
         imap[nums[i]] = i;
     }
 }</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<div id="rust" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">pub</span><span style="color:#bbb"> </span><span style="color:#00a">fn</span> <span style="color:#0a0">two_sum</span>(nums: <span style="color:#0aa">Vec</span>&lt;<span style="color:#0aa">i32</span>&gt;,<span style="color:#bbb"> </span>target: <span style="color:#0aa">i32</span>)<span style="color:#bbb"> </span>-&gt; <span style="color:#0aa">Vec</span>&lt;<span style="color:#0aa">i32</span>&gt;<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#00a">use</span><span style="color:#bbb"> </span>std::collections::HashMap;<span style="color:#bbb">
+</span><span style="color:#bbb">    
+</span><span style="color:#bbb">    </span><span style="color:#00a">let</span><span style="color:#bbb"> </span><span style="color:#00a">mut</span><span style="color:#bbb"> </span>m: <span style="color:#0a0;text-decoration:underline">HashMap</span>&lt;<span style="color:#0aa">i32</span>,<span style="color:#bbb"> </span><span style="color:#0aa">i32</span>&gt;<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>HashMap::new();<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#00a">for</span><span style="color:#bbb"> </span>(i,<span style="color:#bbb"> </span>v)<span style="color:#bbb"> </span><span style="color:#00a">in</span><span style="color:#bbb"> </span>nums.iter().enumerate()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#00a">match</span><span style="color:#bbb"> </span>m.get(&amp;(target<span style="color:#bbb"> </span>-<span style="color:#bbb"> </span>*v))<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#0aa">Some</span>(&amp;i2)<span style="color:#bbb"> </span>=&gt;<span style="color:#bbb"> </span><span style="color:#00a">return</span><span style="color:#bbb"> </span>vec![i<span style="color:#bbb"> </span><span style="color:#00a">as</span><span style="color:#bbb"> </span><span style="color:#0aa">i32</span>,<span style="color:#bbb"> </span>i2],<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#0aa">None</span><span style="color:#bbb"> </span>=&gt;<span style="color:#bbb"> </span>m.insert(*v,<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#00a">as</span><span style="color:#bbb"> </span><span style="color:#0aa">i32</span>),<span style="color:#bbb">
+</span><span style="color:#bbb">        </span>};<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>vec![]<span style="color:#bbb">
+</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
 </div>
 </div>
 </div>
