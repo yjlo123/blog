@@ -6,7 +6,7 @@
     <description>Recent content in leetcode on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -767,6 +767,19 @@ Example 1:
 Input: nums1 = [1,2,2,1], nums2 = [2,2] Output: [2,2] Example 2:
 Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4] Output: [4,9] Explanation: [9,4] is also accepted. Constraints:
  1 &amp;lt;= nums1.length, nums2.</description>
+    </item>
+    
+    <item>
+      <title>357 Count Numbers with Unique Digits</title>
+      <link>https://blog.siwei.dev/leetcode/357-count-numbers-with-unique-digits/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/357-count-numbers-with-unique-digits/</guid>
+      <description>Given an integer n, return the count of all numbers with unique digits, x, where 0 &amp;lt;= x &amp;lt; 10n.
+Example 1:
+Input: n = 2 Output: 91 Explanation: The answer should be the total numbers in the range of 0 ≤ x &amp;lt; 100, excluding 11,22,33,44,55,66,77,88,99 Example 2:
+Input: n = 0 Output: 1 Constraints:
+ 0 &amp;lt;= n &amp;lt;= 8   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  class Solution: &amp;#39;&amp;#39;&amp;#39; &amp;lt;x-digit num: y numbers with unique digits&amp;gt; 0: 1 1: 9 2: 9*9 3: 9*9*8 4: 9*9*8*7 &amp;#39;&amp;#39;&amp;#39; def countNumbersWithUniqueDigits(self, n: int) -&amp;gt; int: res = 1 acc = 9 cur = 9 i = 1 while i &amp;lt;= n: res += acc acc *= cur cur -= 1 i += 1 return res     </description>
     </item>
     
     <item>
