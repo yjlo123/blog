@@ -6,7 +6,7 @@
     <description>Recent content on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -856,6 +856,16 @@ All letters in hexadecimal (a-f) must be in lowercase. The hexadecimal string mu
 But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.
 Example:
 n = 15, Return: [ &amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;4&amp;quot;, &amp;quot;Buzz&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;7&amp;quot;, &amp;quot;8&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;Buzz&amp;quot;, &amp;quot;11&amp;quot;, &amp;quot;Fizz&amp;quot;, &amp;quot;13&amp;quot;, &amp;quot;14&amp;quot;, &amp;quot;FizzBuzz&amp;quot; ]  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  func fizzBuzz(n int) []string { var result []string for i := 1; i &amp;lt;= n; i++ { if i%3 == 0 &amp;amp;&amp;amp; i%5 == 0 { result = append(result, &amp;#34;FizzBuzz&amp;#34;) } else if i%3 == 0 { result = append(result, &amp;#34;Fizz&amp;#34;) } else if i%5 == 0 { result = append(result, &amp;#34;Buzz&amp;#34;) } else { result = append(result, strconv.</description>
+    </item>
+    
+    <item>
+      <title>420 Strong Password Checker</title>
+      <link>https://blog.siwei.dev/leetcode/420-strong-password-checker/</link>
+      <pubDate>Mon, 08 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/420-strong-password-checker/</guid>
+      <description>A password is considered strong if the below conditions are all met:
+ It has at least 6 characters and at most 20 characters. It contains at least one lowercase letter, at least one uppercase letter, and at least one digit. It does not contain three repeating characters in a row (i.e., &amp;quot;...aaa...&amp;quot; is weak, but &amp;quot;...aa...a...&amp;quot; is strong, assuming other conditions are met).  Given a string password, return the minimum number of steps required to make password strong.</description>
     </item>
     
     <item>

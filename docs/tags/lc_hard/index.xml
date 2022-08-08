@@ -6,7 +6,7 @@
     <description>Recent content in lc_hard on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_hard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_hard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>4 Median of Two Sorted Arrays</title>
       <link>https://blog.siwei.dev/leetcode/4-median-of-two-sorted-arrays/</link>
@@ -70,6 +70,16 @@ Input: prices = [3,3,5,0,0,3,1,4] Output: 6 Explanation: Buy on day 4 (price = 0
   For example, for arr = [2,3,4], the median is 3.
   For example, for arr = [2,3], the median is (2 + 3) / 2 = 2.5. Implement the MedianFinder class:
   MedianFinder() initializes the MedianFinder object.</description>
+    </item>
+    
+    <item>
+      <title>420 Strong Password Checker</title>
+      <link>https://blog.siwei.dev/leetcode/420-strong-password-checker/</link>
+      <pubDate>Mon, 08 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/420-strong-password-checker/</guid>
+      <description>A password is considered strong if the below conditions are all met:
+ It has at least 6 characters and at most 20 characters. It contains at least one lowercase letter, at least one uppercase letter, and at least one digit. It does not contain three repeating characters in a row (i.e., &amp;quot;...aaa...&amp;quot; is weak, but &amp;quot;...aa...a...&amp;quot; is strong, assuming other conditions are met).  Given a string password, return the minimum number of steps required to make password strong.</description>
     </item>
     
   </channel>

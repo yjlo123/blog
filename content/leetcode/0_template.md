@@ -1,7 +1,7 @@
 ---
 weight: -1
 title: "0 Title"
-date: 2021-10-01T00:00:00-04:00
+date: 2022-08-01T00:00:00-04:00
 draft: true
 tags: ["leetcode"]
 ---
