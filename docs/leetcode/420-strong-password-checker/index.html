@@ -164,14 +164,14 @@ Output: 0
         <span style="color:#aaa;font-style:italic"># Check rule 3</span>
         groups = [<span style="color:#0aa">len</span>(<span style="color:#0aa">list</span>(grp)) <span style="color:#00a">for</span> _, grp <span style="color:#00a">in</span> itertools.groupby(password)]
         <span style="color:#00a">for</span> _ <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(num_req_deletes):
-            <span style="color:#aaa;font-style:italic">#apply best delete</span>
-            argmin, _ = <span style="color:#0aa">min</span>(
+            <span style="color:#aaa;font-style:italic"># Apply best delete</span>
+            idx, _ = <span style="color:#0aa">min</span>(
                 <span style="color:#0aa">enumerate</span>(groups),
-                <span style="color:#aaa;font-style:italic"># Ignore groups of length &lt; 3 as long as others are available.</span>
+                <span style="color:#aaa;font-style:italic"># Ignore groups of length &lt; 3</span>
                 <span style="color:#aaa;font-style:italic"># 5 - it[1] &gt; 2 when it[1] &lt; 3</span>
                 key=<span style="color:#00a">lambda</span> it: it[<span style="color:#099">1</span>] % <span style="color:#099">3</span> <span style="color:#00a">if</span> it[<span style="color:#099">1</span>] &gt;= <span style="color:#099">3</span> <span style="color:#00a">else</span> <span style="color:#099">5</span>,
             )
-            groups[argmin] -= <span style="color:#099">1</span>
+            groups[idx] -= <span style="color:#099">1</span>
 
         num_req_group_replaces = <span style="color:#0aa">sum</span>(
             group // <span style="color:#099">3</span>

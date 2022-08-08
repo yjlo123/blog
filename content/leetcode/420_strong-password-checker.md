@@ -67,14 +67,14 @@ class Solution:
         # Check rule 3
         groups = [len(list(grp)) for _, grp in itertools.groupby(password)]
         for _ in range(num_req_deletes):
-            #apply best delete
-            argmin, _ = min(
+            # Apply best delete
+            idx, _ = min(
                 enumerate(groups),
-                # Ignore groups of length < 3 as long as others are available.
+                # Ignore groups of length < 3
                 # 5 - it[1] > 2 when it[1] < 3
                 key=lambda it: it[1] % 3 if it[1] >= 3 else 5,
             )
-            groups[argmin] -= 1
+            groups[idx] -= 1
 
         num_req_group_replaces = sum(
             group // 3
