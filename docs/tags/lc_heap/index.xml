@@ -6,7 +6,7 @@
     <description>Recent content in lc_heap on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_heap/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_heap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>295 Find Median from Data Stream</title>
       <link>https://blog.siwei.dev/leetcode/295-find-median-from-data-stream/</link>
@@ -30,6 +30,16 @@ Example 1:
 Input: nums = [1,1,1,2,2,3], k = 2 Output: [1,2] Example 2:
 Input: nums = [1], k = 1 Output: [1] Note:
  You may assume k is always valid, 1 ≤ k ≤ number of unique elements. Your algorithm&amp;rsquo;s time complexity must be better than O(n log n), where n is the array&amp;rsquo;s size. It&amp;rsquo;s guaranteed that the answer is unique, in other words the set of the top k frequent elements is unique.</description>
+    </item>
+    
+    <item>
+      <title>1710 Maximum Units on a Truck</title>
+      <link>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</guid>
+      <description>You are assigned to put some amount of boxes onto one truck. You are given a 2D array boxTypes, where boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi]:
+ numberOfBoxesi is the number of boxes of type i. numberOfUnitsPerBoxi is the number of units in each box of the type i. You are also given an integer truckSize, which is the maximum number of boxes that can be put on the truck. You can choose any boxes to put on the truck as long as the number of boxes does not exceed truckSize.</description>
     </item>
     
   </channel>

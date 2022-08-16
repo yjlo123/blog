@@ -10,8 +10,8 @@ tags: ["leetcode"]
 
 <div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
-{{< highlight go "linenos=table" >}}
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
 
 {{< / highlight >}}
 </div>

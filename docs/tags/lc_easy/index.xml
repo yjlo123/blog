@@ -6,7 +6,7 @@
     <description>Recent content in lc_easy on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_easy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -681,6 +681,16 @@ In each iteration, you calculate the step by step sum of startValue plus element
 Return the minimum positive value of startValue such that the step by step sum is never less than 1.
 Example 1:
 Input: nums = [-3,2,-3,4,2] Output: 5 Explanation: If you choose startValue = 4, in the third iteration your step by step sum is less than 1.</description>
+    </item>
+    
+    <item>
+      <title>1710 Maximum Units on a Truck</title>
+      <link>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</guid>
+      <description>You are assigned to put some amount of boxes onto one truck. You are given a 2D array boxTypes, where boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi]:
+ numberOfBoxesi is the number of boxes of type i. numberOfUnitsPerBoxi is the number of units in each box of the type i. You are also given an integer truckSize, which is the maximum number of boxes that can be put on the truck. You can choose any boxes to put on the truck as long as the number of boxes does not exceed truckSize.</description>
     </item>
     
   </channel>

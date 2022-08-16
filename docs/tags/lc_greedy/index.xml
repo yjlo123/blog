@@ -6,7 +6,7 @@
     <description>Recent content in lc_greedy on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_greedy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_greedy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>55 Jump Game</title>
       <link>https://blog.siwei.dev/leetcode/55-jump-game/</link>
@@ -32,6 +32,16 @@ Example 1:
 Input: intervals = [[0,30],[5,10],[15,20]] Output: 2 Example 2:
 Input: intervals = [[7,10],[2,4]] Output: 1 Constraints:
  1 &amp;lt;= intervals.length &amp;lt;= 104 0 &amp;lt;= starti &amp;lt; endi &amp;lt;= 106   1 2 3 4 5 6 7 8 9 10 11 12 13  class Solution: def minMeetingRooms(self, intervals: List[List[int]]) -&amp;gt; int: free_rooms = [] intervals.</description>
+    </item>
+    
+    <item>
+      <title>1710 Maximum Units on a Truck</title>
+      <link>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</guid>
+      <description>You are assigned to put some amount of boxes onto one truck. You are given a 2D array boxTypes, where boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi]:
+ numberOfBoxesi is the number of boxes of type i. numberOfUnitsPerBoxi is the number of units in each box of the type i. You are also given an integer truckSize, which is the maximum number of boxes that can be put on the truck. You can choose any boxes to put on the truck as long as the number of boxes does not exceed truckSize.</description>
     </item>
     
   </channel>
