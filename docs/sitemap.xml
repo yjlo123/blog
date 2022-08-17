@@ -260,8 +260,17 @@
     <loc>https://blog.siwei.dev/leetcode/1137-n-th-tribonacci-number/</loc>
     <lastmod>2021-09-19T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1207-unique-number-of-occurrences/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1275-find-winner-on-a-tic-tac-toe-game/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1325-delete-leaves-with-a-given-value/</loc>
     <lastmod>2021-03-28T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1360-number-of-days-between-two-dates/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1413-minimum-value-to-get-positive-step-by-step-sum/</loc>
     <lastmod>2021-03-28T00:00:00+08:00</lastmod>
@@ -305,6 +314,9 @@
     <loc>https://blog.siwei.dev/tags/lc_heap/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_matrix/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_stack/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -336,9 +348,6 @@
     <lastmod>2021-09-30T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_dp/</loc>
-    <lastmod>2021-09-30T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_matrix/</loc>
     <lastmod>2021-09-30T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
