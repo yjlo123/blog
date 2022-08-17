@@ -15,10 +15,10 @@
       <guid>https://blog.siwei.dev/leetcode/20-valid-parentheses/</guid>
       <description>Given a string s containing just the characters &#39;(&#39;, &#39;)&#39;, &#39;{&#39;, &#39;}&#39;, &#39;[&#39; and &#39;]&#39;, determine if the input string is valid.
 An input string is valid if:
- Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order.  Example 1:
-Input: s = &amp;quot;()&amp;quot; Output: true Example 2:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true Example 3:
-Input: s = &amp;quot;(]&amp;quot; Output: false Example 4:</description>
+Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Example 1:
+Input: s = &amp;#34;()&amp;#34;Output: true Example 2:
+Input: s = &amp;#34;()[]{}&amp;#34;Output: true Example 3:
+Input: s = &amp;#34;(]&amp;#34;Output: false Example 4:</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ Input: s = &amp;quot;(]&amp;quot; Output: false Example 4:</description>
       <guid>https://blog.siwei.dev/leetcode/232-implement-queue-using-stacks/</guid>
       <description>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 Implement the MyQueue class:
- void push(int x) Pushes element x to the back of the queue. int pop() Removes the element from the front of the queue and returns it. int peek() Returns the element at the front of the queue.</description>
+void push(int x) Pushes element x to the back of the queue. int pop() Removes the element from the front of the queue and returns it. int peek() Returns the element at the front of the queue. boolean empty() Returns true if the queue is empty, false otherwise.</description>
     </item>
     
     <item>

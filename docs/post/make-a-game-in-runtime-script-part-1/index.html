@@ -63,7 +63,7 @@
     <p>Creating mini-games is one of the purposes of developing Runtime Script. Although it is not a convenient language to write games, Runtime Script provides the basic features, such as drawing pixels and monitoring key events, for building playable and publishable games.</p>
 <p>I&rsquo;ve created several games while implementing Runtime Script and found making games is an effective way to test this language. Here are some examples: <a href="https://runtime.siwei.dev/?src=bird">Flappy Bird</a>,
 <a href="https://runtime.siwei.dev/?src=puzzle">Sliding Puzzle</a>,
-<a href="https://siwei.dev/app/sokoban/">Sokoban</a>,
+<a href="https://siwei.dev/app/sokoban/">Sokoban</a>, 
 <a href="https://github.com/yjlo123/runtime-script#examples">(More &hellip;)</a>. Since some of them are created at an early stage of Runtime Script,   they may not have used the latest supported syntax.</p>
 <p>All the games I created using Runtime Script share the same necessary components, i.e. status variables, main loop, key events, sleep intervals, and redrawing pixels. In this blog, we are going to write such a boilerplate that can be modified to various mini-games.</p>
 <p>In the program that we are going to write, you can move a white pixel on the canvas by pressing arrow keys.</p>
@@ -106,7 +106,7 @@ let cur_r 10
 
 let key $lastkey
 ife $key 37
- prt 'left'
+ prt &#39;left&#39;
  sub cur_c $cur_c 1
 fin
 </code></pre><p>The first line is for waiting for 3 seconds so that you have the chance to press the key before <code>$lastkey</code> is evaluated. Without the waiting time, the program finishes immediately.</p>
@@ -115,28 +115,28 @@ fin
 jne $key 37 check_up
 / left
 sub cur_c $cur_c 1
-prt 'left'
+prt &#39;left&#39;
 jmp continue
 
 #check_up
 jne $key 38 check_right
 / up
 sub cur_r $cur_r 1
-prt 'up'
+prt &#39;up&#39;
 jmp continue
 
 #check_right
 jne $key 39 check_down
 / right
 add cur_c $cur_c 1
-prt 'right'
+prt &#39;right&#39;
 jmp continue
 
 #check_down
 jne $key 40 continue
 / down
 add cur_r $cur_r 1
-prt 'down'
+prt &#39;down&#39;
 jmp continue
 
 #continue
@@ -158,25 +158,25 @@ let key $lastkey
 ife $key 37
  / left
  sub cur_c $cur_c 1
- prt 'left'
+ prt &#39;left&#39;
 fin
 
 ife $key 38
  / up
  sub cur_r $cur_r 1
- prt 'up'
+ prt &#39;up&#39;
 fin
 
 ife $key 39
  / right
  add cur_c $cur_c 1
- prt 'right'
+ prt &#39;right&#39;
 fin
 
 ife $key 40
  / down
  add cur_r $cur_r 1
- prt 'down'
+ prt &#39;down&#39;
 fin
 
 / -- draw --

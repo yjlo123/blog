@@ -14,9 +14,9 @@
       
       <guid>https://blog.siwei.dev/leetcode/295-find-median-from-data-stream/</guid>
       <description>The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value and the median is the mean of the two middle values.
-  For example, for arr = [2,3,4], the median is 3.
-  For example, for arr = [2,3], the median is (2 + 3) / 2 = 2.5. Implement the MedianFinder class:
-  MedianFinder() initializes the MedianFinder object.</description>
+For example, for arr = [2,3,4], the median is 3.
+For example, for arr = [2,3], the median is (2 + 3) / 2 = 2.5. Implement the MedianFinder class:
+MedianFinder() initializes the MedianFinder object.</description>
     </item>
     
     <item>
@@ -27,9 +27,9 @@
       <guid>https://blog.siwei.dev/leetcode/347-top-k-frequent-elements/</guid>
       <description>Given a non-empty array of integers, return the k most frequent elements.
 Example 1:
-Input: nums = [1,1,1,2,2,3], k = 2 Output: [1,2] Example 2:
-Input: nums = [1], k = 1 Output: [1] Note:
- You may assume k is always valid, 1 ≤ k ≤ number of unique elements. Your algorithm&amp;rsquo;s time complexity must be better than O(n log n), where n is the array&amp;rsquo;s size. It&amp;rsquo;s guaranteed that the answer is unique, in other words the set of the top k frequent elements is unique.</description>
+Input: nums = [1,1,1,2,2,3], k = 2Output: [1,2] Example 2:
+Input: nums = [1], k = 1Output: [1] Note:
+You may assume k is always valid, 1 ≤ k ≤ number of unique elements. Your algorithm&amp;rsquo;s time complexity must be better than O(n log n), where n is the array&amp;rsquo;s size. It&amp;rsquo;s guaranteed that the answer is unique, in other words the set of the top k frequent elements is unique.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ Input: nums = [1], k = 1 Output: [1] Note:
       
       <guid>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</guid>
       <description>You are assigned to put some amount of boxes onto one truck. You are given a 2D array boxTypes, where boxTypes[i] = [numberOfBoxesi, numberOfUnitsPerBoxi]:
- numberOfBoxesi is the number of boxes of type i. numberOfUnitsPerBoxi is the number of units in each box of the type i. You are also given an integer truckSize, which is the maximum number of boxes that can be put on the truck. You can choose any boxes to put on the truck as long as the number of boxes does not exceed truckSize.</description>
+numberOfBoxesi is the number of boxes of type i. numberOfUnitsPerBoxi is the number of units in each box of the type i. You are also given an integer truckSize, which is the maximum number of boxes that can be put on the truck. You can choose any boxes to put on the truck as long as the number of boxes does not exceed truckSize.</description>
     </item>
     
   </channel>

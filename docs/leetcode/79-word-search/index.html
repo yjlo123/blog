@@ -79,21 +79,21 @@
  S   F  (C)  S
  A  (D) (E)  E
 
-Input: board = [[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;E&quot;],[&quot;S&quot;,&quot;F&quot;,&quot;C&quot;,&quot;S&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;,&quot;E&quot;]], word = &quot;ABCCED&quot;
+Input: board = [[&#34;A&#34;,&#34;B&#34;,&#34;C&#34;,&#34;E&#34;],[&#34;S&#34;,&#34;F&#34;,&#34;C&#34;,&#34;S&#34;],[&#34;A&#34;,&#34;D&#34;,&#34;E&#34;,&#34;E&#34;]], word = &#34;ABCCED&#34;
 Output: true
 </code></pre><p><strong>Example 2:</strong></p>
 <pre tabindex="0"><code> A   B   C   E
  S   F   C  (S)
  A   D  (E) (E)
 
-Input: board = [[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;E&quot;],[&quot;S&quot;,&quot;F&quot;,&quot;C&quot;,&quot;S&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;,&quot;E&quot;]], word = &quot;SEE&quot;
+Input: board = [[&#34;A&#34;,&#34;B&#34;,&#34;C&#34;,&#34;E&#34;],[&#34;S&#34;,&#34;F&#34;,&#34;C&#34;,&#34;S&#34;],[&#34;A&#34;,&#34;D&#34;,&#34;E&#34;,&#34;E&#34;]], word = &#34;SEE&#34;
 Output: true
 </code></pre><p><strong>Example 3:</strong></p>
 <pre tabindex="0"><code> A   B   C   E
  S   F   C   S
  A   D   E   E
 
-Input: board = [[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;E&quot;],[&quot;S&quot;,&quot;F&quot;,&quot;C&quot;,&quot;S&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;,&quot;E&quot;]], word = &quot;ABCB&quot;
+Input: board = [[&#34;A&#34;,&#34;B&#34;,&#34;C&#34;,&#34;E&#34;],[&#34;S&#34;,&#34;F&#34;,&#34;C&#34;,&#34;S&#34;],[&#34;A&#34;,&#34;D&#34;,&#34;E&#34;,&#34;E&#34;]], word = &#34;ABCB&#34;
 Output: false
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -106,58 +106,58 @@ Output: false
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">exist</span>(self, board: List[List[<span style="color:#0aa">str</span>]], word: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">bool</span>:
-        self.board = board
-        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(board)):
-            <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(board[<span style="color:#099">0</span>])):
-                <span style="color:#00a">if</span> self.backtrack(i, j, word):
-                    <span style="color:#00a">return</span> <span style="color:#00a">True</span>
-        <span style="color:#00a">return</span> <span style="color:#00a">False</span>
-        
-    <span style="color:#00a">def</span> <span style="color:#0a0">backtrack</span>(self, i: <span style="color:#0aa">int</span>, j: <span style="color:#0aa">int</span>, suffix: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">bool</span>:
-        <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(suffix) == <span style="color:#099">0</span>:
-            <span style="color:#00a">return</span> <span style="color:#00a">True</span>
-        
-        <span style="color:#00a">if</span> i &lt; <span style="color:#099">0</span> <span style="color:#00a">or</span> i &gt;= <span style="color:#0aa">len</span>(self.board) <span style="color:#00a">or</span> j &lt; <span style="color:#099">0</span> <span style="color:#00a">or</span> j &gt;= <span style="color:#0aa">len</span>(self.board[<span style="color:#099">0</span>]) <span style="color:#00a">or</span> self.board[i][j] != suffix[<span style="color:#099">0</span>]:
-            <span style="color:#00a">return</span> <span style="color:#00a">False</span>
-        
-        ret = <span style="color:#00a">False</span>
-        self.board[i][j] = <span style="color:#a50">&#39;#&#39;</span>
-        <span style="color:#00a">for</span> offset <span style="color:#00a">in</span> [(-<span style="color:#099">1</span>, <span style="color:#099">0</span>), (<span style="color:#099">1</span>, <span style="color:#099">0</span>), (<span style="color:#099">0</span>, -<span style="color:#099">1</span>), (<span style="color:#099">0</span>, <span style="color:#099">1</span>)]:
-            ret = self.backtrack(i+offset[<span style="color:#099">0</span>], j+offset[<span style="color:#099">1</span>], suffix[<span style="color:#099">1</span>:])
-            <span style="color:#00a">if</span> ret:
-                <span style="color:#00a">break</span> <span style="color:#aaa;font-style:italic"># for cleanup side-effects</span>
-        self.board[i][j] = suffix[<span style="color:#099">0</span>]
-        <span style="color:#00a">return</span> ret</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">exist</span>(self, board: List[List[<span style="color:#0aa">str</span>]], word: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        self.board = board
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(board)):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(board[<span style="color:#099">0</span>])):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> self.backtrack(i, j, word):
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">backtrack</span>(self, i: <span style="color:#0aa">int</span>, j: <span style="color:#0aa">int</span>, suffix: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(suffix) == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> i &lt; <span style="color:#099">0</span> <span style="color:#00a">or</span> i &gt;= <span style="color:#0aa">len</span>(self.board) <span style="color:#00a">or</span> j &lt; <span style="color:#099">0</span> <span style="color:#00a">or</span> j &gt;= <span style="color:#0aa">len</span>(self.board[<span style="color:#099">0</span>]) <span style="color:#00a">or</span> self.board[i][j] != suffix[<span style="color:#099">0</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        ret = <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>        self.board[i][j] = <span style="color:#a50">&#39;#&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> offset <span style="color:#00a">in</span> [(-<span style="color:#099">1</span>, <span style="color:#099">0</span>), (<span style="color:#099">1</span>, <span style="color:#099">0</span>), (<span style="color:#099">0</span>, -<span style="color:#099">1</span>), (<span style="color:#099">0</span>, <span style="color:#099">1</span>)]:
+</span></span><span style="display:flex;"><span>            ret = self.backtrack(i+offset[<span style="color:#099">0</span>], j+offset[<span style="color:#099">1</span>], suffix[<span style="color:#099">1</span>:])
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> ret:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">break</span> <span style="color:#aaa;font-style:italic"># for cleanup side-effects</span>
+</span></span><span style="display:flex;"><span>        self.board[i][j] = suffix[<span style="color:#099">0</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> ret</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

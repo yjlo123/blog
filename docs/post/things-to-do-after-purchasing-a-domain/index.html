@@ -72,29 +72,29 @@
 <h2 id="setup-https">Setup HTTPS</h2>
 <p>For certain domain suffixes, HTTPS is compulsory. For instance, <code>.dev</code> is a secure namespace and the website requires HTTPS to work in browser.</p>
 <h3 id="--generate-a-new-cert-using-certbot">- Generate a new cert using certbot</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#aaa;font-style:italic"># for example, your domain is domain.com</span>
-sudo certbot --nginx -d domain.com -d www.doamin.com</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># for example, your domain is domain.com</span>
+</span></span><span style="display:flex;"><span>sudo certbot --nginx -d domain.com -d www.doamin.com</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <p>If you see <code>Error getting validation data</code>, means the DNS settings have not take effect.
 It says it may take up to 48 hours to finish the propagation, but in my case, it only delayed about 3 minutes.</p>
 <h3 id="--add-domains-to-an-existing-cert">- Add domains to an existing cert</h3>
-<p><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<p><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nginx -s stop
-certbot certonly --standalone -d domain.com -d www.domain.com -d abc.domain.com --expand
-nginx</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nginx -s stop
+</span></span><span style="display:flex;"><span>certbot certonly --standalone -d domain.com -d www.domain.com -d abc.domain.com --expand
+</span></span><span style="display:flex;"><span>nginx</span></span></code></pre></td></tr></table>
 </div>
 </div>
 Remember to stop Nginx, otherwise, the following message will be shown.</p>
@@ -104,173 +104,173 @@ Remember to stop Nginx, otherwise, the following message will be shown.</p>
 <p>Since we already have the certs for https, we can redirect all http requests to https. Besides, we also redirect URLs with www to non-www, to make the URL cleaner as well as provide the only enter point for users, so that search engines can index the single URL for the website.</p>
 <p>If you are wondering in what situations we should use <code>www</code>, please refer to this <a href="https://www.yes-www.org/why-use-www/">article</a>.</p>
 <p>Redirect http to https, and www to non-www:
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
-    <span style="color:#00a">listen</span> <span style="color:#099">80</span>;
-    <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span> <span style="color:#a50">www.domain.com</span>;
-    <span style="color:#00a">return</span> <span style="color:#099">301</span> <span style="color:#a50">https://domain.com</span><span style="color:#a00">$request_uri</span>;
-}
-
-<span style="color:#00a">server</span> {
-    <span style="color:#00a">listen</span> <span style="color:#099">443</span> <span style="color:#a50">ssl</span>;
-    <span style="color:#00a">server_name</span> <span style="color:#a50">www.domain.com</span>;
-    <span style="color:#00a">ssl_certificate</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/fullchain.pem</span>;
-    <span style="color:#00a">ssl_certificate_key</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/privkey.pem</span>;
-    <span style="color:#00a">include</span> <span style="color:#a50">/etc/letsencrypt/options-ssl-nginx.conf</span>;
-    <span style="color:#00a">ssl_dhparam</span> <span style="color:#a50">/etc/letsencrypt/ssl-dhparams.pem</span>;
-
-    <span style="color:#00a">return</span> <span style="color:#099">301</span> <span style="color:#a50">https://domain.com</span><span style="color:#a00">$request_uri</span>;
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#00a">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">listen</span> <span style="color:#099">80</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span> <span style="color:#a50">www.domain.com</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> <span style="color:#099">301</span> <span style="color:#a50">https://domain.com</span><span style="color:#a00">$request_uri</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">listen</span> <span style="color:#099">443</span> <span style="color:#a50">ssl</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">server_name</span> <span style="color:#a50">www.domain.com</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">ssl_certificate</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/fullchain.pem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">ssl_certificate_key</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/privkey.pem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">include</span> <span style="color:#a50">/etc/letsencrypt/options-ssl-nginx.conf</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">ssl_dhparam</span> <span style="color:#a50">/etc/letsencrypt/ssl-dhparams.pem</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> <span style="color:#099">301</span> <span style="color:#a50">https://domain.com</span><span style="color:#a00">$request_uri</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 Then the main server block:
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00a">server</span> {
-    <span style="color:#00a">listen</span> <span style="color:#099">443</span> <span style="color:#a50">ssl</span>;
-    <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span>;
-
-    <span style="color:#00a">ssl_certificate</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/fullchain.pem</span>;
-    <span style="color:#00a">ssl_certificate_key</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/privkey.pem</span>;
-
-    <span style="color:#00a">ssl_protocols</span> <span style="color:#a50">TLSv1</span> <span style="color:#a50">TLSv1.1</span> <span style="color:#a50">TLSv1.2</span>;
-    <span style="color:#00a">ssl_prefer_server_ciphers</span> <span style="color:#a00">on</span>;
-    <span style="color:#00a">ssl_ciphers</span> <span style="color:#a50">&#39;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&#39;</span>;
-
-    <span style="color:#00a">root</span> <span style="color:#a50">/var/www/home</span>;
-
-    <span style="color:#00a">error_page</span> <span style="color:#099">404</span> =<span style="color:#099">404</span> <span style="color:#a50">/404.html</span>;
-
-    <span style="color:#aaa;font-style:italic"># Add index.php to the list if you are using PHP
-</span><span style="color:#aaa;font-style:italic"></span>    <span style="color:#00a">index</span> <span style="color:#a50">index.html</span> <span style="color:#a50">index.htm</span> <span style="color:#a50">index.nginx-debian.html</span>;
-
-    <span style="color:#00a">location</span> <span style="color:#a50">/</span> {
-        <span style="color:#00a">try_files</span> <span style="color:#a00">$uri</span> <span style="color:#a00">$uri/</span> <span style="color:#a50">/index.html</span> <span style="color:#a50">/index</span><span style="color:#a00">$uri</span> <span style="color:#a50">/index</span><span style="color:#a00">$uri/</span> =<span style="color:#099">404</span>;
-    }
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#00a">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">listen</span> <span style="color:#099">443</span> <span style="color:#a50">ssl</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">server_name</span> <span style="color:#a50">domain.com</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">ssl_certificate</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/fullchain.pem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">ssl_certificate_key</span> <span style="color:#a50">/etc/letsencrypt/live/domain.com/privkey.pem</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">ssl_protocols</span> <span style="color:#a50">TLSv1</span> <span style="color:#a50">TLSv1.1</span> <span style="color:#a50">TLSv1.2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">ssl_prefer_server_ciphers</span> <span style="color:#a00">on</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">ssl_ciphers</span> <span style="color:#a50">&#39;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">root</span> <span style="color:#a50">/var/www/home</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">error_page</span> <span style="color:#099">404</span> =<span style="color:#099">404</span> <span style="color:#a50">/404.html</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># Add index.php to the list if you are using PHP
+</span></span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"></span>    <span style="color:#00a">index</span> <span style="color:#a50">index.html</span> <span style="color:#a50">index.htm</span> <span style="color:#a50">index.nginx-debian.html</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">location</span> <span style="color:#a50">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">try_files</span> <span style="color:#a00">$uri</span> <span style="color:#a00">$uri/</span> <span style="color:#a50">/index.html</span> <span style="color:#a50">/index</span><span style="color:#a00">$uri</span> <span style="color:#a50">/index</span><span style="color:#a00">$uri/</span> =<span style="color:#099">404</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div></p>
 <h2 id="check-redirection">Check Redirection</h2>
 <p>The following Python programs checks if the https and subdomain redirections are correct.
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">requests</span>
-
-hosts = [
-    <span style="color:#aaa;font-style:italic">#(host_name, subdomains)</span>
-    (<span style="color:#a50">&#39;yjlo.xyz&#39;</span>, [<span style="color:#a50">&#39;page&#39;</span>]),
-    (<span style="color:#a50">&#39;runtime.xyz&#39;</span>, []),
-]
-
-<span style="color:#00a">def</span> <span style="color:#0a0">check_url</span>(domain, sub=<span style="color:#00a">None</span>):
-    sub_domains = [<span style="color:#a50">&#39;&#39;</span>, <span style="color:#a50">&#39;www.&#39;</span>]
-    <span style="color:#00a">if</span> sub:
-        <span style="color:#00a">for</span> s <span style="color:#00a">in</span> sub:
-            sub_domains.append(s + <span style="color:#a50">&#39;.&#39;</span>)
-    failed_urls = []
-    <span style="color:#00a">for</span> schema <span style="color:#00a">in</span> [<span style="color:#a50">&#39;http&#39;</span>, <span style="color:#a50">&#39;https&#39;</span>]:
-        <span style="color:#00a">for</span> sub_domain <span style="color:#00a">in</span> sub_domains:
-            url = <span style="color:#a50">&#39;</span><span style="color:#a50">{}</span><span style="color:#a50">://</span><span style="color:#a50">{}{}</span><span style="color:#a50">&#39;</span>.format(schema, sub_domain, domain)
-            <span style="color:#00a">try</span>:
-                r = requests.get(url)
-                status = r.status_code
-                label = <span style="color:#a50">&#39; &#39;</span> <span style="color:#00a">if</span> status == <span style="color:#099">200</span> <span style="color:#00a">else</span> <span style="color:#a50">&#39;*&#39;</span>
-                <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;</span><span style="color:#a50">{}</span><span style="color:#a50">[</span><span style="color:#a50">{}</span><span style="color:#a50">] </span><span style="color:#a50">{}</span><span style="color:#a50">&#39;</span>.format(label, status, url))
-            <span style="color:#00a">except</span> Exception <span style="color:#00a">as</span> e:
-                <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;*[err] </span><span style="color:#a50">{}</span><span style="color:#a50"> </span><span style="color:#a50">{}</span><span style="color:#a50">&#39;</span>.format(url, e))
-                failed_urls.append(url)
-    <span style="color:#00a">return</span> failed_urls
-
-<span style="color:#00a">if</span> __name__ == <span style="color:#a50">&#39;__main__&#39;</span>:
-    error_urls = []
-    <span style="color:#00a">for</span> d, s <span style="color:#00a">in</span> hosts:
-        error_urls.extend(check_url(d, s))
-
-    <span style="color:#00a">if</span> error_urls:
-        <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;</span><span style="color:#a50">\n</span><span style="color:#a50">===== [Failed URLs] =====&#39;</span>)
-        <span style="color:#00a">for</span> eus <span style="color:#00a">in</span> error_urls:
-            <span style="color:#0aa">print</span>(eus)</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">requests</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hosts = [
+</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic">#(host_name, subdomains)</span>
+</span></span><span style="display:flex;"><span>    (<span style="color:#a50">&#39;yjlo.xyz&#39;</span>, [<span style="color:#a50">&#39;page&#39;</span>]),
+</span></span><span style="display:flex;"><span>    (<span style="color:#a50">&#39;runtime.xyz&#39;</span>, []),
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">check_url</span>(domain, sub=<span style="color:#00a">None</span>):
+</span></span><span style="display:flex;"><span>    sub_domains = [<span style="color:#a50">&#39;&#39;</span>, <span style="color:#a50">&#39;www.&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> sub:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> s <span style="color:#00a">in</span> sub:
+</span></span><span style="display:flex;"><span>            sub_domains.append(s + <span style="color:#a50">&#39;.&#39;</span>)
+</span></span><span style="display:flex;"><span>    failed_urls = []
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> schema <span style="color:#00a">in</span> [<span style="color:#a50">&#39;http&#39;</span>, <span style="color:#a50">&#39;https&#39;</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> sub_domain <span style="color:#00a">in</span> sub_domains:
+</span></span><span style="display:flex;"><span>            url = <span style="color:#a50">&#39;</span><span style="color:#a50">{}</span><span style="color:#a50">://</span><span style="color:#a50">{}{}</span><span style="color:#a50">&#39;</span>.format(schema, sub_domain, domain)
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">try</span>:
+</span></span><span style="display:flex;"><span>                r = requests.get(url)
+</span></span><span style="display:flex;"><span>                status = r.status_code
+</span></span><span style="display:flex;"><span>                label = <span style="color:#a50">&#39; &#39;</span> <span style="color:#00a">if</span> status == <span style="color:#099">200</span> <span style="color:#00a">else</span> <span style="color:#a50">&#39;*&#39;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;</span><span style="color:#a50">{}</span><span style="color:#a50">[</span><span style="color:#a50">{}</span><span style="color:#a50">] </span><span style="color:#a50">{}</span><span style="color:#a50">&#39;</span>.format(label, status, url))
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">except</span> Exception <span style="color:#00a">as</span> e:
+</span></span><span style="display:flex;"><span>                <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;*[err] </span><span style="color:#a50">{}</span><span style="color:#a50"> </span><span style="color:#a50">{}</span><span style="color:#a50">&#39;</span>.format(url, e))
+</span></span><span style="display:flex;"><span>                failed_urls.append(url)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> failed_urls
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> __name__ == <span style="color:#a50">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    error_urls = []
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> d, s <span style="color:#00a">in</span> hosts:
+</span></span><span style="display:flex;"><span>        error_urls.extend(check_url(d, s))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> error_urls:
+</span></span><span style="display:flex;"><span>        <span style="color:#0aa">print</span>(<span style="color:#a50">&#39;</span><span style="color:#a50">\n</span><span style="color:#a50">===== [Failed URLs] =====&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> eus <span style="color:#00a">in</span> error_urls:
+</span></span><span style="display:flex;"><span>            <span style="color:#0aa">print</span>(eus)</span></span></code></pre></td></tr></table>
 </div>
 </div></p>
 

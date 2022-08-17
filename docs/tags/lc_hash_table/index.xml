@@ -17,7 +17,7 @@
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
 Example 1:
-Input: nums = [2,7,11,15], target = 9 Output: [0,1] Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
+Input: nums = [2,7,11,15], target = 9Output: [0,1]Output: Because nums[0] + nums[1] == 9, we return [0, 1].</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ Input: nums = [2,7,11,15], target = 9 Output: [0,1] Output: Because nums[0] + nu
       <description>Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 Each row must contain the digits 1-9 without repetition. Each column must contain the digits 1-9 without repetition. Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
 Note:
- A Sudoku board (partially filled) could be valid but is not necessarily solvable.</description>
+A Sudoku board (partially filled) could be valid but is not necessarily solvable.</description>
     </item>
     
     <item>
@@ -42,8 +42,8 @@ Note:
 Note:
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 Example 1:
-Input: [2,2,1] Output: 1 Example 2:
-Input: [4,1,2,1,2] Output: 4  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumber(nums []int) int { set := make(map[int]bool) for _, num := range nums { if _, ok := set[num]; ok { delete(set, num) } else { set[num] = true } } for num, _ := range set { return num } return -1 }    https://runtime.</description>
+Input: [2,2,1]Output: 1 Example 2:
+Input: [4,1,2,1,2]Output: 4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 func singleNumber(nums []int) int { set := make(map[int]bool) for _, num := range nums { if _, ok := set[num]; ok { delete(set, num) } else { set[num] = true } } for num, _ := range set { return num } return -1 } https://runtime.</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ Input: [4,1,2,1,2] Output: 4  1 2 3 4 5 6 7 8 9 10 11 12 13 14  func singleNumbe
       <guid>https://blog.siwei.dev/leetcode/146-lru-cache/</guid>
       <description>Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
 Implement the LRUCache class:
- LRUCache(int capacity) Initialize the LRU cache with positive size capacity. int get(int key) Return the value of the key if the key exists, otherwise return -1. void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.</description>
+LRUCache(int capacity) Initialize the LRU cache with positive size capacity. int get(int key) Return the value of the key if the key exists, otherwise return -1. void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.</description>
     </item>
     
     <item>
@@ -65,9 +65,9 @@ Implement the LRUCache class:
       <guid>https://blog.siwei.dev/leetcode/350-intersection-of-two-arrays-ii/</guid>
       <description>Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
 Example 1:
-Input: nums1 = [1,2,2,1], nums2 = [2,2] Output: [2,2] Example 2:
-Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4] Output: [4,9] Explanation: [9,4] is also accepted. Constraints:
- 1 &amp;lt;= nums1.length, nums2.</description>
+Input: nums1 = [1,2,2,1], nums2 = [2,2]Output: [2,2] Example 2:
+Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]Output: [4,9]Explanation: [9,4] is also accepted. Constraints:
+1 &amp;lt;= nums1.length, nums2.length &amp;lt;= 1000 0 &amp;lt;= nums1[i], nums2[i] &amp;lt;= 1000 Follow up:</description>
     </item>
     
     <item>
@@ -78,10 +78,10 @@ Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4] Output: [4,9] Explanation: [9,4] is 
       <guid>https://blog.siwei.dev/leetcode/387-first-unique-character-in-a-string/</guid>
       <description>Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
 Example 1:
-Input: s = &amp;quot;leetcode&amp;quot; Output: 0 Example 2:
-Input: s = &amp;quot;loveleetcode&amp;quot; Output: 2 Example 3:
-Input: s = &amp;quot;aabb&amp;quot; Output: -1 Constraints:
- 1 &amp;lt;= s.length &amp;lt;= 105 s consists of only lowercase English letters.   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  func firstUniqChar(s string) int { m := make(map[rune]int) for _, c := range s { _, has := m[c] if has { m[c]++ } else { m[c] = 1 } } for i, c := range s { if m[c] == 1 { return i } } return -1 }    1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  class Solution: def firstUniqChar(self, s: str) -&amp;gt; int: count = collections.</description>
+Input: s = &amp;#34;leetcode&amp;#34;Output: 0 Example 2:
+Input: s = &amp;#34;loveleetcode&amp;#34;Output: 2 Example 3:
+Input: s = &amp;#34;aabb&amp;#34;Output: -1 Constraints:
+1 &amp;lt;= s.length &amp;lt;= 105 s consists of only lowercase English letters. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 func firstUniqChar(s string) int { m := make(map[rune]int) for _, c := range s { _, has := m[c] if has { m[c]++ } else { m[c] = 1 } } for i, c := range s { if m[c] == 1 { return i } } return -1 } 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 class Solution: def firstUniqChar(self, s: str) -&amp;gt; int: count = collections.</description>
     </item>
     
     <item>

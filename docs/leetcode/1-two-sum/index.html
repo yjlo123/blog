@@ -91,144 +91,144 @@ Output: [0,1]
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">twoSum</span>(nums []<span style="color:#0aa">int</span>, target <span style="color:#0aa">int</span>) []<span style="color:#0aa">int</span> {
-    d := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">int</span>]<span style="color:#0aa">int</span>)
-    <span style="color:#00a">for</span> idx, num := <span style="color:#00a">range</span> nums {
-        <span style="color:#00a">if</span> v, ok := d[num]; ok {
-            <span style="color:#00a">return</span> []<span style="color:#0aa">int</span>{v, idx}
-        }
-        d[target-num] = idx
-    }
-    <span style="color:#00a">return</span> <span style="color:#00a">nil</span>
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#00a">func</span> <span style="color:#0a0">twoSum</span>(nums []<span style="color:#0aa">int</span>, target <span style="color:#0aa">int</span>) []<span style="color:#0aa">int</span> {
+</span></span><span style="display:flex;"><span>    d := <span style="color:#0aa">make</span>(<span style="color:#00a">map</span>[<span style="color:#0aa">int</span>]<span style="color:#0aa">int</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> idx, num := <span style="color:#00a">range</span> nums {
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> v, ok := d[num]; ok {
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> []<span style="color:#0aa">int</span>{v, idx}
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        d[target-num] = idx
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> <span style="color:#00a">nil</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">twoSum</span>(nums: <span style="color:#a50">&#39;List[int]&#39;</span>, target: <span style="color:#a50">&#39;int&#39;</span>) -&gt; <span style="color:#a50">&#39;List[int]&#39;</span>:
-    <span style="color:#0aa">map</span> = {}
-    <span style="color:#00a">for</span> i, n <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
-        <span style="color:#00a">if</span> n <span style="color:#00a">in</span> <span style="color:#0aa">map</span>:
-            <span style="color:#00a">return</span> [<span style="color:#0aa">map</span>[n], i]
-        <span style="color:#0aa">map</span>[target-n] = i</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">twoSum</span>(nums: <span style="color:#a50">&#39;List[int]&#39;</span>, target: <span style="color:#a50">&#39;int&#39;</span>) -&gt; <span style="color:#a50">&#39;List[int]&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#0aa">map</span> = {}
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> i, n <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> n <span style="color:#00a">in</span> <span style="color:#0aa">map</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> [<span style="color:#0aa">map</span>[n], i]
+</span></span><span style="display:flex;"><span>        <span style="color:#0aa">map</span>[target-n] = i</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="java" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a">public</span> <span style="color:#0aa">int</span>[] <span style="color:#0a0">twoSum</span>(<span style="color:#0aa">int</span>[] nums, <span style="color:#0aa">int</span> target) {
-    Map&lt;Integer, Integer&gt; map = <span style="color:#00a">new</span> HashMap&lt;&gt;();
-    <span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = 0; i &lt; nums.<span style="color:#1e90ff">length</span>; i++) {
-        <span style="color:#0aa">int</span> comp = target - nums[i];
-        <span style="color:#00a">if</span> (map.<span style="color:#1e90ff">containsKey</span>(comp)) {
-            <span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{map.<span style="color:#1e90ff">get</span>(comp), i};
-        }
-        map.<span style="color:#1e90ff">put</span>(nums[i], i);
-    }
-    <span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{};
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#00a">public</span> <span style="color:#0aa">int</span>[] <span style="color:#0a0">twoSum</span>(<span style="color:#0aa">int</span>[] nums, <span style="color:#0aa">int</span> target) {
+</span></span><span style="display:flex;"><span>    Map&lt;Integer, Integer&gt; map = <span style="color:#00a">new</span> HashMap&lt;&gt;();
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = 0; i &lt; nums.<span style="color:#1e90ff">length</span>; i++) {
+</span></span><span style="display:flex;"><span>        <span style="color:#0aa">int</span> comp = target - nums[i];
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> (map.<span style="color:#1e90ff">containsKey</span>(comp)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{map.<span style="color:#1e90ff">get</span>(comp), i};
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        map.<span style="color:#1e90ff">put</span>(nums[i], i);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> <span style="color:#00a">new</span> <span style="color:#0aa">int</span>[]{};
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="c++" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector&lt;<span style="color:#0aa">int</span>&gt; twoSum(vector&lt;<span style="color:#0aa">int</span>&gt;&amp; nums, <span style="color:#0aa">int</span> target) {
-    unordered_map&lt;<span style="color:#0aa">int</span>, <span style="color:#0aa">int</span>&gt; imap;
-
-    <span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = <span style="color:#099">0</span>;; ++i) {
-        <span style="color:#00a">auto</span> it = imap.find(target - nums[i]);
-
-        <span style="color:#00a">if</span> (it != imap.end()) 
-            <span style="color:#00a">return</span> vector&lt;<span style="color:#0aa">int</span>&gt; {i, it-&gt;second};
-
-        imap[nums[i]] = i;
-    }
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>vector&lt;<span style="color:#0aa">int</span>&gt; twoSum(vector&lt;<span style="color:#0aa">int</span>&gt;&amp; nums, <span style="color:#0aa">int</span> target) {
+</span></span><span style="display:flex;"><span>    unordered_map&lt;<span style="color:#0aa">int</span>, <span style="color:#0aa">int</span>&gt; imap;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> (<span style="color:#0aa">int</span> i = <span style="color:#099">0</span>;; ++i) {
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">auto</span> it = imap.find(target - nums[i]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> (it != imap.end()) 
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> vector&lt;<span style="color:#0aa">int</span>&gt; {i, it-&gt;second};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        imap[nums[i]] = i;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <div id="rust" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#00a">pub</span><span style="color:#bbb"> </span><span style="color:#00a">fn</span> <span style="color:#0a0">two_sum</span>(nums: <span style="color:#0aa">Vec</span>&lt;<span style="color:#0aa">i32</span>&gt;,<span style="color:#bbb"> </span>target: <span style="color:#0aa">i32</span>)<span style="color:#bbb"> </span>-&gt; <span style="color:#0aa">Vec</span>&lt;<span style="color:#0aa">i32</span>&gt;<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#00a">use</span><span style="color:#bbb"> </span>std::collections::HashMap;<span style="color:#bbb">
-</span><span style="color:#bbb">    
-</span><span style="color:#bbb">    </span><span style="color:#00a">let</span><span style="color:#bbb"> </span><span style="color:#00a">mut</span><span style="color:#bbb"> </span>m: <span style="color:#0a0;text-decoration:underline">HashMap</span>&lt;<span style="color:#0aa">i32</span>,<span style="color:#bbb"> </span><span style="color:#0aa">i32</span>&gt;<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>HashMap::new();<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#00a">for</span><span style="color:#bbb"> </span>(i,<span style="color:#bbb"> </span>v)<span style="color:#bbb"> </span><span style="color:#00a">in</span><span style="color:#bbb"> </span>nums.iter().enumerate()<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span><span style="color:#bbb">        </span><span style="color:#00a">match</span><span style="color:#bbb"> </span>m.get(&amp;(target<span style="color:#bbb"> </span>-<span style="color:#bbb"> </span>*v))<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span><span style="color:#bbb">            </span><span style="color:#0aa">Some</span>(&amp;i2)<span style="color:#bbb"> </span>=&gt;<span style="color:#bbb"> </span><span style="color:#00a">return</span><span style="color:#bbb"> </span>vec![i<span style="color:#bbb"> </span><span style="color:#00a">as</span><span style="color:#bbb"> </span><span style="color:#0aa">i32</span>,<span style="color:#bbb"> </span>i2],<span style="color:#bbb">
-</span><span style="color:#bbb">            </span><span style="color:#0aa">None</span><span style="color:#bbb"> </span>=&gt;<span style="color:#bbb"> </span>m.insert(*v,<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#00a">as</span><span style="color:#bbb"> </span><span style="color:#0aa">i32</span>),<span style="color:#bbb">
-</span><span style="color:#bbb">        </span>};<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>}<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>vec![]<span style="color:#bbb">
-</span><span style="color:#bbb"></span>}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#00a">pub</span><span style="color:#bbb"> </span><span style="color:#00a">fn</span> <span style="color:#0a0">two_sum</span>(nums: <span style="color:#0aa">Vec</span>&lt;<span style="color:#0aa">i32</span>&gt;,<span style="color:#bbb"> </span>target: <span style="color:#0aa">i32</span>)<span style="color:#bbb"> </span>-&gt; <span style="color:#0aa">Vec</span>&lt;<span style="color:#0aa">i32</span>&gt;<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#00a">use</span><span style="color:#bbb"> </span>std::collections::HashMap;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#00a">let</span><span style="color:#bbb"> </span><span style="color:#00a">mut</span><span style="color:#bbb"> </span>m: <span style="color:#0a0;text-decoration:underline">HashMap</span>&lt;<span style="color:#0aa">i32</span>,<span style="color:#bbb"> </span><span style="color:#0aa">i32</span>&gt;<span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>HashMap::new();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#00a">for</span><span style="color:#bbb"> </span>(i,<span style="color:#bbb"> </span>v)<span style="color:#bbb"> </span><span style="color:#00a">in</span><span style="color:#bbb"> </span>nums.iter().enumerate()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#00a">match</span><span style="color:#bbb"> </span>m.get(&amp;(target<span style="color:#bbb"> </span>-<span style="color:#bbb"> </span>*v))<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#0aa">Some</span>(&amp;i2)<span style="color:#bbb"> </span>=&gt;<span style="color:#bbb"> </span><span style="color:#00a">return</span><span style="color:#bbb"> </span>vec![i<span style="color:#bbb"> </span><span style="color:#00a">as</span><span style="color:#bbb"> </span><span style="color:#0aa">i32</span>,<span style="color:#bbb"> </span>i2],<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#0aa">None</span><span style="color:#bbb"> </span>=&gt;<span style="color:#bbb"> </span>m.insert(*v,<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#00a">as</span><span style="color:#bbb"> </span><span style="color:#0aa">i32</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>vec![]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

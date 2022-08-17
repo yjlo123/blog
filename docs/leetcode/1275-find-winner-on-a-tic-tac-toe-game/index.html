@@ -85,7 +85,7 @@ _ x _
 o o x
 
 Input: moves = [[0,0],[2,0],[1,1],[2,1],[2,2]]
-Output: &quot;A&quot;
+Output: &#34;A&#34;
 Explanation: A wins, they always play first.
 </code></pre><p><strong>Example 2:</strong></p>
 <pre tabindex="0"><code>x x o
@@ -93,7 +93,7 @@ x o _
 o _ _
 
 Input: moves = [[0,0],[1,1],[0,1],[0,2],[1,0],[2,0]]
-Output: &quot;B&quot;
+Output: &#34;B&#34;
 Explanation: B wins.
 </code></pre><p><strong>Example 3:</strong></p>
 <pre tabindex="0"><code>x x o
@@ -101,7 +101,7 @@ o o x
 x o x
 
 Input: moves = [[0,0],[1,1],[2,0],[1,0],[1,2],[2,1],[0,1],[0,2],[2,2]]
-Output: &quot;Draw&quot;
+Output: &#34;Draw&#34;
 Explanation: The game ends in a draw since there are no moves to make.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
@@ -114,60 +114,60 @@ Explanation: The game ends in a draw since there are no moves to make.
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">tictactoe</span>(self, moves: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">str</span>:
-        n = <span style="color:#099">3</span>
-        rows, cols = [<span style="color:#099">0</span>] * n, [<span style="color:#099">0</span>] * n
-        diag = anti_diag = <span style="color:#099">0</span>
-        <span style="color:#aaa;font-style:italic"># A: 1, B: -1</span>
-        player = <span style="color:#099">1</span>
-        
-        <span style="color:#00a">for</span> r, c <span style="color:#00a">in</span> moves:
-            rows[r] += player
-            cols[c] += player
-            <span style="color:#00a">if</span> r == c:
-                diag += player
-            <span style="color:#00a">if</span> r + c == n - <span style="color:#099">1</span>:
-                anti_diag += player
-        
-            <span style="color:#00a">if</span> <span style="color:#0aa">any</span>(<span style="color:#0aa">abs</span>(line) == n <span style="color:#00a">for</span> line <span style="color:#00a">in</span> (
-                rows[r],
-                cols[c],
-                diag,
-                anti_diag,
-            )):
-                <span style="color:#00a">return</span> <span style="color:#a50">&#34;A&#34;</span> <span style="color:#00a">if</span> player == <span style="color:#099">1</span> <span style="color:#00a">else</span> <span style="color:#a50">&#34;B&#34;</span>
-            player *= -<span style="color:#099">1</span>
-        <span style="color:#00a">return</span> <span style="color:#a50">&#34;Draw&#34;</span> <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(moves) == n*n <span style="color:#00a">else</span> <span style="color:#a50">&#34;Pending&#34;</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">tictactoe</span>(self, moves: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">str</span>:
+</span></span><span style="display:flex;"><span>        n = <span style="color:#099">3</span>
+</span></span><span style="display:flex;"><span>        rows, cols = [<span style="color:#099">0</span>] * n, [<span style="color:#099">0</span>] * n
+</span></span><span style="display:flex;"><span>        diag = anti_diag = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># A: 1, B: -1</span>
+</span></span><span style="display:flex;"><span>        player = <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> r, c <span style="color:#00a">in</span> moves:
+</span></span><span style="display:flex;"><span>            rows[r] += player
+</span></span><span style="display:flex;"><span>            cols[c] += player
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> r == c:
+</span></span><span style="display:flex;"><span>                diag += player
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> r + c == n - <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>                anti_diag += player
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#0aa">any</span>(<span style="color:#0aa">abs</span>(line) == n <span style="color:#00a">for</span> line <span style="color:#00a">in</span> (
+</span></span><span style="display:flex;"><span>                rows[r],
+</span></span><span style="display:flex;"><span>                cols[c],
+</span></span><span style="display:flex;"><span>                diag,
+</span></span><span style="display:flex;"><span>                anti_diag,
+</span></span><span style="display:flex;"><span>            )):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#a50">&#34;A&#34;</span> <span style="color:#00a">if</span> player == <span style="color:#099">1</span> <span style="color:#00a">else</span> <span style="color:#a50">&#34;B&#34;</span>
+</span></span><span style="display:flex;"><span>            player *= -<span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#a50">&#34;Draw&#34;</span> <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(moves) == n*n <span style="color:#00a">else</span> <span style="color:#a50">&#34;Pending&#34;</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

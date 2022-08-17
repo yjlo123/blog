@@ -70,11 +70,11 @@
 <div class="blog-post-content">
     <p>Given a string <code>s</code>, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;Let's take LeetCode contest&quot;
-Output: &quot;s'teL ekat edoCteeL tsetnoc&quot;
+<pre tabindex="0"><code>Input: s = &#34;Let&#39;s take LeetCode contest&#34;
+Output: &#34;s&#39;teL ekat edoCteeL tsetnoc&#34;
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &quot;God Ding&quot;
-Output: &quot;doG gniD&quot;
+<pre tabindex="0"><code>Input: s = &#34;God Ding&#34;
+Output: &#34;doG gniD&#34;
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
 <li>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></li>
@@ -86,16 +86,16 @@ Output: &quot;doG gniD&quot;
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">reverseWords</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">str</span>:
-        <span style="color:#00a">return</span> <span style="color:#a50">&#39; &#39;</span>.join([w[::-<span style="color:#099">1</span>] <span style="color:#00a">for</span> w <span style="color:#00a">in</span> s.split(<span style="color:#a50">&#39; &#39;</span>)])</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">reverseWords</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">str</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#a50">&#39; &#39;</span>.join([w[::-<span style="color:#099">1</span>] <span style="color:#00a">for</span> w <span style="color:#00a">in</span> s.split(<span style="color:#a50">&#39; &#39;</span>)])</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

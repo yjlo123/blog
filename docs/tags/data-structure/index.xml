@@ -14,9 +14,9 @@
       
       <guid>https://blog.siwei.dev/post/implementing-linked-lists-in-vlang/</guid>
       <description>In V&amp;rsquo;s documentation, it says:
- V&amp;rsquo;s references are similar to Go pointers and C++ references.
+V&amp;rsquo;s references are similar to Go pointers and C++ references.
 For example, a generic tree structure definition would look like this:
- 1 2 3 4 5  struct Node&amp;lt;T&amp;gt;{valTleft&amp;amp;Noderight&amp;amp;Node}   However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.</description>
+1 2 3 4 5 struct Node&amp;lt;T&amp;gt; { val T left &amp;amp;Node right &amp;amp;Node } However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.</description>
     </item>
     
   </channel>

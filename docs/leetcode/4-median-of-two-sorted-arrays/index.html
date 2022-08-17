@@ -99,96 +99,96 @@ Output: 2.00000
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="golang" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a">func</span> <span style="color:#0a0">findMedianSortedArrays</span>(nums1 []<span style="color:#0aa">int</span>, nums2 []<span style="color:#0aa">int</span>) <span style="color:#0aa">float64</span> {
-    m := <span style="color:#0aa">len</span>(nums1)
-    n := <span style="color:#0aa">len</span>(nums2)
-    <span style="color:#00a">if</span> m &gt; n {
-        nums1, nums2 = nums2, nums1
-        m, n = n, m
-    }
-    iMin := <span style="color:#099">0</span>
-    iMax := m
-    halfLen := (m + n + <span style="color:#099">1</span>) / <span style="color:#099">2</span>
-    <span style="color:#00a">for</span> iMin &lt;= iMax {
-        i := (iMin + iMax) / <span style="color:#099">2</span>
-        j := halfLen - i
-        <span style="color:#00a">if</span> i &lt; iMax &amp;&amp; nums2[j-<span style="color:#099">1</span>] &gt; nums1[i] {
-            iMin = i + <span style="color:#099">1</span>
-        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> i &gt; iMin &amp;&amp; nums1[i-<span style="color:#099">1</span>] &gt; nums2[j] {
-            iMax = i - <span style="color:#099">1</span>
-        } <span style="color:#00a">else</span> {
-            maxLeft := <span style="color:#099">0</span>
-            <span style="color:#00a">if</span> i == <span style="color:#099">0</span> {
-                maxLeft = nums2[j-<span style="color:#099">1</span>]
-            } <span style="color:#00a">else</span> <span style="color:#00a">if</span> j == <span style="color:#099">0</span> {
-                maxLeft = nums1[i-<span style="color:#099">1</span>]
-            } <span style="color:#00a">else</span> {
-                maxLeft = <span style="color:#0a0">Max</span>(nums1[i-<span style="color:#099">1</span>], nums2[j-<span style="color:#099">1</span>])
-            }
-            <span style="color:#00a">if</span> (m+n)%<span style="color:#099">2</span> == <span style="color:#099">1</span> {
-                <span style="color:#00a">return</span> <span style="color:#0aa">float64</span>(maxLeft)
-            }
-
-            minRight := <span style="color:#099">0</span>
-            <span style="color:#00a">if</span> i == m {
-                minRight = nums2[j]
-            } <span style="color:#00a">else</span> <span style="color:#00a">if</span> j == n {
-                minRight = nums1[i]
-            } <span style="color:#00a">else</span> {
-                minRight = <span style="color:#0a0">Min</span>(nums2[j], nums1[i])
-            }
-            <span style="color:#00a">return</span> <span style="color:#0aa">float64</span>(maxLeft+minRight) / <span style="color:#099">2.0</span>
-        }
-    }
-    <span style="color:#00a">return</span> <span style="color:#099">0.0</span>
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#00a">func</span> <span style="color:#0a0">findMedianSortedArrays</span>(nums1 []<span style="color:#0aa">int</span>, nums2 []<span style="color:#0aa">int</span>) <span style="color:#0aa">float64</span> {
+</span></span><span style="display:flex;"><span>    m := <span style="color:#0aa">len</span>(nums1)
+</span></span><span style="display:flex;"><span>    n := <span style="color:#0aa">len</span>(nums2)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> m &gt; n {
+</span></span><span style="display:flex;"><span>        nums1, nums2 = nums2, nums1
+</span></span><span style="display:flex;"><span>        m, n = n, m
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    iMin := <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>    iMax := m
+</span></span><span style="display:flex;"><span>    halfLen := (m + n + <span style="color:#099">1</span>) / <span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> iMin &lt;= iMax {
+</span></span><span style="display:flex;"><span>        i := (iMin + iMax) / <span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span>        j := halfLen - i
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> i &lt; iMax &amp;&amp; nums2[j-<span style="color:#099">1</span>] &gt; nums1[i] {
+</span></span><span style="display:flex;"><span>            iMin = i + <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#00a">else</span> <span style="color:#00a">if</span> i &gt; iMin &amp;&amp; nums1[i-<span style="color:#099">1</span>] &gt; nums2[j] {
+</span></span><span style="display:flex;"><span>            iMax = i - <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#00a">else</span> {
+</span></span><span style="display:flex;"><span>            maxLeft := <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i == <span style="color:#099">0</span> {
+</span></span><span style="display:flex;"><span>                maxLeft = nums2[j-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>            } <span style="color:#00a">else</span> <span style="color:#00a">if</span> j == <span style="color:#099">0</span> {
+</span></span><span style="display:flex;"><span>                maxLeft = nums1[i-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>            } <span style="color:#00a">else</span> {
+</span></span><span style="display:flex;"><span>                maxLeft = <span style="color:#0a0">Max</span>(nums1[i-<span style="color:#099">1</span>], nums2[j-<span style="color:#099">1</span>])
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> (m+n)%<span style="color:#099">2</span> == <span style="color:#099">1</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#0aa">float64</span>(maxLeft)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            minRight := <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i == m {
+</span></span><span style="display:flex;"><span>                minRight = nums2[j]
+</span></span><span style="display:flex;"><span>            } <span style="color:#00a">else</span> <span style="color:#00a">if</span> j == n {
+</span></span><span style="display:flex;"><span>                minRight = nums1[i]
+</span></span><span style="display:flex;"><span>            } <span style="color:#00a">else</span> {
+</span></span><span style="display:flex;"><span>                minRight = <span style="color:#0a0">Min</span>(nums2[j], nums1[i])
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#0aa">float64</span>(maxLeft+minRight) / <span style="color:#099">2.0</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> <span style="color:#099">0.0</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

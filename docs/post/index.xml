@@ -25,11 +25,11 @@ I&amp;rsquo;ve created several games while implementing Runtime Script and found
       <guid>https://blog.siwei.dev/post/%E8%A3%85%E6%9C%BA%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%E5%8F%8A%E6%9B%B4%E6%96%B0/</guid>
       <description>满怀期待地配了一台台式机，却要经受电脑各种各样的问题。这次装机也让我认识到了硬件的不可靠。
 总结一下遇到的闹心问题：
- Cooler Master的电源（Cooler Master Gold 550 Full Modular）风扇做工极差。开启和关闭时会发出类似风扇被卡到的噪音。【闹心指数：**】 Asus主板（ASUS TUF Gaming B550M-PLUS）有很严重的兼容性问题，导致装好的电脑随机断电重启。【闹心指数：*****】 Zotac显卡（ZOTAC Gaming GTX 1660 Super）闪屏问题。每隔几分钟屏幕的上半部分就会闪烁一下。【闹心指数：****】  下面详细介绍下每个问题
- 电源问题（风扇噪音） 装机前还很看好全模组（Full Modular）的电源，感觉插线可以更自由。装机后却觉得全模组对于我是没必要的。因为电源一定是要有两个线分别给主板和CPU供电，而且我也没有定制机箱内电源线的需求。
+Cooler Master的电源（Cooler Master Gold 550 Full Modular）风扇做工极差。开启和关闭时会发出类似风扇被卡到的噪音。【闹心指数：**】 Asus主板（ASUS TUF Gaming B550M-PLUS）有很严重的兼容性问题，导致装好的电脑随机断电重启。【闹心指数：*****】 Zotac显卡（ZOTAC Gaming GTX 1660 Super）闪屏问题。每隔几分钟屏幕的上半部分就会闪烁一下。【闹心指数：****】 下面详细介绍下每个问题
+电源问题（风扇噪音） 装机前还很看好全模组（Full Modular）的电源，感觉插线可以更自由。装机后却觉得全模组对于我是没必要的。因为电源一定是要有两个线分别给主板和CPU供电，而且我也没有定制机箱内电源线的需求。
 但这也不是重点。严重的问题是买的这个Cooler Master的电源风扇在启动和断电时有很明显的噪音。
 找售后换了一个全新的后，在关机时风扇仍有很明显的停转噪音，但算是在一个能忍的范围了。
- 主板问题（自动重启） 千挑万选的主板，却给我带来了最大的麻烦。从装好机的第一天开始，电脑就会在轻工作量的时候突然断电重启，在运行大型游戏或者软件时反倒没有重启过。寻找问题的四个多月几乎让人生无可恋。
+主板问题（自动重启） 千挑万选的主板，却给我带来了最大的麻烦。从装好机的第一天开始，电脑就会在轻工作量的时候突然断电重启，在运行大型游戏或者软件时反倒没有重启过。寻找问题的四个多月几乎让人生无可恋。
 重启几乎毫无规律，有时一天重启多次，有时却能够保持一天不出问题。这也导致了每次验证问题是否已被解决的周期很长。
 # 怀疑软件的问题 Google搜索一下random reboot问题，大量的视频和文章介绍怎么更改Windows的某些系统设置或者关闭屏幕保护来解决，然而这些方法一点作用没有。
 然后我卸载掉了一系列软件和驱动，包括AutoHotkey，CPU chipset驱动，Ryzen Master，Nvidia显卡驱动等等，每次都要待机个一两天来验证，但是每次都以失败和沮丧告终。
@@ -37,7 +37,7 @@ I&amp;rsquo;ve created several games while implementing Runtime Script and found
 # 怀疑机箱部件没插好 把CPU风扇，内存，电源，显卡和机箱按钮的连线全都重新插了一遍，折腾一番后，问题依旧。
 # 怀疑电压不稳 电脑突然断电重启是在我小的时候偶尔遇到过的，那时家乡的电压很不稳定，每次伴随着电灯忽暗忽明，电脑就跟着重启。而我能做的只有换个插线板和电源插座来排除一下是连接的问题。
 # 怀疑电源的问题 在Windows的Event Viewer里可以查看每次重启的系统日志。每次重启的记录里都标记着：
- Event ID 41 The system has rebooted without cleanly shutting down first. This error could be caused if the system stopped responding, crashed, or lost power unexpectedly.</description>
+Event ID 41 The system has rebooted without cleanly shutting down first. This error could be caused if the system stopped responding, crashed, or lost power unexpectedly.</description>
     </item>
     
     <item>
@@ -47,9 +47,9 @@ I&amp;rsquo;ve created several games while implementing Runtime Script and found
       
       <guid>https://blog.siwei.dev/post/implementing-linked-lists-in-vlang/</guid>
       <description>In V&amp;rsquo;s documentation, it says:
- V&amp;rsquo;s references are similar to Go pointers and C++ references.
+V&amp;rsquo;s references are similar to Go pointers and C++ references.
 For example, a generic tree structure definition would look like this:
- 1 2 3 4 5  struct Node&amp;lt;T&amp;gt;{valTleft&amp;amp;Noderight&amp;amp;Node}   However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.</description>
+1 2 3 4 5 struct Node&amp;lt;T&amp;gt; { val T left &amp;amp;Node right &amp;amp;Node } However, I found that it seems impossible to initialize such a Node. A new Node must define the initial values for its left and right references, which are Nodes that need their left and right values initialized as well.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ For example, a generic tree structure definition would look like this:
       <pubDate>Tue, 08 Sep 2020 11:30:40 +0800</pubDate>
       
       <guid>https://blog.siwei.dev/post/my-new-pc/</guid>
-      <description>Part Name Price (SGD) Bought From     CPU AMD Ryzen 5 3600X 289.34 Amazon   MB ASUS TUF Gaming B550M-PLUS 221.40 Amazon   MEM Corsair Vengeance 3200 C16 16GB*2 152.21 Amazon   PSU Cooler Master Gold 550 Full Modular 105.00 Shopee   GPU ZOTAC Gaming GTX 1660 Super 324.00 Shopee   SSD Samsung 970 EVO Plus 500GB 138.37 Amazon   SSD Kingston A 2000 Nvme Pcie 500G 76.</description>
+      <description>Part Name Price (SGD) Bought From CPU AMD Ryzen 5 3600X 289.34 Amazon MB ASUS TUF Gaming B550M-PLUS 221.40 Amazon MEM Corsair Vengeance 3200 C16 16GB*2 152.21 Amazon PSU Cooler Master Gold 550 Full Modular 105.00 Shopee GPU ZOTAC Gaming GTX 1660 Super 324.00 Shopee SSD Samsung 970 EVO Plus 500GB 138.37 Amazon SSD Kingston A 2000 Nvme Pcie 500G 76.37 Shopee CASE Cooler Master MASTERBOX NR400 89.00 Shopee FAN be quiet!</description>
     </item>
     
     <item>
@@ -79,7 +79,7 @@ The development process of YJLO Script is fun, I tried to push some commits to t
       <guid>https://blog.siwei.dev/post/things-to-do-after-purchasing-a-domain/</guid>
       <description>Yesterday, I purchased a new domain from Namecheap and realized there were a bunch of things to do to make the new webpage live. Here I listed some notes for future reference.
 Setup HTTPS For certain domain suffixes, HTTPS is compulsory. For instance, .dev is a secure namespace and the website requires HTTPS to work in browser.
-- Generate a new cert using certbot 1 2  # for example, your domain is domain.</description>
+- Generate a new cert using certbot 1 2 # for example, your domain is domain.</description>
     </item>
     
     <item>

@@ -100,120 +100,120 @@
 <p>The first request initialized by the client is asking for a <code>key</code>, which is used as the key in Redis as well as the argument used for asking for Captcha image in the following request.</p>
 <p>The reason why the client has to send two separate requests to get the Captcha image is that the server is not able to return the key and the image data at the same time. This API is designed to be stateless, otherwise, you can manage a session instead of keeping an identifier like the <code>key</code> value in this example.</p>
 <p>In the following code snippet, we also remove the Captcha data from Redis by the key given in the request. This allows the user to refresh the captcha image and the server clears the previous captcha. Besides, each key will expires automatically (deleted from Redis) if it is not cleared by any request.</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#888">@app</span>.route(BASE_URL + <span style="color:#a50">&#34;/captcha_pre&#34;</span>)
-<span style="color:#00a">def</span> <span style="color:#0a0">captcha_pre</span>():
-	<span style="color:#aaa;font-style:italic"># ckey refresh, remove the previous one</span>
-	ckey = request.args.get(<span style="color:#a50">&#39;ckey&#39;</span>)
-	<span style="color:#00a">if</span> ckey:
-		r.delete(ckey)
-
-	key = <span style="color:#0aa">str</span>(uuid.uuid4())
-	r.set(key, CAPTCHA_INIT_VALUE, ex=CAPTCHA_INIT_EXPIRE)
-	<span style="color:#00a">return</span> json.dumps({<span style="color:#a50">&#39;ckey&#39;</span>: key})</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#888">@app</span>.route(BASE_URL + <span style="color:#a50">&#34;/captcha_pre&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">captcha_pre</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#aaa;font-style:italic"># ckey refresh, remove the previous one</span>
+</span></span><span style="display:flex;"><span>	ckey = request.args.get(<span style="color:#a50">&#39;ckey&#39;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#00a">if</span> ckey:
+</span></span><span style="display:flex;"><span>		r.delete(ckey)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	key = <span style="color:#0aa">str</span>(uuid.uuid4())
+</span></span><span style="display:flex;"><span>	r.set(key, CAPTCHA_INIT_VALUE, ex=CAPTCHA_INIT_EXPIRE)
+</span></span><span style="display:flex;"><span>	<span style="color:#00a">return</span> json.dumps({<span style="color:#a50">&#39;ckey&#39;</span>: key})</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <h4 id="2-captcha-key-image-pair">(2) Captcha Key-Image Pair</h4>
 <p>The <a href="https://pypi.org/project/captcha/">captcha</a> module is used here to generate the Captcha image.
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">captcha.image</span> <span style="color:#00a">import</span> ImageCaptcha
-
-image_captcha = ImageCaptcha()
-
-<span style="color:#888">@app</span>.route(BASE_URL + <span style="color:#a50">&#34;/captcha&#34;</span>)
-<span style="color:#00a">def</span> <span style="color:#0a0">captcha_image</span>():
-	ckey = request.args.get(<span style="color:#a50">&#39;ckey&#39;</span>)
-
-	<span style="color:#aaa;font-style:italic"># verify captcha key</span>
-	<span style="color:#00a">try</span>:
-		uuid_obj = uuid.UUID(ckey, version=<span style="color:#099">4</span>)
-	<span style="color:#00a">except</span>:
-		<span style="color:#00a">return</span> json.dumps({<span style="color:#a50">&#39;result&#39;</span>: <span style="color:#099">1</span>, <span style="color:#a50">&#39;message&#39;</span>: <span style="color:#a50">&#39;Invalid key&#39;</span>})
-
-	<span style="color:#aaa;font-style:italic"># verify init</span>
-	captcha_cache = r.get(ckey)
-	<span style="color:#00a">if</span> <span style="color:#00a">not</span> (captcha_cache <span style="color:#00a">and</span> captcha_cache.decode(<span style="color:#a50">&#34;utf-8&#34;</span>) == CAPTCHA_INIT_VALUE):
-		<span style="color:#00a">return</span> json.dumps({<span style="color:#a50">&#39;result&#39;</span>: <span style="color:#099">1</span>, <span style="color:#a50">&#39;message&#39;</span>: <span style="color:#a50">&#39;Invalid key&#39;</span>})
-	
-	<span style="color:#aaa;font-style:italic"># generate captcha</span>
-	value = <span style="color:#a50">&#39;&#39;</span>.join(random.choices(CAPTCHA_CHARSET, k=CAPTCHA_LENGTH))
-	data = image_captcha.generate(value)
-
-	<span style="color:#aaa;font-style:italic"># cache captcha</span>
-	r.set(ckey, value, ex=CAPTCHA_EXPIRE)
-	<span style="color:#00a">return</span> send_file(data, attachment_filename=<span style="color:#a50">&#34;captcha.jpg&#34;</span>, as_attachment=<span style="color:#00a">False</span>)</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">captcha.image</span> <span style="color:#00a">import</span> ImageCaptcha
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>image_captcha = ImageCaptcha()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#888">@app</span>.route(BASE_URL + <span style="color:#a50">&#34;/captcha&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">captcha_image</span>():
+</span></span><span style="display:flex;"><span>	ckey = request.args.get(<span style="color:#a50">&#39;ckey&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#aaa;font-style:italic"># verify captcha key</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a">try</span>:
+</span></span><span style="display:flex;"><span>		uuid_obj = uuid.UUID(ckey, version=<span style="color:#099">4</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#00a">except</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#00a">return</span> json.dumps({<span style="color:#a50">&#39;result&#39;</span>: <span style="color:#099">1</span>, <span style="color:#a50">&#39;message&#39;</span>: <span style="color:#a50">&#39;Invalid key&#39;</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#aaa;font-style:italic"># verify init</span>
+</span></span><span style="display:flex;"><span>	captcha_cache = r.get(ckey)
+</span></span><span style="display:flex;"><span>	<span style="color:#00a">if</span> <span style="color:#00a">not</span> (captcha_cache <span style="color:#00a">and</span> captcha_cache.decode(<span style="color:#a50">&#34;utf-8&#34;</span>) == CAPTCHA_INIT_VALUE):
+</span></span><span style="display:flex;"><span>		<span style="color:#00a">return</span> json.dumps({<span style="color:#a50">&#39;result&#39;</span>: <span style="color:#099">1</span>, <span style="color:#a50">&#39;message&#39;</span>: <span style="color:#a50">&#39;Invalid key&#39;</span>})
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#aaa;font-style:italic"># generate captcha</span>
+</span></span><span style="display:flex;"><span>	value = <span style="color:#a50">&#39;&#39;</span>.join(random.choices(CAPTCHA_CHARSET, k=CAPTCHA_LENGTH))
+</span></span><span style="display:flex;"><span>	data = image_captcha.generate(value)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#aaa;font-style:italic"># cache captcha</span>
+</span></span><span style="display:flex;"><span>	r.set(ckey, value, ex=CAPTCHA_EXPIRE)
+</span></span><span style="display:flex;"><span>	<span style="color:#00a">return</span> send_file(data, attachment_filename=<span style="color:#a50">&#34;captcha.jpg&#34;</span>, as_attachment=<span style="color:#00a">False</span>)</span></span></code></pre></td></tr></table>
 </div>
 </div></p>
 <h4 id="3-verification">(3) Verification</h4>
 <p>Nothing magical here, just compare the cached code with the user input. Take note that each captcha is one-time use only, it will be deleted no matter the user input is correct or not.
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">def</span> <span style="color:#0a0">verify_captcha</span>(captcha_key, captcha_input):
-	captcha_cache = r.get(captcha_key)
-	result = <span style="color:#00a">False</span>
-	<span style="color:#00a">if</span> captcha_cache:
-		captcha_cache_str = captcha_cache.decode(<span style="color:#a50">&#34;utf-8&#34;</span>)
-		<span style="color:#00a">if</span> (captcha_cache_str.lower() == captcha_input.lower()
-			<span style="color:#00a">and</span> <span style="color:#00a">not</span> captcha_cache_str == CAPTCHA_INIT_VALUE):
-			result = <span style="color:#00a">True</span>
-		<span style="color:#aaa;font-style:italic"># clean captcha cache regardless of the result</span>
-		r.delete(captcha_key)
-	<span style="color:#00a">return</span> result</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">verify_captcha</span>(captcha_key, captcha_input):
+</span></span><span style="display:flex;"><span>	captcha_cache = r.get(captcha_key)
+</span></span><span style="display:flex;"><span>	result = <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00a">if</span> captcha_cache:
+</span></span><span style="display:flex;"><span>		captcha_cache_str = captcha_cache.decode(<span style="color:#a50">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#00a">if</span> (captcha_cache_str.lower() == captcha_input.lower()
+</span></span><span style="display:flex;"><span>			<span style="color:#00a">and</span> <span style="color:#00a">not</span> captcha_cache_str == CAPTCHA_INIT_VALUE):
+</span></span><span style="display:flex;"><span>			result = <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#aaa;font-style:italic"># clean captcha cache regardless of the result</span>
+</span></span><span style="display:flex;"><span>		r.delete(captcha_key)
+</span></span><span style="display:flex;"><span>	<span style="color:#00a">return</span> result</span></span></code></pre></td></tr></table>
 </div>
 </div></p>
 <h2 id="conclusion">Conclusion</h2>

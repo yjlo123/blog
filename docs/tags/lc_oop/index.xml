@@ -14,7 +14,7 @@
       
       <guid>https://blog.siwei.dev/leetcode/1114-print-in-order/</guid>
       <description>Suppose we have a class:
-public class Foo { public void first() { print(&amp;quot;first&amp;quot;); } public void second() { print(&amp;quot;second&amp;quot;); } public void third() { print(&amp;quot;third&amp;quot;); } } The same instance of Foo will be passed to three different threads. Thread A will call first(), thread B will call second(), and thread C will call third(). Design a mechanism and modify the program to ensure that second() is executed after first(), and third() is executed after second().</description>
+public class Foo {public void first() { print(&amp;#34;first&amp;#34;); }public void second() { print(&amp;#34;second&amp;#34;); }public void third() { print(&amp;#34;third&amp;#34;); }} The same instance of Foo will be passed to three different threads. Thread A will call first(), thread B will call second(), and thread C will call third(). Design a mechanism and modify the program to ensure that second() is executed after first(), and third() is executed after second().</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@ public class Foo { public void first() { print(&amp;quot;first&amp;quot;); } pub
       <guid>https://blog.siwei.dev/leetcode/1603-design-parking-system/</guid>
       <description>Design a parking system for a parking lot. The parking lot has three kinds of parking spaces: big, medium, and small, with a fixed number of slots for each size.
 Implement the ParkingSystem class:
- ParkingSystem(int big, int medium, int small) Initializes object of the ParkingSystem class. The number of slots for each parking space are given as part of the constructor. bool addCar(int carType) Checks whether there is a parking space of carType for the car that wants to get into the parking lot.</description>
+ParkingSystem(int big, int medium, int small) Initializes object of the ParkingSystem class. The number of slots for each parking space are given as part of the constructor. bool addCar(int carType) Checks whether there is a parking space of carType for the car that wants to get into the parking lot.</description>
     </item>
     
   </channel>

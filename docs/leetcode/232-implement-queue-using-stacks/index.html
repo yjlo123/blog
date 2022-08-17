@@ -87,7 +87,7 @@
 </ul>
 <p><strong>Example 1:</strong></p>
 <pre tabindex="0"><code>Input
-[&quot;MyQueue&quot;, &quot;push&quot;, &quot;push&quot;, &quot;peek&quot;, &quot;pop&quot;, &quot;empty&quot;]
+[&#34;MyQueue&#34;, &#34;push&#34;, &#34;push&#34;, &#34;peek&#34;, &#34;pop&#34;, &#34;empty&#34;]
 [[], [1], [2], [], [], []]
 Output
 [null, null, null, 1, 1, false]
@@ -109,72 +109,72 @@ myQueue.empty(); // return false
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">MyQueue</span>:
-
-    <span style="color:#00a">def</span> __init__(self):
-        self.inbox = []
-        self.outbox = []
-
-    <span style="color:#00a">def</span> <span style="color:#0a0">push</span>(self, x: <span style="color:#0aa">int</span>) -&gt; <span style="color:#00a">None</span>:
-        self.inbox.append(x)
-
-    <span style="color:#00a">def</span> <span style="color:#0a0">pop</span>(self) -&gt; <span style="color:#0aa">int</span>:
-        self._move()
-        <span style="color:#00a">return</span> self.outbox.pop()
-
-    <span style="color:#00a">def</span> <span style="color:#0a0">peek</span>(self) -&gt; <span style="color:#0aa">int</span>:
-        self._move()
-        <span style="color:#00a">return</span> self.outbox[-<span style="color:#099">1</span>]
-
-    <span style="color:#00a">def</span> <span style="color:#0a0">empty</span>(self) -&gt; <span style="color:#0aa">bool</span>:
-        <span style="color:#00a">return</span> <span style="color:#00a">not</span> self.inbox <span style="color:#00a">and</span> <span style="color:#00a">not</span> self.outbox
-
-    <span style="color:#00a">def</span> <span style="color:#0a0">_move</span>(self) -&gt; <span style="color:#00a">None</span>:
-        <span style="color:#00a">if</span> <span style="color:#00a">not</span> self.outbox:
-            <span style="color:#00a">while</span> self.inbox:
-                self.outbox.append(self.inbox.pop())
-
-<span style="color:#aaa;font-style:italic"># Your MyQueue object will be instantiated and called as such:</span>
-<span style="color:#aaa;font-style:italic"># obj = MyQueue()</span>
-<span style="color:#aaa;font-style:italic"># obj.push(x)</span>
-<span style="color:#aaa;font-style:italic"># param_2 = obj.pop()</span>
-<span style="color:#aaa;font-style:italic"># param_3 = obj.peek()</span>
-<span style="color:#aaa;font-style:italic"># param_4 = obj.empty()</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">MyQueue</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self.inbox = []
+</span></span><span style="display:flex;"><span>        self.outbox = []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">push</span>(self, x: <span style="color:#0aa">int</span>) -&gt; <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>        self.inbox.append(x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">pop</span>(self) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        self._move()
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.outbox.pop()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">peek</span>(self) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        self._move()
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.outbox[-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">empty</span>(self) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">not</span> self.inbox <span style="color:#00a">and</span> <span style="color:#00a">not</span> self.outbox
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">_move</span>(self) -&gt; <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> self.outbox:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> self.inbox:
+</span></span><span style="display:flex;"><span>                self.outbox.append(self.inbox.pop())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your MyQueue object will be instantiated and called as such:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj = MyQueue()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj.push(x)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_2 = obj.pop()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_3 = obj.peek()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_4 = obj.empty()</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

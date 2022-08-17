@@ -68,7 +68,7 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>Given the <code>root</code> of a binary tree, return <em>the preorder traversal of its nodes' values</em>.</p>
+    <p>Given the <code>root</code> of a binary tree, return <em>the preorder traversal of its nodes&rsquo; values</em>.</p>
 <p><strong>Example 1:</strong></p>
 <pre tabindex="0"><code> 1
   \
@@ -107,80 +107,80 @@ Output: [1,2]
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
-<span style="color:#aaa;font-style:italic"># class TreeNode:</span>
-<span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, left=None, right=None):</span>
-<span style="color:#aaa;font-style:italic">#         self.val = val</span>
-<span style="color:#aaa;font-style:italic">#         self.left = left</span>
-<span style="color:#aaa;font-style:italic">#         self.right = right</span>
-
-<span style="color:#a50">&#39;&#39;&#39; Recursive &#39;&#39;&#39;</span>
-<span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">preorderTraversal</span>(self, root: Optional[TreeNode]) -&gt; List[<span style="color:#0aa">int</span>]:
-        <span style="color:#00a">def</span> <span style="color:#0a0">preorder</span>(node: Optional[TreeNode], lst: List[<span style="color:#0aa">int</span>]):
-            <span style="color:#00a">if</span> <span style="color:#00a">not</span> node:
-                <span style="color:#00a">return</span>
-            lst.append(node.val)
-            preorder(node.left, lst)
-            preorder(node.right, lst)
-        result = []
-        preorder(root, result)
-        <span style="color:#00a">return</span> result
-
-<span style="color:#a50">&#39;&#39;&#39; Iterative &#39;&#39;&#39;</span>
-<span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-    <span style="color:#00a">def</span> <span style="color:#0a0">preorderTraversal</span>(self, root: Optional[TreeNode]) -&gt; List[<span style="color:#0aa">int</span>]:
-        <span style="color:#00a">if</span> root <span style="color:#00a">is</span> <span style="color:#00a">None</span>:
-            <span style="color:#00a">return</span> []
-        stack, output = [root, ], []
-        <span style="color:#00a">while</span> stack:
-            root = stack.pop()
-            <span style="color:#00a">if</span> root:
-                output.append(root.val) <span style="color:#aaa;font-style:italic"># Add before going to children</span>
-                <span style="color:#00a">if</span> root.right:
-                    stack.append(root.right)
-                <span style="color:#00a">if</span> root.left:
-                    stack.append(root.left)
-        <span style="color:#00a">return</span> output</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># class TreeNode:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, left=None, right=None):</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.val = val</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.left = left</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.right = right</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39; Recursive &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">preorderTraversal</span>(self, root: Optional[TreeNode]) -&gt; List[<span style="color:#0aa">int</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">preorder</span>(node: Optional[TreeNode], lst: List[<span style="color:#0aa">int</span>]):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#00a">not</span> node:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span>
+</span></span><span style="display:flex;"><span>            lst.append(node.val)
+</span></span><span style="display:flex;"><span>            preorder(node.left, lst)
+</span></span><span style="display:flex;"><span>            preorder(node.right, lst)
+</span></span><span style="display:flex;"><span>        result = []
+</span></span><span style="display:flex;"><span>        preorder(root, result)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> result
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39; Iterative &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">preorderTraversal</span>(self, root: Optional[TreeNode]) -&gt; List[<span style="color:#0aa">int</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> root <span style="color:#00a">is</span> <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> []
+</span></span><span style="display:flex;"><span>        stack, output = [root, ], []
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> stack:
+</span></span><span style="display:flex;"><span>            root = stack.pop()
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> root:
+</span></span><span style="display:flex;"><span>                output.append(root.val) <span style="color:#aaa;font-style:italic"># Add before going to children</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> root.right:
+</span></span><span style="display:flex;"><span>                    stack.append(root.right)
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> root.left:
+</span></span><span style="display:flex;"><span>                    stack.append(root.left)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> output</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

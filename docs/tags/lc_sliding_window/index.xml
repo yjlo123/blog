@@ -15,9 +15,9 @@
       <guid>https://blog.siwei.dev/leetcode/3-longest-substring-without-repeating-characters/</guid>
       <description>Given a string s, find the length of the longest substring without repeating characters.
 Example 1:
-Input: s = &amp;quot;abcabcbb&amp;quot; Output: 3 Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3. Example 2:
-Input: s = &amp;quot;bbbbb&amp;quot; Output: 1 Explanation: The answer is &amp;quot;b&amp;quot;, with the length of 1. Example 3:
-Input: s = &amp;quot;pwwkew&amp;quot; Output: 3 Explanation: The answer is &amp;quot;wke&amp;quot;, with the length of 3. Notice that the answer must be a substring, &amp;quot;pwke&amp;quot; is a subsequence and not a substring.</description>
+Input: s = &amp;#34;abcabcbb&amp;#34;Output: 3Explanation: The answer is &amp;#34;abc&amp;#34;, with the length of 3. Example 2:
+Input: s = &amp;#34;bbbbb&amp;#34;Output: 1Explanation: The answer is &amp;#34;b&amp;#34;, with the length of 1. Example 3:
+Input: s = &amp;#34;pwwkew&amp;#34;Output: 3Explanation: The answer is &amp;#34;wke&amp;#34;, with the length of 3.Notice that the answer must be a substring, &amp;#34;pwke&amp;#34; is a subsequence and not a substring.</description>
     </item>
     
     <item>
@@ -29,9 +29,9 @@ Input: s = &amp;quot;pwwkew&amp;quot; Output: 3 Explanation: The answer is &amp;
       <description>Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
 In other words, return true if one of s1&amp;rsquo;s permutations is the substring of s2.
 Example 1:
-Input: s1 = &amp;quot;ab&amp;quot;, s2 = &amp;quot;eidbaooo&amp;quot; Output: true Explanation: s2 contains one permutation of s1 (&amp;quot;ba&amp;quot;). Example 2:
-Input: s1 = &amp;quot;ab&amp;quot;, s2 = &amp;quot;eidboaoo&amp;quot; Output: false Constraints:
- 1 &amp;lt;= s1.length, s2.length &amp;lt;= 104 s1 and s2 consist of lowercase English letters.</description>
+Input: s1 = &amp;#34;ab&amp;#34;, s2 = &amp;#34;eidbaooo&amp;#34;Output: trueExplanation: s2 contains one permutation of s1 (&amp;#34;ba&amp;#34;). Example 2:
+Input: s1 = &amp;#34;ab&amp;#34;, s2 = &amp;#34;eidboaoo&amp;#34;Output: false Constraints:
+1 &amp;lt;= s1.length, s2.length &amp;lt;= 104 s1 and s2 consist of lowercase English letters.</description>
     </item>
     
   </channel>
