@@ -1,21 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>lc_concurrency on Siwei&#39;s Blog</title>
-    <link>https://blog.siwei.dev/tags/lc_concurrency/</link>
-    <description>Recent content in lc_concurrency on Siwei&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 22 Mar 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_concurrency/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>1114 Print in Order</title>
-      <link>https://blog.siwei.dev/leetcode/1114-print-in-order/</link>
-      <pubDate>Mon, 22 Mar 2021 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/1114-print-in-order/</guid>
-      <description>Suppose we have a class:
-public class Foo {public void first() { print(&amp;#34;first&amp;#34;); }public void second() { print(&amp;#34;second&amp;#34;); }public void third() { print(&amp;#34;third&amp;#34;); }} The same instance of Foo will be passed to three different threads. Thread A will call first(), thread B will call second(), and thread C will call third(). Design a mechanism and modify the program to ensure that second() is executed after first(), and third() is executed after second().</description>
-    </item>
-    
-  </channel>
-</rss>

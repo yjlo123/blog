@@ -1,113 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>lc_two_pointers on Siwei&#39;s Blog</title>
-    <link>https://blog.siwei.dev/tags/lc_two_pointers/</link>
-    <description>Recent content in lc_two_pointers on Siwei&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_two_pointers/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>19 Remove Nth Node From End of List</title>
-      <link>https://blog.siwei.dev/leetcode/19-remove-nth-node-from-end-of-list/</link>
-      <pubDate>Sun, 19 Sep 2021 00:00:00 -0400</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/19-remove-nth-node-from-end-of-list/</guid>
-      <description>Given the head of a linked list, remove the nth node from the end of the list and return its head.
-Example 1:
-1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; (4) -&amp;gt; 51 -&amp;gt; 2 -&amp;gt; 3 --------&amp;gt; 5Input: head = [1,2,3,4,5], n = 2Output: [1,2,3,5] Example 2:
-Input: head = [1], n = 1Output: [] Example 3:
-Input: head = [1,2], n = 1Output: [1] Constraints:</description>
-    </item>
-    
-    <item>
-      <title>88 Merge Sorted Array</title>
-      <link>https://blog.siwei.dev/leetcode/88-merge-sorted-array/</link>
-      <pubDate>Tue, 21 Sep 2021 00:00:00 -0400</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/88-merge-sorted-array/</guid>
-      <description>You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
-Merge nums1 and nums2 into a single array sorted in non-decreasing order.
-The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored.</description>
-    </item>
-    
-    <item>
-      <title>167 Two Sum II - Input array is sorted</title>
-      <link>https://blog.siwei.dev/leetcode/167-two-sum-ii-input-array-is-sorted/</link>
-      <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/167-two-sum-ii-input-array-is-sorted/</guid>
-      <description>Given an array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number.
-Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 &amp;lt;= answer[0] &amp;lt; answer[1] &amp;lt;= numbers.length.
-The tests are generated such that there is exactly one solution. You may not use the same element twice.
-Example 1:</description>
-    </item>
-    
-    <item>
-      <title>189 Rotate Array</title>
-      <link>https://blog.siwei.dev/leetcode/189-rotate-array/</link>
-      <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/189-rotate-array/</guid>
-      <description>Given an array, rotate the array to the right by k steps, where k is non-negative.
-Example 1:
-Input: nums = [1,2,3,4,5,6,7], k = 3Output: [5,6,7,1,2,3,4]Explanation:rotate 1 steps to the right: [7,1,2,3,4,5,6]rotate 2 steps to the right: [6,7,1,2,3,4,5]rotate 3 steps to the right: [5,6,7,1,2,3,4] Example 2:
-Input: nums = [-1,-100,3,99], k = 2Output: [3,99,-1,-100]Explanation: rotate 1 steps to the right: [99,-1,-100,3]rotate 2 steps to the right: [3,99,-1,-100] Constraints:</description>
-    </item>
-    
-    <item>
-      <title>283 Move Zeroes</title>
-      <link>https://blog.siwei.dev/leetcode/283-move-zeroes/</link>
-      <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/283-move-zeroes/</guid>
-      <description>Given an integer array nums, move all 0&amp;rsquo;s to the end of it while maintaining the relative order of the non-zero elements.
-Note that you must do this in-place without making a copy of the array.
-Example 1:
-Input: nums = [0,1,0,3,12]Output: [1,3,12,0,0] Example 2:
-Input: nums = [0]Output: [0] Constraints:
-1 &amp;lt;= nums.length &amp;lt;= 104 -231 &amp;lt;= nums[i] &amp;lt;= 231 - 1 Follow up: Could you minimize the total number of operations done?</description>
-    </item>
-    
-    <item>
-      <title>344 Reverse String</title>
-      <link>https://blog.siwei.dev/leetcode/344-reverse-string/</link>
-      <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/344-reverse-string/</guid>
-      <description>Write a function that reverses a string. The input string is given as an array of characters char[].
-Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
-You may assume all the characters consist of printable ascii characters.
-Example 1:
-Input: [&amp;#34;h&amp;#34;,&amp;#34;e&amp;#34;,&amp;#34;l&amp;#34;,&amp;#34;l&amp;#34;,&amp;#34;o&amp;#34;]Output: [&amp;#34;o&amp;#34;,&amp;#34;l&amp;#34;,&amp;#34;l&amp;#34;,&amp;#34;e&amp;#34;,&amp;#34;h&amp;#34;] Example 2:
-Input: [&amp;#34;H&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;n&amp;#34;,&amp;#34;n&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;h&amp;#34;]Output: [&amp;#34;h&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;n&amp;#34;,&amp;#34;n&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;H&amp;#34;] 1 2 3 4 5 6 7 8 9 10 11 func reverseString(s []byte]) { i , j := 0, len(s) - 1 for i &amp;lt; j { temp := s[i] s[i] = s[j] i++ s[j] = temp j-- } fmt.</description>
-    </item>
-    
-    <item>
-      <title>876 Middle of the Linked List</title>
-      <link>https://blog.siwei.dev/leetcode/876-middle-of-the-linked-list/</link>
-      <pubDate>Sun, 19 Sep 2021 00:00:00 -0400</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/876-middle-of-the-linked-list/</guid>
-      <description>Given the head of a singly linked list, return the middle node of the linked list.
-If there are two middle nodes, return the second middle node.
-Example 1:
-1 -&amp;gt; 2 -&amp;gt; (3) -&amp;gt; 4 -&amp;gt; 5Input: head = [1,2,3,4,5]Output: [3,4,5]Explanation: The middle node of the list is node 3. Example 2:
-1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; (4) -&amp;gt; 5 -&amp;gt; 6Input: head = [1,2,3,4,5,6]Output: [4,5,6]Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.</description>
-    </item>
-    
-    <item>
-      <title>977 Squares of a Sorted Array</title>
-      <link>https://blog.siwei.dev/leetcode/977-squares-of-a-sorted-array/</link>
-      <pubDate>Sat, 18 Sep 2021 00:00:00 -0400</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/977-squares-of-a-sorted-array/</guid>
-      <description>Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
-Example 1:
-Input: nums = [-4,-1,0,3,10]Output: [0,1,9,16,100]Explanation: After squaring, the array becomes [16,1,0,9,100].After sorting, it becomes [0,1,9,16,100]. Example 2:
-Input: nums = [-7,-3,2,3,11]Output: [4,9,9,49,121] Constraints:
-1 &amp;lt;= nums.length &amp;lt;= 104 -104 &amp;lt;= nums[i] &amp;lt;= 104 nums is sorted in non-decreasing order. Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?</description>
-    </item>
-    
-  </channel>
-</rss>

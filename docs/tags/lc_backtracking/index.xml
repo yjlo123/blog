@@ -1,23 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>lc_backtracking on Siwei&#39;s Blog</title>
-    <link>https://blog.siwei.dev/tags/lc_backtracking/</link>
-    <description>Recent content in lc_backtracking on Siwei&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_backtracking/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>79 Word Search</title>
-      <link>https://blog.siwei.dev/leetcode/79-word-search/</link>
-      <pubDate>Thu, 30 Sep 2021 00:00:00 -0400</pubDate>
-      
-      <guid>https://blog.siwei.dev/leetcode/79-word-search/</guid>
-      <description>Given an m x n grid of characters board and a string word, return true if word exists in the grid.
-The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
-Example 1:
-(A) (B) (C) ES F (C) SA (D) (E) EInput: board = [[&amp;#34;A&amp;#34;,&amp;#34;B&amp;#34;,&amp;#34;C&amp;#34;,&amp;#34;E&amp;#34;],[&amp;#34;S&amp;#34;,&amp;#34;F&amp;#34;,&amp;#34;C&amp;#34;,&amp;#34;S&amp;#34;],[&amp;#34;A&amp;#34;,&amp;#34;D&amp;#34;,&amp;#34;E&amp;#34;,&amp;#34;E&amp;#34;]], word = &amp;#34;ABCCED&amp;#34;Output: true Example 2:</description>
-    </item>
-    
-  </channel>
-</rss>

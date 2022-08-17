@@ -7,6 +7,8 @@ theme = "basics"
 publishDir = "docs"
 pygmentsStyle = "autumn"
 
+disableKinds = ["RSS"]
+
 [params]
 	author = "Siwei"
 	github = "yjlo123"
