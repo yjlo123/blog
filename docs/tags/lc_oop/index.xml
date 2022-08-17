@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lc_oop on Siwei&#39;s Blog</title>
+    <link>https://blog.siwei.dev/tags/lc_oop/</link>
+    <description>Recent content in lc_oop on Siwei&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_oop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1603 Design Parking System</title>
+      <link>https://blog.siwei.dev/leetcode/1603-design-parking-system/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1603-design-parking-system/</guid>
+      <description>Design a parking system for a parking lot. The parking lot has three kinds of parking spaces: big, medium, and small, with a fixed number of slots for each size.
+Implement the ParkingSystem class:
+ ParkingSystem(int big, int medium, int small) Initializes object of the ParkingSystem class. The number of slots for each parking space are given as part of the constructor. bool addCar(int carType) Checks whether there is a parking space of carType for the car that wants to get into the parking lot.</description>
+    </item>
+    
+  </channel>
+</rss>

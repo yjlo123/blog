@@ -732,6 +732,17 @@ Input: nums = [-3,2,-3,4,2] Output: 5 Explanation: If you choose startValue = 4,
     </item>
     
     <item>
+      <title>1603 Design Parking System</title>
+      <link>https://blog.siwei.dev/leetcode/1603-design-parking-system/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/1603-design-parking-system/</guid>
+      <description>Design a parking system for a parking lot. The parking lot has three kinds of parking spaces: big, medium, and small, with a fixed number of slots for each size.
+Implement the ParkingSystem class:
+ ParkingSystem(int big, int medium, int small) Initializes object of the ParkingSystem class. The number of slots for each parking space are given as part of the constructor. bool addCar(int carType) Checks whether there is a parking space of carType for the car that wants to get into the parking lot.</description>
+    </item>
+    
+    <item>
       <title>1710 Maximum Units on a Truck</title>
       <link>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
