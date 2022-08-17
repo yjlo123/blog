@@ -515,6 +515,17 @@ Input: num = 1 Output: 0 Explanation: The binary representation of 1 is 1 (no le
     </item>
     
     <item>
+      <title>496 Next Greater Element I</title>
+      <link>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</guid>
+      <description>The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
+You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.
+For each 0 &amp;lt;= i &amp;lt; nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2.</description>
+    </item>
+    
+    <item>
       <title>504 Base 7</title>
       <link>https://blog.siwei.dev/leetcode/504-base-7/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0800</pubDate>

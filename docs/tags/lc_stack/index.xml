@@ -6,7 +6,7 @@
     <description>Recent content in lc_stack on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_stack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>20 Valid Parentheses</title>
       <link>https://blog.siwei.dev/leetcode/20-valid-parentheses/</link>
@@ -30,6 +30,17 @@ Input: s = &amp;quot;(]&amp;quot; Output: false Example 4:</description>
       <description>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 Implement the MyQueue class:
  void push(int x) Pushes element x to the back of the queue. int pop() Removes the element from the front of the queue and returns it. int peek() Returns the element at the front of the queue.</description>
+    </item>
+    
+    <item>
+      <title>496 Next Greater Element I</title>
+      <link>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</guid>
+      <description>The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
+You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.
+For each 0 &amp;lt;= i &amp;lt; nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2.</description>
     </item>
     
   </channel>

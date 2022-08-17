@@ -6,7 +6,7 @@
     <description>Recent content in lc_hash_table on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_hash_table/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_hash_table/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1 Two Sum</title>
       <link>https://blog.siwei.dev/leetcode/1-two-sum/</link>
@@ -82,6 +82,17 @@ Input: s = &amp;quot;leetcode&amp;quot; Output: 0 Example 2:
 Input: s = &amp;quot;loveleetcode&amp;quot; Output: 2 Example 3:
 Input: s = &amp;quot;aabb&amp;quot; Output: -1 Constraints:
  1 &amp;lt;= s.length &amp;lt;= 105 s consists of only lowercase English letters.   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  func firstUniqChar(s string) int { m := make(map[rune]int) for _, c := range s { _, has := m[c] if has { m[c]++ } else { m[c] = 1 } } for i, c := range s { if m[c] == 1 { return i } } return -1 }    1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  class Solution: def firstUniqChar(self, s: str) -&amp;gt; int: count = collections.</description>
+    </item>
+    
+    <item>
+      <title>496 Next Greater Element I</title>
+      <link>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</guid>
+      <description>The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
+You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.
+For each 0 &amp;lt;= i &amp;lt; nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2.</description>
     </item>
     
   </channel>

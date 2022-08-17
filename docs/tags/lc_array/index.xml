@@ -6,7 +6,7 @@
     <description>Recent content in lc_array on Siwei&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_array/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://blog.siwei.dev/tags/lc_array/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>53 Maximum Subarray</title>
       <link>https://blog.siwei.dev/leetcode/53-maximum-subarray/</link>
@@ -124,6 +124,17 @@ Example 1:
 Input: nums1 = [1,2,2,1], nums2 = [2,2] Output: [2,2] Example 2:
 Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4] Output: [4,9] Explanation: [9,4] is also accepted. Constraints:
  1 &amp;lt;= nums1.length, nums2.</description>
+    </item>
+    
+    <item>
+      <title>496 Next Greater Element I</title>
+      <link>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0400</pubDate>
+      
+      <guid>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</guid>
+      <description>The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
+You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.
+For each 0 &amp;lt;= i &amp;lt; nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2.</description>
     </item>
     
     <item>
