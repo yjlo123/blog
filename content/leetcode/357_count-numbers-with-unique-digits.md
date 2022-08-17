@@ -6,7 +6,7 @@ draft: false
 tags: ["leetcode", "lc_medium"]
 ---
 
-Given an integer n, return the count of all numbers with unique digits, x, where 0 <= x < 10n.
+Given an integer `n`, return the count of all numbers with unique digits, `x`, where 0 <= x < 10<sup>n</sup>.
 
 **Example 1:**
 ```
@@ -23,7 +23,7 @@ Output: 1
 ```
 
 **Constraints:**
-- 0 <= n <= 8
+- `0 <= n <= 8`
 
 <div class="tabs"></div>
 <div class="tab-content">
