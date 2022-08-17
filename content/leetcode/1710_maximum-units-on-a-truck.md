@@ -34,9 +34,9 @@ Output: 91
 ```
 
 **Constraints:**
-- 1 <= boxTypes.length <= 1000
-- 1 <= numberOfBoxes<sub>i</sub>, numberOfUnitsPerBox<sub>i</sub> <= 1000
-- 1 <= truckSize <= 10<sub>6</sub>
+- `1 <= boxTypes.length <= 1000`
+- <code>1 <= numberOfBoxes<sub>i</sub>, numberOfUnitsPerBox<sub>i</sub> <= 1000</code>
+- <code>1 <= truckSize <= 10<sup>6</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">
