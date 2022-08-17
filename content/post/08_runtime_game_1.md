@@ -9,7 +9,7 @@ Creating mini-games is one of the purposes of developing Runtime Script. Althoug
 
 I've created several games while implementing Runtime Script and found making games is an effective way to test this language. Here are some examples: [Flappy Bird](https://runtime.siwei.dev/?src=bird),
 [Sliding Puzzle](https://runtime.siwei.dev/?src=puzzle),
-[Sokoban](https://siwei.dev/app/sokoban/), 
+[Sokoban](https://siwei.dev/app/sokoban/),
 [(More ...)](https://github.com/yjlo123/runtime-script#examples). Since some of them are created at an early stage of Runtime Script,   they may not have used the latest supported syntax.
 
 All the games I created using Runtime Script share the same necessary components, i.e. status variables, main loop, key events, sleep intervals, and redrawing pixels. In this blog, we are going to write such a boilerplate that can be modified to various mini-games.
