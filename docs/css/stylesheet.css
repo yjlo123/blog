@@ -215,7 +215,7 @@ footer a:hover {
 .tab-content {
   border: 2px solid rgb(210,210,210);
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding-top: 10px;
 }
 
