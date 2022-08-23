@@ -32,8 +32,8 @@ Output: []
 
 **Constraints:**
 
-- The number of nodes in the tree is in the range [0, 2000].
-- -100 <= Node.val <= 100
+- The number of nodes in the tree is in the range `[0, 2000]`.
+- `-100 <= Node.val <= 100`
 
 <div class="tabs"></div>
 <div class="tab-content">
@@ -49,33 +49,33 @@ Output: []
  */
 
 func traverseTree(root *TreeNode, level int, result *[][]int) {
-	if root == nil {
-		return
-	}
-	if level > len(*result)-1 {
-		*result = append(*result, []int{})
-	}
-	(*result)[level] = append((*result)[level], root.Val)
+    if root == nil {
+        return
+    }
+    if level > len(*result)-1 {
+        *result = append(*result, []int{})
+    }
+    (*result)[level] = append((*result)[level], root.Val)
 
-	traverseTree(root.Left, level+1, result)
-	traverseTree(root.Right, level+1, result)
+    traverseTree(root.Left, level+1, result)
+    traverseTree(root.Right, level+1, result)
 
 }
 
 func reverse(nums []int) {
-	for i := 0; i < len(nums)/2; i++ {
-		j := len(nums) - i - 1
-		nums[i], nums[j] = nums[j], nums[i]
-	}
+    for i := 0; i < len(nums)/2; i++ {
+        j := len(nums) - i - 1
+        nums[i], nums[j] = nums[j], nums[i]
+    }
 }
 
 func zigzagLevelOrder(root *TreeNode) [][]int {
-	var result [][]int
-	traverseTree(root, 0, &result)
-	for i := 1; i < len(result); i += 2 {
-		reverse(result[i])
-	}
-	return result
+    var result [][]int
+    traverseTree(root, 0, &result)
+    for i := 1; i < len(result); i += 2 {
+        reverse(result[i])
+    }
+    return result
 }
 {{< / highlight >}}
 </div>
@@ -95,7 +95,12 @@ class Solution:
         while level:
             res.append([n.val for n in level][::direction])
             direction *= -1
-            level = [kid for node in level for kid in (node.left, node.right) if kid]
+            level = [
+                child
+                for node in level
+                for child in (node.left, node.right)
+                if child
+            ]
         return res
 {{< / highlight >}}
 </div>
