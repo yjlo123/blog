@@ -39,11 +39,13 @@ Output: false
 ```
 
 **Constraints:**
-- m == `board.length`
-- n = `board[i].length`
-- 1 <= m, n <= 6
-- 1 <= `word.length` <= 15
+- `m == board.length`
+- `n = board[i].length`
+- `1 <= m, n <= 6`
+- `1 <= word.length <= 15`
 - `board` and `word` consists of only lowercase and uppercase English letters.
+
+**Follow up:** Could you use search pruning to make your solution faster with a larger board?
 
 <div class="tabs"></div>
 <div class="tab-content">
@@ -62,17 +64,21 @@ class Solution:
         if len(suffix) == 0:
             return True
         
-        if i < 0 or i >= len(self.board) or j < 0 or j >= len(self.board[0]) or self.board[i][j] != suffix[0]:
+        if (
+            i < 0 or i >= len(self.board)
+            or j < 0 or j >= len(self.board[0])
+            or self.board[i][j] != suffix[0]
+        ):
             return False
         
-        ret = False
+        result = False
         self.board[i][j] = '#'
         for offset in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-            ret = self.backtrack(i+offset[0], j+offset[1], suffix[1:])
-            if ret:
+            result = self.backtrack(i+offset[0], j+offset[1], suffix[1:])
+            if result:
                 break # for cleanup side-effects
         self.board[i][j] = suffix[0]
-        return ret
+        return result
 {{< / highlight >}}
 </div>
 </div>

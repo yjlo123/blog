@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>lc_hash_table</title>
+        <title>49 Group Anagrams</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -48,106 +48,75 @@
         </section>
 
 
-  <article class="cf pa3 pa4-m pa4-l">
-    <div>
-      <p class="page-title">#lc_hash_table</p>
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section>
-      <ul class="posts_listing">
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>Sep 2020</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/1-two-sum/">1 Two Sum</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/36-valid-sudoku/">36 Valid Sudoku</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>Aug 2022</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/49-group-anagrams/">49 Group Anagrams</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>Sep 2020</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/136-single-number/">136 Single Number</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/146-lru-cache/">146 LRU Cache</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>Sep 2021</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/350-intersection-of-two-arrays-ii/">350 Intersection of Two Arrays II</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>Dec 2020</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/387-first-unique-character-in-a-string/">387 First Unique Character in a String</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>Aug 2022</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/leetcode/496-next-greater-element-i/">496 Next Greater Element I</a>
-              </div>
-            </div>
-          </li>
-          
-        </ul>
-    </section>
+<div class="blog-post">
+  <h1>49 Group Anagrams</h1>
+  <div class="blog-post-subheader">
+    <time>01 Aug 2022</time>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_medium">lc_medium</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_hash_table">lc_hash_table</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_string">lc_string</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>Given an array of strings <code>strs</code>, group <strong>the anagrams</strong> together. You can return the answer in <strong>any order</strong>.</p>
+<p>An <strong>Anagram</strong> is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
+<p><strong>Example 1:</strong></p>
+<pre tabindex="0"><code>Input: strs = [&#34;eat&#34;,&#34;tea&#34;,&#34;tan&#34;,&#34;ate&#34;,&#34;nat&#34;,&#34;bat&#34;]
+Output: [[&#34;bat&#34;],[&#34;nat&#34;,&#34;tan&#34;],[&#34;ate&#34;,&#34;eat&#34;,&#34;tea&#34;]]
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>Input: strs = [&#34;&#34;]
+Output: [[&#34;&#34;]]
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code>Input: strs = [&#34;a&#34;]
+Output: [[&#34;a&#34;]]
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= strs.length &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
+<li><code>strs[i]</code> consists of lowercase English letters.</li>
+</ul>
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">groupAnagrams</span>(self, strs: List[<span style="color:#0aa">str</span>]) -&gt; List[List[<span style="color:#0aa">str</span>]]:
+</span></span><span style="display:flex;"><span>        m = {}
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> s <span style="color:#00a">in</span> strs:
+</span></span><span style="display:flex;"><span>            k = <span style="color:#0aa">tuple</span>(<span style="color:#0aa">sorted</span>(s))
+</span></span><span style="display:flex;"><span>            m.setdefault(k, []).append(s)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> m.values()</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
   </div>
+</div>
 
       <footer>
         <hr>
