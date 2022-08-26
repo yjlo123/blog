@@ -137,6 +137,9 @@
     <loc>https://blog.siwei.dev/leetcode/136-single-number/</loc>
     <lastmod>2020-09-26T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/138-copy-list-with-random-pointer/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/141-linked-list-cycle/</loc>
     <lastmod>2021-10-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -359,6 +362,9 @@
     <loc>https://blog.siwei.dev/tags/lc_heap/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_matrix/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -376,9 +382,6 @@
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_tree/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
-    <lastmod>2021-10-02T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_queue/</loc>
     <lastmod>2021-10-02T00:00:00-04:00</lastmod>
