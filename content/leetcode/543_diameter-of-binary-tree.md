@@ -48,7 +48,7 @@ class Solution:
     def __init__(self):
         self.max_diameter = -1
     
-    def longest_path(self, root) -> int:
+    def longest_path(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
         left_path = self.longest_path(root.left)
