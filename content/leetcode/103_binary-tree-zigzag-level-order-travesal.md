@@ -37,6 +37,32 @@ Output: []
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
+        if not root:
+            return []
+        res, level, direction = [], [root], 1
+        while level:
+            res.append([n.val for n in level][::direction])
+            direction *= -1
+            level = [
+                child
+                for node in level
+                for child in (node.left, node.right)
+                if child
+            ]
+        return res
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 /**
@@ -79,29 +105,5 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 }
 {{< / highlight >}}
 </div>
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
-        if not root:
-            return []
-        res, level, direction = [], [root], 1
-        while level:
-            res.append([n.val for n in level][::direction])
-            direction *= -1
-            level = [
-                child
-                for node in level
-                for child in (node.left, node.right)
-                if child
-            ]
-        return res
-{{< / highlight >}}
-</div>
+
 </div>

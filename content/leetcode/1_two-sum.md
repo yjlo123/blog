@@ -39,6 +39,17 @@ Output: [0,1]
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+def twoSum(nums: 'List[int]', target: 'int') -> 'List[int]':
+    map = {}
+    for i, n in enumerate(nums):
+        if n in map:
+            return [map[n], i]
+        map[target-n] = i
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func twoSum(nums []int, target int) []int {
@@ -51,17 +62,6 @@ func twoSum(nums []int, target int) []int {
     }
     return nil
 }
-{{< / highlight >}}
-</div>
-
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-def twoSum(nums: 'List[int]', target: 'int') -> 'List[int]':
-    map = {}
-    for i, n in enumerate(nums):
-        if n in map:
-            return [map[n], i]
-        map[target-n] = i
 {{< / highlight >}}
 </div>
 

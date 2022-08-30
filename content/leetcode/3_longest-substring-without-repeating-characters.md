@@ -29,7 +29,8 @@ Explanation: The answer is "b", with the length of 1.
 Input: s = "pwwkew"
 Output: 3
 Explanation: The answer is "wke", with the length of 3.
-Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+Notice that the answer must be a substring,
+"pwke" is a subsequence and not a substring.
 ```
 
 **Example 4:**
@@ -40,12 +41,28 @@ Output: 0
 
 **Constraints:**
 
-- 0 <= s.length <= 5 * 10<sup>4</sup>
+- <code>0 <= s.length <= 5 * 10<sup>4</sup></code>
 - `s` consists of English letters, digits, symbols and spaces.
 
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        longest = 0
+        d = {}
+        start = 0
+        for i, c in enumerate(s):
+            if c in d and d[c] >= start:
+                start = d[c] + 1
+            d[c] = i
+            longest = max(longest, i - start + 1)
+        return longest
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func lengthOfLongestSubstring(s string) int {
@@ -70,19 +87,4 @@ func lengthOfLongestSubstring(s string) int {
 {{< / highlight >}}
 </div>
 
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        longest = 0
-        d = {}
-        start = 0
-        for i, c in enumerate(s):
-            if c in d and d[c] >= start:
-                start = d[c] + 1
-            d[c] = i
-            longest = max(longest, i - start + 1)
-        return longest
-{{< / highlight >}}
-</div>
 </div>

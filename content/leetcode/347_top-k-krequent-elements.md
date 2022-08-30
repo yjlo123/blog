@@ -27,6 +27,20 @@ Output: [1]
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+from collections import Counter
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]: 
+        if k == len(nums):
+            return nums
+
+        count = Counter(nums)   
+        return heapq.nlargest(k, count.keys(), key=count.get) 
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func topKFrequent(nums []int, k int) []int {
@@ -120,17 +134,4 @@ func (heap *Heap) swap(i, j int) {
 {{< / highlight >}}
 </div>
 
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-from collections import Counter
-
-class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]: 
-        if k == len(nums):
-            return nums
-
-        count = Counter(nums)   
-        return heapq.nlargest(k, count.keys(), key=count.get) 
-{{< / highlight >}}
-</div>
 </div>

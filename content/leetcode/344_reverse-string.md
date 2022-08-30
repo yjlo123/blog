@@ -27,6 +27,19 @@ Output: ["h","a","n","n","a","H"]
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        n = len(s)
+        for i in range(n//2):
+            s[i], s[n-i-1] = s[n-i-1], s[i]
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func reverseString(s []byte]) {
@@ -40,19 +53,6 @@ func reverseString(s []byte]) {
 	}
 	fmt.Println(s)
 }
-{{< / highlight >}}
-</div>
-
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-class Solution:
-    def reverseString(self, s: List[str]) -> None:
-        """
-        Do not return anything, modify s in-place instead.
-        """
-        n = len(s)
-        for i in range(n//2):
-            s[i], s[n-i-1] = s[n-i-1], s[i]
 {{< / highlight >}}
 </div>
 

@@ -49,6 +49,23 @@ Output: true
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        mapping = {')': '(', '}': '{', ']': '['}
+        for ch in list(s):
+            if ch in mapping:
+                if not stack or stack[-1] != mapping[ch]:
+                    return False
+                stack.pop()
+            else:
+                stack.append(ch)
+        return not stack
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func isValid(s string) bool {
@@ -70,23 +87,6 @@ func isValid(s string) bool {
     }
     return true
 }
-{{< / highlight >}}
-</div>
-
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        mapping = {')': '(', '}': '{', ']': '['}
-        for ch in list(s):
-            if ch in mapping:
-                if not stack or stack[-1] != mapping[ch]:
-                    return False
-                stack.pop()
-            else:
-                stack.append(ch)
-        return not stack
 {{< / highlight >}}
 </div>
 

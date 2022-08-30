@@ -22,7 +22,8 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
 
 Input: head = [-10,-3,0,5,9]
 Output: [0,-3,9,-10,null,5]
-Explanation: One possible answer is [0,-3,9,-10,null,5], which represents the shown height balanced BST.
+Explanation: One possible answer is [0,-3,9,-10,null,5],
+which represents the shown height balanced BST.
 ```
 **Example 2:**
 ```
@@ -47,55 +48,6 @@ Output: [3,1]
 
 <div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
-{{< highlight go "linenos=table" >}}
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
-func findSize(head *ListNode) int {
-	c := 0
-	for head != nil {
-		head = head.Next
-		c++
-	}
-	return c
-}
-
-var list *ListNode
-
-func convert(left, right int) *TreeNode {
-	if left > right {
-		return nil
-	}
-
-	mid := (left + right) / 2
-	newLeft := convert(left, mid-1)
-	node := &TreeNode{list.Val, newLeft, nil}
-
-	list = list.Next
-	node.Right = convert(mid+1, right)
-	return node
-}
-
-func sortedListToBST(head *ListNode) *TreeNode {
-	list = head
-	size := findSize(head)
-	return convert(0, size-1)
-}
-{{< / highlight >}}
-</div>
 <div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
 # Definition for singly-linked list.
@@ -152,4 +104,55 @@ class Solution:
         return convert(0, size - 1)
 {{< / highlight >}}
 </div>
+
+<div id="golang" class="lang">
+{{< highlight go "linenos=table" >}}
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func findSize(head *ListNode) int {
+	c := 0
+	for head != nil {
+		head = head.Next
+		c++
+	}
+	return c
+}
+
+var list *ListNode
+
+func convert(left, right int) *TreeNode {
+	if left > right {
+		return nil
+	}
+
+	mid := (left + right) / 2
+	newLeft := convert(left, mid-1)
+	node := &TreeNode{list.Val, newLeft, nil}
+
+	list = list.Next
+	node.Right = convert(mid+1, right)
+	return node
+}
+
+func sortedListToBST(head *ListNode) *TreeNode {
+	list = head
+	size := findSize(head)
+	return convert(0, size-1)
+}
+{{< / highlight >}}
+</div>
+
 </div>

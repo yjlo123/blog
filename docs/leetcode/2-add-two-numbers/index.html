@@ -84,6 +84,70 @@ Output: [0]
 Output: [8,9,9,9,0,0,0,1]
 </code></pre><div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Definition for singly-linked list.</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># class ListNode:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, next=None):</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.val = val</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.next = next</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">addTwoNumbers</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        l1: Optional[ListNode],
+</span></span><span style="display:flex;"><span>        l2: Optional[ListNode]
+</span></span><span style="display:flex;"><span>    ) -&gt; Optional[ListNode]:
+</span></span><span style="display:flex;"><span>        dummy = ListNode(<span style="color:#099">0</span>)
+</span></span><span style="display:flex;"><span>        tail = dummy
+</span></span><span style="display:flex;"><span>        carry = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> l1 <span style="color:#00a">or</span> l2:
+</span></span><span style="display:flex;"><span>            num1 = l1.val <span style="color:#00a">if</span> l1 <span style="color:#00a">else</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>            num2 = l2.val <span style="color:#00a">if</span> l2 <span style="color:#00a">else</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>            s = num1 + num2 + carry
+</span></span><span style="display:flex;"><span>            carry = s // <span style="color:#099">10</span>
+</span></span><span style="display:flex;"><span>            tail.next = ListNode(s % <span style="color:#099">10</span>)
+</span></span><span style="display:flex;"><span>            tail = tail.next
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> l1:
+</span></span><span style="display:flex;"><span>                l1 = l1.next
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> l2:
+</span></span><span style="display:flex;"><span>                l2 = l2.next
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> carry:
+</span></span><span style="display:flex;"><span>            tail.next = ListNode(carry)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dummy.next</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -155,62 +219,6 @@ Output: [8,9,9,9,0,0,0,1]
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> result.Next
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
-</div>
-</div>
-</div>
-<div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Definition for singly-linked list.</span>
-</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># class ListNode:</span>
-</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, next=None):</span>
-</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.val = val</span>
-</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.next = next</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">addTwoNumbers</span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&gt; Optional[ListNode]:
-</span></span><span style="display:flex;"><span>        dummy = ListNode(<span style="color:#099">0</span>)
-</span></span><span style="display:flex;"><span>        tail = dummy
-</span></span><span style="display:flex;"><span>        carry = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> l1 <span style="color:#00a">or</span> l2:
-</span></span><span style="display:flex;"><span>            num1 = l1.val <span style="color:#00a">if</span> l1 <span style="color:#00a">else</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>            num2 = l2.val <span style="color:#00a">if</span> l2 <span style="color:#00a">else</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>            s = num1 + num2 + carry
-</span></span><span style="display:flex;"><span>            carry = s // <span style="color:#099">10</span>
-</span></span><span style="display:flex;"><span>            tail.next = ListNode(s % <span style="color:#099">10</span>)
-</span></span><span style="display:flex;"><span>            tail = tail.next
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> l1:
-</span></span><span style="display:flex;"><span>                l1 = l1.next
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> l2:
-</span></span><span style="display:flex;"><span>                l2 = l2.next
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> carry:
-</span></span><span style="display:flex;"><span>            tail.next = ListNode(carry)
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dummy.next</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

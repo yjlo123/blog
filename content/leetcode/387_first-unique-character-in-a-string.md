@@ -32,6 +32,27 @@ Output: -1
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        count = collections.Counter(s)
+
+        for idx, ch in enumerate(s):
+            if count[ch] == 1:
+                return idx     
+        return -1
+
+
+''' Fast version '''
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        letters='abcdefghijklmnopqrstuvwxyz'
+        index=[s.index(l) for l in letters if s.count(l) == 1]
+        return min(index) if len(index) > 0 else -1
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func firstUniqChar(s string) int {
@@ -55,24 +76,4 @@ func firstUniqChar(s string) int {
 {{< / highlight >}}
 </div>
 
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-class Solution:
-    def firstUniqChar(self, s: str) -> int:
-        count = collections.Counter(s)
-
-        for idx, ch in enumerate(s):
-            if count[ch] == 1:
-                return idx     
-        return -1
-
-
-''' Fast version '''
-class Solution:
-    def firstUniqChar(self, s: str) -> int:
-        letters='abcdefghijklmnopqrstuvwxyz'
-        index=[s.index(l) for l in letters if s.count(l) == 1]
-        return min(index) if len(index) > 0 else -1
-{{< / highlight >}}
-</div>
 </div>

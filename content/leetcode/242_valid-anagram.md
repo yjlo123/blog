@@ -29,28 +29,6 @@ What if the inputs contain unicode characters? How would you adapt your solution
 
 <div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
-{{< highlight go "linenos=table" >}}
-func isAnagram(s string, t string) bool {
-	if len(s) != len(t) {
-		return false
-	}
-
-	var count [26]int
-	for _, c := range s {
-		count[c-'a']++
-	}
-	for _, c := range t {
-		count[c-'a']--
-		if count[c-'a'] < 0 {
-			return false
-		}
-	}
-	return true
-}
-{{< / highlight >}}
-</div>
-
 <div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
 class Solution:
@@ -80,4 +58,27 @@ class Solution:
         return sorted(s) == sorted(t)
 {{< / highlight >}}
 </div>
+
+<div id="golang" class="lang">
+{{< highlight go "linenos=table" >}}
+func isAnagram(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	var count [26]int
+	for _, c := range s {
+		count[c-'a']++
+	}
+	for _, c := range t {
+		count[c-'a']--
+		if count[c-'a'] < 0 {
+			return false
+		}
+	}
+	return true
+}
+{{< / highlight >}}
+</div>
+
 </div>

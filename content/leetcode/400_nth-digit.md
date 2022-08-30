@@ -35,6 +35,22 @@ The 11th digit of the sequence
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+def findNthDigit(n: int) -> int:
+    length = 1       # number of digits: 1, 2, 3 ...
+    range_count = 9  # count of numbers for current length: 9, 90, 900 ...
+    num = 1          # current number: 1, 10, 100, 1000 ...
+    while n > length * range_count:
+        n -= length * range_count
+        length += 1
+        range_count *= 10
+        num *= 10
+    num += (n-1) / length
+    return int(str(num)[(n-1) % length])
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func findNthDigit(n int) int {
@@ -52,19 +68,5 @@ func findNthDigit(n int) int {
 }
 {{< / highlight >}}
 </div>
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-def findNthDigit(n: int) -> int:
-    length = 1       # number of digits: 1, 2, 3 ...
-    range_count = 9  # count of numbers for current length: 9, 90, 900 ...
-    num = 1          # current number: 1, 10, 100, 1000 ...
-    while n > length * range_count:
-        n -= length * range_count
-        length += 1
-        range_count *= 10
-        num *= 10
-    num += (n-1) / length
-    return int(str(num)[(n-1) % length])
-{{< / highlight >}}
-</div>
+
 </div>

@@ -33,6 +33,40 @@ Output: [8,9,9,9,0,0,0,1]
 
 <div class="tabs"></div>
 <div class="tab-content">
+
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def addTwoNumbers(
+        self,
+        l1: Optional[ListNode],
+        l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
+        dummy = ListNode(0)
+        tail = dummy
+        carry = 0
+        while l1 or l2:
+            num1 = l1.val if l1 else 0
+            num2 = l2.val if l2 else 0
+            s = num1 + num2 + carry
+            carry = s // 10
+            tail.next = ListNode(s % 10)
+            tail = tail.next
+            if l1:
+                l1 = l1.next
+            if l2:
+                l2 = l2.next
+        if carry:
+            tail.next = ListNode(carry)
+        return dummy.next
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 type ListNode struct {
@@ -69,35 +103,6 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     return result.Next
 }
 
-{{< / highlight >}}
-</div>
-
-<div id="python" class="lang">
-{{< highlight python "linenos=table" >}}
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ListNode(0)
-        tail = dummy
-        carry = 0
-        while l1 or l2:
-            num1 = l1.val if l1 else 0
-            num2 = l2.val if l2 else 0
-            s = num1 + num2 + carry
-            carry = s // 10
-            tail.next = ListNode(s % 10)
-            tail = tail.next
-            if l1:
-                l1 = l1.next
-            if l2:
-                l2 = l2.next
-        if carry:
-            tail.next = ListNode(carry)
-        return dummy.next
 {{< / highlight >}}
 </div>
 
