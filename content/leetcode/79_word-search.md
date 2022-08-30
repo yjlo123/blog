@@ -3,7 +3,7 @@ weight: 79
 title: "79 Word Search"
 date: 2021-09-30T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_matrix", "lc_backtracking"]
+tags: ["leetcode", "lc_medium", "lc_matrix", "lc_back_tracking"]
 ---
 
 Given an `m x n` grid of characters `board` and a string word, return `true` _if_ `word` _exists in the grid_.

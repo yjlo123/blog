@@ -143,6 +143,9 @@
     <loc>https://blog.siwei.dev/leetcode/139-word-break/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/140-word-break-ii/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/141-linked-list-cycle/</loc>
     <lastmod>2021-10-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -226,6 +229,9 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/357-count-numbers-with-unique-digits/</loc>
     <lastmod>2022-08-07T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/380-insert-delete-getrandom-o1/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/383-ransom-note/</loc>
     <lastmod>2021-10-01T00:00:00-04:00</lastmod>
@@ -365,6 +371,9 @@
     <loc>https://blog.siwei.dev/tags/lc_array/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
+    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -418,9 +427,6 @@
   </url><url>
     <loc>https://blog.siwei.dev/tags/two_pointers/</loc>
     <lastmod>2021-10-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_backtracking/</loc>
-    <lastmod>2021-09-30T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
     <lastmod>2021-09-30T00:00:00-04:00</lastmod>
