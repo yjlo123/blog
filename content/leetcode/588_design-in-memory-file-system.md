@@ -1,0 +1,117 @@
+---
+weight: 588
+title: "588 Design In-Memory File System"
+date: 2022-09-01T00:00:00-04:00
+draft: false
+tags: ["leetcode", "lc_hard", "lc_oop", "lc_hash_table"]
+---
+
+Design a data structure that simulates an in-memory file system.
+
+Implement the FileSystem class:
+- `FileSystem()` Initializes the object of the system.
+- `List<String> ls(String path)`
+  - If `path` is a file path, returns a list that only contains this file's name.
+  - If `path` is a directory path, returns the list of file and directory names **in this directory**.
+  - The answer should in **lexicographic order**.
+- `void mkdir(String path)` Makes a new directory according to the given `path`. The given directory path does not exist. If the middle directories in the path do not exist, you should create them as well.
+- `void addContentToFile(String filePath, String content)`
+  - If `filePath` does not exist, creates that file containing given content.
+  - If `filePath` already exists, appends the given `content` to original content.
+- `String readContentFromFile(String filePath)` Returns the content in the file at `filePath`.
+
+**Example 1:**
+| **Operation**                          | **Output** | **Explanation**                                                                                                                    |
+|----------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------|
+| FileSystem fs = new FileSystem()       | null       | The constructor returns nothing.                                                                                                   |
+| fs.ls("/")                             | []         | Initially, directory `/` has nothing. So return empty list.                                                                        |
+| fs.mkdir("a/b/c")                      | null       | Create directory `a` in directory `/`. Then create directory `b` in directory `a`. Finally, create directory `c` in directory `b`. |
+| fs.addContentToFile("a/b/c/d","hello") | null       | Create a file named `d` with content `"hello"` in directory `a/b/c`.                                                               |
+| fs.ls("/")                             | ["a"]      | Only directory `a` is in directory `/`.                                                                                            |
+| fs.readContentFromFile("a/b/c/d")      | "hello"    | Output the file content.                                                                                                           |
+
+```
+Input
+["FileSystem", "ls", "mkdir", "addContentToFile", "ls", "readContentFromFile"]
+[[], ["/"], ["/a/b/c"], ["/a/b/c/d", "hello"], ["/"], ["/a/b/c/d"]]
+Output
+[null, [], null, null, ["a"], "hello"]
+
+Explanation
+FileSystem fileSystem = new FileSystem();
+fileSystem.ls("/");                         // return []
+fileSystem.mkdir("/a/b/c");
+fileSystem.addContentToFile("/a/b/c/d", "hello");
+fileSystem.ls("/");                         // return ["a"]
+fileSystem.readContentFromFile("/a/b/c/d"); // return "hello"
+```
+
+**Constraints:**
+- `1 <= path.length, filePath.length <= 100`
+- `path` and `filePath` are absolute paths which begin with `'/'` and do not end with `'/'` except that the path is just `"/"`.
+- You can assume that all directory names and file names only contain lowercase letters, and the same names will not exist in the same directory.
+- You can assume that all operations will be passed valid parameters, and users will not attempt to retrieve file content or list a directory or file that does not exist.
+- `1 <= content.length <= 50`
+- At most `300` calls will be made to `ls`, `mkdir`, `addContentToFile`, and `readContentFromFile`.
+
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class FileSystem:
+
+    def __init__(self):
+        self.root = {}
+
+    @staticmethod
+    def _path_to_tokens(path: str):
+        return [t for t in path.split('/') if t]
+        
+    def ls(self, path: str) -> List[str]:
+        path_tokens = self._path_to_tokens(path)
+        cur = self.root
+        for t in path_tokens:
+            cur = cur.get(t)
+        if type(cur) == str:
+            return [path_tokens[-1]]
+        return sorted(cur.keys())
+
+    def mkdir(self, path: str) -> None:
+        cur = self.root
+        folders = self._path_to_tokens(path)
+        for f in folders:
+            if f in cur:
+                cur = cur[f]
+            else:
+                cur[f] = {}
+                cur = cur[f]
+
+    def addContentToFile(self, filePath: str, content: str) -> None:
+        cur = self.root
+        folders = self._path_to_tokens(filePath)
+        file_name = folders[-1]
+        for f in folders[:-1]:
+            cur = cur[f]
+        if file_name in cur:
+            cur[file_name] += content
+        else:
+            cur[file_name] = content
+
+    def readContentFromFile(self, filePath: str) -> str:
+        cur = self.root
+        folders = self._path_to_tokens(filePath)
+        file_name = folders[-1]
+        for f in folders[:-1]:
+            cur = cur[f]
+        return cur[file_name]
+
+
+# Your FileSystem object will be instantiated and called as such:
+# obj = FileSystem()
+# param_1 = obj.ls(path)
+# obj.mkdir(path)
+# obj.addContentToFile(filePath,content)
+# param_4 = obj.readContentFromFile(filePath)
+{{< / highlight >}}
+</div>
+</div>

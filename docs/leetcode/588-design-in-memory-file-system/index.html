@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+        <title>588 Design In-Memory File System</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>588 Design In-Memory File System</h1>
+  <div class="blog-post-subheader">
+    <time>01 Sep 2022</time>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_hard">lc_hard</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_oop">lc_oop</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_hash_table">lc_hash_table</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>Design a data structure that simulates an in-memory file system.</p>
+<p>Implement the FileSystem class:</p>
+<ul>
+<li><code>FileSystem()</code> Initializes the object of the system.</li>
+<li><code>List&lt;String&gt; ls(String path)</code>
+<ul>
+<li>If <code>path</code> is a file path, returns a list that only contains this file&rsquo;s name.</li>
+<li>If <code>path</code> is a directory path, returns the list of file and directory names <strong>in this directory</strong>.</li>
+<li>The answer should in <strong>lexicographic order</strong>.</li>
+</ul>
+</li>
+<li><code>void mkdir(String path)</code> Makes a new directory according to the given <code>path</code>. The given directory path does not exist. If the middle directories in the path do not exist, you should create them as well.</li>
+<li><code>void addContentToFile(String filePath, String content)</code>
+<ul>
+<li>If <code>filePath</code> does not exist, creates that file containing given content.</li>
+<li>If <code>filePath</code> already exists, appends the given <code>content</code> to original content.</li>
+</ul>
+</li>
+<li><code>String readContentFromFile(String filePath)</code> Returns the content in the file at <code>filePath</code>.</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>Output</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FileSystem fs = new FileSystem()</td>
+<td>null</td>
+<td>The constructor returns nothing.</td>
+</tr>
+<tr>
+<td>fs.ls(&quot;/&quot;)</td>
+<td>[]</td>
+<td>Initially, directory <code>/</code> has nothing. So return empty list.</td>
+</tr>
+<tr>
+<td>fs.mkdir(&ldquo;a/b/c&rdquo;)</td>
+<td>null</td>
+<td>Create directory <code>a</code> in directory <code>/</code>. Then create directory <code>b</code> in directory <code>a</code>. Finally, create directory <code>c</code> in directory <code>b</code>.</td>
+</tr>
+<tr>
+<td>fs.addContentToFile(&ldquo;a/b/c/d&rdquo;,&ldquo;hello&rdquo;)</td>
+<td>null</td>
+<td>Create a file named <code>d</code> with content <code>&quot;hello&quot;</code> in directory <code>a/b/c</code>.</td>
+</tr>
+<tr>
+<td>fs.ls(&quot;/&quot;)</td>
+<td>[&ldquo;a&rdquo;]</td>
+<td>Only directory <code>a</code> is in directory <code>/</code>.</td>
+</tr>
+<tr>
+<td>fs.readContentFromFile(&ldquo;a/b/c/d&rdquo;)</td>
+<td>&ldquo;hello&rdquo;</td>
+<td>Output the file content.</td>
+</tr>
+</tbody>
+</table>
+<pre tabindex="0"><code>Input
+[&#34;FileSystem&#34;, &#34;ls&#34;, &#34;mkdir&#34;, &#34;addContentToFile&#34;, &#34;ls&#34;, &#34;readContentFromFile&#34;]
+[[], [&#34;/&#34;], [&#34;/a/b/c&#34;], [&#34;/a/b/c/d&#34;, &#34;hello&#34;], [&#34;/&#34;], [&#34;/a/b/c/d&#34;]]
+Output
+[null, [], null, null, [&#34;a&#34;], &#34;hello&#34;]
+
+Explanation
+FileSystem fileSystem = new FileSystem();
+fileSystem.ls(&#34;/&#34;);                         // return []
+fileSystem.mkdir(&#34;/a/b/c&#34;);
+fileSystem.addContentToFile(&#34;/a/b/c/d&#34;, &#34;hello&#34;);
+fileSystem.ls(&#34;/&#34;);                         // return [&#34;a&#34;]
+fileSystem.readContentFromFile(&#34;/a/b/c/d&#34;); // return &#34;hello&#34;
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= path.length, filePath.length &lt;= 100</code></li>
+<li><code>path</code> and <code>filePath</code> are absolute paths which begin with <code>'/'</code> and do not end with <code>'/'</code> except that the path is just <code>&quot;/&quot;</code>.</li>
+<li>You can assume that all directory names and file names only contain lowercase letters, and the same names will not exist in the same directory.</li>
+<li>You can assume that all operations will be passed valid parameters, and users will not attempt to retrieve file content or list a directory or file that does not exist.</li>
+<li><code>1 &lt;= content.length &lt;= 50</code></li>
+<li>At most <code>300</code> calls will be made to <code>ls</code>, <code>mkdir</code>, <code>addContentToFile</code>, and <code>readContentFromFile</code>.</li>
+</ul>
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">FileSystem</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self.root = {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#888">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">_path_to_tokens</span>(path: <span style="color:#0aa">str</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> [t <span style="color:#00a">for</span> t <span style="color:#00a">in</span> path.split(<span style="color:#a50">&#39;/&#39;</span>) <span style="color:#00a">if</span> t]
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">ls</span>(self, path: <span style="color:#0aa">str</span>) -&gt; List[<span style="color:#0aa">str</span>]:
+</span></span><span style="display:flex;"><span>        path_tokens = self._path_to_tokens(path)
+</span></span><span style="display:flex;"><span>        cur = self.root
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> t <span style="color:#00a">in</span> path_tokens:
+</span></span><span style="display:flex;"><span>            cur = cur.get(t)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#0aa">type</span>(cur) == <span style="color:#0aa">str</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> [path_tokens[-<span style="color:#099">1</span>]]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#0aa">sorted</span>(cur.keys())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">mkdir</span>(self, path: <span style="color:#0aa">str</span>) -&gt; <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>        cur = self.root
+</span></span><span style="display:flex;"><span>        folders = self._path_to_tokens(path)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> f <span style="color:#00a">in</span> folders:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> f <span style="color:#00a">in</span> cur:
+</span></span><span style="display:flex;"><span>                cur = cur[f]
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>                cur[f] = {}
+</span></span><span style="display:flex;"><span>                cur = cur[f]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">addContentToFile</span>(self, filePath: <span style="color:#0aa">str</span>, content: <span style="color:#0aa">str</span>) -&gt; <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>        cur = self.root
+</span></span><span style="display:flex;"><span>        folders = self._path_to_tokens(filePath)
+</span></span><span style="display:flex;"><span>        file_name = folders[-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> f <span style="color:#00a">in</span> folders[:-<span style="color:#099">1</span>]:
+</span></span><span style="display:flex;"><span>            cur = cur[f]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> file_name <span style="color:#00a">in</span> cur:
+</span></span><span style="display:flex;"><span>            cur[file_name] += content
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>            cur[file_name] = content
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">readContentFromFile</span>(self, filePath: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">str</span>:
+</span></span><span style="display:flex;"><span>        cur = self.root
+</span></span><span style="display:flex;"><span>        folders = self._path_to_tokens(filePath)
+</span></span><span style="display:flex;"><span>        file_name = folders[-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> f <span style="color:#00a">in</span> folders[:-<span style="color:#099">1</span>]:
+</span></span><span style="display:flex;"><span>            cur = cur[f]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> cur[file_name]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your FileSystem object will be instantiated and called as such:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj = FileSystem()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_1 = obj.ls(path)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj.mkdir(path)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj.addContentToFile(filePath,content)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_4 = obj.readContentFromFile(filePath)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2022
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+      <br/>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+
+      (function(){
+        let first = true;
+        $(".tab-content").children(".lang").each(function () {
+          let tabId = $(this).attr("id");
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          first = false;
+        });
+
+        $(".lang").slice(1).each(function() {
+          $(this).hide();
+        })
+      })();
+
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
+  </body>
+</html>
+
