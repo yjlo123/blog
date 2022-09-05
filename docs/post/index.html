@@ -738,6 +738,31 @@
       
     </ul>
   </section>
+  <script>
+  var getUrlParameter = function getUrlParameter(kw) {
+    var url = document.location.href;
+    var qs = url.substring(url.indexOf('?') + 1).split('&');
+    for (var i = 0; i < qs.length; i++){
+      kv = qs[i].split('=');
+      if (kv[0] == kw) {
+        return kv[1];
+      }
+    }
+    return false;
+  };
+
+
+  if (getUrlParameter("random") == '1') {
+    pickRandom();
+  }
+
+  function pickRandom() {
+    let articleList = $(".posts_listing li");
+    let random = Math.floor(Math.random()*articleList.length);
+    let articleUrl = $(articleList.eq(random).find("a")[0]).attr('href');
+    window.location.href = articleUrl;
+  }
+</script>
 
       <footer>
         <hr>
