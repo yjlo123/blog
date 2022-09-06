@@ -230,6 +230,9 @@
     <loc>https://blog.siwei.dev/leetcode/295-find-median-from-data-stream/</loc>
     <lastmod>2021-10-13T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/304-range-sum-query-2d-immutable/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/322-coin-change/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -347,6 +350,9 @@
     <loc>https://blog.siwei.dev/leetcode/863-all-nodes-distance-k-in-binary-tree/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/875-koko-eating-bananas/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/876-middle-of-the-linked-list/</loc>
     <lastmod>2021-09-19T00:00:00-04:00</lastmod>
   </url><url>
@@ -395,6 +401,9 @@
     <loc>https://blog.siwei.dev/leetcode/1413-minimum-value-to-get-positive-step-by-step-sum/</loc>
     <lastmod>2021-03-28T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1429-first-unique-number/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1438-longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -438,6 +447,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_dfs/</loc>
@@ -501,9 +513,6 @@
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
-    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_dp/</loc>
