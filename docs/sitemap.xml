@@ -386,6 +386,9 @@
     <loc>https://blog.siwei.dev/leetcode/1038-binary-search-tree-to-greater-sum-tree/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1041-robot-bounded-in-circle/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1114-print-in-order/</loc>
     <lastmod>2021-03-22T00:00:00+08:00</lastmod>
   </url><url>
@@ -415,6 +418,9 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1325-delete-leaves-with-a-given-value/</loc>
     <lastmod>2021-03-28T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1335-minimum-difficulty-of-a-job-schedule/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1360-number-of-days-between-two-dates/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
@@ -477,6 +483,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_dfs/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_dp/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_easy/</loc>
@@ -546,9 +555,6 @@
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
-    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_dp/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
