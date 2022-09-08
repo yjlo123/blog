@@ -3,7 +3,7 @@ weight: 1010
 title: "1010 Pairs of Songs With Total Durations Divisible by 60"
 date: 2022-09-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium"]
+tags: ["leetcode", "lc_medium", "lc_hash_table"]
 ---
 
 You are given a list of songs where the <code>i<sup>th</sup></code> song has a duration of `time[i]` seconds.
