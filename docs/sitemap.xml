@@ -38,6 +38,9 @@
     <loc>https://blog.siwei.dev/leetcode/21-merge-two-sorted-lists/</loc>
     <lastmod>2020-10-18T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/22-generate-parentheses/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/23-merge-k-sorted-lists/</loc>
     <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
@@ -380,6 +383,9 @@
     <loc>https://blog.siwei.dev/leetcode/977-squares-of-a-sorted-array/</loc>
     <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/994-rotting-oranges/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1022-sum-of-root-to-leaf-binary-numbers/</loc>
     <lastmod>2021-03-24T00:00:00+08:00</lastmod>
   </url><url>
@@ -476,6 +482,9 @@
     <loc>https://blog.siwei.dev/tags/lc_array/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -552,9 +561,6 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/graph/</loc>
-    <lastmod>2022-08-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
