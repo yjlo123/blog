@@ -18,6 +18,18 @@ Each of the nine `3 x 3` sub-boxes of the grid must contain the digits `1-9` wit
 
 **Example 1:**
 ```
+5 3 _ | _ 7 _ | _ _ _
+6 _ _ | 1 9 5 | _ _ _
+_ 9 8 | _ _ _ | _ 6 _
+---------------------
+8 _ _ | _ 6 _ | _ _ 3
+4 _ _ | 8 _ 3 | _ _ 1
+7 _ _ | _ 2 _ | _ _ 6
+---------------------
+_ 6 _ | _ _ _ | 2 8 _
+_ _ _ | 4 1 9 | _ _ 5
+_ _ _ | _ 8 _ | _ 7 9
+
 Input: board = 
 [["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
@@ -48,8 +60,8 @@ Since there are two 8's in the top left 3x3 sub-box, it is invalid.
 ```
 
 **Constraints:**
-- `board.length` == 9
-- `board[i].length` == 9
+- `board.length == 9`
+- `board[i].length == 9`
 - `board[i][j]` is a digit `1-9` or `'.'`.
 
 <div class="tabs"></div>

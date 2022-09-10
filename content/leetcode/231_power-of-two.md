@@ -3,23 +3,25 @@ weight: 231
 title: "231 Power of Two"
 date: 2020-10-20T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_easy"]
+tags: ["leetcode", "lc_easy", "lc_math"]
 ---
 
-Given an integer n, write a function to determine if it is a power of two.
+Given an integer `n`, return _`true` if it is a power of two. Otherwise, return `false`_.
+
+An integer `n` is a power of two, if there exists an integer `x` such that <code>n == 2<sup>x</sup></code>.
 
 **Example 1:**
 ```
 Input: n = 1
 Output: true
-Explanation: 20 = 1
+Explanation: 2^0 = 1
 ```
 
 **Example 2:**
 ```
 Input: n = 16
 Output: true
-Explanation: 24 = 16
+Explanation: 2^4 = 16
 ```
 
 **Example 3:**
@@ -41,8 +43,9 @@ Output: false
 ```
 
 **Constraints:**
-- -2<sup>31</sup> <= n <= 2<sup>31</sup> - 1
+- <code>-2<sup>31</sup> <= n <= 2<sup>31</sup> - 1</code>
 
+**Follow up:** Could you solve it without loops/recursion?
 
 <div class="tabs"></div>
 <div class="tab-content">

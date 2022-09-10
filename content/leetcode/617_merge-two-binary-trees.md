@@ -47,7 +47,11 @@ Output: [2,2]
 #         self.left = left
 #         self.right = right
 class Solution:
-    def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+    def mergeTrees(
+        self,
+        root1: Optional[TreeNode],
+        root2: Optional[TreeNode]
+    ) -> Optional[TreeNode]:
         if root1 and root2:
             return TreeNode(
                 root1.val+root2.val,

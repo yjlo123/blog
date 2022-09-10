@@ -52,6 +52,7 @@
   <h1>273 Integer to English Words</h1>
   <div class="blog-post-subheader">
     <time>01 Sep 2022</time>
+    <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
   </div><ul class="tags">
   
    <li>
@@ -116,14 +117,22 @@ Output: &#34;One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Sev
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">numberToWords</span>(self, num: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">str</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> num:
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#a50">&#39;Zero&#39;</span>
-</span></span><span style="display:flex;"><span>        ones = [<span style="color:#a50">&#39;Zero&#39;</span>, <span style="color:#a50">&#39;One&#39;</span>, <span style="color:#a50">&#39;Two&#39;</span>, <span style="color:#a50">&#39;Three&#39;</span>, <span style="color:#a50">&#39;Four&#39;</span>, <span style="color:#a50">&#39;Five&#39;</span>, <span style="color:#a50">&#39;Six&#39;</span>, <span style="color:#a50">&#39;Seven&#39;</span>, <span style="color:#a50">&#39;Eight&#39;</span>, <span style="color:#a50">&#39;Nine&#39;</span>, <span style="color:#a50">&#39;Ten&#39;</span>, <span style="color:#a50">&#39;Eleven&#39;</span>, <span style="color:#a50">&#39;Twelve&#39;</span>, <span style="color:#a50">&#39;Thirteen&#39;</span>, <span style="color:#a50">&#39;Fourteen&#39;</span>, <span style="color:#a50">&#39;Fifteen&#39;</span>, <span style="color:#a50">&#39;Sixteen&#39;</span>, <span style="color:#a50">&#39;Seventeen&#39;</span>, <span style="color:#a50">&#39;Eighteen&#39;</span>, <span style="color:#a50">&#39;Nineteen&#39;</span>]
-</span></span><span style="display:flex;"><span>        tens = [<span style="color:#a50">&#39;&#39;</span>, <span style="color:#a50">&#39;Ten&#39;</span>, <span style="color:#a50">&#39;Twenty&#39;</span>, <span style="color:#a50">&#39;Thirty&#39;</span>, <span style="color:#a50">&#39;Forty&#39;</span>, <span style="color:#a50">&#39;Fifty&#39;</span>, <span style="color:#a50">&#39;Sixty&#39;</span>, <span style="color:#a50">&#39;Seventy&#39;</span>, <span style="color:#a50">&#39;Eighty&#39;</span>, <span style="color:#a50">&#39;Ninety&#39;</span>]
+</span></span><span style="display:flex;"><span>        ones = [<span style="color:#a50">&#39;Zero&#39;</span>, <span style="color:#a50">&#39;One&#39;</span>, <span style="color:#a50">&#39;Two&#39;</span>, <span style="color:#a50">&#39;Three&#39;</span>, <span style="color:#a50">&#39;Four&#39;</span>, <span style="color:#a50">&#39;Five&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a50">&#39;Six&#39;</span>, <span style="color:#a50">&#39;Seven&#39;</span>, <span style="color:#a50">&#39;Eight&#39;</span>, <span style="color:#a50">&#39;Nine&#39;</span>, <span style="color:#a50">&#39;Ten&#39;</span>, <span style="color:#a50">&#39;Eleven&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a50">&#39;Twelve&#39;</span>, <span style="color:#a50">&#39;Thirteen&#39;</span>, <span style="color:#a50">&#39;Fourteen&#39;</span>, <span style="color:#a50">&#39;Fifteen&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a50">&#39;Sixteen&#39;</span>, <span style="color:#a50">&#39;Seventeen&#39;</span>, <span style="color:#a50">&#39;Eighteen&#39;</span>, <span style="color:#a50">&#39;Nineteen&#39;</span>]
+</span></span><span style="display:flex;"><span>        tens = [<span style="color:#a50">&#39;&#39;</span>, <span style="color:#a50">&#39;Ten&#39;</span>, <span style="color:#a50">&#39;Twenty&#39;</span>, <span style="color:#a50">&#39;Thirty&#39;</span>, <span style="color:#a50">&#39;Forty&#39;</span>, <span style="color:#a50">&#39;Fifty&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a50">&#39;Sixty&#39;</span>, <span style="color:#a50">&#39;Seventy&#39;</span>, <span style="color:#a50">&#39;Eighty&#39;</span>, <span style="color:#a50">&#39;Ninety&#39;</span>]
 </span></span><span style="display:flex;"><span>        thoudands = [<span style="color:#a50">&#39;&#39;</span>, <span style="color:#a50">&#39;Thousand&#39;</span>, <span style="color:#a50">&#39;Million&#39;</span>, <span style="color:#a50">&#39;Billion&#39;</span>, <span style="color:#a50">&#39;Trillion&#39;</span>]
 </span></span><span style="display:flex;"><span>        res = <span style="color:#a50">&#39;&#39;</span>
 </span></span><span style="display:flex;"><span>        i = <span style="color:#099">0</span>

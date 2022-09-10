@@ -52,6 +52,7 @@
   <h1>48 Rotate Image</h1>
   <div class="blog-post-subheader">
     <time>19 Mar 2021</time>
+    <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
   </div><ul class="tags">
   
    <li>
@@ -68,8 +69,8 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given an <em>n x n</em> 2D <code>matrix</code> representing an image, rotate the image by 90 degrees (clockwise).</p>
-<p>You have to rotate the image <strong>in-place</strong>, which means you have to modify the input 2D matrix directly. <strong>DO NOT</strong> allocate another 2D matrix and do the rotation.</p>
+    <p>You are given an <code>n x n</code> 2D <code>matrix</code> representing an image, rotate the image by <strong>90</strong> degrees (clockwise).</p>
+<p>You have to rotate the image <a href="https://en.wikipedia.org/wiki/In-place_algorithm">in-place</a>, which means you have to modify the input 2D matrix directly. <strong>DO NOT</strong> allocate another 2D matrix and do the rotation.</p>
 <p><strong>Example 1:</strong></p>
 <pre tabindex="0"><code>1 2 3      7 4 1
 4 5 6  =&gt;  8 5 2
@@ -93,10 +94,9 @@ Output: [[1]]
 Output: [[3,1],[4,2]]
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>matrix.length</code> == n</li>
-<li><code>matrix[i].length</code> == n</li>
-<li>1 &lt;= n &lt;= 20</li>
-<li>-1000 &lt;= <code>matrix[i][j]</code> &lt;= 1000</li>
+<li><code>n == matrix.length == matrix[i].length</code></li>
+<li><code>1 &lt;= n &lt;= 20</code></li>
+<li><code>-1000 &lt;= matrix[i][j] &lt;= 1000</code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">

@@ -52,6 +52,7 @@
   <h1>36 Valid Sudoku</h1>
   <div class="blog-post-subheader">
     <time>30 Sep 2021</time>
+    <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
   </div><ul class="tags">
   
    <li>
@@ -82,7 +83,19 @@ Each of the nine <code>3 x 3</code> sub-boxes of the grid must contain the digit
 <li>Only the filled cells need to be validated according to the mentioned rules.</li>
 </ul>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: board = 
+<pre tabindex="0"><code>5 3 _ | _ 7 _ | _ _ _
+6 _ _ | 1 9 5 | _ _ _
+_ 9 8 | _ _ _ | _ 6 _
+---------------------
+8 _ _ | _ 6 _ | _ _ 3
+4 _ _ | 8 _ 3 | _ _ 1
+7 _ _ | _ 2 _ | _ _ 6
+---------------------
+_ 6 _ | _ _ _ | 2 8 _
+_ _ _ | 4 1 9 | _ _ 5
+_ _ _ | _ 8 _ | _ 7 9
+
+Input: board = 
 [[&#34;5&#34;,&#34;3&#34;,&#34;.&#34;,&#34;.&#34;,&#34;7&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;]
 ,[&#34;6&#34;,&#34;.&#34;,&#34;.&#34;,&#34;1&#34;,&#34;9&#34;,&#34;5&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;]
 ,[&#34;.&#34;,&#34;9&#34;,&#34;8&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;.&#34;,&#34;6&#34;,&#34;.&#34;]
@@ -109,8 +122,8 @@ Explanation: Same as Example 1, except with the 5 in the top left corner being m
 Since there are two 8&#39;s in the top left 3x3 sub-box, it is invalid.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>board.length</code> == 9</li>
-<li><code>board[i].length</code> == 9</li>
+<li><code>board.length == 9</code></li>
+<li><code>board[i].length == 9</code></li>
 <li><code>board[i][j]</code> is a digit <code>1-9</code> or <code>'.'</code>.</li>
 </ul>
 <div class="tabs"></div>

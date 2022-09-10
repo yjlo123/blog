@@ -37,12 +37,12 @@ Output: []
 ```
 
 **Constraints:**
-- k == lists.length
-- 0 <= k <= 10^4
-- 0 <= lists[i].length <= 500
-- -10^4 <= lists[i][j] <= 10^4
+- `k == lists.length`
+- <code>0 <= k <= 10<sup>4</sup></code>
+- `0 <= lists[i].length <= 500`
+- <code>-10<sup>4</sup> <= lists[i][j] <= 10<sup>4</sup></code>
 - `lists[i]` is sorted in ascending order.
-- The sum of `lists[i].length` won't exceed `10^4`.
+- The sum of `lists[i].length` won't exceed <code>10<sup>4</sup></code>.
 
 
 <div class="tabs"></div>

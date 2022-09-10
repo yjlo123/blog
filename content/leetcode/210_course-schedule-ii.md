@@ -41,7 +41,7 @@ Output: [0]
 - `prerequisites[i].length == 2`
 - <code>0 <= a<sub>i</sub>, b<sub>i</sub> < numCourses</code>
 - <code>a<sub>i</sub> != b<sub>i</sub></code>
-- All the pairs `[ai, bi]` are **distinct**.
+- All the pairs <code>[a<sub>i</sub>, b<sub>i</sub>]</code> are **distinct**.
 
 <div class="tabs"></div>
 <div class="tab-content">

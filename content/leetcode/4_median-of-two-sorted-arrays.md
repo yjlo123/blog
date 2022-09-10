@@ -10,8 +10,6 @@ Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, re
 
 **Follow up**: The overall run time complexity should be `O(log (m+n))`.
 
- 
-
 **Example 1:**
 ```
 Input: nums1 = [1,3], nums2 = [2]
@@ -46,12 +44,12 @@ Output: 2.00000
 
 **Constraints:**
 
-- nums1.length == m
-- nums2.length == n
-- 0 <= m <= 1000
-- 0 <= n <= 1000
-- 1 <= m + n <= 2000
-- -10<sup>6</sup> <= nums1[i], nums2[i] <= 10<sup>6</sup>
+- `nums1.length == m`
+- `nums2.length == n`
+- `0 <= m <= 1000`
+- `0 <= n <= 1000`
+- `1 <= m + n <= 2000`
+- <code>-10<sup>6</sup> <= nums1[i], nums2[i] <= 10<sup>6</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">

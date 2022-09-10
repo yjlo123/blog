@@ -6,7 +6,7 @@ draft: false
 tags: ["leetcode", "lc_medium", "lc_greedy"]
 ---
 
-Given an array of meeting time `intervals` intervals where `intervals[i]` = [start<sub>i</sub>, end<sub>i</sub>], return _the minimum number of conference rooms required_.
+Given an array of meeting time `intervals` intervals where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, return _the minimum number of conference rooms required_.
 
 **Example 1:**
 ```
@@ -21,8 +21,8 @@ Output: 1
 ```
 
 **Constraints:**
-- 1 <= `intervals.length` <= 10<sup>4</sup>
-- 0 <= start<sub>i</sub> < end<sub>i</sub> <= 10<sup>6</sup>
+- <code>1 <= intervals.length <= 10<sup>4</sup></code>
+- <code>0 <= start<sub>i</sub> < end<sub>i</sub> <= 10<sup>6</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">

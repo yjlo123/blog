@@ -35,8 +35,12 @@ class Solution:
     def numberToWords(self, num: int) -> str:
         if not num:
             return 'Zero'
-        ones = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
-        tens = ['', 'Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
+        ones = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five',
+                'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven',
+                'Twelve', 'Thirteen', 'Fourteen', 'Fifteen',
+                'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
+        tens = ['', 'Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty',
+                'Sixty', 'Seventy', 'Eighty', 'Ninety']
         thoudands = ['', 'Thousand', 'Million', 'Billion', 'Trillion']
         res = ''
         i = 0

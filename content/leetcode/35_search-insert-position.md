@@ -37,10 +37,10 @@ Output: 0
 ```
 
 **Constraints:**
-- 1 <= nums.length <= 10<sup>4</sup>
-- -10<sup>4</sup> <= nums[i] <= 10<sup>4</sup>
+- <code>1 <= nums.length <= 10<sup>4</sup></code>
+- <code>-10<sup>4</sup> <= nums[i] <= 10<sup>4</sup></code>
 - `nums` contains **distinct** values sorted in **ascending** order.
-- -10<sup>4</sup> <= target <= 10<sup>4</sup>
+- <code>-10<sup>4</sup> <= target <= 10<sup>4</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">

@@ -33,12 +33,12 @@ Output: [[2,2,2],[2,2,2]]
 ```
 
 **Constraints:**
-- m == image.length
-- n == image[i].length
-- 1 <= m, n <= 50
-- 0 <= image[i][j], newColor < 2<sup>16</sup>
-- 0 <= sr < m
-- 0 <= sc < n
+- `m == image.length`
+- `n == image[i].length`
+- `1 <= m, n <= 50`
+- <code>0 <= image[i][j], newColor < 2<sup>16</sup></code>
+- `0 <= sr < m`
+- `0 <= sc < n`
 
 <div class="tabs"></div>
 <div class="tab-content">

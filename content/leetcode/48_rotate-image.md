@@ -6,11 +6,9 @@ draft: false
 tags: ["leetcode", "lc_medium", "lc_matrix"]
 ---
 
-You are given an _n x n_ 2D `matrix` representing an image, rotate the image by 90 degrees (clockwise).
+You are given an `n x n` 2D `matrix` representing an image, rotate the image by **90** degrees (clockwise).
 
-You have to rotate the image **in-place**, which means you have to modify the input 2D matrix directly. **DO NOT** allocate another 2D matrix and do the rotation.
-
- 
+You have to rotate the image [in-place](https://en.wikipedia.org/wiki/In-place_algorithm), which means you have to modify the input 2D matrix directly. **DO NOT** allocate another 2D matrix and do the rotation.
 
 **Example 1:**
 ```
@@ -43,10 +41,9 @@ Output: [[3,1],[4,2]]
 ```
 
 **Constraints:**
-- `matrix.length` == n
-- `matrix[i].length` == n
-- 1 <= n <= 20
-- -1000 <= `matrix[i][j]` <= 1000
+- `n == matrix.length == matrix[i].length`
+- `1 <= n <= 20`
+- `-1000 <= matrix[i][j] <= 1000`
 
 <div class="tabs"></div>
 <div class="tab-content">

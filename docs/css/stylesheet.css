@@ -32,6 +32,15 @@ body {
   font-size: 2.7rem;
 }
 
+.nav-buttons {
+  float: right;
+  font-size: 1rem;
+}
+
+.nav-buttons a {
+  color: #333;
+}
+
 .post a {
   position: relative;
   color: black;
@@ -273,6 +282,10 @@ footer a:hover {
 
 .lc-hard {
   background-color: rgb(247, 168, 162);
+}
+
+.highlight {
+  overflow-x: auto;
 }
 
 @media screen and (max-width: 576px) {

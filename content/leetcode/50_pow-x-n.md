@@ -30,9 +30,9 @@ Explanation: 2^(-2) = 1/(2^2) = 1/4 = 0.25
 
 **Constraints:**
 
-- -100.0 < x < 100.0
-- -2<sup>31</sup> <= n <= 2<sup>31</sup>-1
-- -10<sup>4</sup> <= x<sup>n</sup> <= 10<sup>4</sup>
+- `-100.0 < x < 100.0`
+- <code>-2<sup>31</sup> <= n <= 2<sup>31</sup>-1</code>
+- <code>-10<sup>4</sup> <= x<sup>n</sup> <= 10<sup>4</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">

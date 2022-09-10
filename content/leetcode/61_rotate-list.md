@@ -32,8 +32,8 @@ Output: [2,0,1]
 
 **Constraints:**
 - The number of nodes in the list is in the range `[0, 500]`.
-- -100 <= Node.val <= 100
-- 0 <= k <= 2 * 10<sup>9</sup>
+- `-100 <= Node.val <= 100`
+- <code>0 <= k <= 2 * 10<sup>9</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">

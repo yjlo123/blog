@@ -32,9 +32,9 @@ Output: [1]
 
 **Constraints:**
 - The number of nodes in the list is `sz`.
-- 1 <= sz <= 30
-- 0 <= Node.val <= 100
-- 1 <= n <= sz
+- `1 <= sz <= 30`
+- `0 <= Node.val <= 100`
+- `1 <= n <= sz`
 
 **Follow up:** Could you do this in one pass?
 

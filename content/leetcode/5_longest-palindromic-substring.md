@@ -6,7 +6,7 @@ draft: false
 tags: ["leetcode", "lc_medium", "lc_string"]
 ---
 
-Given a string **s**, find the longest palindromic substring in **s**. You may assume that the maximum length of **s** is 1000.
+Given a string `s`, return _the longest palindromic substring in `s`_.
 
 **Example1:**
 ```
@@ -19,6 +19,10 @@ Note: "aba" is also a valid answer.
 Input: "cbbd"
 Output: "bb"
 ```
+
+**Constraints:**
+- `1 <= s.length <= 1000`
+- `s` consist of only digits and English letters.
 
 <div class="tabs"></div>
 <div class="tab-content">
