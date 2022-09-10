@@ -49,6 +49,17 @@ Output: false
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        val = 1
+        while val < n:
+            val *= 2
+        return val == n
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func isPowerOfTwo(n int) bool {
@@ -60,6 +71,7 @@ func isPowerOfTwo(n int) bool {
 }
 {{< / highlight >}}
 </div>
+
 <div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode231" target="_blank">https://runtime.siwei.dev/?src=leetcode231</a>

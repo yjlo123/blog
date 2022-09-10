@@ -34,13 +34,36 @@ Output: 3
 
 **Constraints:**
 
-- m == `grid.length`
-- n == `grid[i].length`
-- 1 <= m, n <= 300
+- `m == grid.length`
+- `n == grid[i].length`
+- `1 <= m, n <= 300`
 - `grid[i][j]` is `'0'` or `'1'`.
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        m = len(grid)
+        n = len(grid[0])
+        
+        def dfs(row: int, col: int) -> None:
+            grid[row][col] = '2'
+            for dr, dc in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+                r, c = row + dr, col + dc
+                if 0 <= r < m and 0 <= c < n and grid[r][c] == '1':
+                    dfs(r, c)
+        count = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1':
+                    count += 1
+                    dfs(i, j)
+        return count
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func numIslands(grid [][]byte) int {
