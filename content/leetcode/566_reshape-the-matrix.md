@@ -31,19 +31,24 @@ Output: [[1,2],[3,4]]
 ```
 
 **Constraints:**
-- m == `mat.length`
-- n == `mat[i].length`
-- 1 <= m, n <= 100
-- -1000 <= `mat[i][j]` <= 1000
-- 1 <= r, c <= 300
+- `m == mat.length`
+- `n == mat[i].length`
+- `1 <= m, n <= 100`
+- `-1000 <= mat[i][j] <= 1000`
+- `1 <= r, c <= 300`
 
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
 class Solution:
-    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
-        if len(mat) == 0 or not r*c == len(mat)*len(mat[0]):
+    def matrixReshape(
+        self,
+        mat: List[List[int]],
+        r: int,
+        c: int
+    ) -> List[List[int]]:
+        if not mat or r * c != len(mat) * len(mat[0]):
             return mat
         result = []
         row = []

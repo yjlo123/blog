@@ -88,11 +88,11 @@ Input: mat = [[1,2],[3,4]], r = 2, c = 4
 Output: [[1,2],[3,4]]
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>m == <code>mat.length</code></li>
-<li>n == <code>mat[i].length</code></li>
-<li>1 &lt;= m, n &lt;= 100</li>
-<li>-1000 &lt;= <code>mat[i][j]</code> &lt;= 1000</li>
-<li>1 &lt;= r, c &lt;= 300</li>
+<li><code>m == mat.length</code></li>
+<li><code>n == mat[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 100</code></li>
+<li><code>-1000 &lt;= mat[i][j] &lt;= 1000</code></li>
+<li><code>1 &lt;= r, c &lt;= 300</code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -112,11 +112,21 @@ Output: [[1,2],[3,4]]
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">matrixReshape</span>(self, mat: List[List[<span style="color:#0aa">int</span>]], r: <span style="color:#0aa">int</span>, c: <span style="color:#0aa">int</span>) -&gt; List[List[<span style="color:#0aa">int</span>]]:
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(mat) == <span style="color:#099">0</span> <span style="color:#00a">or</span> <span style="color:#00a">not</span> r*c == <span style="color:#0aa">len</span>(mat)*<span style="color:#0aa">len</span>(mat[<span style="color:#099">0</span>]):
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">matrixReshape</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        mat: List[List[<span style="color:#0aa">int</span>]],
+</span></span><span style="display:flex;"><span>        r: <span style="color:#0aa">int</span>,
+</span></span><span style="display:flex;"><span>        c: <span style="color:#0aa">int</span>
+</span></span><span style="display:flex;"><span>    ) -&gt; List[List[<span style="color:#0aa">int</span>]]:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> mat <span style="color:#00a">or</span> r * c != <span style="color:#0aa">len</span>(mat) * <span style="color:#0aa">len</span>(mat[<span style="color:#099">0</span>]):
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> mat
 </span></span><span style="display:flex;"><span>        result = []
 </span></span><span style="display:flex;"><span>        row = []
