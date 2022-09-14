@@ -71,8 +71,9 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>Given a set of <em>non-overlapping</em> intervals, insert a new interval into the intervals (merge if necessary).</p>
-<p>You may assume that the intervals were initially sorted according to their start times.</p>
+    <p>You are given an array of non-overlapping <code>intervals</code> intervals where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> represent the start and the end of the <code>i<sup>th</sup></code> interval and <code>intervals</code> is sorted in ascending order by <code>start<sub>i</sub></code>. You are also given an interval <code>newInterval = [start, end]</code> that represents the start and end of another interval.</p>
+<p>Insert <code>newInterval</code> into <code>intervals</code> such that <code>intervals</code> is still sorted in ascending order by <code>start<sub>i</sub></code> and <code>intervals</code> still does not have any overlapping intervals (merge overlapping intervals if necessary).</p>
+<p>Return <em><code>intervals</code> after the insertion</em>.</p>
 <p><strong>Example 1:</strong></p>
 <pre tabindex="0"><code>Input: intervals = [[1,3],[6,9]], newInterval = [2,5]
 Output: [[1,5],[6,9]]
@@ -91,15 +92,57 @@ Output: [[1,5]]
 Output: [[1,7]]
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>0 &lt;= intervals.length &lt;= 10<sup>4</sup></li>
-<li>intervals[i].length == 2</li>
-<li>0 &lt;= intervals[i][0] &lt;= intervals[i][1] &lt;= 10<sup>5</sup></li>
-<li>intervals is sorted by intervals[i][0] in <strong>ascending</strong> order.</li>
-<li>newInterval.length == 2</li>
-<li>0 &lt;= newInterval[0] &lt;= newInterval[1] &lt;= 10<sup>5</sup></li>
+<li><code>0 &lt;= intervals.length &lt;= 10<sup>4</sup></code></li>
+<li><code>intervals[i].length == 2</code></li>
+<li><code>0 &lt;= start<sub>i</sub> &lt;= end<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
+<li><code>intervals</code> is sorted by <code>start<sub>i</sub></code> in <strong>ascending</strong> order.</li>
+<li><code>newInterval.length == 2</code></li>
+<li><code>0 &lt;= start &lt;= end &lt;= 10<sup>5</sup></code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">insert</span>(
+</span></span><span style="display:flex;"><span>		self,
+</span></span><span style="display:flex;"><span>		intervals: List[List[<span style="color:#0aa">int</span>]],
+</span></span><span style="display:flex;"><span>		newInterval: List[<span style="color:#0aa">int</span>]
+</span></span><span style="display:flex;"><span>	) -&gt; List[List[<span style="color:#0aa">int</span>]]:
+</span></span><span style="display:flex;"><span>        s, e = newInterval
+</span></span><span style="display:flex;"><span>        left, right = [], []
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i[<span style="color:#099">1</span>] &lt; s:
+</span></span><span style="display:flex;"><span>                left.append(i),
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> i[<span style="color:#099">0</span>] &gt; e:
+</span></span><span style="display:flex;"><span>                right.append(i),
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>                s = <span style="color:#0aa">min</span>(s, i[<span style="color:#099">0</span>])
+</span></span><span style="display:flex;"><span>                e = <span style="color:#0aa">max</span>(e, i[<span style="color:#099">1</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> left + [[s, e]] + right</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

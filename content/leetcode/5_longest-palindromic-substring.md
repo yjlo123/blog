@@ -26,6 +26,28 @@ Output: "bb"
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        max_str = ''
+        for i in range(len(s)):
+            temp = self.check(s, i, i)
+            if len(temp) > len(max_str):
+                max_str = temp
+            temp = self.check(s, i, i+1)
+            if len(temp) > len(max_str):
+                max_str = temp
+        return max_str
+        
+    def check(self, s: str, i: int, j: int) -> str:
+        while i >= 0 and j < len(s) and s[i] == s[j]:
+            i -= 1
+            j += 1
+        return s[i+1:j]
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func longestPalindrome(s string) string {

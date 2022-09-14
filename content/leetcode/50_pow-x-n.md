@@ -6,8 +6,7 @@ draft: false
 tags: ["leetcode", "lc_medium"]
 ---
 
-Implement *pow(x, n)*, which calculates *x* raised to the power n (i.e. xn).
-
+Implement `pow(x, n)`, which calculates `x` raised to the power `n` (i.e. <code>x<sup>n</sup></code>).
 
 **Example 1:**
 ```
@@ -36,6 +35,21 @@ Explanation: 2^(-2) = 1/(2^2) = 1/4 = 0.25
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n == 0:
+            return 1
+        if n < 0:
+            return self.myPow(1 / x, -n)
+        res = self.myPow(x * x, n // 2)
+        if n % 2 == 1:
+            res *= x
+        return res
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func myPow(x float64, n int) float64 {

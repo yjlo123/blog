@@ -3,14 +3,12 @@ weight: 55
 title: "55 Jump Game"
 date: 2021-03-18T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_greedy"]
+tags: ["leetcode", "lc_medium", "lc_greedy", "lc_dp"]
 ---
 
-Given an array of non-negative integers `nums`, you are initially positioned at the **first index** of the array.
+You are given an integer array `nums`. You are initially positioned at the array's **first index**, and each element in the array represents your maximum jump length at that position.
 
-Each element in the array represents your maximum jump length at that position.
-
-Determine if you are able to reach the last index.
+Return _`true` if you can reach the last index, or `false` otherwise._
 
 **Example 1:**
 ```
@@ -29,11 +27,40 @@ Its maximum jump length is 0, which makes it impossible to reach the last index.
 
 **Constraints:**
 
-- 1 <= nums.length <= 3 * 10<sup>4</sup>
-- 0 <= nums[i] <= 10<sup>5</sup>
+- <code>1 <= nums.length <= 3 * 10<sup>4</sup></code>
+- <code>0 <= nums[i] <= 10<sup>5</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+"""
+Greedy
+"""
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        last = len(nums) - 1
+        for i in range(len(nums) - 1, -1, -1):
+            if i + nums[i] >= last:
+                last = i
+        return last == 0
+
+"""
+DP
+"""
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        n = len(nums)
+        dp = [False] * n
+        dp[-1] = True
+        for i in range(n-2, -1, -1):
+            furthest = min(i + nums[i], n-1)
+            if any(dp[i+1:furthest+1]):
+                dp[i] = True
+        return dp[0]
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func canJump(nums []int) bool {

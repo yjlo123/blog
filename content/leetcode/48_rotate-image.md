@@ -47,6 +47,25 @@ Output: [[3,1],[4,2]]
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        # transpose: top-right <-> bottom-left
+        n = len(matrix)
+        for i in range(n):
+            for j in range(i + 1, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        # reflect: left <-> right
+        for i in range(n):
+            for j in range(n // 2):
+                matrix[i][j], matrix[i][-j-1] = matrix[i][-j-1], matrix[i][j]
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func rotate(matrix [][]int) {

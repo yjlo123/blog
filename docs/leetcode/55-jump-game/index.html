@@ -69,11 +69,14 @@
      <a href="/tags/lc_greedy">lc_greedy</a>
    </li>
   
+   <li>
+     <a href="/tags/lc_dp">lc_dp</a>
+   </li>
+  
 </ul>
 <div class="blog-post-content">
-    <p>Given an array of non-negative integers <code>nums</code>, you are initially positioned at the <strong>first index</strong> of the array.</p>
-<p>Each element in the array represents your maximum jump length at that position.</p>
-<p>Determine if you are able to reach the last index.</p>
+    <p>You are given an integer array <code>nums</code>. You are initially positioned at the array&rsquo;s <strong>first index</strong>, and each element in the array represents your maximum jump length at that position.</p>
+<p>Return <em><code>true</code> if you can reach the last index, or <code>false</code> otherwise.</em></p>
 <p><strong>Example 1:</strong></p>
 <pre tabindex="0"><code>Input: nums = [2,3,1,1,4]
 Output: true
@@ -85,11 +88,67 @@ Explanation: You will always arrive at index 3 no matter what.
 Its maximum jump length is 0, which makes it impossible to reach the last index.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></li>
-<li>0 &lt;= nums[i] &lt;= 10<sup>5</sup></li>
+<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">Greedy
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">canJump</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        last = <span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>, -<span style="color:#099">1</span>, -<span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i + nums[i] &gt;= last:
+</span></span><span style="display:flex;"><span>                last = i
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> last == <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">DP
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">canJump</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(nums)
+</span></span><span style="display:flex;"><span>        dp = [<span style="color:#00a">False</span>] * n
+</span></span><span style="display:flex;"><span>        dp[-<span style="color:#099">1</span>] = <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n-<span style="color:#099">2</span>, -<span style="color:#099">1</span>, -<span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>            furthest = <span style="color:#0aa">min</span>(i + nums[i], n-<span style="color:#099">1</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#0aa">any</span>(dp[i+<span style="color:#099">1</span>:furthest+<span style="color:#099">1</span>]):
+</span></span><span style="display:flex;"><span>                dp[i] = <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dp[<span style="color:#099">0</span>]</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

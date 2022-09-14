@@ -37,6 +37,40 @@ Output: [2,0,1]
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def rotateRight(
+        self,
+        head: Optional[ListNode],
+        k: int
+    ) -> Optional[ListNode]:
+        if not head:
+            return None
+        
+        length = 1
+        tail = head
+        while tail.next:
+            tail = tail.next
+            length += 1
+        k = k % length
+        
+        tail.next = head
+        if k > 0:
+            for i in range(length - k):
+                tail = tail.next
+
+        new_head = tail.next
+        tail.next = None
+        return new_head
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 /**
