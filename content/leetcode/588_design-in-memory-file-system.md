@@ -3,7 +3,7 @@ weight: 588
 title: "588 Design In-Memory File System"
 date: 2022-09-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_hard", "lc_oop", "lc_hash_table"]
+tags: ["leetcode", "lc_hard", "lc_ood", "lc_hash_table"]
 ---
 
 Design a data structure that simulates an in-memory file system.

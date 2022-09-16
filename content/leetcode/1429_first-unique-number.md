@@ -3,7 +3,7 @@ weight: 1429
 title: "1429 First Unique Number"
 date: 2022-09-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_ordered_dict", "lc_hash_table", "lc_queue", "lc_oop"]
+tags: ["leetcode", "lc_medium", "lc_ordered_dict", "lc_hash_table", "lc_queue", "lc_ood"]
 ---
 
 You have a queue of integers, you need to retrieve the first unique integer in the queue.

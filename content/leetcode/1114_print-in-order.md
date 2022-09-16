@@ -3,7 +3,7 @@ weight: 1114
 title: "1114 Print in Order"
 date: 2021-03-22T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_easy", "lc_concurrency", "lc_oop"]
+tags: ["leetcode", "lc_easy", "lc_concurrency", "lc_ood"]
 ---
 
 Suppose we have a class:

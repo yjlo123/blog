@@ -3,7 +3,7 @@ weight: 1603
 title: "1603 Design Parking System"
 date: 2022-08-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_easy", "lc_oop"]
+tags: ["leetcode", "lc_easy", "lc_ood"]
 ---
 
 Design a parking system for a parking lot. The parking lot has three kinds of parking spaces: big, medium, and small, with a fixed number of slots for each size.

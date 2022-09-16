@@ -3,7 +3,7 @@ weight: 460
 title: "460 LFU Cache"
 date: 2022-09-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_hard", "lc_hash_table", "lc_ordered_dict", "lc_oop"]
+tags: ["leetcode", "lc_hard", "lc_hash_table", "lc_ordered_dict", "lc_ood"]
 ---
 
 Design and implement a data structure for a [Least Frequently Used (LFU)](https://en.wikipedia.org/wiki/Least_frequently_used) cache.

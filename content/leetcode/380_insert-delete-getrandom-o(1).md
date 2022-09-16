@@ -3,7 +3,7 @@ weight: 380
 title: "380 Insert Delete GetRandom O(1)"
 date: 2022-08-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_hash_table", "lc_oop"]
+tags: ["leetcode", "lc_medium", "lc_hash_table", "lc_ood"]
 ---
 
 Implement the `RandomizedSet` class:

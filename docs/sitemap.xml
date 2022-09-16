@@ -356,6 +356,9 @@
     <loc>https://blog.siwei.dev/leetcode/631-design-excel-sum-formula/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/642-design-search-autocomplete-system/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/694-number-of-distinct-islands/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -506,6 +509,9 @@
     <loc>https://blog.siwei.dev/leetcode/1628-design-an-expression-tree-with-evaluate-function/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1656-design-an-ordered-stream/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1710-maximum-units-on-a-truck/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -599,7 +605,7 @@
     <loc>https://blog.siwei.dev/tags/lc_medium/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_oop/</loc>
+    <loc>https://blog.siwei.dev/tags/lc_ood/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_ordered_dict/</loc>

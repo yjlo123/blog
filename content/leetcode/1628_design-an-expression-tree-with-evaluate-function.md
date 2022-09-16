@@ -3,7 +3,7 @@ weight: 1628
 title: "1628 Design an Expression Tree With Evaluate Function"
 date: 2022-09-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_tree", "lc_oop"]
+tags: ["leetcode", "lc_medium", "lc_tree", "lc_ood"]
 ---
 
 Given the `postfix` tokens of an arithmetic expression, build and return _the binary expression tree that represents this expression_.

@@ -3,7 +3,7 @@ weight: 631
 title: "631 Design Excel Sum Formula"
 date: 2022-09-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_hard", "lc_oop"]
+tags: ["leetcode", "lc_hard", "lc_ood"]
 ---
 
 Design the basic function of **Excel** and implement the function of the sum formula.
