@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+        <title>430 Flatten a Multilevel Doubly Linked List</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>430 Flatten a Multilevel Doubly Linked List</h1>
+  <div class="blog-post-subheader">
+    
+    <time>Sep 2022</time>
+    <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
+    
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_medium">lc_medium</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_linked_list">lc_linked_list</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_stack">lc_stack</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_dfs">lc_dfs</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>You are given a doubly linked list, which contains nodes that have a next pointer, a previous pointer, and an additional <strong>child pointer</strong>. This child pointer may or may not point to a separate doubly linked list, also containing these special nodes. These child lists may have one or more children of their own, and so on, to produce a <strong>multilevel data structure</strong> as shown in the example below.</p>
+<p>Given the <code>head</code> of the first level of the list, <strong>flatten</strong> the list so that all the nodes appear in a single-level, doubly linked list. Let <code>curr</code> be a node with a child list. The nodes in the child list should appear <strong>after</strong> <code>curr</code> and <strong>before</strong> <code>curr.next</code> in the flattened list.</p>
+<p>Return <em>the <code>head</code> of the flattened list. The nodes in the list must have <strong>all</strong> of their child pointers set to <code>null</code></em>.</p>
+<p><strong>Example 1:</strong></p>
+<pre tabindex="0"><code> 1 &lt;--&gt; 2 &lt;--&gt; 3 &lt;--&gt; 4 &lt;--&gt; 5 &lt;--&gt; 6
+               |
+               7 &lt;--&gt; 8 &lt;--&gt; 9 &lt;--&gt; 10
+                      |
+                      11 &lt;--&gt; 12
+Input: head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+Output: [1,2,3,7,8,11,12,9,10,4,5,6]
+Explanation: The multilevel linked list in the input is shown.
+After flattening the multilevel linked list it becomes:
+ 1 &lt;--&gt; 2 &lt;--&gt; 3 &lt;--&gt; 7 &lt;--&gt; 8 &lt;--&gt; 11 &lt;--&gt; 12 &lt;--&gt; 9 &lt;--&gt; 10 &lt;--&gt; 4 &lt;--&gt; 5 &lt;--&gt; 6
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code> 1 &lt;--&gt; 2
+ |
+ 3
+Input: head = [1,2,null,3]
+Output: [1,3,2]
+Explanation: The multilevel linked list in the input is shown.
+After flattening the multilevel linked list it becomes:
+1 &lt;--&gt; 3 &lt;--&gt; 2
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code>Input: head = []
+Output: []
+Explanation: There could be empty list in the input.
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of Nodes will not exceed <code>1000</code>.</li>
+<li><code>1 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
+</ul>
+<p><strong>How the multilevel linked list is represented in test cases:</strong></p>
+<p>We use the multilevel linked list from <strong>Example 1</strong> above:</p>
+<pre tabindex="0"><code> 1---2---3---4---5---6--NULL
+         |
+         7---8---9---10--NULL
+             |
+             11--12--NULL
+</code></pre><p>The serialization of each level is as follows:</p>
+<pre tabindex="0"><code>[1,2,3,4,5,6,null]
+[7,8,9,10,null]
+[11,12,null]
+</code></pre><p>To serialize all levels together, we will add nulls in each level to signify no node connects to the upper node of the previous level. The serialization becomes:</p>
+<pre tabindex="0"><code>[1,    2,    3, 4, 5, 6, null]
+             |
+[null, null, 7,    8, 9, 10, null]
+                   |
+[            null, 11, 12, null]
+</code></pre><p>Merging the serialization of each level and removing trailing nulls we obtain:</p>
+<pre tabindex="0"><code>[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+</code></pre><div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50"># Definition for a Node.
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">class Node:
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">    def __init__(self, val, prev, next, child):
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        self.val = val
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        self.prev = prev
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        self.next = next
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        self.child = child
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">flatten</span>(self, head: <span style="color:#a50">&#39;Optional[Node]&#39;</span>) -&gt; <span style="color:#a50">&#39;Optional[Node]&#39;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> head:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> head
+</span></span><span style="display:flex;"><span>        stack = []
+</span></span><span style="display:flex;"><span>        cur = head
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> cur <span style="color:#00a">or</span> stack:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> cur.child:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> cur.next:
+</span></span><span style="display:flex;"><span>                    stack.append(cur.next)
+</span></span><span style="display:flex;"><span>                cur.next = cur.child
+</span></span><span style="display:flex;"><span>                cur.child.prev = cur
+</span></span><span style="display:flex;"><span>                cur.child = <span style="color:#00a">None</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> <span style="color:#00a">not</span> cur.next <span style="color:#00a">and</span> stack:
+</span></span><span style="display:flex;"><span>                cur.next = stack.pop()
+</span></span><span style="display:flex;"><span>                cur.next.prev = cur
+</span></span><span style="display:flex;"><span>            cur = cur.next
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> head
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">DFS
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>(<span style="color:#0aa">object</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">flatten</span>(self, head: <span style="color:#a50">&#39;Optional[Node]&#39;</span>) -&gt; <span style="color:#a50">&#39;Optional[Node]&#39;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> head:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> head
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        pseudoHead = Node(<span style="color:#00a">None</span>, <span style="color:#00a">None</span>, head, <span style="color:#00a">None</span>)
+</span></span><span style="display:flex;"><span>        self.flatten_dfs(pseudoHead, head)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        pseudoHead.next.prev = <span style="color:#00a">None</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> pseudoHead.next
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">flatten_dfs</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        prev: <span style="color:#a50">&#39;Optional[Node]&#39;</span>,
+</span></span><span style="display:flex;"><span>        curr: <span style="color:#a50">&#39;Optional[Node]&#39;</span>
+</span></span><span style="display:flex;"><span>    ) -&gt; <span style="color:#a50">&#39;Optional[Node]&#39;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#a50">&#34;&#34;&#34; return the tail of the flatten list &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> curr:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> prev
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        curr.prev = prev
+</span></span><span style="display:flex;"><span>        prev.next = curr
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># the curr.next would be tempered in the recursive function</span>
+</span></span><span style="display:flex;"><span>        tempNext = curr.next
+</span></span><span style="display:flex;"><span>        tail = self.flatten_dfs(curr, curr.child)
+</span></span><span style="display:flex;"><span>        curr.child = <span style="color:#00a">None</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.flatten_dfs(tail, tempNext)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2022
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+      <br/>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+
+      (function(){
+        let first = true;
+        $(".tab-content").children(".lang").each(function () {
+          let tabId = $(this).attr("id");
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          first = false;
+        });
+
+        $(".lang").slice(1).each(function() {
+          $(this).hide();
+        })
+      })();
+
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
+  </body>
+</html>
+
