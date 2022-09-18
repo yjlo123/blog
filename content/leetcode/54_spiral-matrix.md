@@ -60,7 +60,7 @@ class Solution:
 
             if up != down:
                 # Traverse from right to left.
-                for col in rangeght -(ri 1, left - 1, -1):
+                for col in range(right - 1, left - 1, -1):
                     result.append(matrix[down][col])
 
             if left != right:

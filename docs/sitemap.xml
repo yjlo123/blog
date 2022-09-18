@@ -161,6 +161,9 @@
     <loc>https://blog.siwei.dev/leetcode/127-word-ladder/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/131-palindrome-partitioning/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/134-gas-station/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -501,6 +504,9 @@
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1209-remove-all-adjacent-duplicates-in-string-ii/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1249-minimum-remove-to-make-valid-parentheses/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1268-search-suggestions-system/</loc>
