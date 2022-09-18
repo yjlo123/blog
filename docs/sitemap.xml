@@ -53,6 +53,9 @@
     <loc>https://blog.siwei.dev/leetcode/23-merge-k-sorted-lists/</loc>
     <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/33-search-in-rotated-sorted-array/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/35-search-insert-position/</loc>
     <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
@@ -326,6 +329,9 @@
     <loc>https://blog.siwei.dev/leetcode/476-number-complement/</loc>
     <lastmod>2020-12-10T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/489-robot-room-cleaner/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -506,6 +512,9 @@
     <loc>https://blog.siwei.dev/leetcode/1335-minimum-difficulty-of-a-job-schedule/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1352-product-of-the-last-k-numbers/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1360-number-of-days-between-two-dates/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -681,6 +690,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/prefix_product/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/prefix_sum/</loc>
