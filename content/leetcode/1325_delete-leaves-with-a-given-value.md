@@ -8,7 +8,7 @@ tags: ["leetcode", "lc_medium", "lc_tree"]
 
 Given a binary tree `root` and an integer `target`, delete all the **leaf nodes** with value `target`.
 
-Note that once you delete a leaf node with value `target`, if it's parent node becomes a leaf node and has the value `target`, it should also be deleted (you need to continue doing that until you can't).
+Note that once you delete a leaf node with value `target`, if it's parent node becomes a leaf node and has the value `target`, it should also be deleted (you need to continue doing that until you cannot).
 
 **Example 1:**
 ```
@@ -60,28 +60,51 @@ Output: [1,2,3]
 ```
 
 **Constraints:**
-- 1 <= target <= 1000
-- The given binary tree will have between `1` and `3000` nodes.
-- Each node's value is between `[1, 1000]`.
+- The number of nodes in the tree is in the range `[1, 3000]`.
+- `1 <= Node.val, target <= 1000`
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def removeLeafNodes(
+        self,
+        root: Optional[TreeNode],
+        target: int
+    ) -> Optional[TreeNode]:
+        if root.left:
+            root.left = self.removeLeafNodes(root.left, target)
+        if root.right:
+            root.right = self.removeLeafNodes(root.right, target)
+        if root.left == root.right and root.val == target:
+            return None
+        return root
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func removeLeafNodes(root *TreeNode, target int) *TreeNode {
-	if root.Left != nil {
-		root.Left = removeLeafNodes(root.Left, target)
-	}
+    if root.Left != nil {
+        root.Left = removeLeafNodes(root.Left, target)
+    }
 
-	if root.Right != nil {
-		root.Right = removeLeafNodes(root.Right, target)
-	}
+    if root.Right != nil {
+        root.Right = removeLeafNodes(root.Right, target)
+    }
 
-	if root.Left == root.Right && root.Val == target {
-		return nil
-	}
+    if root.Left == root.Right && root.Val == target {
+        return nil
+    }
 
-	return root
+    return root
 }
 {{< / highlight >}}
 </div>
