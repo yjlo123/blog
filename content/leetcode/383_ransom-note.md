@@ -6,7 +6,7 @@ draft: false
 tags: ["leetcode", "lc_easy", "lc_string"]
 ---
 
-Given two stings `ransomNote` and `magazine`, return `true` if `ransomNote` can be constructed from `magazine` and `false` otherwise.
+Given two stings `ransomNote` and `magazine`, return _`true` if `ransomNote` can be constructed from `magazine` and `false` otherwise_.
 
 Each letter in `magazine` can only be used once in `ransomNote`.
 
@@ -29,7 +29,7 @@ Output: true
 ```
 
 **Constraints:**
-- 1 <= `ransomNote.length`, `magazine.length` <= 10<sup>5</sup>
+- <code>1 <= ransomNote.length, magazine.length <= 10<sup>5</sup></code>
 - `ransomNote` and `magazine` consist of lowercase English letters.
 
 <div class="tabs"></div>
