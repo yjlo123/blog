@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+        <title>993 Cousins in Binary Tree</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>993 Cousins in Binary Tree</h1>
+  <div class="blog-post-subheader">
+    
+    <time>Sep 2022</time>
+    <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
+    
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_easy">lc_easy</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_tree">lc_tree</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_bfs">lc_bfs</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>Given the <code>root</code> of a binary tree with unique values and the values of two different nodes of the tree <code>x</code> and <code>y</code>, return <em><code>true</code> if the nodes corresponding to the values <code>x</code> and <code>y</code> in the tree are <strong>cousins</strong>, or <code>false</code> otherwise</em>.</p>
+<p>Two nodes of a binary tree are <strong>cousins</strong> if they have the same depth with different parents.</p>
+<p>Note that in a binary tree, the root node is at the depth <code>0</code>, and children of each depth k node are at the depth <code>k + 1</code>.</p>
+<p><strong>Example 1:</strong></p>
+<pre tabindex="0"><code>    1
+   / \
+  2   3
+ /
+4
+
+Input: root = [1,2,3,4], x = 4, y = 3
+Output: false
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>    1
+   / \
+  2   3
+  \    \
+   4    5
+
+Input: root = [1,2,3,null,4,null,5], x = 5, y = 4
+Output: true
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code>    1
+   / \
+  2   3
+  \
+   4
+
+Input: root = [1,2,3,null,4], x = 2, y = 3
+Output: false
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[2, 100]</code>.</li>
+<li><code>1 &lt;= Node.val &lt;= 100</code></li>
+<li>Each node has a <strong>unique</strong> value.</li>
+<li><code>x != y</code></li>
+<li><code>x</code> and <code>y</code> are exist in the tree.</li>
+</ul>
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># class TreeNode:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, left=None, right=None):</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.val = val</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.left = left</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.right = right</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">isCousins</span>(self, root: Optional[TreeNode], x: <span style="color:#0aa">int</span>, y: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        level = [root]
+</span></span><span style="display:flex;"><span>        target_lvl = -<span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        current_lvl = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> level:
+</span></span><span style="display:flex;"><span>            temp_level = []
+</span></span><span style="display:flex;"><span>            values = <span style="color:#0aa">set</span>()
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> node <span style="color:#00a">in</span> level:
+</span></span><span style="display:flex;"><span>                current_children = <span style="color:#0aa">set</span>()
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> node.left:
+</span></span><span style="display:flex;"><span>                    temp_level.append(node.left)
+</span></span><span style="display:flex;"><span>                    current_children.add(node.left.val)
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> node.right:
+</span></span><span style="display:flex;"><span>                    temp_level.append(node.right)
+</span></span><span style="display:flex;"><span>                    current_children.add(node.right.val) 
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> x <span style="color:#00a">in</span> current_children <span style="color:#00a">and</span> y <span style="color:#00a">in</span> current_children:
+</span></span><span style="display:flex;"><span>                        <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>                values |= current_children
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> x <span style="color:#00a">in</span> values <span style="color:#00a">and</span> y <span style="color:#00a">in</span> values:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> (
+</span></span><span style="display:flex;"><span>                (x <span style="color:#00a">in</span> values <span style="color:#00a">and</span> y <span style="color:#00a">not</span> <span style="color:#00a">in</span> values)
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">or</span> (x <span style="color:#00a">not</span> <span style="color:#00a">in</span> values <span style="color:#00a">and</span> y <span style="color:#00a">in</span> values)
+</span></span><span style="display:flex;"><span>            ):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>            level = temp_level
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">DFS
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">isCousins</span>(self, root: TreeNode, x: <span style="color:#0aa">int</span>, y: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">dfs</span>(node, parent, depth, v):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> node:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> node.val == v:
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">return</span> depth, parent
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> (
+</span></span><span style="display:flex;"><span>                    dfs(node.left, node, depth + <span style="color:#099">1</span>, v)
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">or</span> dfs(node.right, node, depth + <span style="color:#099">1</span>, v)
+</span></span><span style="display:flex;"><span>                )
+</span></span><span style="display:flex;"><span>        dx, px = dfs(root, <span style="color:#00a">None</span>, <span style="color:#099">0</span>, x)
+</span></span><span style="display:flex;"><span>        dy, py = dfs(root, <span style="color:#00a">None</span>, <span style="color:#099">0</span>, y)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dx == dy <span style="color:#00a">and</span> px != py</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2022
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+      <br/>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+
+      (function(){
+        let first = true;
+        $(".tab-content").children(".lang").each(function () {
+          let tabId = $(this).attr("id");
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          first = false;
+        });
+
+        $(".lang").slice(1).each(function() {
+          $(this).hide();
+        })
+      })();
+
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
+  </body>
+</html>
+
