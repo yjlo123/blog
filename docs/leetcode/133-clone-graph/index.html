@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>122 Best Time to Buy and Sell Stock II</title>
+        <title>133 Clone Graph</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>122 Best Time to Buy and Sell Stock II</h1>
+  <h1>133 Clone Graph</h1>
   <div class="blog-post-subheader">
     
-    <time>Oct 2020</time>
+    <time>Sep 2022</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -62,63 +62,59 @@
    </li>
   
    <li>
-     <a href="/tags/lc_easy">lc_easy</a>
+     <a href="/tags/lc_medium">lc_medium</a>
    </li>
   
    <li>
-     <a href="/tags/lc_array">lc_array</a>
+     <a href="/tags/lc_bfs">lc_bfs</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>
-<p>On each day, you may decide to buy and/or sell the stock. You can only hold <strong>at most one</strong> share of the stock at any time. However, you can buy it then immediately sell it on the <strong>same day</strong>.</p>
-<p>Find and return <em>the <strong>maximum</strong> profit you can achieve</em>.</p>
+    <p>Given a reference of a node in a <a href="https://en.wikipedia.org/wiki/Connectivity_(graph_theory)#Connected_graph">connected</a> undirected graph.</p>
+<p>Return a <a href="https://en.wikipedia.org/wiki/Object_copying#Deep_copy">deep copy</a> (clone) of the graph.</p>
+<p>Each node in the graph contains a value (<code>int</code>) and a list (<code>List[Node]</code>) of its neighbors.</p>
+<pre tabindex="0"><code>class Node {
+    public int val;
+    public List&lt;Node&gt; neighbors;
+}
+</code></pre><p><strong>Test case format:</strong></p>
+<p>For simplicity, each node&rsquo;s value is the same as the node&rsquo;s index (1-indexed). For example, the first node with <code>val == 1</code>, the second node with <code>val == 2</code>, and so on. The graph is represented in the test case using an adjacency list.</p>
+<p><strong>An adjacency list</strong> is a collection of unordered <strong>lists</strong> used to represent a finite graph. Each list describes the set of neighbors of a node in the graph.</p>
+<p>The given node will always be the first node with <code>val = 1</code>. You must return the <strong>copy of the given node</strong> as a reference to the cloned graph.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: [7,1,5,3,6,4]
-Output: 7
-Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
-             Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+<pre tabindex="0"><code>(1) - (2)
+ |     |
+(4) - (3)
+
+Input: adjList = [[2,4],[1,3],[2,4],[1,3]]
+Output: [[2,4],[1,3],[2,4],[1,3]]
+Explanation: There are 4 nodes in the graph.
+1st node (val = 1)&#39;s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+2nd node (val = 2)&#39;s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+3rd node (val = 3)&#39;s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+4th node (val = 4)&#39;s neighbors are 1st node (val = 1) and 3rd node (val = 3).
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: [1,2,3,4,5]
-Output: 4
-Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
-             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
-             engaging multiple transactions at the same time. You must sell before buying again.
+<pre tabindex="0"><code>(1)
+
+Input: adjList = [[]]
+Output: [[]]
+Explanation: Note that the input contains one empty list. The graph consists of only one node with val = 1 and it does not have any neighbors.
 </code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: [7,6,4,3,1]
-Output: 0
-Explanation: In this case, no transaction is done, i.e. max profit = 0.
+<pre tabindex="0"><code>Input: adjList = []
+Output: []
+Explanation: This an empty graph, it does not have any nodes.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= prices.length &lt;= 3 * 10<sup>4</sup></code></li>
-<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>
+<li>The number of nodes in the graph is in the range <code>[0, 100]</code>.</li>
+<li><code>1 &lt;= Node.val &lt;= 100</code></li>
+<li><code>Node.val</code> is unique for each node.</li>
+<li>There are no repeated edges and no self-loops in the graph.</li>
+<li>The Graph is connected and all nodes can be visited starting from the given node.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">maxProfit</span>(self, prices: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        total = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>, <span style="color:#0aa">len</span>(prices)):
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> prices[i] &gt; prices[i-<span style="color:#099">1</span>]:
-</span></span><span style="display:flex;"><span>                total += prices[i] - prices[i-<span style="color:#099">1</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> total</span></span></code></pre></td></tr></table>
-</div>
-</div>
-</div>
-<div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -134,28 +130,41 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#00a">func</span> <span style="color:#0a0">maxProfit</span>(prices []<span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> prices == <span style="color:#00a">nil</span> || <span style="color:#0aa">len</span>(prices) == <span style="color:#099">0</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    profit := <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> i := <span style="color:#099">0</span>; i &lt; <span style="color:#0aa">len</span>(prices)-<span style="color:#099">1</span>; i++ {
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> prices[i+<span style="color:#099">1</span>] &gt; prices[i] {
-</span></span><span style="display:flex;"><span>            profit += prices[i+<span style="color:#099">1</span>] - prices[i]
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> profit
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50"># Definition for a Node.
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">class Node:
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">    def __init__(self, val = 0, neighbors = None):
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        self.val = val
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        self.neighbors = neighbors if neighbors is not None else []
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">collections</span> <span style="color:#00a">import</span> deque
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">cloneGraph</span>(self, node: <span style="color:#a50">&#39;Node&#39;</span>) -&gt; <span style="color:#a50">&#39;Node&#39;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> node:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#00a">None</span>
+</span></span><span style="display:flex;"><span>        q = deque([node])
+</span></span><span style="display:flex;"><span>        created = {node: Node(node.val)}
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> q:
+</span></span><span style="display:flex;"><span>            n = q.popleft()
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> nei <span style="color:#00a">in</span> n.neighbors:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> nei <span style="color:#00a">not</span> <span style="color:#00a">in</span> created:
+</span></span><span style="display:flex;"><span>                    created[nei] = Node(nei.val)
+</span></span><span style="display:flex;"><span>                    q.append(nei)
+</span></span><span style="display:flex;"><span>                created[n].neighbors.append(created[nei])
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> created[node]</span></span></code></pre></td></tr></table>
 </div>
 </div>
-</div>
-<div id="runtime" class="lang">
-    <div class="code-link">
-        <a href="https://runtime.siwei.dev/?src=leetcode122" target="_blank">https://runtime.siwei.dev/?src=leetcode122</a>
-    </div>
 </div>
 </div>
 

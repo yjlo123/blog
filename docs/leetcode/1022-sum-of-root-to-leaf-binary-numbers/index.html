@@ -71,11 +71,20 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given the <code>root</code> of a binary tree where each node has a value <code>0</code> or <code>1</code>.  Each root-to-leaf path represents a binary number starting with the most significant bit.  For example, if the path is <code>0 -&gt; 1 -&gt; 1 -&gt; 0 -&gt; 1</code>, then this could represent <code>01101</code> in binary, which is <code>13</code>.</p>
-<p>For all leaves in the tree, consider the numbers represented by the path from the root to that leaf.</p>
-<p>Return <em>the sum of these numbers</em>. The answer is <strong>guaranteed</strong> to fit in a <strong>32-bits</strong> integer.</p>
+    <p>You are given the <code>root</code> of a binary tree where each node has a value <code>0</code> or <code>1</code>.  Each root-to-leaf path represents a binary number starting with the most significant bit.</p>
+<ul>
+<li>For example, if the path is <code>0 -&gt; 1 -&gt; 1 -&gt; 0 -&gt; 1</code>, then this could represent <code>01101</code> in binary, which is <code>13</code>.</li>
+</ul>
+<p>For all leaves in the tree, consider the numbers represented by the path from the root to that leaf. Return <em>the sum of these numbers</em>.</p>
+<p>The test cases are generated so that the answer fits in a <strong>32-bits</strong> integer.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: root = [1,0,1,0,1,0,1]
+<pre tabindex="0"><code>      1
+    /   \
+  0       1
+ / \     / \
+0   1   0   1
+
+Input: root = [1,0,1,0,1,0,1]
 Output: 22
 Explanation: (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
 </code></pre><p><strong>Example 2:</strong></p>
@@ -94,6 +103,48 @@ Output: 3
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># class TreeNode:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, left=None, right=None):</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.val = val</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.left = left</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.right = right</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">sumRootToLeaf</span>(self, root: Optional[TreeNode]) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.dfs(root, <span style="color:#099">0</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">dfs</span>(self, node: Optional[TreeNode], current: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> node:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        current = (current &lt;&lt; <span style="color:#099">1</span>) + node.val
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> node.left == node.right:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> current
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.dfs(node.left, current) + self.dfs(node.right, current)</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

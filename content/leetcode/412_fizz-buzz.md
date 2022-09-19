@@ -35,6 +35,24 @@ Return:
 ```
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        res = []
+        for i in range(1, n+1):
+            if i % 15 == 0:
+                res.append("FizzBuzz")
+            elif i % 5 == 0:
+                res.append("Buzz")
+            elif i % 3 == 0:
+                res.append("Fizz")
+            else:
+                res.append(str(i))
+        return res
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func fizzBuzz(n int) []string {
@@ -54,6 +72,7 @@ func fizzBuzz(n int) []string {
 }
 {{< / highlight >}}
 </div>
+
 <div id="runtime" class="lang">
     <div class="code-link">
         <a href="https://runtime.siwei.dev/?src=leetcode412" target="_blank">https://runtime.siwei.dev/?src=leetcode412</a>

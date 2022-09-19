@@ -43,6 +43,18 @@ Output: 5
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def minStartValue(self, nums: List[int]) -> int:
+        min_sum = current = 0
+        for n in nums:
+            current += n
+            min_sum = min(min_sum, current)
+        return -min_sum + 1
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 func minStartValue(nums []int) int {

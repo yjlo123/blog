@@ -46,6 +46,32 @@ Output: []
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
+        res = []
+        def dfs(node, path, total):
+            if not node:
+                return
+            new_val = node.val + total
+            new_path = path + [node.val]
+            if node.left == node.right and new_val == targetSum:
+                res.append(new_path)
+                return
+            dfs(node.left, new_path, new_val)
+            dfs(node.right, new_path, new_val)
+        dfs(root, [], 0)
+        return res
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 /**
