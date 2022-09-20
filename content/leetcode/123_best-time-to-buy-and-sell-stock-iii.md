@@ -6,7 +6,7 @@ draft: false
 tags: ["leetcode", "lc_hard"]
 ---
 
-You are given an array `prices` where `prices[i]` is the price of a given stock on the i<sup>th</sup> day.
+You are given an array `prices` where `prices[i]` is the price of a given stock on the <code>i<sup>th</sup></code> day.
 
 Find the maximum profit you can achieve. You may complete **at most two transactions**.
 
@@ -42,11 +42,29 @@ Output: 0
 
 **Constraints:**
 
-- 1 <= prices.length <= 10<sup>5</sup>
-- 0 <= prices[i] <= 10<sup>5</sup>
+- <code>1 <= prices.length <= 10<sup>5</sup></code>
+- <code>0 <= prices[i] <= 10<sup>5</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+{{< highlight python "linenos=table" >}}
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        t1_cost, t2_cost = float('inf'), float('inf')
+        t1_profit, t2_profit = 0, 0
+        
+        for p in prices:
+            # max profit if only one txn is allowed
+            t1_cost = min(t1_cost, p)
+            t1_profit = max(t1_profit, p - t1_cost)
+            # reinvest the gain in the second txn
+            t2_cost = min(t2_cost, p - t1_profit)
+            t2_profit = max(t2_profit, p - t2_cost)
+        return t2_profit
+{{< / highlight >}}
+</div>
+
 <div id="golang" class="lang">
 {{< highlight go "linenos=table" >}}
 // dp[k, i] = max(dp[k, i-1], prices[i] - prices[j] + dp[k-1, j-1]), j=[0..i-1]

@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>247 H-Index</title>
+        <title>247 Strobogrammatic Number II</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,49 +49,39 @@
 
 
 <div class="blog-post">
-  <h1>247 H-Index</h1>
+  <h1>247 Strobogrammatic Number II</h1>
   <div class="blog-post-subheader">
     
-    <time>17 Mar 2021</time>
+    <time>Sep 2022</time>
+    <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
   
    <li>
-     <a href="/tags/leetcode0">leetcode0</a>
+     <a href="/tags/leetcode">leetcode</a>
    </li>
   
    <li>
      <a href="/tags/lc_medium">lc_medium</a>
    </li>
   
-   <li>
-     <a href="/tags/lc_bucket_sort">lc_bucket_sort</a>
-   </li>
-  
 </ul>
 <div class="blog-post-content">
-    <p>Given an array of integers <code>citations</code> where <code>citations[i]</code> is the number of citations a researcher received for their i<sup>th</sup> paper, return compute the researcher&rsquo;s <code>h</code><strong>-index</strong>.</p>
-<p>According to the <code>definition of h-index on Wikipedia</code>: A scientist has an index <code>h</code> if <code>h</code> of their <code>n</code> papers have at least h citations each, and the other <code>n − h</code> papers have no more than <code>h</code> citations each.</p>
-<p>If there are several possible values for <code>h</code>, the maximum one is taken as the <code>h</code><strong>-index</strong>.</p>
+    <p>Given an integer <code>n</code>, return all the <strong>strobogrammatic numbers</strong> that are of length <code>n</code>. You may return the answer in <strong>any order</strong>.</p>
+<p>A <strong>strobogrammatic number</strong> is a number that looks the same when rotated <code>180</code> degrees (looked at upside down).</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: citations = [3,0,6,1,5]
-Output: 3
-Explanation: [3,0,6,1,5] means the researcher has 5 papers in total
-and each of them had received 3, 0, 6, 1, 5 citations respectively.
-Since the researcher has 3 papers with at least 3 citations each and
-the remaining two with no more than 3 citations each, their h-index is 3.
+<pre tabindex="0"><code>Input: n = 2
+Output: [&#34;11&#34;,&#34;69&#34;,&#34;88&#34;,&#34;96&#34;]
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: citations = [1,3,1]
-Output: 1
+<pre tabindex="0"><code>Input: n = 1
+Output: [&#34;0&#34;,&#34;1&#34;,&#34;8&#34;]
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>n == citations.length</li>
-<li>1 &lt;= n &lt;= 5000</li>
-<li>0 &lt;= citations[i] &lt;= 1000</li>
+<li><code>1 &lt;= n &lt;= 14</code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
-<div id="golang" class="lang">
+<div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -114,28 +104,32 @@ Output: 1
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#00a">func</span> <span style="color:#0a0">hIndex</span>(citations []<span style="color:#0aa">int</span>) <span style="color:#0aa">int</span> {
-</span></span><span style="display:flex;"><span>	buckets := <span style="color:#0aa">make</span>([]<span style="color:#0aa">int</span>, <span style="color:#0aa">len</span>(citations)+<span style="color:#099">1</span>)
-</span></span><span style="display:flex;"><span>	length := <span style="color:#0aa">len</span>(citations)
-</span></span><span style="display:flex;"><span>	<span style="color:#00a">for</span> _, c := <span style="color:#00a">range</span> citations {
-</span></span><span style="display:flex;"><span>		<span style="color:#00a">if</span> c &gt;= length {
-</span></span><span style="display:flex;"><span>			buckets[length]++
-</span></span><span style="display:flex;"><span>		} <span style="color:#00a">else</span> {
-</span></span><span style="display:flex;"><span>			buckets[c]++
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">findStrobogrammatic</span>(self, n: <span style="color:#0aa">int</span>) -&gt; List[<span style="color:#0aa">str</span>]:
+</span></span><span style="display:flex;"><span>        middle = [<span style="color:#a50">&#39;0&#39;</span>, <span style="color:#a50">&#39;1&#39;</span>, <span style="color:#a50">&#39;8&#39;</span>]
+</span></span><span style="display:flex;"><span>        pairs = [<span style="color:#a50">&#39;00&#39;</span>, <span style="color:#a50">&#39;11&#39;</span>, <span style="color:#a50">&#39;88&#39;</span>, <span style="color:#a50">&#39;69&#39;</span>, <span style="color:#a50">&#39;96&#39;</span>]
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        res = []
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">wrap</span>(m, s):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> m == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                res.append(s)
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> pair <span style="color:#00a">in</span> pairs:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> m == <span style="color:#099">1</span> <span style="color:#00a">and</span> pair[<span style="color:#099">0</span>] == <span style="color:#a50">&#39;0&#39;</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">continue</span>
+</span></span><span style="display:flex;"><span>                wrap(m - <span style="color:#099">1</span>, pair[<span style="color:#099">0</span>] + s + pair[<span style="color:#099">1</span>])
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	count := <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#00a">for</span> i := length; i &gt; <span style="color:#099">0</span>; i-- {
-</span></span><span style="display:flex;"><span>		count += buckets[i]
-</span></span><span style="display:flex;"><span>		<span style="color:#00a">if</span> count &gt;= i {
-</span></span><span style="display:flex;"><span>			<span style="color:#00a">return</span> i
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#00a">return</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> n % <span style="color:#099">2</span> == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>            wrap(n // <span style="color:#099">2</span>, <span style="color:#a50">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> m <span style="color:#00a">in</span> middle:
+</span></span><span style="display:flex;"><span>                wrap(n // <span style="color:#099">2</span>, m)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res
+</span></span><span style="display:flex;"><span>                </span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

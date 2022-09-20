@@ -71,7 +71,11 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>Given a <strong>positive</strong> integer <code>num</code>, output its complement number. The complement strategy is to flip the bits of its binary representation.</p>
+    <p>The <strong>complement</strong> of an integer is the integer you get when you flip all the <code>0</code>&rsquo;s to <code>1</code>&rsquo;s and all the <code>1</code>&rsquo;s to <code>0</code>&rsquo;s in its binary representation.</p>
+<ul>
+<li>For example, The integer <code>5</code> is <code>&quot;101&quot;</code> in binary and its <strong>complement</strong> is <code>&quot;010&quot;</code> which is the integer <code>2</code>.</li>
+</ul>
+<p>Given an integer <code>num</code>, return <em>its complement</em>.</p>
 <p><strong>Example 1:</strong></p>
 <pre tabindex="0"><code>Input: num = 5
 Output: 2
@@ -84,13 +88,36 @@ Explanation: The binary representation of 1 is 1 (no leading zero bits),
 and its complement is 0. So you need to output 0.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li>The given integer num is guaranteed to fit within the range of a 32-bit signed integer.</li>
-<li>num &gt;= 1</li>
-<li>You could assume no leading zero bit in the integer’s binary representation.</li>
-<li>This question is the same as 1009</li>
+<li><code>1 &lt;= num &lt; 2<sup>31</sup></code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">findComplement</span>(self, num: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        todo, bit = num, <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> todo:
+</span></span><span style="display:flex;"><span>            num = num ^ bit
+</span></span><span style="display:flex;"><span>            bit &lt;&lt;= <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            todo &gt;&gt;= <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> num
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
 <div id="golang" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

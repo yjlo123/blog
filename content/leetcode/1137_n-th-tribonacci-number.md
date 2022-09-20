@@ -6,7 +6,7 @@ draft: false
 tags: ["leetcode", "lc_easy", "lc_dp"]
 ---
 
-The Tribonacci sequence Tn is defined as follows: 
+The Tribonacci sequence T<sub>n</sub> is defined as follows: 
 
 T<sub>0</sub> = 0, T<sub>1</sub> = 1, T<sub>2</sub> = 1, and T<sub>n+3</sub> = T<sub>n</sub> + T<sub>n+1</sub> + T<sub>n+2</sub> for n >= 0.
 
@@ -28,7 +28,7 @@ Output: 1389537
 
 **Constraints:**
 - `0 <= n <= 37`
-- The answer is guaranteed to fit within a 32-bit integer, ie. `answer <= 2^31 - 1`.
+- The answer is guaranteed to fit within a 32-bit integer, ie. <code>answer <= 2<sup>31</sup> - 1</code>.
 
 <div class="tabs"></div>
 <div class="tab-content">
