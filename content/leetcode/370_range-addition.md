@@ -3,7 +3,7 @@ weight: 370
 title: "370 Range Addition"
 date: 2022-09-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium"]
+tags: ["leetcode", "lc_medium", "lc_prefix_sum"]
 ---
 
 You are given an integer `length` and an array `updates` where <code>updates[i] = [startIdx<sub>i</sub>, endIdx<sub>i</sub>, inc<sub>i</sub>]</code>.
