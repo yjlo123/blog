@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>253 Meeting Rooms II</title>
+        <title>716 Max Stack</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>253 Meeting Rooms II</h1>
+  <h1>716 Max Stack</h1>
   <div class="blog-post-subheader">
     
-    <time>Sep 2021</time>
+    <time>Sep 2022</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -62,34 +62,57 @@
    </li>
   
    <li>
-     <a href="/tags/lc_medium">lc_medium</a>
+     <a href="/tags/lc_hard">lc_hard</a>
    </li>
   
    <li>
-     <a href="/tags/lc_greedy">lc_greedy</a>
+     <a href="/tags/lc_stack">lc_stack</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_ood">lc_ood</a>
    </li>
   
    <li>
      <a href="/tags/lc_heap">lc_heap</a>
    </li>
   
-   <li>
-     <a href="/tags/lc_sorting">lc_sorting</a>
-   </li>
-  
 </ul>
 <div class="blog-post-content">
-    <p>Given an array of meeting time <code>intervals</code> intervals where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, return <em>the minimum number of conference rooms required</em>.</p>
+    <p>Design a max stack data structure that supports the stack operations and supports finding the stack&rsquo;s maximum element.</p>
+<p>Implement the <code>MaxStack</code> class:</p>
+<ul>
+<li><code>MaxStack()</code> Initializes the stack object.</li>
+<li><code>void push(int x)</code> Pushes element <code>x</code> onto the stack.</li>
+<li><code>int pop()</code> Removes the element on top of the stack and returns it.</li>
+<li><code>int top()</code> Gets the element on the top of the stack without removing it.</li>
+<li><code>int peekMax()</code> Retrieves the maximum element in the stack without removing it.</li>
+<li><code>int popMax()</code> Retrieves the maximum element in the stack and removes it. If there is more than one maximum element, only remove the <strong>top-most</strong> one.</li>
+</ul>
+<p>You must come up with a solution that supports <code>O(1)</code> for each <code>top</code> call and <code>O(logn)</code> for each other call.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: intervals = [[0,30],[5,10],[15,20]]
-Output: 2
-</code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: intervals = [[7,10],[2,4]]
-Output: 1
+<pre tabindex="0"><code>Input
+[&#34;MaxStack&#34;, &#34;push&#34;, &#34;push&#34;, &#34;push&#34;, &#34;top&#34;, &#34;popMax&#34;, &#34;top&#34;, &#34;peekMax&#34;, &#34;pop&#34;, &#34;top&#34;]
+[[], [5], [1], [5], [], [], [], [], [], []]
+Output
+[null, null, null, null, 5, 5, 1, 5, 1, 5]
+
+Explanation
+MaxStack stk = new MaxStack();
+stk.push(5);   // [5] the top of the stack and the maximum number is 5.
+stk.push(1);   // [5, 1] the top of the stack is 1, but the maximum is 5.
+stk.push(5);   // [5, 1, 5] the top of the stack is 5, which is also the maximum, because it is the top most one.
+stk.top();     // return 5, [5, 1, 5] the stack did not change.
+stk.popMax();  // return 5, [5, 1] the stack is changed now, and the top is different from the max.
+stk.top();     // return 1, [5, 1] the stack did not change.
+stk.peekMax(); // return 5, [5, 1] the stack did not change.
+stk.pop();     // return 1, [5] the top of the stack and the max element is now 5.
+stk.top();     // return 5, [5] the stack did not change.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= intervals.length &lt;= 10<sup>4</sup></code></li>
-<li><code>0 &lt;= start<sub>i</sub> &lt; end<sub>i</sub> &lt;= 10<sup>6</sup></code></li>
+<li><code>-10<sup>7</sup> &lt;= x &lt;= 10<sup>7</sup></code></li>
+<li>At most <code>10<sup>5</sup></code> calls will be made to <code>push</code>, <code>pop</code>, <code>top</code>, <code>peekMax</code>, and <code>popMax</code>.</li>
+<li>There will be <strong>at least one element</strong> in the stack when pop, top, peekMax, or popMax is called.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -136,48 +159,60 @@ Output: 1
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">Priority Queues
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minMeetingRooms</span>(self, intervals: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        free_rooms = []
-</span></span><span style="display:flex;"><span>        intervals.sort(key=<span style="color:#00a">lambda</span> t: t[<span style="color:#099">0</span>])
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        heapq.heappush(free_rooms, intervals[<span style="color:#099">0</span>][<span style="color:#099">1</span>])
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals[<span style="color:#099">1</span>:]:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> free_rooms[<span style="color:#099">0</span>] &lt;= i[<span style="color:#099">0</span>]:
-</span></span><span style="display:flex;"><span>                heapq.heappop(free_rooms)
-</span></span><span style="display:flex;"><span>            heapq.heappush(free_rooms, i[<span style="color:#099">1</span>])
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">MaxStack</span>:
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#0aa">len</span>(free_rooms)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self.deleted = <span style="color:#0aa">set</span>()
+</span></span><span style="display:flex;"><span>        self.cur_id = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        self.stack = []
+</span></span><span style="display:flex;"><span>        self.heap = []
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">Chronological Ordering
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minMeetingRooms</span>(self, intervals: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> intervals:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">push</span>(self, x: <span style="color:#0aa">int</span>) -&gt; <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>        new_id= self.cur_id
+</span></span><span style="display:flex;"><span>        self.cur_id += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        self.stack.append((x, new_id))
+</span></span><span style="display:flex;"><span>        heapq.heappush(self.heap, (-x, -new_id))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        used_rooms = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        start_timings = <span style="color:#0aa">sorted</span>([i[<span style="color:#099">0</span>] <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals])
-</span></span><span style="display:flex;"><span>        end_timings = <span style="color:#0aa">sorted</span>(i[<span style="color:#099">1</span>] <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">pop</span>(self) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> self.stack <span style="color:#00a">and</span> self.stack[-<span style="color:#099">1</span>][<span style="color:#099">1</span>] <span style="color:#00a">in</span> self.deleted:
+</span></span><span style="display:flex;"><span>            self.stack.pop()
+</span></span><span style="display:flex;"><span>        val, eid = self.stack.pop()
+</span></span><span style="display:flex;"><span>        self.deleted.add(eid)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> val
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        L = <span style="color:#0aa">len</span>(intervals)
-</span></span><span style="display:flex;"><span>        end_pointer = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        start_pointer = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> start_pointer &lt; L:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> start_timings[start_pointer] &gt;= end_timings[end_pointer]:
-</span></span><span style="display:flex;"><span>                used_rooms -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                end_pointer += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            used_rooms += <span style="color:#099">1</span>    
-</span></span><span style="display:flex;"><span>            start_pointer += <span style="color:#099">1</span>   
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">top</span>(self) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> self.stack <span style="color:#00a">and</span> self.stack[-<span style="color:#099">1</span>][<span style="color:#099">1</span>] <span style="color:#00a">in</span> self.deleted:
+</span></span><span style="display:flex;"><span>            self.stack.pop()
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.stack[-<span style="color:#099">1</span>][<span style="color:#099">0</span>]
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> used_rooms</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">peekMax</span>(self) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> self.heap <span style="color:#00a">and</span> -self.heap[<span style="color:#099">0</span>][<span style="color:#099">1</span>] <span style="color:#00a">in</span> self.deleted:
+</span></span><span style="display:flex;"><span>            heapq.heappop(self.heap)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> -self.heap[<span style="color:#099">0</span>][<span style="color:#099">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">popMax</span>(self) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> self.heap <span style="color:#00a">and</span> -self.heap[<span style="color:#099">0</span>][<span style="color:#099">1</span>] <span style="color:#00a">in</span> self.deleted:
+</span></span><span style="display:flex;"><span>            heapq.heappop(self.heap)
+</span></span><span style="display:flex;"><span>        val, eid = heapq.heappop(self.heap)
+</span></span><span style="display:flex;"><span>        self.deleted.add(-eid)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> -val
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your MaxStack object will be instantiated and called as such:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj = MaxStack()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj.push(x)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_2 = obj.pop()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_3 = obj.top()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_4 = obj.peekMax()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_5 = obj.popMax()</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

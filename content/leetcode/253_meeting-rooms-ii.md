@@ -3,7 +3,7 @@ weight: 253
 title: "253 Meeting Rooms II"
 date: 2021-09-30T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_greedy"]
+tags: ["leetcode", "lc_medium", "lc_greedy", "lc_heap", "lc_sorting"]
 ---
 
 Given an array of meeting time `intervals` intervals where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, return _the minimum number of conference rooms required_.
@@ -28,6 +28,9 @@ Output: 1
 <div class="tab-content">
 <div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
+'''
+Priority Queues
+'''
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         free_rooms = []
@@ -41,6 +44,30 @@ class Solution:
             heapq.heappush(free_rooms, i[1])
 
         return len(free_rooms)
+
+'''
+Chronological Ordering
+'''
+class Solution:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        if not intervals:
+            return 0
+
+        used_rooms = 0
+        start_timings = sorted([i[0] for i in intervals])
+        end_timings = sorted(i[1] for i in intervals)
+
+        L = len(intervals)
+        end_pointer = 0
+        start_pointer = 0
+        while start_pointer < L:
+            if start_timings[start_pointer] >= end_timings[end_pointer]:
+                used_rooms -= 1
+                end_pointer += 1
+            used_rooms += 1    
+            start_pointer += 1   
+
+        return used_rooms
 {{< / highlight >}}
 </div>
 </div>

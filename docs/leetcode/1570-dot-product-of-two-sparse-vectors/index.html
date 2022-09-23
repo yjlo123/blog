@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>253 Meeting Rooms II</title>
+        <title>1570 Dot Product of Two Sparse Vectors</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>253 Meeting Rooms II</h1>
+  <h1>1570 Dot Product of Two Sparse Vectors</h1>
   <div class="blog-post-subheader">
     
-    <time>Sep 2021</time>
+    <time>Sep 2022</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -66,30 +66,41 @@
    </li>
   
    <li>
-     <a href="/tags/lc_greedy">lc_greedy</a>
+     <a href="/tags/lc_hash_table">lc_hash_table</a>
    </li>
   
    <li>
-     <a href="/tags/lc_heap">lc_heap</a>
-   </li>
-  
-   <li>
-     <a href="/tags/lc_sorting">lc_sorting</a>
+     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given an array of meeting time <code>intervals</code> intervals where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, return <em>the minimum number of conference rooms required</em>.</p>
+    <p>Given two sparse vectors, compute their dot product.</p>
+<p>Implement class <code>SparseVector</code>:</p>
+<ul>
+<li><code>SparseVector(nums)</code> Initializes the object with the vector <code>nums</code></li>
+<li><code>dotProduct(vec)</code> Compute the dot product between the instance of SparseVector and <code>vec</code></li>
+</ul>
+<p>A <strong>sparse vector</strong> is a vector that has mostly zero values, you should store the sparse vector <strong>efficiently</strong> and compute the dot product between two SparseVector.</p>
+<p><strong>Follow up:</strong> What if only one of the vectors is sparse?</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: intervals = [[0,30],[5,10],[15,20]]
-Output: 2
+<pre tabindex="0"><code>Input: nums1 = [1,0,0,2,3], nums2 = [0,3,0,4,0]
+Output: 8
+Explanation: v1 = SparseVector(nums1) , v2 = SparseVector(nums2)
+v1.dotProduct(v2) = 1*0 + 0*3 + 0*0 + 2*4 + 3*0 = 8
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: intervals = [[7,10],[2,4]]
-Output: 1
+<pre tabindex="0"><code>Input: nums1 = [0,1,0,0,0], nums2 = [0,0,0,0,2]
+Output: 0
+Explanation: v1 = SparseVector(nums1) , v2 = SparseVector(nums2)
+v1.dotProduct(v2) = 0*0 + 1*0 + 0*0 + 0*0 + 0*2 = 0
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code>Input: nums1 = [0,1,0,0,2,0,0], nums2 = [1,0,0,0,3,0,4]
+Output: 6
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= intervals.length &lt;= 10<sup>4</sup></code></li>
-<li><code>0 &lt;= start<sub>i</sub> &lt; end<sub>i</sub> &lt;= 10<sup>6</sup></code></li>
+<li><code>n == nums1.length == nums2.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 100</code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -136,48 +147,58 @@ Output: 1
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">Priority Queues
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minMeetingRooms</span>(self, intervals: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        free_rooms = []
-</span></span><span style="display:flex;"><span>        intervals.sort(key=<span style="color:#00a">lambda</span> t: t[<span style="color:#099">0</span>])
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        heapq.heappush(free_rooms, intervals[<span style="color:#099">0</span>][<span style="color:#099">1</span>])
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals[<span style="color:#099">1</span>:]:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> free_rooms[<span style="color:#099">0</span>] &lt;= i[<span style="color:#099">0</span>]:
-</span></span><span style="display:flex;"><span>                heapq.heappop(free_rooms)
-</span></span><span style="display:flex;"><span>            heapq.heappush(free_rooms, i[<span style="color:#099">1</span>])
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">SparseVector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self, nums: List[<span style="color:#0aa">int</span>]):
+</span></span><span style="display:flex;"><span>        self.data = {}
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i, v <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> v != <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                self.data[i] = v
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#0aa">len</span>(free_rooms)
+</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># Return the dotProduct of two sparse vectors</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">dotProduct</span>(self, vec: <span style="color:#a50">&#39;SparseVector&#39;</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        res = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i, v <span style="color:#00a">in</span> vec.data.items():
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i <span style="color:#00a">in</span> self.data:
+</span></span><span style="display:flex;"><span>                res += self.data[i] * v
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your SparseVector object will be instantiated and called as such:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># v1 = SparseVector(nums1)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># v2 = SparseVector(nums2)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># ans = v1.dotProduct(v2)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">Chronological Ordering
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">Without using a hash table
 </span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minMeetingRooms</span>(self, intervals: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> intervals:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">SparseVector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self, nums: List[<span style="color:#0aa">int</span>]):
+</span></span><span style="display:flex;"><span>        self.pairs = []
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> index, value <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> value != <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                self.pairs.append([index, value])
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        used_rooms = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        start_timings = <span style="color:#0aa">sorted</span>([i[<span style="color:#099">0</span>] <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals])
-</span></span><span style="display:flex;"><span>        end_timings = <span style="color:#0aa">sorted</span>(i[<span style="color:#099">1</span>] <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">dotProduct</span>(self, vec: <span style="color:#a50">&#39;SparseVector&#39;</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        result = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        p, q = <span style="color:#099">0</span>, <span style="color:#099">0</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        L = <span style="color:#0aa">len</span>(intervals)
-</span></span><span style="display:flex;"><span>        end_pointer = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        start_pointer = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> start_pointer &lt; L:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> start_timings[start_pointer] &gt;= end_timings[end_pointer]:
-</span></span><span style="display:flex;"><span>                used_rooms -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                end_pointer += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            used_rooms += <span style="color:#099">1</span>    
-</span></span><span style="display:flex;"><span>            start_pointer += <span style="color:#099">1</span>   
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> p &lt; <span style="color:#0aa">len</span>(self.pairs) <span style="color:#00a">and</span> q &lt; <span style="color:#0aa">len</span>(vec.pairs):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> self.pairs[p][<span style="color:#099">0</span>] == vec.pairs[q][<span style="color:#099">0</span>]:
+</span></span><span style="display:flex;"><span>                result += self.pairs[p][<span style="color:#099">1</span>] * vec.pairs[q][<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>                p += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>                q += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> self.pairs[p][<span style="color:#099">0</span>] &lt; vec.pairs[q][<span style="color:#099">0</span>]:
+</span></span><span style="display:flex;"><span>                p += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>                q += <span style="color:#099">1</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> used_rooms</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> result</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
