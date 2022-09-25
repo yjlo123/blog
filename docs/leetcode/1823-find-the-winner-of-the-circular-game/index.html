@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>858 Mirror Reflection</title>
+        <title>1823 Find the Winner of the Circular Game</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>858 Mirror Reflection</h1>
+  <h1>1823 Find the Winner of the Circular Game</h1>
   <div class="blog-post-subheader">
     
     <time>Sep 2022</time>
@@ -66,28 +66,49 @@
    </li>
   
    <li>
+     <a href="/tags/lc_queue">lc_queue</a>
+   </li>
+  
+   <li>
      <a href="/tags/lc_math">lc_math</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>There is a special square room with mirrors on each of the four walls. Except for the southwest corner, there are receptors on each of the remaining corners, numbered <code>0</code>, <code>1</code>, and <code>2</code>.</p>
-<p>The square room has walls of length <code>p</code> and a laser ray from the southwest corner first meets the east wall at a distance <code>q</code> from the <code>0<sup>th</sup></code> receptor.</p>
-<p>Given the two integers <code>p</code> and <code>q</code>, return <em>the number of the receptor that the ray meets first</em>.</p>
-<p>The test cases are guaranteed so that the ray will meet a receptor eventually.</p>
+    <p>There are <code>n</code> friends that are playing a game. The friends are sitting in a circle and are numbered from <code>1</code> to <code>n</code> in <strong>clockwise order</strong>. More formally, moving clockwise from the <code>i<sup>th</sup></code> friend brings you to the <code>(i+1)<sup>th</sup></code> friend for <code>1 &lt;= i &lt; n</code>, and moving clockwise from the <code>n<sup>th</sup></code> friend brings you to the <code>1<sup>st</sup></code> friend.</p>
+<p>The rules of the game are as follows:</p>
+<ol>
+<li><strong>Start</strong> at the <code>1<sup>st</sup></code> friend.</li>
+<li>Count the next <code>k</code> friends in the clockwise direction <strong>including</strong> the friend you started at. The counting wraps around the circle and may count some friends more than once.</li>
+<li>The last friend you counted leaves the circle and loses the game.</li>
+<li>If there is still more than one friend in the circle, go back to step <code>2</code> <strong>starting</strong> from the friend <strong>immediately clockwise</strong> of the friend who just lost and repeat.</li>
+<li>Else, the last friend in the circle wins the game.</li>
+</ol>
+<p>Given the number of friends, <code>n</code>, and an integer <code>k</code>, return <em>the winner of the game</em>.</p>
 <p><strong>Example 1:</strong>
-<img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/06/18/reflection.png" style="width: 30%;"/></p>
-<pre tabindex="0"><code>Input: p = 2, q = 1
-Output: 2
-Explanation: The ray meets receptor 2 the first time it gets reflected back
-to the left wall.
+<img src="https://assets.leetcode.com/uploads/2021/03/25/ic234-q2-ex11.png" style="width: 100%;"/></p>
+<pre tabindex="0"><code>Input: n = 5, k = 2
+Output: 3
+Explanation: Here are the steps of the game:
+1) Start at friend 1.
+2) Count 2 friends clockwise, which are friends 1 and 2.
+3) Friend 2 leaves the circle. Next start is friend 3.
+4) Count 2 friends clockwise, which are friends 3 and 4.
+5) Friend 4 leaves the circle. Next start is friend 5.
+6) Count 2 friends clockwise, which are friends 5 and 1.
+7) Friend 1 leaves the circle. Next start is friend 3.
+8) Count 2 friends clockwise, which are friends 3 and 5.
+9) Friend 5 leaves the circle. Only friend 3 is left, so they are the winner.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: p = 3, q = 1
+<pre tabindex="0"><code>Input: n = 6, k = 5
 Output: 1
+Explanation: The friends leave in this order: 5, 4, 6, 2, 3. The winner is friend 1.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= q &lt;= p &lt;= 1000</code></li>
+<li><code>1 &lt;= k &lt;= n &lt;= 500</code></li>
 </ul>
+<p><strong>Follow up:</strong><br>
+Could you solve this problem in linear time with constant space?</p>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -108,36 +129,34 @@ Output: 1
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">mirrorReflection</span>(self, p: <span style="color:#0aa">int</span>, q: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> q == <span style="color:#099">0</span>: 
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">findTheWinner</span>(self, n: <span style="color:#0aa">int</span>, k: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        q = deque([i+<span style="color:#099">1</span> <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n)])
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> <span style="color:#0aa">len</span>(q) &gt; <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> _ <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(k-<span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>                q.append(q.popleft())
+</span></span><span style="display:flex;"><span>            q.popleft()
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> q[<span style="color:#099">0</span>]
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        height = q
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> height &lt; p <span style="color:#00a">or</span> height % p:
-</span></span><span style="display:flex;"><span>            height += q
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        upFlip = height / p
-</span></span><span style="display:flex;"><span>        rightFlip = height / q
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        topCorner = <span style="color:#099">1</span> <span style="color:#00a">if</span> upFlip % <span style="color:#099">2</span> <span style="color:#00a">else</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> topCorner <span style="color:#00a">if</span> rightFlip % <span style="color:#099">2</span> <span style="color:#00a">else</span> <span style="color:#099">2</span></span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">Constant space
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">findTheWinner</span>(self, n: <span style="color:#0aa">int</span>, k: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> n == <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> (k + self.findTheWinner(n-<span style="color:#099">1</span>, k) -<span style="color:#099">1</span>) % n + <span style="color:#099">1</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
 </div>
-<img src="https://assets.leetcode.com/users/images/4a446656-c1e5-4c5d-be07-74462b7e41c7_1605604037.1616201.png" style="width: 50%;"/>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">mirrorReflection</span>(self, p, q):
-</span></span><span style="display:flex;"><span>        k = <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> k*q%p: k += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> k%<span style="color:#099">2</span>==<span style="color:#099">1</span> <span style="color:#00a">and</span> (k*q//p)%<span style="color:#099">2</span>==<span style="color:#099">0</span>: <span style="color:#00a">return</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> k%<span style="color:#099">2</span>==<span style="color:#099">1</span> <span style="color:#00a">and</span> (k*q//p)%<span style="color:#099">2</span>==<span style="color:#099">1</span>: <span style="color:#00a">return</span> <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> k%<span style="color:#099">2</span>==<span style="color:#099">0</span> <span style="color:#00a">and</span> (k*q//p)%<span style="color:#099">2</span>==<span style="color:#099">1</span>: <span style="color:#00a">return</span> <span style="color:#099">2</span>     
-</span></span></code></pre></div>
+
   </div>
 </div>
 

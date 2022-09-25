@@ -53,3 +53,15 @@ class Solution:
 {{< / highlight >}}
 </div>
 </div>
+
+<img src="https://assets.leetcode.com/users/images/4a446656-c1e5-4c5d-be07-74462b7e41c7_1605604037.1616201.png" style="width: 50%;"/>
+
+``` python
+class Solution:
+    def mirrorReflection(self, p, q):
+        k = 1
+        while k*q%p: k += 1
+        if k%2==1 and (k*q//p)%2==0: return 0
+        if k%2==1 and (k*q//p)%2==1: return 1
+        if k%2==0 and (k*q//p)%2==1: return 2     
+```
