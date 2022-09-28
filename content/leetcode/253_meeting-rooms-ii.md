@@ -33,17 +33,17 @@ Priority Queues
 '''
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        free_rooms = []
+        used_rooms = []
         intervals.sort(key=lambda t: t[0])
         
-        heapq.heappush(free_rooms, intervals[0][1])
+        heapq.heappush(used_rooms, intervals[0][1])
         
         for i in intervals[1:]:
-            if free_rooms[0] <= i[0]:
-                heapq.heappop(free_rooms)
-            heapq.heappush(free_rooms, i[1])
+            if used_rooms[0] <= i[0]:
+                heapq.heappop(used_rooms)
+            heapq.heappush(used_rooms, i[1])
 
-        return len(free_rooms)
+        return len(used_rooms)
 
 '''
 Chronological Ordering
