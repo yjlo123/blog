@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>253 Meeting Rooms II</title>
+        <title>987 Vertical Order Traversal of a Binary Tree</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>253 Meeting Rooms II</h1>
+  <h1>987 Vertical Order Traversal of a Binary Tree</h1>
   <div class="blog-post-subheader">
     
-    <time>Sep 2021</time>
+    <time>Sep 2022</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -62,34 +62,75 @@
    </li>
   
    <li>
-     <a href="/tags/lc_medium">lc_medium</a>
+     <a href="/tags/lc_hard">lc_hard</a>
    </li>
   
    <li>
-     <a href="/tags/lc_greedy">lc_greedy</a>
+     <a href="/tags/lc_tree">lc_tree</a>
    </li>
   
    <li>
-     <a href="/tags/lc_heap">lc_heap</a>
+     <a href="/tags/lc_dfs">lc_dfs</a>
    </li>
   
    <li>
-     <a href="/tags/lc_sorting">lc_sorting</a>
+     <a href="/tags/lc_hash_table">lc_hash_table</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given an array of meeting time <code>intervals</code> intervals where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>, return <em>the minimum number of conference rooms required</em>.</p>
+    <p>Given the <code>root</code> of a binary tree, calculate the <strong>vertical order traversal</strong> of the binary tree.</p>
+<p>For each node at position <code>(row, col)</code>, its left and right children will be at positions <code>(row + 1, col - 1)</code> and <code>(row + 1, col + 1)</code> respectively. The root of the tree is at <code>(0, 0)</code>.</p>
+<p>The <strong>vertical order traversal</strong> of a binary tree is a list of top-to-bottom orderings for each column index starting from the leftmost column and ending on the rightmost column. There may be multiple nodes in the same row and same column. In such a case, sort these nodes by their values.</p>
+<p>Return <em>the <strong>vertical order traversal</strong> of the binary tree</em>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: intervals = [[0,30],[5,10],[15,20]]
-Output: 2
+<pre tabindex="0"><code>  3
+ / \
+9   20
+   /  \
+  15   7
+
+Input: root = [3,9,20,null,null,15,7]
+Output: [[9],[3,15],[20],[7]]
+Explanation:
+Column -1: Only node 9 is in this column.
+Column 0: Nodes 3 and 15 are in this column in that order from top to bottom.
+Column 1: Only node 20 is in this column.
+Column 2: Only node 7 is in this column.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: intervals = [[7,10],[2,4]]
-Output: 1
+<pre tabindex="0"><code>     1
+    /  \
+  2     3
+ / \   / \
+4   5,6   7
+
+Input: root = [1,2,3,4,5,6,7]
+Output: [[4],[2],[1,5,6],[3],[7]]
+Explanation:
+Column -2: Only node 4 is in this column.
+Column -1: Only node 2 is in this column.
+Column 0: Nodes 1, 5, and 6 are in this column.
+          1 is at the top, so it comes first.
+          5 and 6 are at the same position (2, 0), so we order them by their value, 5 before 6.
+Column 1: Only node 3 is in this column.
+Column 2: Only node 7 is in this column.
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code>     1
+    /  \
+  2     3
+ / \   / \
+4   6,5   7
+
+Input: root = [1,2,3,4,6,5,7]
+Output: [[4],[2],[1,5,6],[3],[7]]
+Explanation:
+This case is the exact same as example 2, but with nodes 5 and 6 swapped.
+Note that the solution remains the same since 5 and 6 are in the same location
+and should be ordered by their values.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= intervals.length &lt;= 10<sup>4</sup></code></li>
-<li><code>0 &lt;= start<sub>i</sub> &lt; end<sub>i</sub> &lt;= 10<sup>6</sup></code></li>
+<li>The number of nodes in the tree is in the range <code>[1, 1000]</code>.</li>
+<li><code>0 &lt;= Node.val &lt;= 1000</code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -118,66 +159,30 @@ Output: 1
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">Priority Queues
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># class TreeNode:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#     def __init__(self, val=0, left=None, right=None):</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.val = val</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.left = left</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.right = right</span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minMeetingRooms</span>(self, intervals: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        used_rooms = []
-</span></span><span style="display:flex;"><span>        intervals.sort(key=<span style="color:#00a">lambda</span> t: t[<span style="color:#099">0</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">verticalTraversal</span>(self, root: Optional[TreeNode]) -&gt; List[List[<span style="color:#0aa">int</span>]]:
+</span></span><span style="display:flex;"><span>        grouped = defaultdict(<span style="color:#0aa">list</span>)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        heapq.heappush(used_rooms, intervals[<span style="color:#099">0</span>][<span style="color:#099">1</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">dfs</span>(node: Optional[TreeNode], depth: <span style="color:#0aa">int</span>, col: <span style="color:#0aa">int</span>) -&gt; <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#00a">not</span> node:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span>
+</span></span><span style="display:flex;"><span>            grouped[col].append((depth, node.val))
+</span></span><span style="display:flex;"><span>            dfs(node.left, depth + <span style="color:#099">1</span>, col - <span style="color:#099">1</span>)
+</span></span><span style="display:flex;"><span>            dfs(node.right, depth + <span style="color:#099">1</span>, col + <span style="color:#099">1</span>)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals[<span style="color:#099">1</span>:]:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> used_rooms[<span style="color:#099">0</span>] &lt;= i[<span style="color:#099">0</span>]:
-</span></span><span style="display:flex;"><span>                heapq.heappop(used_rooms)
-</span></span><span style="display:flex;"><span>            heapq.heappush(used_rooms, i[<span style="color:#099">1</span>])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#0aa">len</span>(used_rooms)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">Chronological Ordering
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minMeetingRooms</span>(self, intervals: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> intervals:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        used_rooms = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        start_timings = <span style="color:#0aa">sorted</span>([i[<span style="color:#099">0</span>] <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals])
-</span></span><span style="display:flex;"><span>        end_timings = <span style="color:#0aa">sorted</span>(i[<span style="color:#099">1</span>] <span style="color:#00a">for</span> i <span style="color:#00a">in</span> intervals)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        L = <span style="color:#0aa">len</span>(intervals)
-</span></span><span style="display:flex;"><span>        end_pointer = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        start_pointer = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> start_pointer &lt; L:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> start_timings[start_pointer] &gt;= end_timings[end_pointer]:
-</span></span><span style="display:flex;"><span>                used_rooms -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                end_pointer += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            used_rooms += <span style="color:#099">1</span>    
-</span></span><span style="display:flex;"><span>            start_pointer += <span style="color:#099">1</span>   
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> used_rooms</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>        dfs(root, <span style="color:#099">0</span>, <span style="color:#099">0</span>)
+</span></span><span style="display:flex;"><span>        res = []
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> k <span style="color:#00a">in</span> <span style="color:#0aa">sorted</span>(grouped.keys()):
+</span></span><span style="display:flex;"><span>            res.append([i[<span style="color:#099">1</span>] <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">sorted</span>(grouped[k])])
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
