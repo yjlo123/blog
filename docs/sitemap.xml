@@ -218,6 +218,9 @@
     <loc>https://blog.siwei.dev/leetcode/146-lru-cache/</loc>
     <lastmod>2021-09-30T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/153-find-minimum-in-rotated-sorted-array/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/155-min-stack/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -405,6 +408,9 @@
     <lastmod>2020-12-10T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/489-robot-room-cleaner/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/490-the-maze/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</loc>
@@ -763,9 +769,6 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/autoscale-policy/</loc>
     <lastmod>2021-10-17T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_array/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>

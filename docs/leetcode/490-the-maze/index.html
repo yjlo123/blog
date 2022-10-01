@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>15 3Sum</title>
+        <title>490 The Maze</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>15 3Sum</h1>
+  <h1>490 The Maze</h1>
   <div class="blog-post-subheader">
     
     <time>Sep 2022</time>
@@ -66,34 +66,75 @@
    </li>
   
    <li>
-     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
+     <a href="/tags/lc_dfs">lc_dfs</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_matrix">lc_matrix</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given an integer array nums, return all the triplets <code>[nums[i], nums[j], nums[k]]</code> such that <code>i != j</code>, <code>i != k</code>, and <code>j != k</code>, and <code>nums[i] + nums[j] + nums[k] == 0</code>.</p>
-<p>Notice that the solution set must not contain duplicate triplets.</p>
+    <p>There is a ball in a <code>maze</code> with empty spaces (represented as <code>0</code>) and walls (represented as <code>1</code>). The ball can go through the empty spaces by rolling <strong>up</strong>, <strong>down</strong>, <strong>left</strong> or <strong>right</strong>, but it won&rsquo;t stop rolling until hitting a wall. When the ball stops, it could choose the next direction.</p>
+<p>Given the <code>m x n</code> <code>maze</code>, the ball&rsquo;s <code>start</code> position and the <code>destination</code>, where <code>start = [start<sub>row</sub>, start<sub>col</sub>]</code> and <code>destination = [destination<sub>row</sub>, destination<sub>col</sub>]</code>, return <code>true</code> if the ball can stop at the destination, otherwise return <code>false</code>.</p>
+<p>You may assume that the borders of <strong>the maze are all walls</strong> (see examples).</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: nums = [-1,0,1,2,-1,-4]
-Output: [[-1,-1,2],[-1,0,1]]
-Explanation: 
-nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
-nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
-nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
-The distinct triplets are [-1,0,1] and [-1,-1,2].
-Notice that the order of the output and the order of the triplets does not matter.
+<pre tabindex="0"><code># # # # # # #
+# _ _ # _ O #
+# _ _ _ _ _ #
+# _ _ _ # _ #
+# # # _ # # #
+# _ _ _ _ M #
+# # # # # # #
+
+Input: maze = [
+    [0,0,1,0,0],
+    [0,0,0,0,0],
+    [0,0,0,1,0],
+    [1,1,0,1,1],
+    [0,0,0,0,0]
+], start = [0,4], destination = [4,4]
+Output: true
+Explanation: One possible way is : left -&gt; down -&gt; left -&gt; down -&gt; right -&gt; down -&gt; right.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: nums = [0,1,1]
-Output: []
-Explanation: The only possible triplet does not sum up to 0.
+<pre tabindex="0"><code># # # # # # #
+# _ _ # _ O #
+# _ _ _ _ _ #
+# _ _ _ # _ #
+# # # M # # #
+# _ _ _ _ _ #
+# # # # # # #
+
+Input: maze = [
+    [0,0,1,0,0],
+    [0,0,0,0,0],
+    [0,0,0,1,0],
+    [1,1,0,1,1],
+    [0,0,0,0,0]
+], start = [0,4], destination = [3,2]
+Output: false
+Explanation: There is no way for the ball to stop at the destination. Notice that you can pass through the destination but you cannot stop there.
 </code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: nums = [0,0,0]
-Output: [[0,0,0]]
-Explanation: The only possible triplet sums up to 0.
+<pre tabindex="0"><code>Input: maze = [
+    [0,0,0,0,0],
+    [1,1,0,0,1],
+    [0,0,0,0,0],
+    [0,1,0,0,1],
+    [0,1,0,0,0]
+], start = [4,3], destination = [0,1]
+Output: false
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>3 &lt;= nums.length &lt;= 3000</code></li>
-<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>m == maze.length</code></li>
+<li><code>n == maze[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 100</code></li>
+<li><code>maze[i][j]</code> is <code>0</code> or <code>1</code>.</li>
+<li><code>start.length == 2</code></li>
+<li><code>destination.length == 2</code></li>
+<li><code>0 &lt;= start<sub>row</sub>, destination<sub>row</sub> &lt;= m</code></li>
+<li><code>0 &lt;= start<sub>col</sub>, destination<sub>col</sub> &lt;= n</code></li>
+<li>Both the ball and the destination exist in an empty space, and they will not be in the same position initially.</li>
+<li>The maze contains <strong>at least 2 empty spaces</strong>.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -136,58 +177,44 @@ Explanation: The only possible triplet sums up to 0.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">threeSum</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; List[List[<span style="color:#0aa">int</span>]]:
-</span></span><span style="display:flex;"><span>        res, dups = <span style="color:#0aa">set</span>(), <span style="color:#0aa">set</span>()
-</span></span><span style="display:flex;"><span>        seen = {}
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i, v1 <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums):
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> v1 <span style="color:#00a">not</span> <span style="color:#00a">in</span> dups:
-</span></span><span style="display:flex;"><span>                dups.add(v1)
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">for</span> j, v2 <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(nums[i+<span style="color:#099">1</span>:]):
-</span></span><span style="display:flex;"><span>                    v3 = -(v1 + v2)
-</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> v3 <span style="color:#00a">in</span> seen <span style="color:#00a">and</span> seen[v3] == i:
-</span></span><span style="display:flex;"><span>                        res.add(<span style="color:#0aa">tuple</span>(<span style="color:#0aa">sorted</span>([v1, v2, v3])))
-</span></span><span style="display:flex;"><span>                    seen[v2] = i
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">Sort first
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">threeSum</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; List[List[<span style="color:#0aa">int</span>]]:
-</span></span><span style="display:flex;"><span>        res = []
-</span></span><span style="display:flex;"><span>        nums.sort()
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(nums)):
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> nums[i] &gt; <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">break</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i == <span style="color:#099">0</span> <span style="color:#00a">or</span> nums[i - <span style="color:#099">1</span>] != nums[i]:
-</span></span><span style="display:flex;"><span>                self.find_two_sum(nums, i, res)
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">find_two_sum</span>(self, nums: List[<span style="color:#0aa">int</span>], i: <span style="color:#0aa">int</span>, res: List[List[<span style="color:#0aa">int</span>]]):
-</span></span><span style="display:flex;"><span>        lo, hi = i + <span style="color:#099">1</span>, <span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> (lo &lt; hi):
-</span></span><span style="display:flex;"><span>            s = nums[i] + nums[lo] + nums[hi]
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> s &lt; <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>                lo += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> s &gt; <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>                hi -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
-</span></span><span style="display:flex;"><span>                res.append([nums[i], nums[lo], nums[hi]])
-</span></span><span style="display:flex;"><span>                lo += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                hi -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">while</span> lo &lt; hi <span style="color:#00a">and</span> nums[lo] == nums[lo - <span style="color:#099">1</span>]:
-</span></span><span style="display:flex;"><span>                    lo += <span style="color:#099">1</span></span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">hasPath</span>(self, maze: List[List[<span style="color:#0aa">int</span>]], start: List[<span style="color:#0aa">int</span>], destination: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        m = <span style="color:#0aa">len</span>(maze)
+</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(maze[<span style="color:#099">0</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">dfs</span>(row: <span style="color:#0aa">int</span>, col: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> visited[row][col]:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> row == destination[<span style="color:#099">0</span>] <span style="color:#00a">and</span> col == destination[<span style="color:#099">1</span>]:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>            visited[row][col] = <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>            left, right = col - <span style="color:#099">1</span>, col + <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            top, bottom = row - <span style="color:#099">1</span>, row + <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># move right</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> right &lt; n <span style="color:#00a">and</span> maze[row][right] == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                right += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> dfs(row, right - <span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># move left</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> left &gt;= <span style="color:#099">0</span> <span style="color:#00a">and</span> maze[row][left] == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                left -= <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> dfs(row, left + <span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># move up</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> top &gt;= <span style="color:#099">0</span> <span style="color:#00a">and</span> maze[top][col] == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                top -= <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> dfs(top + <span style="color:#099">1</span>, col):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># move down</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> bottom &lt; m <span style="color:#00a">and</span> maze[bottom][col] == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                bottom += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> dfs(bottom - <span style="color:#099">1</span>, col):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        visited = [[<span style="color:#00a">False</span>] * n <span style="color:#00a">for</span> _ <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(m)]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dfs(start[<span style="color:#099">0</span>], start[<span style="color:#099">1</span>])</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
