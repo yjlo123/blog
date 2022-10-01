@@ -65,6 +65,9 @@
     <loc>https://blog.siwei.dev/leetcode/42-trapping-rain-water/</loc>
     <lastmod>2021-06-26T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/46-permutations/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/48-rotate-image/</loc>
     <lastmod>2021-03-19T00:00:00+08:00</lastmod>
   </url><url>
@@ -209,6 +212,9 @@
     <loc>https://blog.siwei.dev/leetcode/146-lru-cache/</loc>
     <lastmod>2021-09-30T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/155-min-stack/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/167-two-sum-ii-input-array-is-sorted/</loc>
     <lastmod>2021-09-18T00:00:00-04:00</lastmod>
   </url><url>
@@ -338,6 +344,9 @@
     <loc>https://blog.siwei.dev/leetcode/380-insert-delete-getrandom-o1/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/381-insert-delete-getrandom-o1-duplicates-allowed/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/383-ransom-note/</loc>
     <lastmod>2021-10-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -372,6 +381,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/460-lfu-cache/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/461-hamming-distance/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/472-concatenated-words/</loc>
