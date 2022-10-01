@@ -125,6 +125,9 @@
     <loc>https://blog.siwei.dev/leetcode/94-binary-tree-inorder-traversal/</loc>
     <lastmod>2021-10-02T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/98-validate-binary-search-tree/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/99-recover-binary-search-tree/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -142,6 +145,9 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/104-maximum-depth-of-binary-tree/</loc>
     <lastmod>2021-10-02T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/105-construct-binary-tree-from-preorder-and-inorder-traversal/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/109-convert-sorted-list-to-binary-search-tree/</loc>
     <lastmod>2021-03-21T00:00:00+08:00</lastmod>
@@ -771,6 +777,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_bst/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_db/</loc>
