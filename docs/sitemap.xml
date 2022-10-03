@@ -329,6 +329,9 @@
     <loc>https://blog.siwei.dev/leetcode/322-coin-change/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/329-longest-increasing-path-in-a-matrix/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/331-verify-preorder-serialization-of-a-binary-tree/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -485,6 +488,9 @@
     <loc>https://blog.siwei.dev/leetcode/665-non-decreasing-array/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/680-valid-palindrome-ii/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/692-top-k-frequent-words/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -557,6 +563,9 @@
     <loc>https://blog.siwei.dev/leetcode/937-reorder-data-in-log-files/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/947-most-stones-removed-with-same-row-or-column/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/948-bag-of-tokens/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -594,6 +603,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1094-car-pooling/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1099-two-sum-less-than-k/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1109-corporate-flight-bookings/</loc>
@@ -873,6 +885,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_two_pointers/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_union_find/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/leetcode/</loc>
