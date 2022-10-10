@@ -377,6 +377,9 @@
     <loc>https://blog.siwei.dev/leetcode/394-decode-string/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/398-random-pick-index/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/399-evaluate-division/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -585,6 +588,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1010-pairs-of-songs-with-total-durations-divisible-by-60/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1011-capacity-to-ship-packages-within-d-days/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1022-sum-of-root-to-leaf-binary-numbers/</loc>
@@ -867,6 +873,9 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_queue/</loc>
+    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_random/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_sliding_window/</loc>
