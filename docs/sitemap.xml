@@ -314,6 +314,9 @@
     <loc>https://blog.siwei.dev/leetcode/300-longest-increasing-subsequence/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/301-remove-invalid-parentheses/</loc>
+    <lastmod>2022-10-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/304-range-sum-query-2d-immutable/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -812,10 +815,16 @@
     <loc>https://blog.siwei.dev/leetcode/autoscale-policy/</loc>
     <lastmod>2021-10-17T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
+    <lastmod>2022-10-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
     <lastmod>2022-10-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_dfs/</loc>
+    <lastmod>2022-10-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
     <lastmod>2022-10-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_matrix/</loc>
@@ -842,9 +851,6 @@
     <loc>https://blog.siwei.dev/tags/lc_array/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
-  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -867,9 +873,6 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_greedy/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_hash/</loc>
