@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>1730 Shortest Path to Get Food</title>
+        <title>1293 Shortest Path in a Grid with Obstacles Elimination</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>1730 Shortest Path to Get Food</h1>
+  <h1>1293 Shortest Path in a Grid with Obstacles Elimination</h1>
   <div class="blog-post-subheader">
     
-    <time>Sep 2022</time>
+    <time>Oct 2022</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -62,78 +62,55 @@
    </li>
   
    <li>
-     <a href="/tags/lc_medium">lc_medium</a>
+     <a href="/tags/lc_hard">lc_hard</a>
    </li>
   
    <li>
      <a href="/tags/lc_bfs">lc_bfs</a>
    </li>
   
-   <li>
-     <a href="/tags/lc_matrix">lc_matrix</a>
-   </li>
-  
 </ul>
 <div class="blog-post-content">
-    <p>You are starving and you want to eat food as quickly as possible. You want to find the shortest path to arrive at any food cell.</p>
-<p>You are given an <code>m x n</code> character matrix, <code>grid</code>, of these different types of cells:</p>
-<ul>
-<li><code>'*'</code> is your location. There is <strong>exactly one</strong> &lsquo;*&rsquo; cell.</li>
-<li><code>'#'</code> is a food cell. There may be <strong>multiple</strong> food cells.</li>
-<li><code>'O'</code> is free space, and you can travel through these cells.</li>
-<li><code>'X'</code> is an obstacle, and you cannot travel through these cells.</li>
-</ul>
-<p>You can travel to any adjacent cell north, east, south, or west of your current location if there is not an obstacle.</p>
-<p>Return <em>the <strong>length</strong> of the shortest path for you to reach <strong>any</strong> food cell.</em> If there is no path for you to reach food, return <code>-1</code>.</p>
+    <p>You are given an <code>m x n</code> integer matrix <code>grid</code> where each cell is either <code>0</code> (empty) or <code>1</code> (obstacle). You can move up, down, left, or right from and to an empty cell in <strong>one step</strong>.</p>
+<p>Return <em>the minimum number of steps to walk from the upper left corner <code>(0, 0)</code> to the lower right corner <code>(m - 1, n - 1)</code> given that you can eliminate at most k obstacles</em>. If it is not possible to find such walk return <code>-1</code>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code># # # # # #
-# X _ _ _ #
-# _ _ O _ #
-# # # # # #
+<pre tabindex="0"><code>_ _ _
+# # _
+_ _ _
+_ # #
+_ _ _
 
 Input: grid = [
-[&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;*&#34;,&#34;O&#34;,&#34;O&#34;,&#34;O&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;O&#34;,&#34;O&#34;,&#34;#&#34;,&#34;O&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;]]
-Output: 3
-Explanation: It takes 3 steps to reach the food.
-</code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code># # # # #
-# X # _ #
-# _ # O #
-# # # # #
-
-Input: grid = [
-[&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;*&#34;,&#34;X&#34;,&#34;O&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;O&#34;,&#34;X&#34;,&#34;#&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;]]
-Output: -1
-Explanation: It is not possible to reach the food.
-</code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code># # # # # # # #
-# X _ # _ O _ #
-# _ _ # _ _ # #
-# _ _ _ _ O _ #
-# # # # # # # #
-
-Input: grid = [
-[&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;*&#34;,&#34;O&#34;,&#34;X&#34;,&#34;O&#34;,&#34;#&#34;,&#34;O&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;O&#34;,&#34;O&#34;,&#34;X&#34;,&#34;O&#34;,&#34;O&#34;,&#34;X&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;O&#34;,&#34;O&#34;,&#34;O&#34;,&#34;O&#34;,&#34;#&#34;,&#34;O&#34;,&#34;X&#34;],
-[&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;,&#34;X&#34;]]
+    [0,0,0],
+    [1,1,0],
+    [0,0,0],
+    [0,1,1],
+    [0,0,0]
+], k = 1
 Output: 6
-Explanation: There can be multiple food cells.
-It only takes 6 steps to reach the bottom food.
+Explanation: 
+The shortest path without eliminating any obstacle is 10.
+The shortest path with one obstacle elimination at position (3,2) is 6. Such path is (0,0) -&gt; (0,1) -&gt; (0,2) -&gt; (1,2) -&gt; (2,2) -&gt; (3,2) -&gt; (4,2).
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>_ # #
+# # #
+# _ _
+
+Input: grid = [
+    [0,1,1],
+    [1,1,1],
+    [1,0,0]
+], k = 1
+Output: -1
+Explanation: We need to eliminate at least two obstacles to find such a walk.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
 <li><code>m == grid.length</code></li>
 <li><code>n == grid[i].length</code></li>
-<li><code>1 &lt;= m, n &lt;= 200</code></li>
-<li><code>grid[row][col]</code> is <code>'*'</code>, <code>'X'</code>, <code>'O'</code>, or<code> '#'</code>.</li>
-<li>The grid contains <strong>exactly one</strong> <code>'*'</code>.</li>
+<li><code>1 &lt;= m, n &lt;= 40</code></li>
+<li><code>1 &lt;= k &lt;= m * n</code></li>
+<li><code>grid[i][j]</code> is either <code>0</code> <strong>or</strong> <code>1</code>.</li>
+<li><code>grid[0][0] == grid[m - 1][n - 1] == 0</code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -168,35 +145,39 @@ It only takes 6 steps to reach the bottom food.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">collections</span> <span style="color:#00a">import</span> deque
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">getFood</span>(self, grid: List[List[<span style="color:#0aa">str</span>]]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        m, n = <span style="color:#0aa">len</span>(grid), <span style="color:#0aa">len</span>(grid[<span style="color:#099">0</span>])
-</span></span><span style="display:flex;"><span>        q = deque()
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> r <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(m):
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> c <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n):
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> grid[r][c] == <span style="color:#a50">&#39;*&#39;</span>:
-</span></span><span style="display:flex;"><span>                    q.append((r, c))
-</span></span><span style="display:flex;"><span>                    <span style="color:#00a">break</span>
-</span></span><span style="display:flex;"><span>        dis = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">shortestPath</span>(self, grid: List[List[<span style="color:#0aa">int</span>]], k: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        m = <span style="color:#0aa">len</span>(grid)
+</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(grid[<span style="color:#099">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> k &gt;= m + n - <span style="color:#099">2</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> m + n -<span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        state = (<span style="color:#099">0</span>, <span style="color:#099">0</span>, k)
+</span></span><span style="display:flex;"><span>        q = deque([(<span style="color:#099">0</span>, state)])
+</span></span><span style="display:flex;"><span>        seen = <span style="color:#0aa">set</span>([state])
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> q:
-</span></span><span style="display:flex;"><span>            dis += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            q_size = <span style="color:#0aa">len</span>(q)
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(q_size):
-</span></span><span style="display:flex;"><span>                cell = q.popleft()
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">for</span> d <span style="color:#00a">in</span> [(-<span style="color:#099">1</span>, <span style="color:#099">0</span>), (<span style="color:#099">1</span>, <span style="color:#099">0</span>), (<span style="color:#099">0</span>, -<span style="color:#099">1</span>), (<span style="color:#099">0</span>, <span style="color:#099">1</span>)]:
-</span></span><span style="display:flex;"><span>                    x = cell[<span style="color:#099">0</span>] + d[<span style="color:#099">0</span>]
-</span></span><span style="display:flex;"><span>                    y = cell[<span style="color:#099">1</span>] + d[<span style="color:#099">1</span>]
-</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> x &lt; <span style="color:#099">0</span> <span style="color:#00a">or</span> y &lt; <span style="color:#099">0</span> <span style="color:#00a">or</span> x &gt;= m <span style="color:#00a">or</span> y &gt;= n:
-</span></span><span style="display:flex;"><span>                        <span style="color:#00a">continue</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> grid[x][y] == <span style="color:#a50">&#39;#&#39;</span>:
-</span></span><span style="display:flex;"><span>                        <span style="color:#00a">return</span> dis
-</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> grid[x][y] == <span style="color:#a50">&#39;O&#39;</span>:
-</span></span><span style="display:flex;"><span>                        q.append((x, y))
-</span></span><span style="display:flex;"><span>                        grid[x][y] = <span style="color:#a50">&#39;v&#39;</span>
+</span></span><span style="display:flex;"><span>            steps, (i, j, k) = q.popleft()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> (i, j) == (m-<span style="color:#099">1</span>, n-<span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> steps
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> dx, dy <span style="color:#00a">in</span> [(<span style="color:#099">1</span>, <span style="color:#099">0</span>), (-<span style="color:#099">1</span>, <span style="color:#099">0</span>), (<span style="color:#099">0</span>, <span style="color:#099">1</span>), (<span style="color:#099">0</span>, -<span style="color:#099">1</span>)]:
+</span></span><span style="display:flex;"><span>                x, y = i + dx, j + dy
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> <span style="color:#099">0</span> &lt;= x &lt; m <span style="color:#00a">and</span> <span style="color:#099">0</span> &lt;= y &lt; n:
+</span></span><span style="display:flex;"><span>                    nk = k - grid[x][y]
+</span></span><span style="display:flex;"><span>                    new_state = (x, y, nk)
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> nk &gt;= <span style="color:#099">0</span> <span style="color:#00a">and</span> new_state <span style="color:#00a">not</span> <span style="color:#00a">in</span> seen:
+</span></span><span style="display:flex;"><span>                        seen.add(new_state)
+</span></span><span style="display:flex;"><span>                        q.append((steps + <span style="color:#099">1</span>, new_state))
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> -<span style="color:#099">1</span></span></span></code></pre></td></tr></table>
 </div>
 </div>

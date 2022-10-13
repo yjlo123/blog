@@ -20,6 +20,10 @@ Return _the **length** of the shortest path for you to reach **any** food cell._
 
 **Example 1:**
 ```
+# # # # # #
+# X _ _ _ #
+# _ _ O _ #
+# # # # # #
 
 Input: grid = [
 ["X","X","X","X","X","X"],
@@ -31,6 +35,11 @@ Explanation: It takes 3 steps to reach the food.
 ```
 **Example 2:**
 ```
+# # # # #
+# X # _ #
+# _ # O #
+# # # # #
+
 Input: grid = [
 ["X","X","X","X","X"],
 ["X","*","X","O","X"],
@@ -41,6 +50,12 @@ Explanation: It is not possible to reach the food.
 ```
 **Example 3:**
 ```
+# # # # # # # #
+# X _ # _ O _ #
+# _ _ # _ _ # #
+# _ _ _ _ O _ #
+# # # # # # # #
+
 Input: grid = [
 ["X","X","X","X","X","X","X","X"],
 ["X","*","O","X","O","#","O","X"],
@@ -68,7 +83,6 @@ from collections import deque
 class Solution:
     def getFood(self, grid: List[List[str]]) -> int:
         m, n = len(grid), len(grid[0])
-        start = (-1, -1)
         q = deque()
         for r in range(m):
             for c in range(n):
