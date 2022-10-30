@@ -554,6 +554,9 @@
     <loc>https://blog.siwei.dev/leetcode/828-count-unique-characters-of-all-substrings-of-a-given-string/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/852-peak-index-in-a-mountain-array/</loc>
+    <lastmod>2022-10-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/858-mirror-reflection/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -839,6 +842,9 @@
     <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
     <lastmod>2022-10-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
+    <lastmod>2022-10-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_dfs/</loc>
     <lastmod>2022-10-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -876,9 +882,6 @@
     <lastmod>2022-10-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_array/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bst/</loc>
