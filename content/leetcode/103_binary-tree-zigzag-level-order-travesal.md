@@ -3,7 +3,7 @@ weight: 103
 title: "103 Binary Tree Zigzag Level Order Traversal"
 date: 2021-03-21T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_tree"]
+tags: ["leetcode", "lc_medium", "lc_tree", "lc_bfs"]
 ---
 
 Given the `root` of a binary tree, return _the zigzag level order traversal of its nodes' values_. (i.e., from left to right, then right to left for the next level and alternate between).
@@ -31,9 +31,10 @@ Output: []
 ```
 
 **Constraints:**
-
 - The number of nodes in the tree is in the range `[0, 2000]`.
 - `-100 <= Node.val <= 100`
+
+> BFS level by level
 
 <div class="tabs"></div>
 <div class="tab-content">
@@ -46,10 +47,12 @@ Output: []
 #         self.left = left
 #         self.right = right
 class Solution:
-    def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
+    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
-        res, level, direction = [], [root], 1
+        res = []
+        direction = 1
+        level = [root]
         while level:
             res.append([n.val for n in level][::direction])
             direction *= -1

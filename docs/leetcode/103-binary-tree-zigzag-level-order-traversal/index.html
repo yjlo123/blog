@@ -69,6 +69,10 @@
      <a href="/tags/lc_tree">lc_tree</a>
    </li>
   
+   <li>
+     <a href="/tags/lc_bfs">lc_bfs</a>
+   </li>
+  
 </ul>
 <div class="blog-post-content">
     <p>Given the <code>root</code> of a binary tree, return <em>the zigzag level order traversal of its nodes&rsquo; values</em>. (i.e., from left to right, then right to left for the next level and alternate between).</p>
@@ -92,6 +96,9 @@ Output: []
 <li>The number of nodes in the tree is in the range <code>[0, 2000]</code>.</li>
 <li><code>-100 &lt;= Node.val &lt;= 100</code></li>
 </ul>
+<blockquote>
+<p>BFS level by level</p>
+</blockquote>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -118,6 +125,8 @@ Output: []
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
@@ -127,10 +136,12 @@ Output: []
 </span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.left = left</span>
 </span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.right = right</span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">zigzagLevelOrder</span>(self, root: TreeNode) -&gt; List[List[<span style="color:#0aa">int</span>]]:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">zigzagLevelOrder</span>(self, root: Optional[TreeNode]) -&gt; List[List[<span style="color:#0aa">int</span>]]:
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#00a">not</span> root:
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> []
-</span></span><span style="display:flex;"><span>        res, level, direction = [], [root], <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        res = []
+</span></span><span style="display:flex;"><span>        direction = <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        level = [root]
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> level:
 </span></span><span style="display:flex;"><span>            res.append([n.val <span style="color:#00a">for</span> n <span style="color:#00a">in</span> level][::direction])
 </span></span><span style="display:flex;"><span>            direction *= -<span style="color:#099">1</span>

@@ -43,9 +43,7 @@ class Solution:
         prev_2 = 1
         prev_1 = 2
         for i in range(2, n):
-            current = prev_2 + prev_1
-            prev_2 = prev_1
-            prev_1 = current
+            prev_1, prev_2 = prev_2 + prev_1, prev_1
         return prev_1
 {{< / highlight >}}
 </div>

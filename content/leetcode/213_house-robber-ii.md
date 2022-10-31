@@ -34,6 +34,8 @@ Output: 3
 - `1 <= nums.length <= 100`
 - `0 <= nums[i] <= 1000`
 
+> Try `max(A[i-1], A[i-2] + A[i])` for both without first and last because of circle.
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -49,10 +51,10 @@ class Solution:
         )
 
     def rob_simple(self, nums: List[int]) -> int:
-        t1 = t2 = 0
-        for current in nums:
-            t1, t2 = max(t1, current + t2), t1
-        return t1
+        p2 = p1 = 0
+        for num in nums:
+            p2, p1 = p1, max(p1, p2 + num)
+        return p1
 {{< / highlight >}}
 </div>
 </div>

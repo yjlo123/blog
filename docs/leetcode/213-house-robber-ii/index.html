@@ -91,6 +91,9 @@ Output: 3
 <li><code>1 &lt;= nums.length &lt;= 100</code></li>
 <li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
+<blockquote>
+<p>Try <code>max(A[i-1], A[i-2] + A[i])</code> for both without first and last because of circle.</p>
+</blockquote>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -124,10 +127,10 @@ Output: 3
 </span></span><span style="display:flex;"><span>        )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">rob_simple</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        t1 = t2 = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> current <span style="color:#00a">in</span> nums:
-</span></span><span style="display:flex;"><span>            t1, t2 = <span style="color:#0aa">max</span>(t1, current + t2), t1
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> t1</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>        p2 = p1 = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> num <span style="color:#00a">in</span> nums:
+</span></span><span style="display:flex;"><span>            p2, p1 = p1, <span style="color:#0aa">max</span>(p1, p2 + num)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> p1</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
