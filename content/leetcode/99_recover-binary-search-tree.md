@@ -41,7 +41,9 @@ Swapping 2 and 3 makes the BST valid.
 - <code>-2<sup>31</sup> <= Node.val <= 2<sup>31</sup> - 1</code>
  
 
-Follow up: A solution using `O(n)` space is pretty straight-forward. Could you devise a constant `O(1)` space solution?
+**Follow up:** A solution using `O(n)` space is pretty straight-forward. Could you devise a constant `O(1)` space solution?
+
+> Inorder traverse the BST, which supposed to generate an increasing array, record the two numbers that violate `A[i] < A[i+1]`.
 
 <div class="tabs"></div>
 <div class="tab-content">

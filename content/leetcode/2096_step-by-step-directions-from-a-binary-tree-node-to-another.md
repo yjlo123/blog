@@ -46,6 +46,8 @@ Explanation: The shortest path is: 2 → 1.
 - `1 <= startValue, destValue <= n`
 - `startValue != destValue`
 
+> Traverse the tree to find the paths from root to the two nodes, remove the common prefix, and change the path to the left node (the one found first) to all "up(U)".
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">

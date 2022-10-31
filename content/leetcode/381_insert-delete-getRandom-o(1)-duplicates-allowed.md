@@ -48,6 +48,9 @@ randomizedCollection.getRandom(); // getRandom should return 1 or 2, both equall
 - At most <code>2 * 10<sup>5</sup></code> calls in total will be made to `insert`, `remove`, and `getRandom`.
 - There will be at least one element in the data structure when `getRandom` is called.
 
+> Use an array to record all numbers and for selecting one randomly,  
+and a dictionary of set for getting the index of a number.
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -73,7 +76,7 @@ class RandomizedCollection:
         last = self.data[-1]
         self.idx[last].add(idx_to_remove)            
         self.idx[last].remove(len(self.data) - 1)
-        self.data[idx_to_remove] = self.data[-1]                 
+        self.data[idx_to_remove] = last               
         self.data.pop()
         return True
 

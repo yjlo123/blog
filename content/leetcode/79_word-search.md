@@ -16,7 +16,8 @@ The word can be constructed from letters of sequentially adjacent cells, where a
  S   F  (C)  S
  A  (D) (E)  E
 
-Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],
+word = "ABCCED"
 Output: true
 ```
 **Example 2:**
@@ -25,7 +26,8 @@ Output: true
  S   F   C  (S)
  A   D  (E) (E)
 
-Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],
+word = "SEE"
 Output: true
 ```
 **Example 3:**
@@ -34,7 +36,8 @@ Output: true
  S   F   C   S
  A   D   E   E
 
-Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCB"
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],
+word = "ABCB"
 Output: false
 ```
 
@@ -46,6 +49,8 @@ Output: false
 - `board` and `word` consists of only lowercase and uppercase English letters.
 
 **Follow up:** Could you use search pruning to make your solution faster with a larger board?
+
+> Try backtracking (DFS) recursively from each cell.
 
 <div class="tabs"></div>
 <div class="tab-content">
@@ -76,7 +81,7 @@ class Solution:
         for offset in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
             result = self.backtrack(i+offset[0], j+offset[1], suffix[1:])
             if result:
-                break # for cleanup side-effects
+                break # not return here for cleanup side-effects
         self.board[i][j] = suffix[0]
         return result
 {{< / highlight >}}

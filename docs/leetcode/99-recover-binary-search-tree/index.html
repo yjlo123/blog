@@ -99,7 +99,10 @@ Swapping 2 and 3 makes the BST valid.
 <li>The number of nodes in the tree is in the range <code>[2, 1000]</code>.</li>
 <li><code>-2<sup>31</sup> &lt;= Node.val &lt;= 2<sup>31</sup> - 1</code></li>
 </ul>
-<p>Follow up: A solution using <code>O(n)</code> space is pretty straight-forward. Could you devise a constant <code>O(1)</code> space solution?</p>
+<p><strong>Follow up:</strong> A solution using <code>O(n)</code> space is pretty straight-forward. Could you devise a constant <code>O(1)</code> space solution?</p>
+<blockquote>
+<p>Inorder traverse the BST, which supposed to generate an increasing array, record the two numbers that violate <code>A[i] &lt; A[i+1]</code>.</p>
+</blockquote>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">

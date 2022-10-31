@@ -40,12 +40,13 @@ class Solution:
     def climbStairs(self, n: int) -> int:
         if n < 3:
             return n
-        memo = [0] * n
-        memo[0] = 1
-        memo[1] = 2
+        prev_2 = 1
+        prev_1 = 2
         for i in range(2, n):
-            memo[i] = memo[i-1] + memo[i-2]
-        return memo[n-1]
+            current = prev_2 + prev_1
+            prev_2 = prev_1
+            prev_1 = current
+        return prev_1
 {{< / highlight >}}
 </div>
 </div>

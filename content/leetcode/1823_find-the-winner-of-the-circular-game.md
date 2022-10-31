@@ -46,10 +46,15 @@ Explanation: The friends leave in this order: 5, 4, 6, 2, 3. The winner is frien
 **Follow up:**  
 Could you solve this problem in linear time with constant space?
 
+> Intution : If we have the winner for 'n-1' and 'k', we can find the winner for 'n' and 'k' by moving on to the next k<sup>th</sup> person, i.e. f(n) = (f(n-1) + k) % n
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
+'''
+Siulation
+'''
 class Solution:
     def findTheWinner(self, n: int, k: int) -> int:
         q = deque([i+1 for i in range(n)])
@@ -65,9 +70,10 @@ Constant space
 '''
 class Solution:
     def findTheWinner(self, n: int, k: int) -> int:
-        if n == 1:
-            return 1
-        return (k + self.findTheWinner(n-1, k) -1) % n + 1
+        ans = 0
+        for i in range(1, n+1):
+            ans = (ans + k) % i
+        return ans + 1
 {{< / highlight >}}
 </div>
 </div>

@@ -112,6 +112,10 @@ randomizedCollection.getRandom(); // getRandom should return 1 or 2, both equall
 <li>At most <code>2 * 10<sup>5</sup></code> calls in total will be made to <code>insert</code>, <code>remove</code>, and <code>getRandom</code>.</li>
 <li>There will be at least one element in the data structure when <code>getRandom</code> is called.</li>
 </ul>
+<blockquote>
+<p>Use an array to record all numbers and for selecting one randomly,<br>
+and a dictionary of set for getting the index of a number.</p>
+</blockquote>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -174,7 +178,7 @@ randomizedCollection.getRandom(); // getRandom should return 1 or 2, both equall
 </span></span><span style="display:flex;"><span>        last = self.data[-<span style="color:#099">1</span>]
 </span></span><span style="display:flex;"><span>        self.idx[last].add(idx_to_remove)            
 </span></span><span style="display:flex;"><span>        self.idx[last].remove(<span style="color:#0aa">len</span>(self.data) - <span style="color:#099">1</span>)
-</span></span><span style="display:flex;"><span>        self.data[idx_to_remove] = self.data[-<span style="color:#099">1</span>]                 
+</span></span><span style="display:flex;"><span>        self.data[idx_to_remove] = last               
 </span></span><span style="display:flex;"><span>        self.data.pop()
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">True</span>
 </span></span><span style="display:flex;"><span>

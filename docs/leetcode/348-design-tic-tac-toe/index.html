@@ -80,7 +80,7 @@
 <p>Implement the <code>TicTacToe</code> class:</p>
 <ul>
 <li><code>TicTacToe(int n)</code> Initializes the object the size of the board <code>n</code>.</li>
-<li><code>int move(int row, int col, int player) </code>Indicates that the player with id <code>player</code> plays at the cell <code>(row, col)</code> of the board. The move is guaranteed to be a valid move.</li>
+<li><code>int move(int row, int col, int player)</code> Indicates that the player with id <code>player</code> plays at the cell <code>(row, col)</code> of the board. The move is guaranteed to be a valid move.</li>
 </ul>
 <p><strong>Example 1:</strong></p>
 <pre tabindex="0"><code>Input
@@ -134,7 +134,10 @@ ticTacToe.move(2, 1, 1); // return 1 (player 1 wins)
 <li><code>(row, col)</code> are <strong>unique</strong> for each different call to <code>move</code>.</li>
 <li>At most <code>n<sup>2</sup></code> calls will be made to <code>move</code>.</li>
 </ul>
-<p>Follow-up: Could you do better than O(n2) per move() operation?</p>
+<p><strong>Follow-up:</strong> Could you do better than <code>O(n<sup>2</sup>)</code> per <code>move()</code> operation?</p>
+<blockquote>
+<p>For each row/column/diagonal, player1 +1 and player2 -1, then check the absolute value for each one.</p>
+</blockquote>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -188,8 +191,8 @@ ticTacToe.move(2, 1, 1); // return 1 (player 1 wins)
 </span></span><span style="display:flex;"><span>        self.rows[row] += cur_player
 </span></span><span style="display:flex;"><span>        self.cols[col] += cur_player
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> row == col:
-</span></span><span style="display:flex;"><span>            self.right  += cur_player
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> row == self.n - col -<span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>            self.right += cur_player
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> row == self.n - col - <span style="color:#099">1</span>:
 </span></span><span style="display:flex;"><span>            self.left += cur_player
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> (

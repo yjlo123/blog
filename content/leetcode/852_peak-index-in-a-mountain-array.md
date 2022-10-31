@@ -37,6 +37,8 @@ Output: 1
 - <code>0 <= arr[i] <= 10<sup>6</sup></code>
 - `arr` is **guaranteed** to be a mountain array.
 
+> Binary search over the array of comparisons to find the largest index `i` such that `A[i] < A[i+1]`.
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">

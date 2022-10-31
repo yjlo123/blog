@@ -13,7 +13,7 @@ Assume the following rules are for the tic-tac-toe game on an `n x n` board betw
 
 Implement the `TicTacToe` class:
 - `TicTacToe(int n)` Initializes the object the size of the board `n`.
-- `int move(int row, int col, int player) `Indicates that the player with id `player` plays at the cell `(row, col)` of the board. The move is guaranteed to be a valid move.
+- `int move(int row, int col, int player)` Indicates that the player with id `player` plays at the cell `(row, col)` of the board. The move is guaranteed to be a valid move.
 
 **Example 1:**
 ```
@@ -70,7 +70,9 @@ ticTacToe.move(2, 1, 1); // return 1 (player 1 wins)
 - At most <code>n<sup>2</sup></code> calls will be made to `move`.
  
 
-Follow-up: Could you do better than O(n2) per move() operation?
+**Follow-up:** Could you do better than <code>O(n<sup>2</sup>)</code> per `move()` operation?
+
+> For each row/column/diagonal, player1 +1 and player2 -1, then check the absolute value for each one.
 
 <div class="tabs"></div>
 <div class="tab-content">
@@ -91,8 +93,8 @@ class TicTacToe:
         self.rows[row] += cur_player
         self.cols[col] += cur_player
         if row == col:
-            self.right  += cur_player
-        if row == self.n - col -1:
+            self.right += cur_player
+        if row == self.n - col - 1:
             self.left += cur_player
         
         if (
