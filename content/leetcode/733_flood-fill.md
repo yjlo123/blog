@@ -40,6 +40,8 @@ Output: [[2,2,2],[2,2,2]]
 - `0 <= sr < m`
 - `0 <= sc < n`
 
+> Get the starting pixel color and do BFS.
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
