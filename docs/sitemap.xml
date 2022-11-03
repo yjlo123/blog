@@ -98,6 +98,9 @@
     <loc>https://blog.siwei.dev/leetcode/57-insert-interval/</loc>
     <lastmod>2021-03-19T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/60-permutation-sequence/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/61-rotate-list/</loc>
     <lastmod>2021-06-14T00:00:00+08:00</lastmod>
   </url><url>
@@ -857,6 +860,9 @@
     <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_math/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_medium/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -924,9 +930,6 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_math/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_ood/</loc>
