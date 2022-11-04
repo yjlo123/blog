@@ -35,12 +35,12 @@ class Solution:
         sorted_intervals = sorted(intervals, key=lambda x: x[0])
         res = []
         start, end = sorted_intervals[0]
-        for i in sorted_intervals:
-            if i[0] <= end:
-                end = max(end, i[1]);
+        for i_start, i_end in sorted_intervals:
+            if i_start <= end:
+                end = max(end, i_end)
             else:
                 res.append([start, end])
-                start, end = i
+                start, end = i_start, i_end
         res.append([start, end])
         return res
 {{< / highlight >}}

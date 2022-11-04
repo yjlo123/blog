@@ -111,12 +111,12 @@ Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 </span></span><span style="display:flex;"><span>        sorted_intervals = <span style="color:#0aa">sorted</span>(intervals, key=<span style="color:#00a">lambda</span> x: x[<span style="color:#099">0</span>])
 </span></span><span style="display:flex;"><span>        res = []
 </span></span><span style="display:flex;"><span>        start, end = sorted_intervals[<span style="color:#099">0</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> sorted_intervals:
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i[<span style="color:#099">0</span>] &lt;= end:
-</span></span><span style="display:flex;"><span>                end = <span style="color:#0aa">max</span>(end, i[<span style="color:#099">1</span>]);
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i_start, i_end <span style="color:#00a">in</span> sorted_intervals:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i_start &lt;= end:
+</span></span><span style="display:flex;"><span>                end = <span style="color:#0aa">max</span>(end, i_end)
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
 </span></span><span style="display:flex;"><span>                res.append([start, end])
-</span></span><span style="display:flex;"><span>                start, end = i
+</span></span><span style="display:flex;"><span>                start, end = i_start, i_end
 </span></span><span style="display:flex;"><span>        res.append([start, end])
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res</span></span></code></pre></td></tr></table>
 </div>
