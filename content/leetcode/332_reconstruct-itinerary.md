@@ -62,13 +62,13 @@ class Solution:
         self.visit_map = {}
 
         # sort the itinerary based on the lexical order
-        for origin, itinerary in self.graph.items():
-        # Note that we could have multiple identical flights,
-        # i.e. same origin and destination.
-            itinerary.sort()
-            self.visit_map[origin] = [False] * len(itinerary)
+        for origin, destinations in self.graph.items():
+            # Note that we could have multiple identical flights,
+            # i.e. same origin and destination.
+            destinations.sort()
+            self.visit_map[origin] = [False] * len(destinations)
 
-        self.flights = len(tickets)
+        self.n = len(tickets)
         self.result = []
         route = ['JFK']
         self.backtracking('JFK', route)
@@ -76,8 +76,10 @@ class Solution:
         return self.result
 
     def backtracking(self, src, route):
-        if len(route) == self.flights + 1:
+        if len(route) == self.n + 1:
             self.result = route
+            # since the itineraries are sorted, we can stop
+            # once the first one is found
             return True
 
         for i, next_des in enumerate(self.graph[src]):
@@ -89,7 +91,6 @@ class Solution:
                 if ret:
                     return True
         return False
-
 {{< / highlight >}}
 </div>
 </div>

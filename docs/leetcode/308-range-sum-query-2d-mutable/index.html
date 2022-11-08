@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>332 Reconstruct Itinerary</title>
+        <title>308 Range Sum Query 2D - Mutable</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>332 Reconstruct Itinerary</h1>
+  <h1>308 Range Sum Query 2D - Mutable</h1>
   <div class="blog-post-subheader">
     
     <time>Nov 2022</time>
@@ -66,48 +66,44 @@
    </li>
   
    <li>
-     <a href="/tags/lc_dfs">lc_dfs</a>
-   </li>
-  
-   <li>
-     <a href="/tags/lc_back_tracking">lc_back_tracking</a>
+     <a href="/tags/lc_matrix">lc_matrix</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given a list of airline <code>tickets</code> where <code>tickets[i] = [from<sub>i</sub>, to<sub>i</sub>]</code> represent the departure and the arrival airports of one flight. Reconstruct the itinerary in order and return it.</p>
-<p>All of the tickets belong to a man who departs from <code>&quot;JFK&quot;</code>, thus, the itinerary must begin with <code>&quot;JFK&quot;</code>. If there are multiple valid itineraries, you should return the itinerary that has the smallest lexical order when read as a single string.</p>
+    <p>Given a 2D matrix <code>matrix</code>, handle multiple queries of the following types:</p>
+<p><strong>Update</strong> the value of a cell in <code>matrix</code>.
+Calculate the sum of the elements of <code>matrix</code> inside the rectangle defined by its <strong>upper left corner</strong> <code>(row1, col1)</code> and <strong>lower right corner</strong> <code>(row2, col2)</code>.
+Implement the NumMatrix class:</p>
 <ul>
-<li>For example, the itinerary <code>[&quot;JFK&quot;, &quot;LGA&quot;]</code> has a smaller lexical order than <code>[&quot;JFK&quot;, &quot;LGB&quot;]</code>.</li>
+<li><code>NumMatrix(int[][] matrix)</code> Initializes the object with the integer matrix <code>matrix</code>.</li>
+<li><code>void update(int row, int col, int val)</code> <strong>Updates</strong> the value of <code>matrix[row][col]</code> to be <code>val</code>.</li>
+<li><code>int sumRegion(int row1, int col1, int row2, int col2)</code> Returns the sum of the elements of <code>matrix</code> inside the rectangle defined by its <strong>upper left corner</strong> <code>(row1, col1)</code> and <strong>lower right corner</strong> <code>(row2, col2)</code>.</li>
 </ul>
-<p>You may assume all tickets form at least one valid itinerary. You must use all the tickets once and only once.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>MUC --&gt; LHR --&gt; SFO
- ^               |
- |               v
-JFK             SJC
+<pre tabindex="0"><code>Input
+[&#34;NumMatrix&#34;, &#34;sumRegion&#34;, &#34;update&#34;, &#34;sumRegion&#34;]
+[[[[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]]], [2, 1, 4, 3], [3, 2, 2], [2, 1, 4, 3]]
+Output
+[null, 8, null, 10]
 
-Input: tickets = [[&#34;MUC&#34;,&#34;LHR&#34;],[&#34;JFK&#34;,&#34;MUC&#34;],[&#34;SFO&#34;,&#34;SJC&#34;],[&#34;LHR&#34;,&#34;SFO&#34;]]
-Output: [&#34;JFK&#34;,&#34;MUC&#34;,&#34;LHR&#34;,&#34;SFO&#34;,&#34;SJC&#34;]
-</code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>SFO &lt;-.
- ^   \ \
- |     \ \
- |  --&gt; v |
-JFK &lt;-- ATL
-
-Input: tickets = [[&#34;JFK&#34;,&#34;SFO&#34;],[&#34;JFK&#34;,&#34;ATL&#34;],[&#34;SFO&#34;,&#34;ATL&#34;],[&#34;ATL&#34;,&#34;JFK&#34;],[&#34;ATL&#34;,&#34;SFO&#34;]]
-Output: [&#34;JFK&#34;,&#34;ATL&#34;,&#34;JFK&#34;,&#34;SFO&#34;,&#34;ATL&#34;,&#34;SFO&#34;]
-Explanation: Another possible reconstruction is [&#34;JFK&#34;,&#34;SFO&#34;,&#34;ATL&#34;,&#34;JFK&#34;,&#34;ATL&#34;,&#34;SFO&#34;]
-but it is larger in lexical order.
+Explanation
+NumMatrix numMatrix = new NumMatrix([[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]]);
+numMatrix.sumRegion(2, 1, 4, 3); // return 8 (i.e. sum of the left red rectangle)
+numMatrix.update(3, 2, 2);       // matrix changes from left image to right image
+numMatrix.sumRegion(2, 1, 4, 3); // return 10 (i.e. sum of the right red rectangle)
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= tickets.length &lt;= 300</code></li>
-<li><code>tickets[i].length == 2</code></li>
-<li><code>from<sub>i</sub>.length == 3</code></li>
-<li><code>to<sub>i</sub>.length == 3</code></li>
-<li><code>from<sub>i</sub></code> and <code>to<sub>i</sub></code> consist of uppercase English letters.</li>
-<li><code>from<sub>i</sub> != to<sub>i</sub></code></li>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>-10<sup>5</sup> &lt;= matrix[i][j] &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= row &lt; m</code></li>
+<li><code>0 &lt;= col &lt; n</code></li>
+<li><code>-10<sup>5</sup> &lt;= val &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= row1 &lt;= row2 &lt; m</code></li>
+<li><code>0 &lt;= col1 &lt;= col2 &lt; n</code></li>
+<li>At most <code>10<sup>4</sup></code> calls will be made to <code>sumRegion</code> and <code>update</code>.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -145,59 +141,39 @@ but it is larger in lexical order.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">collections</span> <span style="color:#00a">import</span> defaultdict
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">NumMatrix</span>:
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">findItinerary</span>(self, tickets: List[List[<span style="color:#0aa">str</span>]]) -&gt; List[<span style="color:#0aa">str</span>]:
-</span></span><span style="display:flex;"><span>        self.graph = defaultdict(<span style="color:#0aa">list</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self, matrix: List[List[<span style="color:#0aa">int</span>]]):
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> row <span style="color:#00a">in</span> matrix:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> col <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>, <span style="color:#0aa">len</span>(row)):
+</span></span><span style="display:flex;"><span>                row[col] += row[col-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>        self.matrix = matrix
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> src, des <span style="color:#00a">in</span> tickets:
-</span></span><span style="display:flex;"><span>            self.graph[src].append(des)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">update</span>(self, row: <span style="color:#0aa">int</span>, col: <span style="color:#0aa">int</span>, val: <span style="color:#0aa">int</span>) -&gt; <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>        original = self.matrix[row][col]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> col != <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>            original -= self.matrix[row][col-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        diff = original - val
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> y <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(col, <span style="color:#0aa">len</span>(self.matrix[<span style="color:#099">0</span>])):
+</span></span><span style="display:flex;"><span>            self.matrix[row][y] -= diff
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        self.visit_map = {}
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">sumRegion</span>(self, row1: <span style="color:#0aa">int</span>, col1: <span style="color:#0aa">int</span>, row2: <span style="color:#0aa">int</span>, col2: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        res = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> x <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(row1, row2+<span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>            res += self.matrix[x][col2]
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> col1 != <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                res -= self.matrix[x][col1-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># sort the itinerary based on the lexical order</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> origin, destinations <span style="color:#00a">in</span> self.graph.items():
-</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># Note that we could have multiple identical flights,</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># i.e. same origin and destination.</span>
-</span></span><span style="display:flex;"><span>            destinations.sort()
-</span></span><span style="display:flex;"><span>            self.visit_map[origin] = [<span style="color:#00a">False</span>] * <span style="color:#0aa">len</span>(destinations)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        self.n = <span style="color:#0aa">len</span>(tickets)
-</span></span><span style="display:flex;"><span>        self.result = []
-</span></span><span style="display:flex;"><span>        route = [<span style="color:#a50">&#39;JFK&#39;</span>]
-</span></span><span style="display:flex;"><span>        self.backtracking(<span style="color:#a50">&#39;JFK&#39;</span>, route)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.result
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">backtracking</span>(self, src, route):
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(route) == self.n + <span style="color:#099">1</span>:
-</span></span><span style="display:flex;"><span>            self.result = route
-</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># since the itineraries are sorted, we can stop</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># once the first one is found</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#00a">True</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i, next_des <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(self.graph[src]):
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#00a">not</span> self.visit_map[src][i]:
-</span></span><span style="display:flex;"><span>                <span style="color:#aaa;font-style:italic"># mark the visit before the next recursion</span>
-</span></span><span style="display:flex;"><span>                self.visit_map[src][i] = <span style="color:#00a">True</span>
-</span></span><span style="display:flex;"><span>                ret = self.backtracking(next_des, route + [next_des])
-</span></span><span style="display:flex;"><span>                self.visit_map[src][i] = <span style="color:#00a">False</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> ret:
-</span></span><span style="display:flex;"><span>                    <span style="color:#00a">return</span> <span style="color:#00a">True</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">False</span></span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your NumMatrix object will be instantiated and called as such:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj = NumMatrix(matrix)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj.update(row,col,val)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_2 = obj.sumRegion(row1,col1,row2,col2)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
