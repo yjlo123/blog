@@ -593,6 +593,9 @@
     <loc>https://blog.siwei.dev/leetcode/828-count-unique-characters-of-all-substrings-of-a-given-string/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/845-longest-mountain-in-array/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/852-peak-index-in-a-mountain-array/</loc>
     <lastmod>2022-10-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -805,6 +808,12 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1492-the-kth-factor-of-n/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1506-find-root-of-n-ary-tree/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1547-minimum-cost-to-cut-a-stick/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1567-maximum-length-of-subarray-with-positive-product/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
