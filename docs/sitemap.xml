@@ -476,6 +476,9 @@
     <loc>https://blog.siwei.dev/leetcode/496-next-greater-element-i/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/503-next-greater-element-ii/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/504-base-7/</loc>
     <lastmod>2021-06-08T00:00:00+08:00</lastmod>
   </url><url>
@@ -533,6 +536,9 @@
     <loc>https://blog.siwei.dev/leetcode/642-design-search-autocomplete-system/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/658-find-k-closest-elements/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/659-split-array-into-consecutive-subsequences/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -577,6 +583,9 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/739-daily-temperatures/</loc>
     <lastmod>2022-10-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/746-min-cost-climbing-stairs/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/767-reorganize-string/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
@@ -637,6 +646,9 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/948-bag-of-tokens/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/967-numbers-with-same-consecutive-differences/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/968-binary-tree-cameras/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
@@ -914,6 +926,9 @@
     <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -950,6 +965,9 @@
     <loc>https://blog.siwei.dev/tags/lc_sorting/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_stack/</loc>
+    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_string/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -970,12 +988,6 @@
   </url><url>
     <loc>https://blog.siwei.dev/tags/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
-    <lastmod>2022-10-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_stack/</loc>
-    <lastmod>2022-10-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_topo_sort/</loc>
     <lastmod>2022-10-01T00:00:00-04:00</lastmod>
