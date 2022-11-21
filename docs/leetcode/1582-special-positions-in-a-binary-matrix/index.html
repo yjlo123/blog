@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>159 Longest Substring with At Most Two Distinct Characters</title>
+        <title>1582 Special Positions in a Binary Matrix</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>159 Longest Substring with At Most Two Distinct Characters</h1>
+  <h1>1582 Special Positions in a Binary Matrix</h1>
   <div class="blog-post-subheader">
     
     <time>Nov 2022</time>
@@ -62,29 +62,40 @@
    </li>
   
    <li>
-     <a href="/tags/lc_medium">lc_medium</a>
+     <a href="/tags/lc_easy">lc_easy</a>
    </li>
   
    <li>
-     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
+     <a href="/tags/lc_matrix">lc_matrix</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given a string <code>s</code>, return <em>the length of the longest 
-substring (A substring is a contiguous non-empty sequence of characters within a string.) that contains at most <strong>two distinct characters</strong></em>.</p>
+    <p>Given an <code>m x n</code> binary matrix <code>mat</code>, return the number of special positions in <code>mat</code>.</p>
+<p>A position <code>(i, j)</code> is called special if <code>mat[i][j] == 1</code> and all other elements in row <code>i</code> and column <code>j</code> are <code>0</code> (rows and columns are <strong>0-indexed</strong>).</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;eceba&#34;
-Output: 3
-Explanation: The substring is &#34;ece&#34; which its length is 3.
+<pre tabindex="0"><code>1 0 0
+0 0[1]
+1 0 0
+
+Input: mat = [[1,0,0],[0,0,1],[1,0,0]]
+Output: 1
+Explanation: (1, 2) is a special position because mat[1][2] == 1
+and all other elements in row 1 and column 2 are 0.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;ccaabbb&#34;
-Output: 5
-Explanation: The substring is &#34;aabbb&#34; which its length is 5.
+<pre tabindex="0"><code>[1]0 0
+ 0[1]0
+ 0 0[1]
+
+Input: mat = [[1,0,0],[0,1,0],[0,0,1]]
+Output: 3
+Explanation: (0, 0), (1, 1) and (2, 2) are special positions.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-<li><code>s</code> consists of English letters.</li>
+<li><code>m == mat.length</code></li>
+<li><code>n == mat[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 100</code></li>
+<li><code>mat[i][j]</code> is either <code>0</code> or <code>1</code>.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -101,27 +112,17 @@ Explanation: The substring is &#34;aabbb&#34; which its length is 5.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">lengthOfLongestSubstringTwoDistinct</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        left = right = -<span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        d = defaultdict(<span style="color:#0aa">int</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">numSpecial</span>(self, mat: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        row_sums = [<span style="color:#0aa">sum</span>(r) <span style="color:#00a">for</span> r <span style="color:#00a">in</span> mat]
+</span></span><span style="display:flex;"><span>        col_sums = [<span style="color:#0aa">sum</span>([r[i] <span style="color:#00a">for</span> r <span style="color:#00a">in</span> mat]) <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(mat[<span style="color:#099">0</span>]))]
 </span></span><span style="display:flex;"><span>        res = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> right &lt; <span style="color:#0aa">len</span>(s)-<span style="color:#099">1</span>:
-</span></span><span style="display:flex;"><span>            right += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            d[s[right]] += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> <span style="color:#0aa">len</span>(d) &gt; <span style="color:#099">2</span>:
-</span></span><span style="display:flex;"><span>                left += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                d[s[left]] -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> d[s[left]] == <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>                    <span style="color:#00a">del</span> d[s[left]]
-</span></span><span style="display:flex;"><span>            res = <span style="color:#0aa">max</span>(res, right-left)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(mat)):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(mat[<span style="color:#099">0</span>])):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> mat[i][j] == <span style="color:#099">1</span> <span style="color:#00a">and</span> row_sums[i] == <span style="color:#099">1</span> <span style="color:#00a">and</span> col_sums[j] == <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>                    res += <span style="color:#099">1</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res</span></span></code></pre></td></tr></table>
 </div>
 </div>
