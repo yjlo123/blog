@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>159 Longest Substring with At Most Two Distinct Characters</title>
+        <title>974 Subarray Sums Divisible by K</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>159 Longest Substring with At Most Two Distinct Characters</h1>
+  <h1>974 Subarray Sums Divisible by K</h1>
   <div class="blog-post-subheader">
     
     <time>Nov 2022</time>
@@ -65,26 +65,23 @@
      <a href="/tags/lc_medium">lc_medium</a>
    </li>
   
-   <li>
-     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
-   </li>
-  
 </ul>
 <div class="blog-post-content">
-    <p>Given a string <code>s</code>, return <em>the length of the longest
-substring (A substring is a contiguous non-empty sequence of characters within a string.) that contains at most <strong>two distinct characters</strong></em>.</p>
+    <p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <em>the number of non-empty <strong>subarrays</strong> that have a sum divisible by <code>k</code></em>.</p>
+<p>A <strong>subarray</strong> is a <strong>contiguous</strong> part of an array.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;eceba&#34;
-Output: 3
-Explanation: The substring is &#34;ece&#34; which its length is 3.
+<pre tabindex="0"><code>Input: nums = [4,5,0,-2,-3,1], k = 5
+Output: 7
+Explanation: There are 7 subarrays with a sum divisible by k = 5:
+[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;ccaabbb&#34;
-Output: 5
-Explanation: The substring is &#34;aabbb&#34; which its length is 5.
+<pre tabindex="0"><code>Input: nums = [5], k = 9
+Output: 0
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-<li><code>s</code> consists of English letters.</li>
+<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+<li><code>2 &lt;= k &lt;= 10<sup>4</sup></code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -104,24 +101,20 @@ Explanation: The substring is &#34;aabbb&#34; which its length is 5.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">lengthOfLongestSubstringTwoDistinct</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        left = right = -<span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        d = defaultdict(<span style="color:#0aa">int</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">subarraysDivByK</span>(self, nums: List[<span style="color:#0aa">int</span>], k: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># sum[i] - sum[j] = k * x</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># (sum[i] - sum[j]) % k  == (k * x) % k == 0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># sum[i] % k == sum[j] % k</span>
 </span></span><span style="display:flex;"><span>        res = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> right &lt; <span style="color:#0aa">len</span>(s)-<span style="color:#099">1</span>:
-</span></span><span style="display:flex;"><span>            right += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            d[s[right]] += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> <span style="color:#0aa">len</span>(d) &gt; <span style="color:#099">2</span>:
-</span></span><span style="display:flex;"><span>                left += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                d[s[left]] -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> d[s[left]] == <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>                    <span style="color:#00a">del</span> d[s[left]]
-</span></span><span style="display:flex;"><span>            res = <span style="color:#0aa">max</span>(res, right-left)
+</span></span><span style="display:flex;"><span>        prefix = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        count = [<span style="color:#099">1</span>] + [<span style="color:#099">0</span>] * k
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> num <span style="color:#00a">in</span> nums:
+</span></span><span style="display:flex;"><span>            prefix = (prefix + num) % k
+</span></span><span style="display:flex;"><span>            res += count[prefix]
+</span></span><span style="display:flex;"><span>            count[prefix] += <span style="color:#099">1</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res</span></span></code></pre></td></tr></table>
 </div>
 </div>
