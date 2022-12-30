@@ -6,8 +6,7 @@ draft: false
 tags: ["leetcode", "lc_medium", "lc_two_pointers"]
 ---
 
-Given a string `s`, return _the length of the longest 
-substring (A substring is a contiguous non-empty sequence of characters within a string.) that contains at most **two distinct characters**_.
+Given a string `s`, return _the length of the longest substring (A substring is a contiguous non-empty sequence of characters within a string.) that contains at most **two distinct characters**_.
 
 **Example 1:**
 ```
