@@ -908,6 +908,9 @@
     <loc>https://blog.siwei.dev/leetcode/1603-design-parking-system/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1610-maximum-number-of-visible-points/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1614-maximum-nesting-depth-of-the-parentheses/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1007,6 +1010,9 @@
     <loc>https://blog.siwei.dev/tags/lc_ood/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_sliding_window/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_sorting/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1101,9 +1107,6 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_random/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_sliding_window/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_trie/</loc>
