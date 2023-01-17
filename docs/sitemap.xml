@@ -521,6 +521,9 @@
     <loc>https://blog.siwei.dev/leetcode/525-contiguous-array/</loc>
     <lastmod>2021-03-27T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/528-random-pick-with-weight/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/535-encode-and-decode-tinyurl/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1019,6 +1022,12 @@
     <loc>https://blog.siwei.dev/tags/lc_ood/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_presum/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_random/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_sliding_window/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1110,9 +1119,6 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_queue/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_random/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_trie/</loc>
