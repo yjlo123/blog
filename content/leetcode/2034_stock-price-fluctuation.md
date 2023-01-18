@@ -3,7 +3,7 @@ weight: 2034
 title: "2034 Stock Price Fluctuation"
 date: 2023-01-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_ood", "lc_heap", "lc_hashtable"]
+tags: ["leetcode", "lc_medium", "lc_ood", "lc_heap", "lc_hash_table"]
 ---
 
 You are given a stream of **records** about a particular stock. Each record contains a **timestamp** and the corresponding price of the stock at that timestamp.
