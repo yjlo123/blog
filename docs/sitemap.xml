@@ -995,6 +995,9 @@
     <loc>https://blog.siwei.dev/leetcode/2130-maximum-twin-sum-of-a-linked-list/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/2158-amount-of-new-area-painted-each-day/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/2184-number-of-ways-to-build-sturdy-brick-wall/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1034,6 +1037,9 @@
     <loc>https://blog.siwei.dev/leetcode/2416-sum-of-prefix-scores-of-strings/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_array/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1047,6 +1053,9 @@
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_hash_table/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_hashtable/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_heap/</loc>
@@ -1105,9 +1114,6 @@
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bst/</loc>
     <lastmod>2022-12-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_array/</loc>
-    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
