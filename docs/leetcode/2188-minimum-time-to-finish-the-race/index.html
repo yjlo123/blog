@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+        <title>2188 Minimum Time to Finish the Race</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>2188 Minimum Time to Finish the Race</h1>
+  <div class="blog-post-subheader">
+    
+    <time>Jan 2023</time>
+    <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
+    
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_hard">lc_hard</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_dp">lc_dp</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>You are given a <strong>0-indexed</strong> 2D integer array <code>tires</code> where <code>tires[i] = [f<sub>i</sub>, r<sub>i</sub>]</code> indicates that the <code>i<sup>th</sup></code> tire can finish its <code>x<sup>th</sup></code> successive lap in <code>f<sub>i</sub> * r<sub>i</sub><sup>(x-1)</sup></code> seconds.</p>
+<ul>
+<li>For example, if <code>f<sub>i</sub> = 3</code> and <code>r<sub>i</sub> = 2</code>, then the tire would finish its <code>1<sup>st</sup></code> lap in 3 seconds, its <code>2<sup>nd</sup></code> lap in <code>3 * 2 = 6</code> seconds, its <code>3<sup>rd</sup></code> lap in <code>3 * 2<sup>2</sup> = 12</code> seconds, etc.</li>
+</ul>
+<p>You are also given an integer <code>changeTime</code> and an integer <code>numLaps</code>.</p>
+<p>The race consists of <code>numLaps</code> laps and you may start the race with <strong>any</strong> tire. You have an <strong>unlimited</strong> supply of each tire and after every lap, you may <strong>change</strong> to any given tire (including the current tire type) if you wait <code>changeTime</code> seconds.</p>
+<p>Return <em>the <strong>minimum</strong> time to finish the race</em>.</p>
+<p><strong>Example 1:</strong></p>
+<pre tabindex="0"><code>Input: tires = [[2,3],[3,4]], changeTime = 5, numLaps = 4
+Output: 21
+Explanation: 
+Lap 1: Start with tire 0 and finish the lap in 2 seconds.
+Lap 2: Continue with tire 0 and finish the lap in 2 * 3 = 6 seconds.
+Lap 3: Change tires to a new tire 0 for 5 seconds and then finish the lap in another 2 seconds.
+Lap 4: Continue with tire 0 and finish the lap in 2 * 3 = 6 seconds.
+Total time = 2 + 6 + 5 + 2 + 6 = 21 seconds.
+The minimum time to complete the race is 21 seconds.
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>Input: tires = [[1,10],[2,2],[3,4]], changeTime = 6, numLaps = 5
+Output: 25
+Explanation: 
+Lap 1: Start with tire 1 and finish the lap in 2 seconds.
+Lap 2: Continue with tire 1 and finish the lap in 2 * 2 = 4 seconds.
+Lap 3: Change tires to a new tire 1 for 6 seconds and then finish the lap in another 2 seconds.
+Lap 4: Continue with tire 1 and finish the lap in 2 * 2 = 4 seconds.
+Lap 5: Change tires to tire 0 for 6 seconds then finish the lap in another 1 second.
+Total time = 2 + 4 + 6 + 2 + 4 + 6 + 1 = 25 seconds.
+The minimum time to complete the race is 25 seconds. 
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= tires.length &lt;= 10<sup>5</sup></code></li>
+<li><code>tires[i].length == 2</code></li>
+<li><code>1 &lt;= f<sub>i</sub>, changeTime &lt;= 10<sup>5</sup></code></li>
+<li><code>2 &lt;= r<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= numLaps &lt;= 1000</code></li>
+</ul>
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minimumFinishTime</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        tires: List[List[<span style="color:#0aa">int</span>]],
+</span></span><span style="display:flex;"><span>        changeTime: <span style="color:#0aa">int</span>,
+</span></span><span style="display:flex;"><span>        numLaps: <span style="color:#0aa">int</span>
+</span></span><span style="display:flex;"><span>    ) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        dp = [math.inf] * (numLaps + <span style="color:#099">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> f, r <span style="color:#00a">in</span> tires:
+</span></span><span style="display:flex;"><span>            cur_cost = f
+</span></span><span style="display:flex;"><span>            total_cost = f
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>, numLaps + <span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> i &gt; <span style="color:#099">16</span>: <span style="color:#00a">break</span>
+</span></span><span style="display:flex;"><span>                dp[i] = <span style="color:#0aa">min</span>(dp[i], total_cost)
+</span></span><span style="display:flex;"><span>                cur_cost *= r
+</span></span><span style="display:flex;"><span>                total_cost += cur_cost
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>, numLaps + <span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>, i):
+</span></span><span style="display:flex;"><span>                <span style="color:#aaa;font-style:italic"># if we switch tire at jth point </span>
+</span></span><span style="display:flex;"><span>                dp[i] = <span style="color:#0aa">min</span>(dp[i], dp[j] + changeTime + dp[i - j])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dp[-<span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">Fast
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minimumFinishTime</span>(
+</span></span><span style="display:flex;"><span>        self,
+</span></span><span style="display:flex;"><span>        tires: List[List[<span style="color:#0aa">int</span>]],
+</span></span><span style="display:flex;"><span>        changeTime: <span style="color:#0aa">int</span>,
+</span></span><span style="display:flex;"><span>        numLaps: <span style="color:#0aa">int</span>
+</span></span><span style="display:flex;"><span>    ) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        tires.sort()
+</span></span><span style="display:flex;"><span>        new_tire = []
+</span></span><span style="display:flex;"><span>        dp = [changeTime * (i-<span style="color:#099">1</span>) + tires[<span style="color:#099">0</span>][<span style="color:#099">0</span>] * i <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(numLaps+<span style="color:#099">1</span>)]
+</span></span><span style="display:flex;"><span>        dp[<span style="color:#099">0</span>] = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        maxi = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> f, r <span style="color:#00a">in</span> tires:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#00a">not</span> new_tire <span style="color:#00a">or</span> f &gt; new_tire[<span style="color:#099">0</span>] <span style="color:#00a">and</span> r &lt; new_tire[<span style="color:#099">1</span>]:
+</span></span><span style="display:flex;"><span>                new_tire = [f, r]
+</span></span><span style="display:flex;"><span>                t = f
+</span></span><span style="display:flex;"><span>                i = <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">while</span> i &lt; numLaps <span style="color:#00a">and</span> t * (r-<span style="color:#099">1</span>) &lt; changeTime:
+</span></span><span style="display:flex;"><span>                    t = t*r + f
+</span></span><span style="display:flex;"><span>                    i += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> dp[i] &gt; t:
+</span></span><span style="display:flex;"><span>                        dp[i] = t
+</span></span><span style="display:flex;"><span>                        maxi = <span style="color:#0aa">max</span>(i, maxi)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(numLaps + <span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">min</span>(i, maxi+<span style="color:#099">1</span>)):
+</span></span><span style="display:flex;"><span>                dp[i] = <span style="color:#0aa">min</span>(dp[i], dp[j] + changeTime + dp[i-j])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dp[numLaps]</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2023
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+      <br/>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+
+      (function(){
+        let first = true;
+        $(".tab-content").children(".lang").each(function () {
+          let tabId = $(this).attr("id");
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          first = false;
+        });
+
+        $(".lang").slice(1).each(function() {
+          $(this).hide();
+        })
+      })();
+
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
+  </body>
+</html>
+
