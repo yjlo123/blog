@@ -89,8 +89,19 @@ x ≥ log bucket / log states
 {{< highlight python "linenos=table" >}}
 class Solution:
     def poorPigs(self, buckets: int, minutesToDie: int, minutesToTest: int) -> int:
+        '''
+        If there are k experiments, then each pig has (k+1) states
+        (never die, die at experiment 1, die at experiment 2, and so on)
+        num pigs can be encoded into (k+1)^num cases
+        We should map each case to a poisonous bucket:
+        (k+1)^num >= buckets
+        '''
         states = minutesToTest // minutesToDie + 1
-        return math.ceil(math.log(buckets) / math.log(states))
+        mid=math.log(buckets) / math.log(states)
+        if mid - int(mid) < 0.000000000000001:
+            return int(mid)
+        else:
+            return int(mid) + 1
 {{< / highlight >}}
 </div>
 </div>
