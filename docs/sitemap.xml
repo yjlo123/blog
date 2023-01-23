@@ -788,6 +788,9 @@
     <loc>https://blog.siwei.dev/leetcode/1129-shortest-path-with-alternating-colors/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1136-parallel-courses/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1137-n-th-tribonacci-number/</loc>
     <lastmod>2021-09-19T00:00:00-04:00</lastmod>
   </url><url>
@@ -910,6 +913,9 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1472-design-browser-history/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1480-running-sum-of-1d-array/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1492-the-kth-factor-of-n/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
@@ -1052,6 +1058,9 @@
     <loc>https://blog.siwei.dev/tags/lc_array/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1134,9 +1143,6 @@
     <lastmod>2022-12-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
-    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_bfs/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_greedy/</loc>
