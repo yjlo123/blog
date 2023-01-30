@@ -3,7 +3,7 @@ weight: 528
 title: "528 Random Pick with Weight"
 date: 2023-01-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_random", "lc_binary_search", "lc_presum"]
+tags: ["leetcode", "lc_medium", "lc_random", "lc_binary_search", "lc_prefix_sum"]
 ---
 
 You are given a **0-indexed** array of positive integers `w` where `w[i]` describes the weight of the <code>i<sup>th</sup></code> index.

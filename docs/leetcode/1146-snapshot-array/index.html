@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>528 Random Pick with Weight</title>
+        <title>1146 Snapshot Array</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>528 Random Pick with Weight</h1>
+  <h1>1146 Snapshot Array</h1>
   <div class="blog-post-subheader">
     
     <time>Jan 2023</time>
@@ -66,66 +66,35 @@
    </li>
   
    <li>
-     <a href="/tags/lc_random">lc_random</a>
-   </li>
-  
-   <li>
      <a href="/tags/lc_binary_search">lc_binary_search</a>
-   </li>
-  
-   <li>
-     <a href="/tags/lc_prefix_sum">lc_prefix_sum</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given a <strong>0-indexed</strong> array of positive integers <code>w</code> where <code>w[i]</code> describes the weight of the <code>i<sup>th</sup></code> index.</p>
-<p>You need to implement the function <code>pickIndex()</code>, which randomly picks an index in the range <code>[0, w.length - 1]</code> (<strong>inclusive</strong>) and returns it. The probability of picking an index <code>i</code> is <code>w[i] / sum(w)</code>.</p>
+    <p>Implement a SnapshotArray that supports the following interface:</p>
 <ul>
-<li>For example, if <code>w = [1, 3]</code>, the probability of picking index <code>0</code> is <code>1 / (1 + 3) = 0.25</code> (i.e., <code>25%</code>), and the probability of picking index <code>1</code> is <code>3 / (1 + 3) = 0.75</code> (i.e., <code>75%</code>).</li>
+<li><code>SnapshotArray(int length)</code> initializes an array-like data structure with the given length. <strong>Initially, each element equals 0</strong>.</li>
+<li><code>void set(index, val)</code> sets the element at the given <code>index</code> to be equal to <code>val</code>.</li>
+<li><code>int snap()</code> takes a snapshot of the array and returns the <code>snap_id</code>: the total number of times we called <code>snap()</code> minus <code>1</code>.</li>
+<li><code>int get(index, snap_id)</code> returns the value at the given <code>index</code>, at the time we took the snapshot with the given <code>snap_id</code></li>
 </ul>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input
-[&#34;Solution&#34;,&#34;pickIndex&#34;]
-[[[1]],[]]
-Output
-[null,0]
-
-Explanation
-Solution solution = new Solution([1]);
-solution.pickIndex(); // return 0.
-The only option is to return 0 since there is only one element in w.
-</code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input
-[&#34;Solution&#34;,&#34;pickIndex&#34;,&#34;pickIndex&#34;,&#34;pickIndex&#34;,&#34;pickIndex&#34;,&#34;pickIndex&#34;]
-[[[1,3]],[],[],[],[],[]]
-Output
-[null,1,1,1,1,0]
-
-Explanation
-Solution solution = new Solution([1, 3]);
-solution.pickIndex(); // return 1.
-It is returning the second element (index = 1) that has a probability of 3/4.
-solution.pickIndex(); // return 1
-solution.pickIndex(); // return 1
-solution.pickIndex(); // return 1
-solution.pickIndex(); // return 0.
-It is returning the first element (index = 0) that has a probability of 1/4.
-
-Since this is a randomization problem, multiple answers are allowed.
-All of the following outputs can be considered correct:
-[null,1,1,1,1,0]
-[null,1,1,1,1,1]
-[null,1,1,1,0,0]
-[null,1,1,1,0,1]
-[null,1,0,1,0,0]
-......
-and so on.
+<pre tabindex="0"><code>Input: [&#34;SnapshotArray&#34;,&#34;set&#34;,&#34;snap&#34;,&#34;set&#34;,&#34;get&#34;]
+[[3],[0,5],[],[0,6],[0,0]]
+Output: [null,null,0,null,5]
+Explanation: 
+SnapshotArray snapshotArr = new SnapshotArray(3); // set the length to be 3
+snapshotArr.set(0,5);  // Set array[0] = 5
+snapshotArr.snap();  // Take a snapshot, return snap_id = 0
+snapshotArr.set(0,6);
+snapshotArr.get(0,0);  // Get the value of array[0] with snap_id = 0, return 5
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= w.length &lt;= 10<sup>4</sup></code></li>
-<li><code>1 &lt;= w[i] &lt;= 10<sup>5</sup></code></li>
-<li><code>pickIndex</code> will be called at most <code>10<sup>4</sup></code> times.</li>
+<li><code>1 &lt;= length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= index &lt; length</code></li>
+<li><code>0 &lt;= val &lt;= 10<sup>9</sup></code></li>
+<li><code>0 &lt;= snap_id &lt; </code>(the total number of times we call <code>snap()</code>)</li>
+<li>At most <code>5 * 10<sup>4</sup></code> calls will be made to <code>set</code>, <code>snap</code>, and <code>get</code>.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -147,23 +116,51 @@ and so on.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">SnapshotArray</span>:
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self, w: List[<span style="color:#0aa">int</span>]):
-</span></span><span style="display:flex;"><span>        self.presum = [<span style="color:#099">0</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> v <span style="color:#00a">in</span> w:
-</span></span><span style="display:flex;"><span>            self.presum.append(self.presum[-<span style="color:#099">1</span>] + v)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self, length: <span style="color:#0aa">int</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#a50">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        [
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">            [[snap_id, val_0], ...]
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">            [[snap_id, val_1], ...]
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        ]
+</span></span></span><span style="display:flex;"><span><span style="color:#a50">        &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        self.array = [[[-<span style="color:#099">1</span>, <span style="color:#099">0</span>]] <span style="color:#00a">for</span> _ <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(length)]
+</span></span><span style="display:flex;"><span>        self.snap_id = <span style="color:#099">0</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">pickIndex</span>(self) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        rv = random.randint(<span style="color:#099">1</span>, self.presum[-<span style="color:#099">1</span>])
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> bisect.bisect_left(self.presum, rv) - <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">set</span>(self, index: <span style="color:#0aa">int</span>, val: <span style="color:#0aa">int</span>) -&gt; <span style="color:#00a">None</span>:
+</span></span><span style="display:flex;"><span>        self.array[index].append([self.snap_id, val])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">snap</span>(self) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        self.snap_id += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.snap_id - <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">get</span>(self, index: <span style="color:#0aa">int</span>, snap_id: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        idx = bisect.bisect(self.array[index], [snap_id+<span style="color:#099">1</span>]) - <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.array[index][idx][<span style="color:#099">1</span>]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your Solution object will be instantiated and called as such:</span>
-</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj = Solution(w)</span>
-</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_1 = obj.pickIndex()</span></span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your SnapshotArray object will be instantiated and called as such:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj = SnapshotArray(length)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj.set(index,val)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_2 = obj.snap()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_3 = obj.get(index,snap_id)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

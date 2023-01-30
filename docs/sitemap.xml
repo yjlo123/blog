@@ -797,6 +797,9 @@
     <loc>https://blog.siwei.dev/leetcode/1143-longest-common-subsequence/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1146-snapshot-array/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1151-minimum-swaps-to-group-all-1s-together/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1082,9 +1085,6 @@
     <loc>https://blog.siwei.dev/tags/lc_hash_table/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_hashtable/</loc>
-    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
-  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_heap/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1100,7 +1100,7 @@
     <loc>https://blog.siwei.dev/tags/lc_ood/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_presum/</loc>
+    <loc>https://blog.siwei.dev/tags/lc_prefix_sum/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_random/</loc>
@@ -1173,9 +1173,6 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_ordered_dict/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_prefix_sum/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_queue/</loc>

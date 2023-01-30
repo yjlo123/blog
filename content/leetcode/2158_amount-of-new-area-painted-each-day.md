@@ -3,7 +3,7 @@ weight: 2158
 title: "2158 Amount of New Area Painted Each Day"
 date: 2023-01-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_hard", "lc_array", "lc_hashtable"]
+tags: ["leetcode", "lc_hard", "lc_array", "lc_hash_table"]
 ---
 
 There is a long and thin painting that can be represented by a number line. You are given a **0-indexed** 2D integer array `paint` of length `n`, where <code>paint[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>. This means that on the ith day you need to paint the area between <code>start<sub>i</sub></code> and <code>end<sub>i</sub></code>.
