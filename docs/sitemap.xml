@@ -710,6 +710,9 @@
     <loc>https://blog.siwei.dev/leetcode/937-reorder-data-in-log-files/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/938-range-sum-of-bst/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/947-most-stones-removed-with-same-row-or-column/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1055,6 +1058,9 @@
     <loc>https://blog.siwei.dev/leetcode/2345-finding-the-number-of-visible-mountains/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/2366-minimum-replacements-to-sort-the-array/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/2402-meeting-rooms-iii/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1077,6 +1083,9 @@
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_easy/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_greedy/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
@@ -1146,9 +1155,6 @@
     <lastmod>2022-12-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
-    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_greedy/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
