@@ -434,6 +434,9 @@
     <loc>https://blog.siwei.dev/leetcode/370-range-addition/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/379-design-phone-directory/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/380-insert-delete-getrandom-o1/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -956,6 +959,9 @@
     <loc>https://blog.siwei.dev/leetcode/1603-design-parking-system/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1606-find-servers-that-handled-most-number-of-requests/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1610-maximum-number-of-visible-points/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1073,6 +1079,9 @@
     <loc>https://blog.siwei.dev/leetcode/2416-sum-of-prefix-scores-of-strings/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/2421-number-of-good-paths/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/2458-height-of-binary-tree-after-subtree-removal-queries/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1119,6 +1128,9 @@
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_prefix_sum/</loc>
+    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_queue/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_random/</loc>
@@ -1188,9 +1200,6 @@
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_ordered_dict/</loc>
-    <lastmod>2022-09-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_queue/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/prefix_product/</loc>

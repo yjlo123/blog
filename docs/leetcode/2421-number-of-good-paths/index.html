@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <link rel="shortcut icon" href="/favicon.gif">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+        <title>2421 Number of Good Paths</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1">
+            <a href="/"><img src='/yjlo.png' /></a>
+          </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          
+        </section>
+
+
+<div class="blog-post">
+  <h1>2421 Number of Good Paths</h1>
+  <div class="blog-post-subheader">
+    
+    <time>Jan 2023</time>
+    <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
+    
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/leetcode">leetcode</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_hard">lc_hard</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_union_find">lc_union_find</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>There is a tree (i.e. a connected, undirected graph with no cycles) consisting of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code> and exactly <code>n - 1</code> edges.</p>
+<p>You are given a 0-indexed integer array <code>vals</code> of length <code>n</code> where <code>vals[i]</code> denotes the value of the <code>i<sup>th</sup></code> node. You are also given a 2D integer array <code>edges</code> where <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> denotes that there exists an undirected edge connecting nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code>.</p>
+<p>A <strong>good path</strong> is a simple path that satisfies the following conditions:</p>
+<p>The starting node and the ending node have the <strong>same</strong> value.
+All nodes between the starting node and the ending node have values <strong>less than or equal to</strong> the starting node (i.e. the starting node&rsquo;s value should be the maximum value along the path).
+Return <em>the number of distinct good paths</em>.</p>
+<p>Note that a path and its reverse are counted as the same path. For example, <code>0 -&gt; 1</code> is considered to be the same as <code>1 -&gt; 0</code>. A single node is also considered as a valid path.</p>
+<p><strong>Example 1:</strong></p>
+<pre tabindex="0"><code>   0(1)
+  /    \
+1(3)   2(2)
+      /    \
+    3(1)   4(3)
+
+Input: vals = [1,3,2,1,3], edges = [[0,1],[0,2],[2,3],[2,4]]
+Output: 6
+Explanation: There are 5 good paths consisting of a single node.
+There is 1 additional good path: 1 -&gt; 0 -&gt; 2 -&gt; 4.
+(The reverse path 4 -&gt; 2 -&gt; 0 -&gt; 1 is treated as the same as 1 -&gt; 0 -&gt; 2 -&gt; 4.)
+Note that 0 -&gt; 2 -&gt; 3 is not a good path because vals[2] &gt; vals[0].
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>     0(1)
+      /
+    1(1)
+     /
+   2(2)
+  /    \
+3(2)   4(3)
+
+Input: vals = [1,1,2,2,3], edges = [[0,1],[1,2],[2,3],[2,4]]
+Output: 7
+Explanation: There are 5 good paths consisting of a single node.
+There are 2 additional good paths: 0 -&gt; 1 and 2 -&gt; 3.
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code> 0(1)
+
+Input: vals = [1], edges = []
+Output: 1
+Explanation: The tree consists of only one node, so there is one good path.
+</code></pre><p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == vals.length</code></li>
+<li><code>1 &lt;= n &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= vals[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>edges.length == n - 1</code></li>
+<li><code>edges[i].length == 2</code></li>
+<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt; n</code></li>
+<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
+<li><code>edges</code> represents a valid tree.</li>
+</ul>
+<div class="tabs"></div>
+<div class="tab-content">
+<div id="python" class="lang">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">numberOfGoodPaths</span>(self, vals: List[<span style="color:#0aa">int</span>], edges: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(vals)
+</span></span><span style="display:flex;"><span>        parent = [i <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n)]
+</span></span><span style="display:flex;"><span>        rank = [<span style="color:#099">0</span>] * n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">find</span>(x):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> parent[x] != x:
+</span></span><span style="display:flex;"><span>                parent[x] = find(parent[x])
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> parent[x]
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">union</span>(x, y):
+</span></span><span style="display:flex;"><span>            hx, hy = find(x), find(y)
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> hx == hy:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> rank[hx] &lt; rank[hy]:
+</span></span><span style="display:flex;"><span>                parent[hx] = hy
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> rank[hx] &gt; rank[hy]:
+</span></span><span style="display:flex;"><span>                parent[hy] = hx
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>                parent[hy] = hx
+</span></span><span style="display:flex;"><span>                rank[hx] += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        adj = defaultdict(<span style="color:#0aa">list</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> a, b <span style="color:#00a">in</span> edges:
+</span></span><span style="display:flex;"><span>            adj[a].append(b)
+</span></span><span style="display:flex;"><span>            adj[b].append(a)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        val_to_nodes = defaultdict(<span style="color:#0aa">list</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n):
+</span></span><span style="display:flex;"><span>            val_to_nodes[vals[i]].append(i)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        path_count = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> val <span style="color:#00a">in</span> <span style="color:#0aa">sorted</span>(val_to_nodes.keys()):
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># process nodes from smallest to largest value</span>
+</span></span><span style="display:flex;"><span>            nodes = val_to_nodes[val]
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> node <span style="color:#00a">in</span> nodes:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> node <span style="color:#00a">not</span> <span style="color:#00a">in</span> adj:
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">continue</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">for</span> neighbor <span style="color:#00a">in</span> adj[node]:
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> vals[node] &gt;= vals[neighbor]:
+</span></span><span style="display:flex;"><span>                        union(node, neighbor)
+</span></span><span style="display:flex;"><span>            group = defaultdict(<span style="color:#0aa">int</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> u <span style="color:#00a">in</span> val_to_nodes[val]:
+</span></span><span style="display:flex;"><span>                hu = find(u)
+</span></span><span style="display:flex;"><span>                group[hu] = group[hu] + <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> size <span style="color:#00a">in</span> group.values():
+</span></span><span style="display:flex;"><span>                path_count += size * (size + <span style="color:#099">1</span>) // <span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> path_count</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2023
+          <a href="https://siwei.dev/" target="_blank">siwei.dev</a>
+        </small>
+      </footer>
+      <br/>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+
+      (function(){
+        let first = true;
+        $(".tab-content").children(".lang").each(function () {
+          let tabId = $(this).attr("id");
+          let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          first = false;
+        });
+
+        $(".lang").slice(1).each(function() {
+          $(this).hide();
+        })
+      })();
+
+      function showLang(evt, lang) {
+        var i;
+        var x = document.getElementsByClassName("lang");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(lang).style.display = "block";
+      
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" tab-btn-active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        evt.currentTarget.className += " tab-btn-active";
+      }
+    </script>
+  </body>
+</html>
+
