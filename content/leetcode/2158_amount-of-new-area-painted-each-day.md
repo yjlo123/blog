@@ -6,7 +6,7 @@ draft: false
 tags: ["leetcode", "lc_hard", "lc_array", "lc_hash_table"]
 ---
 
-There is a long and thin painting that can be represented by a number line. You are given a **0-indexed** 2D integer array `paint` of length `n`, where <code>paint[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>. This means that on the ith day you need to paint the area between <code>start<sub>i</sub></code> and <code>end<sub>i</sub></code>.
+There is a long and thin painting that can be represented by a number line. You are given a **0-indexed** 2D integer array `paint` of length `n`, where <code>paint[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>. This means that on the <code>i<sup>th</sup></code> day you need to paint the area between <code>start<sub>i</sub></code> and <code>end<sub>i</sub></code>.
 
 Painting the same area multiple times will create an uneven painting so you only want to paint each area of the painting at most **once**.
 
