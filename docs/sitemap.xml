@@ -857,6 +857,9 @@
     <loc>https://blog.siwei.dev/leetcode/1249-minimum-remove-to-make-valid-parentheses/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1263-minimum-moves-to-move-a-box-to-their-target-location/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1268-search-suggestions-system/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1097,6 +1100,9 @@
     <loc>https://blog.siwei.dev/leetcode/2458-height-of-binary-tree-after-subtree-removal-queries/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_dfs/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/lc_dp/</loc>
     <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1137,9 +1143,6 @@
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_binary_search/</loc>
-    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_dfs/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_easy/</loc>
