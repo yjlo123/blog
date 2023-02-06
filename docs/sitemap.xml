@@ -827,6 +827,9 @@
     <loc>https://blog.siwei.dev/leetcode/1169-invalid-transactions/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1171-remove-zero-sum-consecutive-nodes-from-linked-list/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1192-critical-connections-in-a-network/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1079,6 +1082,9 @@
     <loc>https://blog.siwei.dev/leetcode/2303-calculate-amount-paid-in-taxes/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/2332-the-latest-time-to-catch-a-bus/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/2345-finding-the-number-of-visible-mountains/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1110,6 +1116,9 @@
     <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_hard/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
     <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_math/</loc>
@@ -1194,9 +1203,6 @@
     <lastmod>2022-12-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
-    <lastmod>2022-11-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_linked_list/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_matrix/</loc>
