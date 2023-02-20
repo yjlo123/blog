@@ -58,53 +58,6 @@ Room 0 held 1 meeting while rooms 1 and 2 each held 2 meetings, so we return 1.
 <div class="tab-content">
 <div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
-from collections import deque
-
-class Solution:
-    
-    def mostBooked(self, n: int, meetings: List[List[int]]) -> int:
-        room_count = [0] * n
-        avail_rooms = [i for i in range(n)] # heap of room_id
-        heapq.heapify(avail_rooms)
-
-        current_meetings = []  # min heap: (end_time, room_id)
-        delayed_meetings = deque([])  # (duration)
-        pending_meetings = deque(sorted(meetings))  # (start, end)
-
-        while pending_meetings or delayed_meetings:
-            # == process delayed meeting
-            if delayed_meetings:
-                delay_meeting_duration = delayed_meetings.popleft()
-                end_time, room_id = heapq.heappop(current_meetings)
-                room_count[room_id] += 1
-                heapq.heappush(
-                    current_meetings,
-                    (end_time + delay_meeting_duration, room_id)
-                )
-                continue
-
-            # == process pending meeting
-            start, end = pending_meetings.popleft()
-
-            # release rooms
-            while current_meetings and current_meetings[0][0] <= start:
-                _, released_room_id = heapq.heappop(current_meetings)
-                heapq.heappush(avail_rooms, released_room_id)
-            
-            if not avail_rooms:
-                # all rooms being used
-                delayed_meetings.append(end - start)
-            else:
-                room_id = heapq.heappop(avail_rooms)
-                heapq.heappush(current_meetings, (end, room_id))
-                room_count[room_id] += 1
-
-        return room_count.index(max(room_count))
-
-
-'''
-Simpler Version
-'''
 class Solution:
     
     def mostBooked(self, n: int, meetings: List[List[int]]) -> int:

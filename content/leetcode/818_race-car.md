@@ -54,6 +54,8 @@ class Solution:
             return self.dp[target]
 
         n = target.bit_length()
+        # 2^n exactly at target or just over target
+        # 2^(n-1) just before target
         if 2**n - 1 == target:
             self.dp[target] = n
         else:

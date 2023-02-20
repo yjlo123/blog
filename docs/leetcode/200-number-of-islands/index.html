@@ -220,9 +220,9 @@ Output: 3
 </span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> grid[i][j] == <span style="color:#a50">&#39;0&#39;</span>:
 </span></span><span style="display:flex;"><span>                    <span style="color:#00a">continue</span>
 </span></span><span style="display:flex;"><span>                idx = i * n + j
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> j &lt; n-<span style="color:#099">1</span> <span style="color:#00a">and</span> grid[i][j+<span style="color:#099">1</span>] == <span style="color:#a50">&#39;1&#39;</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> j+<span style="color:#099">1</span> &lt; n <span style="color:#00a">and</span> grid[i][j+<span style="color:#099">1</span>] == <span style="color:#a50">&#39;1&#39;</span>:
 </span></span><span style="display:flex;"><span>                    union(idx, idx+<span style="color:#099">1</span>)
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> i &lt; m-<span style="color:#099">1</span> <span style="color:#00a">and</span> grid[i+<span style="color:#099">1</span>][j] == <span style="color:#a50">&#39;1&#39;</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> i+<span style="color:#099">1</span> &lt; m <span style="color:#00a">and</span> grid[i+<span style="color:#099">1</span>][j] == <span style="color:#a50">&#39;1&#39;</span>:
 </span></span><span style="display:flex;"><span>                    union(idx, idx+n)
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> self.count</span></span></code></pre></td></tr></table>
 </div>

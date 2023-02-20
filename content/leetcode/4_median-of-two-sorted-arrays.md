@@ -83,10 +83,12 @@ class Solution:
         ma, mb = a[ia], b[ib]
         
         if ia + ib < k:
+            # remove from the front
             if ma > mb:
                 return self.kth(a, b[ib+1:], k - ib - 1)
             return self.kth(a[ia+1:], b, k - ia - 1)
         else:
+            # remove from the back
             if ma > mb:
                 return self.kth(a[:ia], b, k)
             return self.kth(a, b[:ib], k)

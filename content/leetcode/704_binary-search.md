@@ -3,7 +3,7 @@ weight: 704
 title: "704 Binary Search"
 date: 2021-09-18T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_easy", "lc_binary_search"]
+tags: ["leetcode", "lc_easy", "lc_binary_search", "lc_deque"]
 ---
 
 Given an array of integers `nums` which is sorted in ascending order, and an integer `target`, write a function to search `target` in `nums`. If `target` exists, then return its index. Otherwise, return `-1`.
@@ -26,9 +26,9 @@ Explanation: 2 does not exist in nums so return -1
 ```
 
 **Constraints:**
-- 1 <= nums.length <= 10<sup>4</sup>
-- -10<sup>4</sup> < nums[i], target < 10<sup>4</sup>
-- All the integers in `nums` are unique.
+- <code>1 <= nums.length <= 10<sup>4</sup></code>
+- <code>-10<sup>4</sup> < nums[i], target < 10<sup>4</sup></code>
+- All the integers in `nums` are **unique**.
 - `nums` is sorted in ascending order.
 
 <div class="tabs"></div>

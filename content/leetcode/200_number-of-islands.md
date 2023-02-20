@@ -97,9 +97,9 @@ class Solution:
                 if grid[i][j] == '0':
                     continue
                 idx = i * n + j
-                if j < n-1 and grid[i][j+1] == '1':
+                if j+1 < n and grid[i][j+1] == '1':
                     union(idx, idx+1)
-                if i < m-1 and grid[i+1][j] == '1':
+                if i+1 < m and grid[i+1][j] == '1':
                     union(idx, idx+n)
         return self.count
 {{< / highlight >}}

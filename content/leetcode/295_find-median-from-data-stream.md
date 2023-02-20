@@ -9,6 +9,7 @@ The **median** is the middle value in an ordered integer list. If the size of th
 
 - For example, for `arr = [2,3,4]`, the median is `3`.
 - For example, for `arr = [2,3]`, the median is `(2 + 3) / 2 = 2.5`.
+
 Implement the MedianFinder class:
 
 - `MedianFinder()` initializes the `MedianFinder` object.
@@ -33,13 +34,15 @@ medianFinder.findMedian(); // return 2.0
 ```
 
 **Constraints:**
-- -10<sup>5</sup> <= `num` <= 10<sup>5</sup>
+- <code>-10<sup>5</sup> <= `num` <= 10<sup>5</sup></code>
 - There will be at least one element in the data structure before calling `findMedian`.
-- At most 5 * 10<sup>4</sup> calls will be made to `addNum` and `findMedian`.
+- At most <code>5 * 10<sup>4</sup></code> calls will be made to `addNum` and `findMedian`.
 
 **Follow up:**
 - If all integer numbers from the stream are in the range `[0, 100]`, how would you optimize your solution?
 - If `99%` of all integer numbers from the stream are in the range `[0, 100]`, how would you optimize your solution?
+
+> `insort` would be `O(n)` because all the elements in the array may need to be shifted after insertion
 
 <div class="tabs"></div>
 <div class="tab-content">

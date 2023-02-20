@@ -55,13 +55,13 @@ class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
         mapping = {')': '(', '}': '{', ']': '['}
-        for ch in list(s):
-            if ch in mapping:
-                if not stack or stack[-1] != mapping[ch]:
+        for c in s:
+            if c in mapping:
+                if not stack or stack[-1] != mapping[c]:
                     return False
                 stack.pop()
             else:
-                stack.append(ch)
+                stack.append(c)
         return not stack
 {{< / highlight >}}
 </div>

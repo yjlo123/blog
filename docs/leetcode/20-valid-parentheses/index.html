@@ -120,13 +120,13 @@ Output: true
 </span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">isValid</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">bool</span>:
 </span></span><span style="display:flex;"><span>        stack = []
 </span></span><span style="display:flex;"><span>        mapping = {<span style="color:#a50">&#39;)&#39;</span>: <span style="color:#a50">&#39;(&#39;</span>, <span style="color:#a50">&#39;}&#39;</span>: <span style="color:#a50">&#39;{&#39;</span>, <span style="color:#a50">&#39;]&#39;</span>: <span style="color:#a50">&#39;[&#39;</span>}
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> ch <span style="color:#00a">in</span> <span style="color:#0aa">list</span>(s):
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> ch <span style="color:#00a">in</span> mapping:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> <span style="color:#00a">not</span> stack <span style="color:#00a">or</span> stack[-<span style="color:#099">1</span>] != mapping[ch]:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> c <span style="color:#00a">in</span> s:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> c <span style="color:#00a">in</span> mapping:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> <span style="color:#00a">not</span> stack <span style="color:#00a">or</span> stack[-<span style="color:#099">1</span>] != mapping[c]:
 </span></span><span style="display:flex;"><span>                    <span style="color:#00a">return</span> <span style="color:#00a">False</span>
 </span></span><span style="display:flex;"><span>                stack.pop()
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
-</span></span><span style="display:flex;"><span>                stack.append(ch)
+</span></span><span style="display:flex;"><span>                stack.append(c)
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">not</span> stack</span></span></code></pre></td></tr></table>
 </div>
 </div>

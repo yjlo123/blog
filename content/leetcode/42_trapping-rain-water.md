@@ -3,7 +3,7 @@ weight: 42
 title: "42 Trapping Rain Water"
 date: 2021-06-26T00:00:00+08:00
 draft: false
-tags: ["leetcode", "lc_hard"]
+tags: ["leetcode", "lc_hard", "lc_two_pointers"]
 ---
 
 Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.

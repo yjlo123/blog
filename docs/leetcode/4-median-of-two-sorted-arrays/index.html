@@ -139,6 +139,8 @@ Output: 2.00000
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
@@ -169,10 +171,12 @@ Output: 2.00000
 </span></span><span style="display:flex;"><span>        ma, mb = a[ia], b[ib]
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> ia + ib &lt; k:
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># remove from the front</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> ma &gt; mb:
 </span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> self.kth(a, b[ib+<span style="color:#099">1</span>:], k - ib - <span style="color:#099">1</span>)
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> self.kth(a[ia+<span style="color:#099">1</span>:], b, k - ia - <span style="color:#099">1</span>)
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># remove from the back</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> ma &gt; mb:
 </span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> self.kth(a[:ia], b, k)
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> self.kth(a, b[:ib], k)</span></span></code></pre></td></tr></table>

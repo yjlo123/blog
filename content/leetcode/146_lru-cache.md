@@ -37,10 +37,10 @@ lRUCache.get(4);    // return 4
 ```
 
 **Constraints:**
-- 1 <= capacity <= 3000
-- 0 <= key <= 10<sup>4</sup>
-- 0 <= value <= 10<sup>5</sup>
-- At most 2 * 10<sup>5</sup> calls will be made to `get` and `put`.
+- `1 <= capacity <= 3000`
+- <code>0 <= key <= 10<sup>4</sup></code>
+- <code>0 <= value <= 10<sup>5</sup></code>
+- At most <code>2 * 10<sup>5</sup></code> calls will be made to `get` and `put`.
 
 <div class="tabs"></div>
 <div class="tab-content">
@@ -65,12 +65,14 @@ class LRUCache:
         self.tail.prev = self.head
 
     def _add_node(self, node):
+        # add to head
         node.prev = self.head
         node.next = self.head.next
         self.head.next.prev = node
         self.head.next = node
         
     def _remove_node(self, node):
+        # remove from tail
         prev_node = node.prev
         next_node = node.next
         prev_node.next = next_node
