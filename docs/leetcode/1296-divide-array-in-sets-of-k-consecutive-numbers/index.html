@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>424 Longest Repeating Character Replacement</title>
+        <title>1296 Divide Array in Sets of K Consecutive Numbers</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>424 Longest Repeating Character Replacement</h1>
+  <h1>1296 Divide Array in Sets of K Consecutive Numbers</h1>
   <div class="blog-post-subheader">
     
     <time>Feb 2023</time>
@@ -66,28 +66,31 @@
    </li>
   
    <li>
-     <a href="/tags/lc_sliding_window">lc_sliding_window</a>
+     <a href="/tags/lc_greedy">lc_greedy</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given a string <code>s</code> and an integer <code>k</code>. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most <code>k</code> times.</p>
-<p>Return <em>the length of the longest substring containing the same letter you can get after performing the above operations</em>.</p>
+    <p>Given an array of integers <code>nums</code> and a positive integer <code>k</code>, check whether it is possible to divide this array into sets of <code>k</code> consecutive numbers.</p>
+<p>Return <em><code>true</code> if it is possible</em>. Otherwise, return <code>false</code>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;ABAB&#34;, k = 2
-Output: 4
-Explanation: Replace the two &#39;A&#39;s with two &#39;B&#39;s or vice versa.
+<pre tabindex="0"><code>Input: nums = [1,2,3,3,4,4,5,6], k = 4
+Output: true
+Explanation: Array can be divided into [1,2,3,4] and [3,4,5,6].
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;AABABBA&#34;, k = 1
-Output: 4
-Explanation: Replace the one &#39;A&#39; in the middle with &#39;B&#39; and form &#34;AABBBBA&#34;.
-The substring &#34;BBBB&#34; has the longest repeating letters, which is 4.
+<pre tabindex="0"><code>Input: nums = [3,2,1,2,3,4,3,4,5,9,10,11], k = 3
+Output: true
+Explanation: Array can be divided into [1,2,3] , [2,3,4] , [3,4,5] and [9,10,11].
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code>Input: nums = [1,2,3,4], k = 3
+Output: false
+Explanation: Each array should be divided in subarrays of size 3.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-<li><code>s</code> consists of only uppercase English letters.</li>
-<li><code>0 &lt;= k &lt;= s.length</code></li>
+<li><code>1 &lt;= k &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
+<p><strong>Note</strong>: This question is the same as 846: <a href="https://leetcode.com/problems/hand-of-straights/">https://leetcode.com/problems/hand-of-straights/</a></p>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -107,28 +110,22 @@ The substring &#34;BBBB&#34; has the longest repeating letters, which is 4.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">characterReplacement</span>(self, s: <span style="color:#0aa">str</span>, k: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        win_start = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        max_len = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        count_map = defaultdict(<span style="color:#0aa">int</span>)  <span style="color:#aaa;font-style:italic"># char count within the current window</span>
-</span></span><span style="display:flex;"><span>        max_count = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> win_end, c <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(s):
-</span></span><span style="display:flex;"><span>            count_map[c] += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            max_count = <span style="color:#0aa">max</span>(max_count, count_map[c])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> win_end - win_start + <span style="color:#099">1</span> - max_count &gt; k:
-</span></span><span style="display:flex;"><span>                count_map[s[win_start]] -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>                win_start += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            max_len = <span style="color:#0aa">max</span>(max_len, win_end - win_start + <span style="color:#099">1</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> max_len</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">isPossibleDivide</span>(self, nums: List[<span style="color:#0aa">int</span>], k: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        count = defaultdict(<span style="color:#0aa">int</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> num <span style="color:#00a">in</span> nums:
+</span></span><span style="display:flex;"><span>            count[num] += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> num <span style="color:#00a">in</span> <span style="color:#0aa">sorted</span>(count.keys()):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> count[num] &gt; <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                need = count[num]
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(num, num + k):
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> count[i] &lt; need:
+</span></span><span style="display:flex;"><span>                        <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>                    count[i] -= need
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">True</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

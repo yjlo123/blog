@@ -6,9 +6,9 @@ draft: false
 tags: ["leetcode", "lc_medium", "graph"]
 ---
 
-There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where <code>prerequisites[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that you **must** take course bi first if you want to take course <code>a<sub>i</sub></code>.
+There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where <code>prerequisites[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that you **must** take course <code>b<sub>i</sub></code> first if you want to take course <code>a<sub>i</sub></code>.
 
-- For example, the pair `[0, 1]`, indicates that to take course 0 you have to first take course `1`.
+- For example, the pair `[0, 1]`, indicates that to take course `0` you have to first take course `1`.
 
 Return _the ordering of courses you should take to finish all courses._ If there are many valid answers, return **any** of them. If it is impossible to finish all courses, return **an empty array**.
 
@@ -53,27 +53,26 @@ class Solution:
         numCourses: int,
         prerequisites: List[List[int]]
     ) -> List[int]:
-        parent_map = {}
-        indegree_list = [0] * numCourses
-        for pre in prerequisites:
-            parent_map.setdefault(pre[1], []).append(pre[0])
-            indegree_list[pre[0]] += 1
+        parent_map = defaultdict(list)
+        indegrees = [0] * numCourses
+        for c, p in prerequisites:
+            parent_map[p].append(c)
+            indegrees[c] += 1
         
         pre_free_stack = []
         for c in range(numCourses):
-            if indegree_list[c] == 0:
-                # c has no pre
+            if indegrees[c] == 0:
                 pre_free_stack.append(c)
                 
-        ordered_courses = []
+        res = []
         while pre_free_stack:
             c = pre_free_stack.pop()
-            ordered_courses.append(c)
-            for p in parent_map.get(c, []):
-                indegree_list[p] -= 1
-                if indegree_list[p] == 0:
+            res.append(c)
+            for p in parent_map[c]:
+                indegrees[p] -= 1
+                if indegrees[p] == 0:
                     pre_free_stack.append(p)
-        return ordered_courses if len(ordered_courses) == numCourses else []
+        return res if len(res) == numCourses else []
 {{< / highlight >}}
 </div>
 </div>

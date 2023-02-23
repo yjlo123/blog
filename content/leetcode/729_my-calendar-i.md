@@ -10,7 +10,7 @@ You are implementing a program to use as your calendar. We can add a new event i
 
 A **double booking** happens when two events have some non-empty intersection (i.e., some moment is common to both events.).
 
-The event can be represented as a pair of integers `start` and `end` that represents a booking on the half-open interval `[start, end)`, the range of real numbers x such that `start <= x < end`.
+The event can be represented as a pair of integers `start` and `end` that represents a booking on the half-open interval `[start, end)`, the range of real numbers `x` such that `start <= x < end`.
 
 Implement the `MyCalendar` class:
 - `MyCalendar()` Initializes the calendar object.
@@ -39,23 +39,20 @@ myCalendar.book(20, 30); // return True, The event can be booked, as the first e
 <div class="tab-content">
 <div id="python" class="lang">
 {{< highlight python "linenos=table" >}}
-from sortedcontainers import SortedList
-
 class MyCalendar:
 
     def __init__(self):
-        self.calendar = SortedList()
+        self.calendar = []
 
     def book(self, start: int, end: int) -> bool:
-        idx = self.calendar.bisect_right((start, end))
+        idx = bisect.bisect_right(self.calendar, (start, end))
         if (
             (idx > 0 and self.calendar[idx-1][1] > start)
             or (idx < len(self.calendar) and self.calendar[idx][0] < end)
         ):
             return False
-        self.calendar.add((start, end))
+        bisect.insort_right(self.calendar, (start, end))
         return True
-
 
 # Your MyCalendar object will be instantiated and called as such:
 # obj = MyCalendar()

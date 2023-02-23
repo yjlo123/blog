@@ -73,7 +73,7 @@
 <div class="blog-post-content">
     <p>You are implementing a program to use as your calendar. We can add a new event if adding the event will not cause a <strong>double booking</strong>.</p>
 <p>A <strong>double booking</strong> happens when two events have some non-empty intersection (i.e., some moment is common to both events.).</p>
-<p>The event can be represented as a pair of integers <code>start</code> and <code>end</code> that represents a booking on the half-open interval <code>[start, end)</code>, the range of real numbers x such that <code>start &lt;= x &lt; end</code>.</p>
+<p>The event can be represented as a pair of integers <code>start</code> and <code>end</code> that represents a booking on the half-open interval <code>[start, end)</code>, the range of real numbers <code>x</code> such that <code>start &lt;= x &lt; end</code>.</p>
 <p>Implement the <code>MyCalendar</code> class:</p>
 <ul>
 <li><code>MyCalendar()</code> Initializes the calendar object.</li>
@@ -119,28 +119,22 @@ myCalendar.book(20, 30); // return True, The event can be booked, as the first e
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">sortedcontainers</span> <span style="color:#00a">import</span> SortedList
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">MyCalendar</span>:
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">MyCalendar</span>:
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self):
-</span></span><span style="display:flex;"><span>        self.calendar = SortedList()
+</span></span><span style="display:flex;"><span>        self.calendar = []
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">book</span>(self, start: <span style="color:#0aa">int</span>, end: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">bool</span>:
-</span></span><span style="display:flex;"><span>        idx = self.calendar.bisect_right((start, end))
+</span></span><span style="display:flex;"><span>        idx = bisect.bisect_right(self.calendar, (start, end))
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> (
 </span></span><span style="display:flex;"><span>            (idx &gt; <span style="color:#099">0</span> <span style="color:#00a">and</span> self.calendar[idx-<span style="color:#099">1</span>][<span style="color:#099">1</span>] &gt; start)
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">or</span> (idx &lt; <span style="color:#0aa">len</span>(self.calendar) <span style="color:#00a">and</span> self.calendar[idx][<span style="color:#099">0</span>] &lt; end)
 </span></span><span style="display:flex;"><span>        ):
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#00a">False</span>
-</span></span><span style="display:flex;"><span>        self.calendar.add((start, end))
+</span></span><span style="display:flex;"><span>        bisect.insort_right(self.calendar, (start, end))
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">True</span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your MyCalendar object will be instantiated and called as such:</span>
 </span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj = MyCalendar()</span>

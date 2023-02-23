@@ -37,7 +37,7 @@ class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         win_start = 0
         max_len = 0
-        count_map = defaultdict(int)
+        count_map = defaultdict(int)  # char count within the current window
         max_count = 0
 
         for win_end, c in enumerate(s):

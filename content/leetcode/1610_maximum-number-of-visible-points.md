@@ -61,6 +61,8 @@ Explanation: You can only see one of the two points, as shown above.
 - `0 <= angle < 360`
 - <code>0 <= pos<sub>x</sub>, posy, x<sub>i</sub>, y<sub>i</sub> <= 100</code>
 
+> `math.atan2(y, x)` returns value of `atan(y/x)` in radians. The `atan2()` method returns a numeric value between `-𝝿` and `𝝿` representing the angle θ of a `(x, y)` point and positive x-axis.
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
