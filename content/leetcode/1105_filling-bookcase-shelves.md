@@ -12,7 +12,7 @@ We want to place these books in order onto bookcase shelves that have a total wi
 
 We choose some of the books to place on this shelf such that the sum of their thickness is less than or equal to `shelfWidth`, then build another level of the shelf of the bookcase so that the total height of the bookcase has increased by the maximum height of the books we just put down. We repeat this process until there are no more books to place.
 
-Note that at each step of the above process, the order of the books we place is the same order as the given sequence of books.
+Note that at each step of the above process, the order of the books we place is the **same order** as the given sequence of books.
 
 - For example, if we have an ordered list of `5` books, we might place the first and second book onto the first shelf, the third book on the second shelf, and the fourth and fifth book on the last shelf.
 
@@ -21,12 +21,12 @@ Return _the minimum possible height that the total bookshelf can be after placin
 
 **Example 1:**
 ```
-1___
+1___  <- 1st shelf
 2233
 2233
-2233
+2233  <- 2nd shelf
 ___7
-4567
+4567  <- 3rd shelf
 
 Input: books = [[1,1],[2,3],[2,3],[1,1],[1,1],[1,1],[1,2]], shelf_width = 4
 Output: 6
@@ -53,13 +53,18 @@ class Solution:
     def minHeightShelves(self, books: List[List[int]], shelfWidth: int) -> int:
         n = len(books)
         # dp[i] := min height if i-th books is the last book
+        #          on its current level
         dp = [0] + [math.inf] * n
 
         for i in range(1, n + 1):
+            # max height of the current level
             max_height = 0
             remaining = shelfWidth
             
-            for j in reversed(range(1, i + 1)):
+            # try all possible previous book (within shelfWidth)
+            # [i down to j] at the same level with the current book (i)
+            for j in range(i, 0, -1):
+                # including the current book (i)
                 w, h = books[j - 1]
                 max_height = max(max_height, h)
                 remaining -= w

@@ -124,7 +124,6 @@ Output: [[1]]
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Definition for a binary tree node.</span>
@@ -135,17 +134,16 @@ Output: [[1]]
 </span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic">#         self.right = right</span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">findLeaves</span>(self, root: Optional[TreeNode]) -&gt; List[List[<span style="color:#0aa">int</span>]]:
-</span></span><span style="display:flex;"><span>        d = {}
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">dfs</span>(node: Optional[TreeNode]) -&gt; <span style="color:#0aa">int</span>:
 </span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#00a">not</span> node:
 </span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>            left = dfs(node.left) + <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            right = dfs(node.right) + <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            cur_lvl = <span style="color:#0aa">max</span>(left, right)
-</span></span><span style="display:flex;"><span>            d.setdefault(cur_lvl, []).append(node.val)
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> cur_lvl
+</span></span><span style="display:flex;"><span>            cur_level = <span style="color:#0aa">max</span>(dfs(node.left), dfs(node.right)) + <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            d[cur_level].append(node.val)
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> cur_level
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        d = defaultdict(<span style="color:#0aa">list</span>)
 </span></span><span style="display:flex;"><span>        dfs(root)
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> [a[<span style="color:#099">1</span>] <span style="color:#00a">for</span> a <span style="color:#00a">in</span> <span style="color:#0aa">sorted</span>(d.items(), key=<span style="color:#00a">lambda</span> x: x[<span style="color:#099">0</span>])]</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> [vals <span style="color:#00a">for</span> _, vals <span style="color:#00a">in</span> <span style="color:#0aa">sorted</span>(d.items(), key=<span style="color:#00a">lambda</span> n: n[<span style="color:#099">0</span>])]</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

@@ -52,10 +52,10 @@ Explanation: No course can be studied because they are prerequisites of each oth
 {{< highlight python "linenos=table" >}}
 class Solution:
     def minimumSemesters(self, n: int, relations: List[List[int]]) -> int:
-        graph = defaultdict(set)
+        graph = defaultdict(list)
         indegree = defaultdict(int)
         for pre, course in relations:
-            graph[pre].add(course)
+            graph[pre].append(course)
             indegree[course] += 1
         
         queue = [i for i in range(1, n+1) if i not in indegree]

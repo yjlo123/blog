@@ -76,6 +76,8 @@ Thus all 5 bombs are detonated.
 - `bombs[i].length == 3`
 - <code>1 <= x<sub>i</sub>, y<sub>i</sub>, r<sub>i</sub> <= 10<sup>5</sup></code>
 
+> Build the dependency graph, and try detonating from each bomb
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -89,20 +91,22 @@ class Solution:
             for j in range(n):
                 if i == j:
                     continue
-                x2, y2, r2 = bombs[j]
+                x2, y2, _ = bombs[j]
+                # Bomb #j in in the range of bomb #i
                 if (x2-x1)**2 + (y2-y1)**2 <= r1**2:
                     graph[i].append(j)
         
-        def dfs(current: int, detonated: Set[int]):
+        def dfs(current: int):
+            detonated.add(current)
             for adj in graph[current]:
                 if adj not in detonated:
-                    detonated.add(adj)
-                    dfs(adj, detonated)
+                    dfs(adj)
 
         max_len = 0
+        detonated = set()
         for i in range(n):
-            detonated = set([i])
-            dfs(i, detonated)
+            detonated.clear()
+            dfs(i)
             max_len = max(max_len, len(detonated))
         return max_len
 {{< / highlight >}}

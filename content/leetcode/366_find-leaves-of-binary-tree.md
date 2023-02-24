@@ -47,17 +47,16 @@ Output: [[1]]
 #         self.right = right
 class Solution:
     def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
-        d = {}
         def dfs(node: Optional[TreeNode]) -> int:
             if not node:
                 return 0
-            left = dfs(node.left) + 1
-            right = dfs(node.right) + 1
-            cur_lvl = max(left, right)
-            d.setdefault(cur_lvl, []).append(node.val)
-            return cur_lvl
+            cur_level = max(dfs(node.left), dfs(node.right)) + 1
+            d[cur_level].append(node.val)
+            return cur_level
+        
+        d = defaultdict(list)
         dfs(root)
-        return [a[1] for a in sorted(d.items(), key=lambda x: x[0])]
+        return [vals for _, vals in sorted(d.items(), key=lambda n: n[0])]
 {{< / highlight >}}
 </div>
 </div>
