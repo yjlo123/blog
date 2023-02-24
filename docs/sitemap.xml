@@ -212,6 +212,9 @@
     <loc>https://blog.siwei.dev/leetcode/127-word-ladder/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/128-longest-consecutive-sequence/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/129-sum-root-to-leaf-numbers/</loc>
     <lastmod>2022-12-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1223,6 +1226,9 @@
     <loc>https://blog.siwei.dev/tags/lc_two_pointers/</loc>
     <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/tags/lc_union_find/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/tags/leetcode/</loc>
     <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -1260,9 +1266,6 @@
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_topo_sort/</loc>
-    <lastmod>2023-01-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_union_find/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_bst/</loc>
