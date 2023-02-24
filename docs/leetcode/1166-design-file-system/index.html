@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>55 Jump Game</title>
+        <title>1166 Design File System</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>55 Jump Game</h1>
+  <h1>1166 Design File System</h1>
   <div class="blog-post-subheader">
     
-    <time>Mar 2021</time>
+    <time>Feb 2023</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -66,30 +66,49 @@
    </li>
   
    <li>
-     <a href="/tags/lc_greedy">lc_greedy</a>
-   </li>
-  
-   <li>
-     <a href="/tags/lc_dp">lc_dp</a>
+     <a href="/tags/lc_trie">lc_trie</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given an integer array <code>nums</code>. You are initially positioned at the array&rsquo;s <strong>first index</strong>, and each element in the array represents your maximum jump length at that position.</p>
-<p>Return <em><code>true</code> if you can reach the last index, or <code>false</code> otherwise.</em></p>
+    <p>You are asked to design a file system that allows you to create new paths and associate them with different values.</p>
+<p>The format of a path is one or more concatenated strings of the form: <code>/</code>followed by one or more lowercase English letters. For example, <code>&quot;/leetcode&quot;</code> and <code>&quot;/leetcode/problems&quot;</code> are valid paths while an empty string <code>&quot;&quot;</code> and <code>&quot;/&quot;</code> are not.</p>
+<p>Implement the <code>FileSystem</code> class:</p>
+<ul>
+<li><code>bool createPath(string path, int value)</code> Creates a new <code>path</code> and associates a <code>value</code> to it if possible and returns <code>true</code>. Returns <code>false</code> if the path <strong>already exists</strong> or its parent path <strong>doesn&rsquo;t exist</strong>.</li>
+<li><code>int get(string path)</code> Returns the value associated with <code>path</code> or returns <code>-1</code> if the path doesn&rsquo;t exist.</li>
+</ul>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: nums = [2,3,1,1,4]
-Output: true
-Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+<pre tabindex="0"><code>Input: 
+[&#34;FileSystem&#34;,&#34;createPath&#34;,&#34;get&#34;]
+[[],[&#34;/a&#34;,1],[&#34;/a&#34;]]
+Output: 
+[null,true,1]
+Explanation: 
+FileSystem fileSystem = new FileSystem();
+
+fileSystem.createPath(&#34;/a&#34;, 1); // return true
+fileSystem.get(&#34;/a&#34;); // return 1
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: nums = [3,2,1,0,4]
-Output: false
-Explanation: You will always arrive at index 3 no matter what.
-Its maximum jump length is 0, which makes it impossible to reach the last index.
+<pre tabindex="0"><code>Input: 
+[&#34;FileSystem&#34;,&#34;createPath&#34;,&#34;createPath&#34;,&#34;get&#34;,&#34;createPath&#34;,&#34;get&#34;]
+[[],[&#34;/leet&#34;,1],[&#34;/leet/code&#34;,2],[&#34;/leet/code&#34;],[&#34;/c/d&#34;,1],[&#34;/c&#34;]]
+Output: 
+[null,true,true,2,false,-1]
+Explanation: 
+FileSystem fileSystem = new FileSystem();
+
+fileSystem.createPath(&#34;/leet&#34;, 1); // return true
+fileSystem.createPath(&#34;/leet/code&#34;, 2); // return true
+fileSystem.get(&#34;/leet/code&#34;); // return 2
+fileSystem.createPath(&#34;/c/d&#34;, 1); // return false because the parent path &#34;/c&#34; doesn&#39;t exist.
+fileSystem.get(&#34;/c&#34;); // return -1 because this path doesn&#39;t exist.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
-<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>2 &lt;= path.length &lt;= 100</code></li>
+<li><code>1 &lt;= value &lt;= 10<sup>9</sup></code></li>
+<li>Each <code>path</code> is valid and consists of lowercase English letters and <code>'/'</code>.</li>
+<li>At most <code>10<sup>4</sup></code> calls in total will be made to <code>createPath</code> and <code>get</code>.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -129,75 +148,41 @@ Its maximum jump length is 0, which makes it impossible to reach the last index.
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">Greedy
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">FileSystem</span>:
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># Forward version:</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">canJump</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">bool</span>:
-</span></span><span style="display:flex;"><span>        last = <span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>, -<span style="color:#099">1</span>, -<span style="color:#099">1</span>):
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i + nums[i] &gt;= last:
-</span></span><span style="display:flex;"><span>                last = i
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> last == <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self.root = {}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># Backward version:</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">canJump</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">bool</span>:
-</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(nums)
-</span></span><span style="display:flex;"><span>        farthest = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n-<span style="color:#099">1</span>):
-</span></span><span style="display:flex;"><span>            farthest = <span style="color:#0aa">max</span>(farthest, i + nums[i])
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> farthest &lt;= i:
-</span></span><span style="display:flex;"><span>                <span style="color:#aaa;font-style:italic"># stcuk at i</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">createPath</span>(self, path: <span style="color:#0aa">str</span>, value: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        cur = self.root
+</span></span><span style="display:flex;"><span>        folders = [i <span style="color:#00a">for</span> i <span style="color:#00a">in</span> path.split(<span style="color:#a50">&#39;/&#39;</span>) <span style="color:#00a">if</span> i]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i, p <span style="color:#00a">in</span> <span style="color:#0aa">enumerate</span>(folders):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> i == <span style="color:#0aa">len</span>(folders) - <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> p <span style="color:#00a">in</span> cur:
+</span></span><span style="display:flex;"><span>                    <span style="color:#aaa;font-style:italic"># path already exists</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>                cur[p] = {<span style="color:#a50">&#39;#&#39;</span>: value}
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> p <span style="color:#00a">not</span> <span style="color:#00a">in</span> cur:
+</span></span><span style="display:flex;"><span>                <span style="color:#aaa;font-style:italic"># parent path doesn&#39;t exist</span>
 </span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#00a">False</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> farthest &gt;= n-<span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            cur = cur[p]
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">DP
-</span></span></span><span style="display:flex;"><span><span style="color:#a50">&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">canJump</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">bool</span>:
-</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(nums)
-</span></span><span style="display:flex;"><span>        dp = [<span style="color:#00a">False</span>] * n
-</span></span><span style="display:flex;"><span>        dp[-<span style="color:#099">1</span>] = <span style="color:#00a">True</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n-<span style="color:#099">2</span>, -<span style="color:#099">1</span>, -<span style="color:#099">1</span>):
-</span></span><span style="display:flex;"><span>            furthest = <span style="color:#0aa">min</span>(i + nums[i], n-<span style="color:#099">1</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#0aa">any</span>(dp[i+<span style="color:#099">1</span>:furthest+<span style="color:#099">1</span>]):
-</span></span><span style="display:flex;"><span>                dp[i] = <span style="color:#00a">True</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dp[<span style="color:#099">0</span>]</span></span></code></pre></td></tr></table>
-</div>
-</div>
-</div>
-<div id="golang" class="lang">
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#00a">func</span> <span style="color:#0a0">canJump</span>(nums []<span style="color:#0aa">int</span>) <span style="color:#0aa">bool</span> {
-</span></span><span style="display:flex;"><span>	lastPos := <span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#00a">for</span> i := <span style="color:#0aa">len</span>(nums) - <span style="color:#099">1</span>; i &gt;= <span style="color:#099">0</span>; i-- {
-</span></span><span style="display:flex;"><span>		<span style="color:#00a">if</span> i+nums[i] &gt;= lastPos {
-</span></span><span style="display:flex;"><span>			lastPos = i
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#00a">return</span> lastPos == <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">get</span>(self, path: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        cur = self.root
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> p <span style="color:#00a">in</span> [i <span style="color:#00a">for</span> i <span style="color:#00a">in</span> path.split(<span style="color:#a50">&#39;/&#39;</span>) <span style="color:#00a">if</span> i]:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> p <span style="color:#00a">not</span> <span style="color:#00a">in</span> cur:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> -<span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            cur = cur[p]
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> cur[<span style="color:#a50">&#39;#&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Your FileSystem object will be instantiated and called as such:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># obj = FileSystem()</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_1 = obj.createPath(path,value)</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># param_2 = obj.get(path)</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

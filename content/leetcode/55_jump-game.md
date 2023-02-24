@@ -38,12 +38,25 @@ Its maximum jump length is 0, which makes it impossible to reach the last index.
 Greedy
 """
 class Solution:
+
+    # Forward version:
     def canJump(self, nums: List[int]) -> bool:
         last = len(nums) - 1
         for i in range(len(nums) - 1, -1, -1):
             if i + nums[i] >= last:
                 last = i
         return last == 0
+
+    # Backward version:
+    def canJump(self, nums: List[int]) -> bool:
+        n = len(nums)
+        farthest = 0
+        for i in range(n-1):
+            farthest = max(farthest, i + nums[i])
+            if farthest <= i:
+                # stcuk at i
+                return False
+        return farthest >= n-1
 
 """
 DP
