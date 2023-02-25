@@ -70,7 +70,7 @@
    </li>
   
    <li>
-     <a href="/tags/lc_odd">lc_odd</a>
+     <a href="/tags/lc_ood">lc_ood</a>
    </li>
   
    <li>
@@ -91,7 +91,12 @@
 <li><code>int move(String direction)</code> Returns the score of the game after applying one <code>direction</code> move by the snake. If the game is over, return <code>-1</code>.</li>
 </ul>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>
+<pre tabindex="0"><code>o _ _   =&gt;   _ o _   =&gt;   _ _ _   =&gt;   _ 2 _
+_ _ 1   R    _ _ 1   D    _ o 1   R    _ o o
+
+=&gt;   _ 2 o   =&gt;   _ o o   =&gt;   _ x x 
+U    _ _ o   L    _ _ o   U    _ _ x
+
 Input
 [&#34;SnakeGame&#34;, &#34;move&#34;, &#34;move&#34;, &#34;move&#34;, &#34;move&#34;, &#34;move&#34;, &#34;move&#34;]
 [[3, 2, [[1, 2], [0, 1]]], [&#34;R&#34;], [&#34;D&#34;], [&#34;R&#34;], [&#34;U&#34;], [&#34;L&#34;], [&#34;U&#34;]]
