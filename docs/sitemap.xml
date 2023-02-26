@@ -734,6 +734,9 @@
     <loc>https://blog.siwei.dev/leetcode/909-snakes-and-ladders/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/921-minimum-add-to-make-parentheses-valid/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/926-flip-string-to-monotone-increasing/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -809,6 +812,9 @@
     <loc>https://blog.siwei.dev/leetcode/1048-longest-string-chain/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1052-grumpy-bookstore-owner/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1055-shortest-way-to-form-string/</loc>
     <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
@@ -883,6 +889,9 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1200-minimum-absolute-difference/</loc>
     <lastmod>2022-11-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1202-smallest-string-with-swaps/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1207-unique-number-of-occurrences/</loc>
     <lastmod>2022-08-01T00:00:00-04:00</lastmod>
@@ -1052,8 +1061,14 @@
     <loc>https://blog.siwei.dev/leetcode/1628-design-an-expression-tree-with-evaluate-function/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
   </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1642-furthest-building-you-can-reach/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
+  </url><url>
     <loc>https://blog.siwei.dev/leetcode/1656-design-an-ordered-stream/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.siwei.dev/leetcode/1657-determine-if-two-strings-are-close/</loc>
+    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/1698-number-of-distinct-substrings-in-a-string/</loc>
     <lastmod>2022-09-01T00:00:00-04:00</lastmod>
@@ -1189,9 +1204,6 @@
   </url><url>
     <loc>https://blog.siwei.dev/leetcode/2458-height-of-binary-tree-after-subtree-removal-queries/</loc>
     <lastmod>2023-01-01T00:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.siwei.dev/tags/lc_/</loc>
-    <lastmod>2023-02-01T00:00:00-04:00</lastmod>
   </url><url>
     <loc>https://blog.siwei.dev/tags/lc_back_tracking/</loc>
     <lastmod>2023-02-01T00:00:00-04:00</lastmod>

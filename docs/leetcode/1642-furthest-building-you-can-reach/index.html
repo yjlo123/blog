@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>1525 Number of Good Ways to Split a String</title>
+        <title>1642 Furthest Building You Can Reach</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>1525 Number of Good Ways to Split a String</h1>
+  <h1>1642 Furthest Building You Can Reach</h1>
   <div class="blog-post-subheader">
     
     <time>Feb 2023</time>
@@ -66,31 +66,59 @@
    </li>
   
    <li>
-     <a href="/tags/lc_string">lc_string</a>
+     <a href="/tags/lc_heap">lc_heap</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_greedy">lc_greedy</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given a string <code>s</code>.</p>
-<p>A split is called <strong>good</strong> if you can split <code>s</code> into two non-empty strings <code>s<sub>left</sub></code> and <code>s<sub>right</sub></code> where their concatenation is equal to <code>s</code> (i.e., <code>s<sub>left</sub> + s<sub>right</sub> = s</code>) and the number of distinct letters in <code>s<sub>left</sub></code> and <code>s<sub>right</sub></code> is the same.</p>
-<p>Return <em>the number of good splits you can make in <code>s</code></em>.</p>
+    <p>You are given an integer array <code>heights</code> representing the heights of buildings, some <code>bricks</code>, and some <code>ladders</code>.</p>
+<p>You start your journey from building <code>0</code> and move to the next building by possibly using bricks or ladders.</p>
+<p>While moving from building <code>i</code> to building <code>i+1</code> (<strong>0-indexed</strong>),</p>
+<ul>
+<li>If the current building&rsquo;s height is <strong>greater than or equal to</strong> the next building&rsquo;s height, you do <strong>not</strong> need a ladder or bricks.</li>
+<li>If the current building&rsquo;s height is <strong>less than</strong> the next building&rsquo;s height, you can either use one ladder or <code>(h[i+1] - h[i])</code> <strong>bricks</strong>.</li>
+</ul>
+<p>Return <em>the furthest building index (0-indexed) you can reach if you use the given ladders and bricks optimally</em>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;aacaba&#34;
-Output: 2
-Explanation: There are 5 ways to split &#34;aacaba&#34; and 2 of them are good. 
-(&#34;a&#34;, &#34;acaba&#34;) Left string and right string contains 1 and 3 different letters respectively.
-(&#34;aa&#34;, &#34;caba&#34;) Left string and right string contains 1 and 3 different letters respectively.
-(&#34;aac&#34;, &#34;aba&#34;) Left string and right string contains 2 and 2 different letters respectively (good split).
-(&#34;aaca&#34;, &#34;ba&#34;) Left string and right string contains 2 and 2 different letters respectively (good split).
-(&#34;aacab&#34;, &#34;a&#34;) Left string and right string contains 3 and 1 different letters respectively.
+<pre tabindex="0"><code>          #
+          #
+          # #
+          # #
+          # #
+      / # # #
+      / # # #
+  - # / # # #
+  - # # # # #
+  - # # # # #
+# - # # # # #
+# - # # # # #
+# # # # # # #
+# # # # # # #
+
+Input: heights = [4,2,7,6,9,14,12], bricks = 5, ladders = 1
+Output: 4
+Explanation: Starting at building 0, you can follow these steps:
+- Go to building 1 without using ladders nor bricks since 4 &gt;= 2.
+- Go to building 2 using 5 bricks. You must use either bricks or ladders because 2 &lt; 7.
+- Go to building 3 without using ladders nor bricks since 7 &gt;= 6.
+- Go to building 4 using your only ladder. You must use either bricks or ladders because 6 &lt; 9.
+It is impossible to go beyond building 4 because you do not have any more bricks or ladders.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;abcd&#34;
-Output: 1
-Explanation: Split the string as follows (&#34;ab&#34;, &#34;cd&#34;).
+<pre tabindex="0"><code>Input: heights = [4,12,2,7,3,18,20,3,19], bricks = 10, ladders = 2
+Output: 7
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code>Input: heights = [14,3,19,3], bricks = 17, ladders = 0
+Output: 3
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-<li><code>s</code> consists of only lowercase English letters.</li>
+<li><code>1 &lt;= heights.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= heights[i] &lt;= 10<sup>6</sup></code></li>
+<li><code>0 &lt;= bricks &lt;= 10<sup>9</sup></code></li>
+<li><code>0 &lt;= ladders &lt;= heights.length</code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -109,20 +137,32 @@ Explanation: Split the string as follows (&#34;ab&#34;, &#34;cd&#34;).
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">numSplits</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        r, l = Counter(s), <span style="color:#0aa">set</span>()
-</span></span><span style="display:flex;"><span>        res = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> c <span style="color:#00a">in</span> s:
-</span></span><span style="display:flex;"><span>            l.add(c)
-</span></span><span style="display:flex;"><span>            r[c] -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> r[c] == <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">del</span> r[c]
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(r) == <span style="color:#0aa">len</span>(l):
-</span></span><span style="display:flex;"><span>                res += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">furthestBuilding</span>(self, heights: List[<span style="color:#0aa">int</span>], bricks: <span style="color:#0aa">int</span>, ladders: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(heights)
+</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># use ladders for the highest climbs</span>
+</span></span><span style="display:flex;"><span>        heap = []
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>, n):
+</span></span><span style="display:flex;"><span>            diff = heights[i] - heights[i - <span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> diff &lt;= <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">continue</span>
+</span></span><span style="display:flex;"><span>            heapq.heappush(heap, diff)
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># If haven&#39;t gone over the num of ladders, nothing else to do</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(heap) &lt;= ladders:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># Otherwise, we have to take a climb out of heap</span>
+</span></span><span style="display:flex;"><span>            bricks -= heapq.heappop(heap)
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> bricks &lt; <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> i - <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> n - <span style="color:#099">1</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

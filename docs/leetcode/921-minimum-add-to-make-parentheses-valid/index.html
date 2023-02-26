@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>1525 Number of Good Ways to Split a String</title>
+        <title>921 Minimum Add to Make Parentheses Valid</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>1525 Number of Good Ways to Split a String</h1>
+  <h1>921 Minimum Add to Make Parentheses Valid</h1>
   <div class="blog-post-subheader">
     
     <time>Feb 2023</time>
@@ -66,31 +66,36 @@
    </li>
   
    <li>
-     <a href="/tags/lc_string">lc_string</a>
+     <a href="/tags/lc_stack">lc_stack</a>
+   </li>
+  
+   <li>
+     <a href="/tags/lc_greedy">lc_greedy</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given a string <code>s</code>.</p>
-<p>A split is called <strong>good</strong> if you can split <code>s</code> into two non-empty strings <code>s<sub>left</sub></code> and <code>s<sub>right</sub></code> where their concatenation is equal to <code>s</code> (i.e., <code>s<sub>left</sub> + s<sub>right</sub> = s</code>) and the number of distinct letters in <code>s<sub>left</sub></code> and <code>s<sub>right</sub></code> is the same.</p>
-<p>Return <em>the number of good splits you can make in <code>s</code></em>.</p>
+    <p>A parentheses string is valid if and only if:</p>
+<ul>
+<li>It is the empty string,</li>
+<li>It can be written as <code>AB</code> (<code>A</code> concatenated with <code>B</code>), where <code>A</code> and <code>B</code> are valid strings, or</li>
+<li>It can be written as <code>(A)</code>, where <code>A</code> is a valid string.</li>
+</ul>
+<p>You are given a parentheses string <code>s</code>. In one move, you can insert a parenthesis at any position of the string.</p>
+<ul>
+<li>For example, if <code>s = &quot;()))&quot;</code>, you can insert an opening parenthesis to be <code>&quot;(()))&quot;</code> or a closing parenthesis to be <code>&quot;())))&quot;</code>.
+Return <em>the minimum number of moves required to make <code>s</code> valid</em>.</li>
+</ul>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;aacaba&#34;
-Output: 2
-Explanation: There are 5 ways to split &#34;aacaba&#34; and 2 of them are good. 
-(&#34;a&#34;, &#34;acaba&#34;) Left string and right string contains 1 and 3 different letters respectively.
-(&#34;aa&#34;, &#34;caba&#34;) Left string and right string contains 1 and 3 different letters respectively.
-(&#34;aac&#34;, &#34;aba&#34;) Left string and right string contains 2 and 2 different letters respectively (good split).
-(&#34;aaca&#34;, &#34;ba&#34;) Left string and right string contains 2 and 2 different letters respectively (good split).
-(&#34;aacab&#34;, &#34;a&#34;) Left string and right string contains 3 and 1 different letters respectively.
-</code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;abcd&#34;
+<pre tabindex="0"><code>Input: s = &#34;())&#34;
 Output: 1
-Explanation: Split the string as follows (&#34;ab&#34;, &#34;cd&#34;).
+</code></pre><p><strong>Example 2:</strong></p>
+<pre tabindex="0"><code>Input: s = &#34;(((&#34;
+Output: 3
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-<li><code>s</code> consists of only lowercase English letters.</li>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s[i]</code> is either <code>'('</code> or <code>')'</code>.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -112,17 +117,17 @@ Explanation: Split the string as follows (&#34;ab&#34;, &#34;cd&#34;).
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">numSplits</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        r, l = Counter(s), <span style="color:#0aa">set</span>()
-</span></span><span style="display:flex;"><span>        res = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minAddToMakeValid</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        count = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        stack = <span style="color:#099">0</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> c <span style="color:#00a">in</span> s:
-</span></span><span style="display:flex;"><span>            l.add(c)
-</span></span><span style="display:flex;"><span>            r[c] -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> r[c] == <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">del</span> r[c]
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(r) == <span style="color:#0aa">len</span>(l):
-</span></span><span style="display:flex;"><span>                res += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> c == <span style="color:#a50">&#39;(&#39;</span>:
+</span></span><span style="display:flex;"><span>                stack += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> stack:
+</span></span><span style="display:flex;"><span>                stack -= <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>                count += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> count + stack</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

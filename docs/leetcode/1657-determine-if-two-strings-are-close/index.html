@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>1525 Number of Good Ways to Split a String</title>
+        <title>1657 Determine if Two Strings Are Close</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>1525 Number of Good Ways to Split a String</h1>
+  <h1>1657 Determine if Two Strings Are Close</h1>
   <div class="blog-post-subheader">
     
     <time>Feb 2023</time>
@@ -71,58 +71,66 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given a string <code>s</code>.</p>
-<p>A split is called <strong>good</strong> if you can split <code>s</code> into two non-empty strings <code>s<sub>left</sub></code> and <code>s<sub>right</sub></code> where their concatenation is equal to <code>s</code> (i.e., <code>s<sub>left</sub> + s<sub>right</sub> = s</code>) and the number of distinct letters in <code>s<sub>left</sub></code> and <code>s<sub>right</sub></code> is the same.</p>
-<p>Return <em>the number of good splits you can make in <code>s</code></em>.</p>
+    <p>Two strings are considered <strong>close</strong> if you can attain one from the other using the following operations:</p>
+<ul>
+<li>Operation 1: Swap any two <strong>existing</strong> characters.
+<ul>
+<li>For example, <code>abcde -&gt; aecdb</code></li>
+</ul>
+</li>
+<li>Operation 2: Transform <strong>every</strong> occurrence of one existing character into another <strong>existing</strong> character, and do the same with the other character.
+<ul>
+<li>For example, <code>aacabb -&gt; bbcbaa</code> (all <code>a</code>&rsquo;s turn into <code>b</code>&rsquo;s, and all <code>b</code>&rsquo;s turn into <code>a</code>&rsquo;s)</li>
+</ul>
+</li>
+</ul>
+<p>You can use the operations on either string as many times as necessary.</p>
+<p>Given two strings, <code>word1</code> and <code>word2</code>, return <em><code>true</code> if <code>word1</code> and <code>word2</code> are close, and <code>false</code> otherwise</em>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;aacaba&#34;
-Output: 2
-Explanation: There are 5 ways to split &#34;aacaba&#34; and 2 of them are good. 
-(&#34;a&#34;, &#34;acaba&#34;) Left string and right string contains 1 and 3 different letters respectively.
-(&#34;aa&#34;, &#34;caba&#34;) Left string and right string contains 1 and 3 different letters respectively.
-(&#34;aac&#34;, &#34;aba&#34;) Left string and right string contains 2 and 2 different letters respectively (good split).
-(&#34;aaca&#34;, &#34;ba&#34;) Left string and right string contains 2 and 2 different letters respectively (good split).
-(&#34;aacab&#34;, &#34;a&#34;) Left string and right string contains 3 and 1 different letters respectively.
+<pre tabindex="0"><code>Input: word1 = &#34;abc&#34;, word2 = &#34;bca&#34;
+Output: true
+Explanation: You can attain word2 from word1 in 2 operations.
+Apply Operation 1: &#34;abc&#34; -&gt; &#34;acb&#34;
+Apply Operation 1: &#34;acb&#34; -&gt; &#34;bca&#34;
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: s = &#34;abcd&#34;
-Output: 1
-Explanation: Split the string as follows (&#34;ab&#34;, &#34;cd&#34;).
+<pre tabindex="0"><code>Input: word1 = &#34;a&#34;, word2 = &#34;aa&#34;
+Output: false
+Explanation: It is impossible to attain word2 from word1, or vice versa, in any number of operations.
+</code></pre><p><strong>Example 3:</strong></p>
+<pre tabindex="0"><code>Input: word1 = &#34;cabbba&#34;, word2 = &#34;abbccc&#34;
+Output: true
+Explanation: You can attain word2 from word1 in 3 operations.
+Apply Operation 1: &#34;cabbba&#34; -&gt; &#34;caabbb&#34;
+Apply Operation 2: &#34;caabbb&#34; -&gt; &#34;baaccc&#34;
+Apply Operation 2: &#34;baaccc&#34; -&gt; &#34;abbccc&#34;
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-<li><code>s</code> consists of only lowercase English letters.</li>
+<li><code>1 &lt;= word1.length, word2.length &lt;= 10<sup>5</sup></code></li>
+<li><code>word1</code> and <code>word2</code> contain only lowercase English letters.</li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">numSplits</span>(self, s: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        r, l = Counter(s), <span style="color:#0aa">set</span>()
-</span></span><span style="display:flex;"><span>        res = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> c <span style="color:#00a">in</span> s:
-</span></span><span style="display:flex;"><span>            l.add(c)
-</span></span><span style="display:flex;"><span>            r[c] -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> r[c] == <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">del</span> r[c]
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(r) == <span style="color:#0aa">len</span>(l):
-</span></span><span style="display:flex;"><span>                res += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">closeStrings</span>(self, word1: <span style="color:#0aa">str</span>, word2: <span style="color:#0aa">str</span>) -&gt; <span style="color:#0aa">bool</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> <span style="color:#0aa">len</span>(word1) != <span style="color:#0aa">len</span>(word2) <span style="color:#00a">or</span> <span style="color:#0aa">set</span>(word1) != <span style="color:#0aa">set</span>(word2):
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> (
+</span></span><span style="display:flex;"><span>            <span style="color:#0aa">sorted</span>([word1.count(c) <span style="color:#00a">for</span> c <span style="color:#00a">in</span> <span style="color:#0aa">set</span>(word1)])
+</span></span><span style="display:flex;"><span>            == <span style="color:#0aa">sorted</span>([word2.count(c) <span style="color:#00a">for</span> c <span style="color:#00a">in</span> <span style="color:#0aa">set</span>(word2)])
+</span></span><span style="display:flex;"><span>        )</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

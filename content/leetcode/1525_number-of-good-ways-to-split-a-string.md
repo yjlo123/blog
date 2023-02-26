@@ -3,7 +3,7 @@ weight: 1525
 title: "1525 Number of Good Ways to Split a String"
 date: 2023-02-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_medium", "lc_"]
+tags: ["leetcode", "lc_medium", "lc_string"]
 ---
 
 You are given a string `s`.
