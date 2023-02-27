@@ -48,6 +48,8 @@ The subsequence has a length of 1, so we return 1.
 - <code>1 <= nums.length <= 10<sup>5</sup></code>
 - <code>1 <= nums[i], k <= 10<sup>5</sup></code>
 
+> [Explanation Post](https://leetcode.com/problems/longest-increasing-subsequence-ii/solutions/2560085/python-explanation-with-pictures-segment-tree/)
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
