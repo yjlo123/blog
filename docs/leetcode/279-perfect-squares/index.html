@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>443 String Compression</title>
+        <title>279 Perfect Squares</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>443 String Compression</h1>
+  <h1>279 Perfect Squares</h1>
   <div class="blog-post-subheader">
     
-    <time>Sep 2022</time>
+    <time>Mar 2023</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -66,43 +66,28 @@
    </li>
   
    <li>
-     <a href="/tags/lc_string">lc_string</a>
+     <a href="/tags/lc_dp">lc_dp</a>
    </li>
   
    <li>
-     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
+     <a href="/tags/lc_bfs">lc_bfs</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>Given an array of characters <code>chars</code>, compress it using the following algorithm:</p>
-<p>Begin with an empty string <code>s</code>. For each group of <strong>consecutive repeating characters</strong> in <code>chars</code>:</p>
-<ul>
-<li>If the group&rsquo;s length is <code>1</code>, append the character to <code>s</code>.</li>
-<li>Otherwise, append the character followed by the group&rsquo;s length.</li>
-</ul>
-<p>The compressed string <code>s</code> <strong>should not be returned separately</strong>, but instead, be stored <strong>in the input character array</strong> <code>chars</code>. Note that group lengths that are 10 or longer will be split into multiple characters in <code>chars</code>.</p>
-<p>After you are done <strong>modifying the input array</strong>, return <em>the new length of the array</em>.</p>
-<p>You must write an algorithm that uses only constant extra space.</p>
+    <p>Given an integer <code>n</code>, return <em>the least number of perfect square numbers that sum to <code>n</code></em>.</p>
+<p>A <strong>perfect square</strong> is an integer that is the square of an integer; in other words, it is the product of some integer with itself. For example, <code>1</code>, <code>4</code>, <code>9</code>, and <code>16</code> are perfect squares while <code>3</code> and <code>11</code> are not.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: chars = [&#34;a&#34;,&#34;a&#34;,&#34;b&#34;,&#34;b&#34;,&#34;c&#34;,&#34;c&#34;,&#34;c&#34;]
-Output: Return 6, and the first 6 characters of the input array should be:
-[&#34;a&#34;,&#34;2&#34;,&#34;b&#34;,&#34;2&#34;,&#34;c&#34;,&#34;3&#34;]
-Explanation: The groups are &#34;aa&#34;, &#34;bb&#34;, and &#34;ccc&#34;. This compresses to &#34;a2b2c3&#34;.
+<pre tabindex="0"><code>Input: n = 12
+Output: 3
+Explanation: 12 = 4 + 4 + 4.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: chars = [&#34;a&#34;]
-Output: Return 1, and the first character of the input array should be:
-[&#34;a&#34;]
-Explanation: The only group is &#34;a&#34;, which remains uncompressed since it&#39;s a single character.
-</code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: chars = [&#34;a&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;,&#34;b&#34;]
-Output: Return 4, and the first 4 characters of the input array should be:
-[&#34;a&#34;,&#34;b&#34;,&#34;1&#34;,&#34;2&#34;].
-Explanation: The groups are &#34;a&#34; and &#34;bbbbbbbbbbbb&#34;. This compresses to &#34;ab12&#34;.
+<pre tabindex="0"><code>Input: n = 13
+Output: 2
+Explanation: 13 = 4 + 9.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= chars.length &lt;= 2000</code></li>
-<li><code>chars[i]</code> is a lowercase English letter, uppercase English letter, digit, or symbol.</li>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -119,42 +104,18 @@ Explanation: The groups are &#34;a&#34; and &#34;bbbbbbbbbbbb&#34;. This compres
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">compress</span>(self, chars: List[<span style="color:#0aa">str</span>]) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(chars)
-</span></span><span style="display:flex;"><span>        i, j = <span style="color:#099">0</span>, <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> j &lt; n:
-</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># set char</span>
-</span></span><span style="display:flex;"><span>            chars[i] = chars[j]
-</span></span><span style="display:flex;"><span>            i += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># count</span>
-</span></span><span style="display:flex;"><span>            count = <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> j + <span style="color:#099">1</span> &lt; n <span style="color:#00a">and</span> chars[j] == chars[j+<span style="color:#099">1</span>]:
-</span></span><span style="display:flex;"><span>                count += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">numSquares</span>(self, n: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        dp = [math.inf] * (n + <span style="color:#099">1</span>)
+</span></span><span style="display:flex;"><span>        dp[<span style="color:#099">0</span>] = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>, n+<span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>            j = <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> j*j &lt;= i:
+</span></span><span style="display:flex;"><span>                dp[i] = <span style="color:#0aa">min</span>(dp[i], dp[i - j*j] + <span style="color:#099">1</span>)
 </span></span><span style="display:flex;"><span>                j += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># set count</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> count &gt; <span style="color:#099">1</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">for</span> c <span style="color:#00a">in</span> <span style="color:#0aa">str</span>(count):
-</span></span><span style="display:flex;"><span>                    chars[i] = c
-</span></span><span style="display:flex;"><span>                    i += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            j += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> i</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> dp[n]</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

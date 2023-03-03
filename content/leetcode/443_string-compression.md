@@ -51,25 +51,25 @@ Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 class Solution:
     def compress(self, chars: List[str]) -> int:
         n = len(chars)
-        idx = 0
-        prev = None
-        i = 0
-        while i < n:
-            if chars[i] != prev:
-                prev = chars[i]
-                chars[idx] = chars[i]
-                idx += 1
-                i += 1
-                continue
+        i, j = 0, 0
+        while j < n:
+            # set char
+            chars[i] = chars[j]
+            i += 1
+
+            # count
             count = 1
-            while i < n and chars[i] == prev:
+            while j + 1 < n and chars[j] == chars[j+1]:
                 count += 1
-                i += 1
+                j += 1
+            
+            # set count
             if count > 1:
                 for c in str(count):
-                    chars[idx] = c
-                    idx += 1
-        return idx
+                    chars[i] = c
+                    i += 1
+            j += 1
+        return i
 {{< / highlight >}}
 </div>
 </div>

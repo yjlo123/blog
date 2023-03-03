@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>1755 Closest Subsequence Sum</title>
+        <title>2035 Partition Array Into Two Arrays to Minimize Sum Difference</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>1755 Closest Subsequence Sum</h1>
+  <h1>2035 Partition Array Into Two Arrays to Minimize Sum Difference</h1>
   <div class="blog-post-subheader">
     
-    <time>Feb 2023</time>
+    <time>Mar 2023</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -70,33 +70,45 @@
    </li>
   
    <li>
+     <a href="/tags/lc_binary_search">lc_binary_search</a>
+   </li>
+  
+   <li>
      <a href="/tags/lc_meet_in_the_middle">lc_meet_in_the_middle</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given an integer array <code>nums</code> and an integer <code>goal</code>.</p>
-<p>You want to choose a subsequence of <code>nums</code> such that the sum of its elements is the closest possible to <code>goal</code>. That is, if the sum of the subsequence&rsquo;s elements is <code>sum</code>, then you want to minimize the absolute difference <code>abs(sum - goal)</code>.</p>
-<p>Return <em>the <strong>minimum</strong> possible value of <code>abs(sum - goal)</code></em>.</p>
-<p>Note that a subsequence of an array is an array formed by removing some elements <strong>(possibly all or none)</strong> of the original array.</p>
+    <p>You are given an integer array <code>nums</code> of <code>2 * n</code> integers. You need to partition <code>nums</code> into two arrays of length <code>n</code> to <strong>minimize the absolute difference</strong> of the <strong>sums</strong> of the arrays. To partition <code>nums</code>, put each element of <code>nums</code> into one of the two arrays.</p>
+<p>Return <em>the <strong>minimum</strong> possible absolute difference</em>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: nums = [5,-7,3,5], goal = 6
-Output: 0
-Explanation: Choose the whole array as a subsequence, with a sum of 6.
-This is equal to the goal, so the absolute difference is 0.
+<pre tabindex="0"><code>arr1: 3  9
+nums: 3  9  7  3
+arr2:       7  3
+
+Input: nums = [3,9,7,3]
+Output: 2
+Explanation: One optimal partition is: [3,9] and [7,3].
+The absolute difference between the sums of the arrays is abs((3 + 9) - (7 + 3)) = 2.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: nums = [7,-9,15,-2], goal = -5
-Output: 1
-Explanation: Choose the subsequence [7,-9,-2], with a sum of -4.
-The absolute difference is abs(-4 - (-5)) = abs(1) = 1, which is the minimum.
+<pre tabindex="0"><code>Input: nums = [-36,36]
+Output: 72
+Explanation: One optimal partition is: [-36] and [36].
+The absolute difference between the sums of the arrays is abs((-36) - (36)) = 72.
 </code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: nums = [1,2,3], goal = -7
-Output: 7
+<pre tabindex="0"><code>arr1: 2         4      -9
+nums: 2  -1  0  4  -2  -9
+arr2:    -1  0     -2
+
+Input: nums = [2,-1,0,4,-2,-9]
+Output: 0
+Explanation: One optimal partition is: [2,4,-9] and [-1,0,-2].
+The absolute difference between the sums of the arrays is abs((2 + 4 + -9) - (-1 + 0 + -2)) = 0.
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 40</code></li>
+<li><code>1 &lt;= n &lt;= 15</code></li>
+<li><code>nums.length == 2 * n</code></li>
 <li><code>-10<sup>7</sup> &lt;= nums[i] &lt;= 10<sup>7</sup></code></li>
-<li><code>-10<sup>9</sup> &lt;= goal &lt;= 10<sup>9</sup></code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -127,42 +139,32 @@ Output: 7
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minAbsDifference</span>(self, nums: List[<span style="color:#0aa">int</span>], goal: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(nums)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># all possible sums of given array</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">get_all_sums</span>(arr):
-</span></span><span style="display:flex;"><span>            sums = {<span style="color:#099">0</span>}            
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> a <span style="color:#00a">in</span> arr:
-</span></span><span style="display:flex;"><span>                sums |= {s + a <span style="color:#00a">for</span> s <span style="color:#00a">in</span> sums}
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> sums 
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minimumDifference</span>(self, nums: List[<span style="color:#0aa">int</span>]) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        h = <span style="color:#0aa">len</span>(nums) // <span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span>        left_half, right_half = nums[:h], nums[h:]
+</span></span><span style="display:flex;"><span>        ans = <span style="color:#0aa">abs</span>(<span style="color:#0aa">sum</span>(left_half) - <span style="color:#0aa">sum</span>(right_half))
+</span></span><span style="display:flex;"><span>        total = <span style="color:#0aa">sum</span>(nums)
+</span></span><span style="display:flex;"><span>        half = total // <span style="color:#099">2</span>
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        s1 = <span style="color:#0aa">sorted</span>(get_all_sums(nums[:n//<span style="color:#099">2</span>]))
-</span></span><span style="display:flex;"><span>        s2 = <span style="color:#0aa">sorted</span>(get_all_sums(nums[n//<span style="color:#099">2</span>:]))
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> k <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>, h // <span style="color:#099">2</span> + <span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># select k from left half, and h-k from right half</span>
+</span></span><span style="display:flex;"><span>            left = [<span style="color:#0aa">sum</span>(comb) <span style="color:#00a">for</span> comb <span style="color:#00a">in</span> combinations(left_half, k)]
+</span></span><span style="display:flex;"><span>            right = [<span style="color:#0aa">sum</span>(comb) <span style="color:#00a">for</span> comb <span style="color:#00a">in</span> combinations(right_half, h - k)]
+</span></span><span style="display:flex;"><span>            right.sort()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        best = math.inf
-</span></span><span style="display:flex;"><span>        l = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        r = <span style="color:#0aa">len</span>(s2) - <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># find the sum of two sums from s1 and s2 respectively</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># that gives a value closest to the goal</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> l &lt; <span style="color:#0aa">len</span>(s1) <span style="color:#00a">and</span> r &gt;= <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>            s = s1[l] + s2[r]
-</span></span><span style="display:flex;"><span>            best = <span style="color:#0aa">min</span>(best, <span style="color:#0aa">abs</span>(s - goal))
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> s == goal:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> s &lt; goal:
-</span></span><span style="display:flex;"><span>                l += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
-</span></span><span style="display:flex;"><span>                r -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> best</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> l <span style="color:#00a">in</span> left:
+</span></span><span style="display:flex;"><span>                r = half - l
+</span></span><span style="display:flex;"><span>                p = bisect.bisect_left(right, r) 
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">for</span> pp <span style="color:#00a">in</span> [p, p - <span style="color:#099">1</span>]:
+</span></span><span style="display:flex;"><span>                    <span style="color:#00a">if</span> <span style="color:#099">0</span> &lt;= pp &lt; <span style="color:#0aa">len</span>(right):
+</span></span><span style="display:flex;"><span>                        left_ans_sum = l + right[pp]
+</span></span><span style="display:flex;"><span>                        right_ans_sum = total - left_ans_sum
+</span></span><span style="display:flex;"><span>                        diff = <span style="color:#0aa">abs</span>(left_ans_sum - right_ans_sum)
+</span></span><span style="display:flex;"><span>                        ans = <span style="color:#0aa">min</span>(ans, diff) 
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> ans</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>1755 Closest Subsequence Sum</title>
+        <title>149 Max Points on a Line</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,10 +49,10 @@
 
 
 <div class="blog-post">
-  <h1>1755 Closest Subsequence Sum</h1>
+  <h1>149 Max Points on a Line</h1>
   <div class="blog-post-subheader">
     
-    <time>Feb 2023</time>
+    <time>Mar 2023</time>
     <div class="nav-buttons"><a href="/leetcode/pick-one/">🔀 Pick One</a></div>
     
   </div><ul class="tags">
@@ -66,38 +66,44 @@
    </li>
   
    <li>
-     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
+     <a href="/tags/lc_math">lc_math</a>
    </li>
   
    <li>
-     <a href="/tags/lc_meet_in_the_middle">lc_meet_in_the_middle</a>
+     <a href="/tags/lc_hash_table">lc_hash_table</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given an integer array <code>nums</code> and an integer <code>goal</code>.</p>
-<p>You want to choose a subsequence of <code>nums</code> such that the sum of its elements is the closest possible to <code>goal</code>. That is, if the sum of the subsequence&rsquo;s elements is <code>sum</code>, then you want to minimize the absolute difference <code>abs(sum - goal)</code>.</p>
-<p>Return <em>the <strong>minimum</strong> possible value of <code>abs(sum - goal)</code></em>.</p>
-<p>Note that a subsequence of an array is an array formed by removing some elements <strong>(possibly all or none)</strong> of the original array.</p>
+    <p>Given an array of <code>points</code> where <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code> represents a point on the X-Y plane, return <em>the maximum number of points that lie on the same straight line</em>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: nums = [5,-7,3,5], goal = 6
-Output: 0
-Explanation: Choose the whole array as a subsequence, with a sum of 6.
-This is equal to the goal, so the absolute difference is 0.
+<pre tabindex="0"><code>4
+3     x
+2   x
+1 x
+0 1 2 3 4 
+
+Input: points = [[1,1],[2,2],[3,3]]
+Output: 3
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: nums = [7,-9,15,-2], goal = -5
-Output: 1
-Explanation: Choose the subsequence [7,-9,-2], with a sum of -4.
-The absolute difference is abs(-4 - (-5)) = abs(1) = 1, which is the minimum.
-</code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: nums = [1,2,3], goal = -7
-Output: 7
+<pre tabindex="0"><code>4 x
+3   x     x
+2     x
+1 x     x
+0 1 2 3 4 5
+
+Input: points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]
+Output: 4
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 40</code></li>
-<li><code>-10<sup>7</sup> &lt;= nums[i] &lt;= 10<sup>7</sup></code></li>
-<li><code>-10<sup>9</sup> &lt;= goal &lt;= 10<sup>9</sup></code></li>
+<li><code>1 &lt;= points.length &lt;= 300</code></li>
+<li><code>points[i].length == 2</code></li>
+<li><code>-10<sup>4</sup> &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= 10<sup>4</sup></code></li>
+<li>All the <code>points</code> are <strong>unique</strong>.</li>
 </ul>
+<blockquote>
+<p>For a fixed point <code>points[i]</code>, consider all other points <code>points[j]</code> and calculate the atan2 for each vector <code>points[j] - points[i]</code> (the vector with the magnitudes <code>(points[j].x - points[i].x, points[j].y - points[i].y)</code>). Then find the maximum number of times some angle value occurs among the calculated values.</p>
+</blockquote>
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -117,52 +123,22 @@ Output: 7
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minAbsDifference</span>(self, nums: List[<span style="color:#0aa">int</span>], goal: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(nums)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># all possible sums of given array</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">get_all_sums</span>(arr):
-</span></span><span style="display:flex;"><span>            sums = {<span style="color:#099">0</span>}            
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> a <span style="color:#00a">in</span> arr:
-</span></span><span style="display:flex;"><span>                sums |= {s + a <span style="color:#00a">for</span> s <span style="color:#00a">in</span> sums}
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> sums 
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        s1 = <span style="color:#0aa">sorted</span>(get_all_sums(nums[:n//<span style="color:#099">2</span>]))
-</span></span><span style="display:flex;"><span>        s2 = <span style="color:#0aa">sorted</span>(get_all_sums(nums[n//<span style="color:#099">2</span>:]))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        best = math.inf
-</span></span><span style="display:flex;"><span>        l = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        r = <span style="color:#0aa">len</span>(s2) - <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># find the sum of two sums from s1 and s2 respectively</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># that gives a value closest to the goal</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> l &lt; <span style="color:#0aa">len</span>(s1) <span style="color:#00a">and</span> r &gt;= <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>            s = s1[l] + s2[r]
-</span></span><span style="display:flex;"><span>            best = <span style="color:#0aa">min</span>(best, <span style="color:#0aa">abs</span>(s - goal))
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> s == goal:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> s &lt; goal:
-</span></span><span style="display:flex;"><span>                l += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
-</span></span><span style="display:flex;"><span>                r -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> best</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">maxPoints</span>(self, points: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(points)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> n == <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>        result = <span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n):
+</span></span><span style="display:flex;"><span>            cnt = collections.defaultdict(<span style="color:#0aa">int</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(n):
+</span></span><span style="display:flex;"><span>                <span style="color:#00a">if</span> j != i:
+</span></span><span style="display:flex;"><span>                    cnt[math.atan2(points[j][<span style="color:#099">1</span>] - points[i][<span style="color:#099">1</span>],
+</span></span><span style="display:flex;"><span>                                   points[j][<span style="color:#099">0</span>] - points[i][<span style="color:#099">0</span>])] += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            result = <span style="color:#0aa">max</span>(result, <span style="color:#0aa">max</span>(cnt.values()) + <span style="color:#099">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> result</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>

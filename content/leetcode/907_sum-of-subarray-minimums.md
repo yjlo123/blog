@@ -6,7 +6,7 @@ draft: false
 tags: ["leetcode", "lc_medium", "lc_stack", "lc_array"]
 ---
 
-Given an array of integers arr, find the sum of `min(b)`, where `b` ranges over every (contiguous) subarray of `arr`. Since the answer may be large, return the answer modulo <code>10<sup>9</sup> + 7</code>.
+Given an array of integers `arr`, find the sum of `min(b)`, where `b` ranges over every (contiguous) subarray of `arr`. Since the answer may be large, return the answer modulo <code>10<sup>9</sup> + 7</code>.
 
 **Example 1:**
 ```
@@ -27,6 +27,8 @@ Output: 444
 - <code>1 <= arr.length <= 3 * 10<sup>4</sup></code>
 - <code>1 <= arr[i] <= 3 * 10<sup>4</sup></code>
 
+> For each element, find how many subarrays containing this element with this element as the minimum.
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
@@ -41,7 +43,8 @@ class Solution:
         for i, n in enumerate(arr):
             while stack and arr[stack[-1]] > n:
                 cur = stack.pop()
-                res += arr[cur] * (i - cur) * (cur - stack[-1]) 
+                # arr[cur] is the min between arr[stack[-1]] and arr[i] (exclusive)
+                res += arr[cur] * (cur - stack[-1]) * (i - cur) 
             stack.append(i)
         return res % MOD
 {{< / highlight >}}

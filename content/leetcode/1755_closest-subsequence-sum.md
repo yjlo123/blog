@@ -3,7 +3,7 @@ weight: 1755
 title: "1755 Closest Subsequence Sum"
 date: 2023-02-01T00:00:00-04:00
 draft: false
-tags: ["leetcode", "lc_hard", "lc_two_pointers"]
+tags: ["leetcode", "lc_hard", "lc_two_pointers", "lc_meet_in_the_middle"]
 ---
 
 You are given an integer array `nums` and an integer `goal`.

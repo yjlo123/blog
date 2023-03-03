@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>1755 Closest Subsequence Sum</title>
+        <title>1353 Maximum Number of Events That Can Be Attended</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,7 +49,7 @@
 
 
 <div class="blog-post">
-  <h1>1755 Closest Subsequence Sum</h1>
+  <h1>1353 Maximum Number of Events That Can Be Attended</h1>
   <div class="blog-post-subheader">
     
     <time>Feb 2023</time>
@@ -62,41 +62,43 @@
    </li>
   
    <li>
-     <a href="/tags/lc_hard">lc_hard</a>
+     <a href="/tags/lc_medium">lc_medium</a>
    </li>
   
    <li>
-     <a href="/tags/lc_two_pointers">lc_two_pointers</a>
+     <a href="/tags/lc_heap">lc_heap</a>
    </li>
   
    <li>
-     <a href="/tags/lc_meet_in_the_middle">lc_meet_in_the_middle</a>
+     <a href="/tags/lc_greedy">lc_greedy</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <p>You are given an integer array <code>nums</code> and an integer <code>goal</code>.</p>
-<p>You want to choose a subsequence of <code>nums</code> such that the sum of its elements is the closest possible to <code>goal</code>. That is, if the sum of the subsequence&rsquo;s elements is <code>sum</code>, then you want to minimize the absolute difference <code>abs(sum - goal)</code>.</p>
-<p>Return <em>the <strong>minimum</strong> possible value of <code>abs(sum - goal)</code></em>.</p>
-<p>Note that a subsequence of an array is an array formed by removing some elements <strong>(possibly all or none)</strong> of the original array.</p>
+    <p>You are given an array of <code>events</code> where <code>events[i] = [startDay<sub>i</sub>, endDay<sub>i</sub>]</code>. Every event <code>i</code> starts at <code>startDay<sub>i</sub></code> and ends at <code>endDay<sub>i</sub></code>.</p>
+<p>You can attend an event <code>i</code> at any day <code>d</code> where <code>startTime<sub>i</sub> &lt;= d &lt;= endTime<sub>i</sub></code>. You can only attend one event at any time <code>d</code>.</p>
+<p>Return <em>the maximum number of events you can attend</em>.</p>
 <p><strong>Example 1:</strong></p>
-<pre tabindex="0"><code>Input: nums = [5,-7,3,5], goal = 6
-Output: 0
-Explanation: Choose the whole array as a subsequence, with a sum of 6.
-This is equal to the goal, so the absolute difference is 0.
+<pre tabindex="0"><code> 1 [x _]
+ 2   [x _]
+ 3     [x _]
+Day 1 2 3 4
+
+Input: events = [[1,2],[2,3],[3,4]]
+Output: 3
+Explanation: You can attend all the three events.
+One way to attend them all is as shown.
+Attend the first event on day 1.
+Attend the second event on day 2.
+Attend the third event on day 3.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre tabindex="0"><code>Input: nums = [7,-9,15,-2], goal = -5
-Output: 1
-Explanation: Choose the subsequence [7,-9,-2], with a sum of -4.
-The absolute difference is abs(-4 - (-5)) = abs(1) = 1, which is the minimum.
-</code></pre><p><strong>Example 3:</strong></p>
-<pre tabindex="0"><code>Input: nums = [1,2,3], goal = -7
-Output: 7
+<pre tabindex="0"><code>Input: events= [[1,2],[2,3],[3,4],[1,2]]
+Output: 4
 </code></pre><p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 40</code></li>
-<li><code>-10<sup>7</sup> &lt;= nums[i] &lt;= 10<sup>7</sup></code></li>
-<li><code>-10<sup>9</sup> &lt;= goal &lt;= 10<sup>9</sup></code></li>
+<li><code>1 &lt;= events.length &lt;= 10<sup>5</sup></code></li>
+<li><code>events[i].length == 2</code></li>
+<li><code>1 &lt;= startDay<sub>i</sub> &lt;= endDay<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
 </ul>
 <div class="tabs"></div>
 <div class="tab-content">
@@ -135,34 +137,34 @@ Output: 7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">class</span> <span style="color:#0a0;text-decoration:underline">Solution</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">minAbsDifference</span>(self, nums: List[<span style="color:#0aa">int</span>], goal: <span style="color:#0aa">int</span>) -&gt; <span style="color:#0aa">int</span>:
-</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(nums)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">def</span> <span style="color:#0a0">maxEvents</span>(self, events: List[List[<span style="color:#0aa">int</span>]]) -&gt; <span style="color:#0aa">int</span>:
+</span></span><span style="display:flex;"><span>        n = <span style="color:#0aa">len</span>(events)
+</span></span><span style="display:flex;"><span>        events.sort()
+</span></span><span style="display:flex;"><span>        heap = []   <span style="color:#aaa;font-style:italic"># heap of on-going events&#39; end time</span>
+</span></span><span style="display:flex;"><span>        res = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        d = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>        i = <span style="color:#099">0</span>   <span style="color:#aaa;font-style:italic"># index of sorted events</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># all possible sums of given array</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">def</span> <span style="color:#0a0">get_all_sums</span>(arr):
-</span></span><span style="display:flex;"><span>            sums = {<span style="color:#099">0</span>}            
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">for</span> a <span style="color:#00a">in</span> arr:
-</span></span><span style="display:flex;"><span>                sums |= {s + a <span style="color:#00a">for</span> s <span style="color:#00a">in</span> sums}
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">return</span> sums 
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        s1 = <span style="color:#0aa">sorted</span>(get_all_sums(nums[:n//<span style="color:#099">2</span>]))
-</span></span><span style="display:flex;"><span>        s2 = <span style="color:#0aa">sorted</span>(get_all_sums(nums[n//<span style="color:#099">2</span>:]))
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> i &lt; n <span style="color:#00a">or</span> heap:
+</span></span><span style="display:flex;"><span>            <span style="color:#aaa;font-style:italic"># while there are no-yet stated or on-going events</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        best = math.inf
-</span></span><span style="display:flex;"><span>        l = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>        r = <span style="color:#0aa">len</span>(s2) - <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># find the sum of two sums from s1 and s2 respectively</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#aaa;font-style:italic"># that gives a value closest to the goal</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">while</span> l &lt; <span style="color:#0aa">len</span>(s1) <span style="color:#00a">and</span> r &gt;= <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>            s = s1[l] + s2[r]
-</span></span><span style="display:flex;"><span>            best = <span style="color:#0aa">min</span>(best, <span style="color:#0aa">abs</span>(s - goal))
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> s == goal:
-</span></span><span style="display:flex;"><span>                <span style="color:#00a">return</span> <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">elif</span> s &lt; goal:
-</span></span><span style="display:flex;"><span>                l += <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#00a">else</span>:
-</span></span><span style="display:flex;"><span>                r -= <span style="color:#099">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> best</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">if</span> <span style="color:#00a">not</span> heap:
+</span></span><span style="display:flex;"><span>                <span style="color:#aaa;font-style:italic"># no on-going events, jump to the next event</span>
+</span></span><span style="display:flex;"><span>                d = events[i][<span style="color:#099">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> i &lt; n <span style="color:#00a">and</span> events[i][<span style="color:#099">0</span>] &lt;= d:
+</span></span><span style="display:flex;"><span>                <span style="color:#aaa;font-style:italic"># add started events&#39; end time to heap</span>
+</span></span><span style="display:flex;"><span>                heapq.heappush(heap, events[i][<span style="color:#099">1</span>])
+</span></span><span style="display:flex;"><span>                i += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            heapq.heappop(heap)
+</span></span><span style="display:flex;"><span>            res += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            d += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#00a">while</span> heap <span style="color:#00a">and</span> heap[<span style="color:#099">0</span>] &lt; d:
+</span></span><span style="display:flex;"><span>                <span style="color:#aaa;font-style:italic"># remove ended events from heap</span>
+</span></span><span style="display:flex;"><span>                heapq.heappop(heap)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> res</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
