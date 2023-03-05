@@ -6,11 +6,12 @@ draft: false
 tags: ["leetcode", "lc_easy", "lc_array"]
 ---
 
-You are given an array `prices` where `prices[i]` is the price of a given stock on the i<sup>th</sup> day.
+You are given an array `prices` where `prices[i]` is the price of a given stock on the <code>i<sup>th</sup></code> day.
 
 You want to maximize your profit by choosing a **single day** to buy one stock and choosing a **different day in the future** to sell that stock.
 
-Return _the maximum profit_ you can achieve from this transaction. If you cannot achieve any profit, return `0`.
+Return *the maximum profit you can achieve from this transaction*. If you cannot achieve any profit, return `0`.
+
 
 **Example 1:**
 ```
@@ -30,8 +31,8 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 
 **Constraints:**
 
-- 1 <= prices.length <= 10<sup>5</sup>
-- 0 <= prices[i] <= 10<sup>4</sup>
+- <code>1 <= prices.length <= 10<sup>5</sup></code>
+- <code>0 <= prices[i] <= 10<sup>4</sup></code>
 
 <div class="tabs"></div>
 <div class="tab-content">
@@ -39,13 +40,13 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 {{< highlight python "linenos=table" >}}
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        lowest = 10**4
+        lowest = math.inf
         max_profit = 0
         for p in prices:
             if p < lowest:
                 lowest = p
-            elif p - lowest > max_profit:
-                max_profit = p - lowest
+            else:
+                max_profit = max(max_profit, p - lowest)
         return max_profit
 {{< / highlight >}}
 </div>
