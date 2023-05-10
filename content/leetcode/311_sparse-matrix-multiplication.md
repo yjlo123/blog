@@ -30,6 +30,19 @@ Output: [[0]]
 - `1 <= m, n, k <= 100`
 - `-100 <= mat1[i][j], mat2[i][j] <= 100`
 
+```
+Compression:
+{row: [(val, col), ...]}
+
+[[1,0,0],   =>   {0: [( 1,0)], 
+ [-1,0,3]]        1: [(-1,0), (3,2)]}
+
+[[7,0,0],   =>   {0: [(7,0)],
+ [0,0,0],         1: [(1,2)]}
+ [0,0,1]] 
+```
+
+
 <div class="tabs"></div>
 <div class="tab-content">
 <div id="python" class="lang">
