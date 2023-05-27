@@ -8,7 +8,7 @@ tags: ["leetcode", "lc_easy", "lc_math"]
 
 Given an integer `x`, return *`true` if `x` is a palindrome, and `false` otherwise*.
 
-> palindrome: an integer is a **palindrome** when it reads the same forward and backward. For example, `121` is a palindrome while `123` is not.
+> palindrome: An integer is a **palindrome** when it reads the same forward and backward. For example, `121` is a palindrome while `123` is not.
 
 **Example 1:**
 ```
@@ -64,6 +64,41 @@ class Solution:
             x //= 10
         
         return x == rev or x == rev // 10
+{{< / highlight >}}
+</div>
+<div id="golang" class="lang">
+{{< highlight golang "linenos=table" >}}
+func isPalindrome(x int) bool {
+    if x < 0 || (x % 10 == 0 && x != 0) {
+        return false
+    }
+
+    revNum := 0
+    for x > revNum {
+        revNum = revNum * 10 + x % 10
+        x /= 10
+    }
+    return x == revNum || x == revNum/10
+}
+{{< / highlight >}}
+</div>
+<div id="java" class="lang">
+{{< highlight java "linenos=table" >}}
+class Solution {
+    public boolean isPalindrome(int x) {
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
+
+        int reverted = 0;
+        while (x > reverted) {
+            reverted = reverted * 10 + x % 10;
+            x /= 10;
+        }
+
+        return x == reverted || x == reverted / 10;
+    }
+}
 {{< / highlight >}}
 </div>
 </div>
