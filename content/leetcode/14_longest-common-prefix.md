@@ -47,9 +47,37 @@ class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         strs.sort()
         res = strs[0]
+        # only check with the last one
         while not strs[-1].startswith(res):
             res = res[:-1]
         return res
+{{< / highlight >}}
+</div>
+
+<div id="golang" class="lang">
+{{< highlight golang "linenos=table" >}}
+/* Sort and reduce prefix */
+func longestCommonPrefix(strs []string) string {
+    sort.Strings(strs)
+    res := strs[0]
+    for !strings.HasPrefix(strs[len(strs)-1], res) {
+        res = res[:len(res)-1]
+    }
+    return res
+}
+
+/* Sort and compare first & last */
+func longestCommonPrefix(strs []string) string {
+    sort.Strings(strs)
+    first := strs[0]
+	last := strs[len(strs) - 1]
+	for i := range first {
+		if first[i] != last[i] {
+			return first[:i]
+		}
+	}
+	return first
+}
 {{< / highlight >}}
 </div>
 </div>
