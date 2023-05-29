@@ -58,19 +58,19 @@ class Solution:
 {{< highlight golang "linenos=table" >}}
 /* Sort and reduce prefix */
 func longestCommonPrefix(strs []string) string {
-    sort.Strings(strs)
-    res := strs[0]
-    for !strings.HasPrefix(strs[len(strs)-1], res) {
-        res = res[:len(res)-1]
-    }
-    return res
+	sort.Strings(strs)
+	res := strs[0]
+	for !strings.HasPrefix(strs[len(strs)-1], res) {
+		res = res[:len(res)-1]
+	}
+	return res
 }
 
 /* Sort and compare first & last */
 func longestCommonPrefix(strs []string) string {
-    sort.Strings(strs)
-    first := strs[0]
-	last := strs[len(strs) - 1]
+	sort.Strings(strs)
+	first := strs[0]
+	last := strs[len(strs)-1]
 	for i := range first {
 		if first[i] != last[i] {
 			return first[:i]

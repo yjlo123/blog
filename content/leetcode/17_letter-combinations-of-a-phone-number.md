@@ -52,4 +52,41 @@ class Solution:
         return res
 {{< / highlight >}}
 </div>
+
+<div id="golang" class="lang">
+{{< highlight golang "linenos=table" >}}
+func letterCombinations(digits string) []string {
+	if digits == "" {
+		return []string{}
+	}
+
+	m := map[byte]string{
+		'0': "0",
+		'1': "1",
+		'2': "abc",
+		'3': "def",
+		'4': "ghi",
+		'5': "jkl",
+		'6': "mno",
+		'7': "pqrs",
+		'8': "tuv",
+		'9': "wxyz",
+	}
+
+	var res []string
+	backtrack("", &res, 0, digits, m)
+	return res
+}
+
+func backtrack(cur string, res *[]string, i int, digits string, m map[byte]string) {
+	if i == len(digits) {
+		*res = append(*res, cur)
+		return
+	}
+	for _, c := range m[digits[i]] {
+		backtrack(cur+string(c), res, i+1, digits, m)
+	}
+}
+{{< / highlight >}}
+</div>
 </div>
