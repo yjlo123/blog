@@ -1,9 +1,14 @@
 ---
-title: "Make a Game in Runtime Script (Part 1)"
+title: "Create a Game in Runtime Script (Part 1)"
 date: 2021-03-28T00:00:00+08:00
 draft: false
 tags: ["runtime script"]
 ---
+
+<link rel="stylesheet" href="https://runtime.siwei.dev/ui/console/jqconsole-embedded.css">
+<link rel="stylesheet" href="https://runtime.siwei.dev/ui/main/style.css"/>
+<script src="https://runtime.siwei.dev/ui/console/jqconsole.js"></script>
+
 
 Creating mini-games is one of the purposes of developing Runtime Script. Although it is not a convenient language to write games, Runtime Script provides the basic features, such as drawing pixels and monitoring key events, for building playable and publishable games.
 
@@ -12,7 +17,7 @@ I've created several games while implementing Runtime Script and found making ga
 [Sokoban](https://siwei.dev/app/sokoban/),
 [(More ...)](https://github.com/yjlo123/runtime-script#examples). Since some of them are created at an early stage of Runtime Script,   they may not have used the latest supported syntax.
 
-All the games I created using Runtime Script share the same necessary components, i.e. status variables, main loop, key events, sleep intervals, and redrawing pixels. In this blog, we are going to write such a boilerplate that can be modified to various mini-games.
+All the games I created using Runtime Script share the same necessary components, i.e. status variables, main loop, key events, sleep intervals, and redrawing pixels. In this article, we are going to implement such a boilerplate that can be modified to various mini-games.
 
 In the program that we are going to write, you can move a white pixel on the canvas by pressing arrow keys.
 
@@ -29,7 +34,7 @@ drw $cur_c $cur_r 1
 
 Be careful that the first argument of `drw` is the column, the second one is the row, and `1` means white color. For the details of the `drw` command and the complete list of colors, you can refer to [this session](https://siwei.dev/doc/runtime/#canvas) in the documentation.
 
-To move the pixel in the game, we can press an arrow key, but how does Runtime Script know it? `$lastkey` is a sepcial value that contains a queue of user pressed keys, and each key is represented by a number. For instance, the keycodes of the arrow keys are listed below:
+To move the pixel in the game, we can press an arrow key, but how does Runtime Script know it? `$lastkey` is a special value that contains a queue of keys pressed by the user, and each key is represented by a number. For instance, the keycodes of the arrow keys are listed below:
 
 | Key | Code |
 |---|---|
@@ -38,10 +43,11 @@ To move the pixel in the game, we can press an arrow key, but how does Runtime S
 | right | 39 |
 | down | 40 |
 
-Every time we try to get a value from `$lastkey`, a user key event is consumed from the queue.
+Every time we try to get a value from `$lastkey`, a key value is consumed from the queue.
 
-Let continue with the program. When the user presses the left arrow key, the program should print `left` and subtract the variable `cur_c` by `1`.
-```
+Let's continue with the program. When the user presses the **left arrow key**, the program should print `left` and subtract the variable `cur_c` by `1`.
+
+<div class="runtime-embedded-box " style="width: 100%; height: 200px;">
 slp 3000
 
 let key $lastkey
@@ -49,7 +55,7 @@ ife $key 37
  prt 'left'
  sub cur_c $cur_c 1
 fin
-```
+</div>
 
 The first line is for waiting for 3 seconds so that you have the chance to press the key before `$lastkey` is evaluated. Without the waiting time, the program finishes immediately.
 
@@ -93,8 +99,7 @@ We are almost done. Let's put all of the above into a loop called `main loop` so
 CAUTION! the `main loop` is an infinite loop! Remember to add a `slp` interval inside the loop to control the refresh rate. For example, `slp 100` will have a refresh rate of 10Hz (1000 / 100 = 10Hz).
 
 The final program:  
-(You can try it yourself at [Runtime Script Playground](https://runtime.siwei.dev/))
-```
+<div class="runtime-embedded-box runtime-show-canvas" style="width: 100%; height: 340px;">
 let cur_c 10
 let cur_r 10
 
@@ -136,4 +141,12 @@ drw $cur_c $cur_r 1
 
 slp 10
 jmp begin
-```
+</div>
+
+<script src="https://runtime.siwei.dev/runtime-init.js"></script>
+<script src="https://runtime.siwei.dev/ui/editor/ace.js"></script>
+<script src="https://runtime.siwei.dev/src/parser.js"></script>
+<script src="https://runtime.siwei.dev/src/canvas.js"></script>
+<script src="https://runtime.siwei.dev/src/evaluator.js"></script>
+<script src="https://runtime.siwei.dev/src/executer.js"></script>
+<script src="https://runtime.siwei.dev/runtime.js"></script>

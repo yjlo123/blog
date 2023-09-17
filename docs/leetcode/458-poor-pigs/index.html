@@ -105,7 +105,7 @@ At time 30, one of the two pigs must die, and the poisonous bucket is the one it
 </ul>
 <h3 id="approach-pig-as-a-qubit">Approach: Pig as a qubit</h3>
 <p><strong>Intuition</strong></p>
-<p>These &ldquo;strange&rdquo; questions are now asked by Google, Baidu and IBM because of their interest in quantum computing. <a href="https://en.wikipedia.org/wiki/Qubit">Quantum bit</a> (or qubit) is the basic unit of quantum information, it&rsquo;s the quantum version of the classical binary bit. Binary bit has only two states : <code>0</code> and <code>1</code>, and on a very basic level the qubit has more. In such questions we deal with an object (here is a pig) which has more than two states.</p>
+<p>These &quot;strange&quot; questions are now asked by Google, Baidu and IBM because of their interest in quantum computing. <a href="https://en.wikipedia.org/wiki/Qubit">Quantum bit</a> (or qubit) is the basic unit of quantum information, it's the quantum version of the classical binary bit. Binary bit has only two states : <code>0</code> and <code>1</code>, and on a very basic level the qubit has more. In such questions we deal with an object (here is a pig) which has more than two states.</p>
 <p><strong>How many states does a pig have</strong></p>
 <p>If there is no time to test, i.e. <code>minutesToTest / minutesToDie = 0</code>, the pig has only one state - <code>alive</code>.</p>
 <p>If <code>minutesToTest / minutesToDie = 1</code> then the pig has a time to die from the poison, that means that now there are two states available for the pig : <code>alive</code> or <code>dead</code>.</p>
@@ -114,7 +114,7 @@ At time 30, one of the two pigs must die, and the poisonous bucket is the one it
 <p>The number of available states for the pig is <code>states = minutesToTest / minutesToDie + 1</code>.</p>
 </blockquote>
 <p><strong>How many buckets could test <code>x</code> pigs with 2 available states</strong></p>
-<p>One pig could test 2 buckets - let&rsquo;s make him drink from the bucket number <code>1</code> and then wait <code>minutesToDie</code> time. If he is alive - the poison is in the bucket number <code>2</code>. If he is dead - the poison is in the bucket number <code>1</code>.</p>
+<p>One pig could test 2 buckets - let's make him drink from the bucket number <code>1</code> and then wait <code>minutesToDie</code> time. If he is alive - the poison is in the bucket number <code>2</code>. If he is dead - the poison is in the bucket number <code>1</code>.</p>
 <p>The same way two pigs could test 2<sup>2</sup>=4 buckets</p>
 <blockquote>
 <p>Hence if one pig has two available states, <code>x</code> pigs could test 2<sup>x</sup> buckets.</p>
@@ -123,10 +123,10 @@ At time 30, one of the two pigs must die, and the poisonous bucket is the one it
 <blockquote>
 <p>After the discussion above, the answer is quite obvious : s<sup>x</sup> buckets.</p>
 </blockquote>
-<p>Let&rsquo;s consider as an example one pig with 3 states, i.e. <code>s = minutesToTest / minutesToDie + 1 = 2 + 1 = 3</code>, and show that he could test <code>3</code> buckets.</p>
+<p>Let's consider as an example one pig with 3 states, i.e. <code>s = minutesToTest / minutesToDie + 1 = 2 + 1 = 3</code>, and show that he could test <code>3</code> buckets.</p>
 <p><strong>Solution</strong></p>
 <p>Hence the problem is to find <code>x</code> such that states<sup>x</sup>&gt; ≥ buckets, where <code>x</code> is a number of pigs, <code>states = minutesToTest / minutesToDie + 1</code> is a number of states available for each pig, and buckets is number of buckets.</p>
-<p>The solution is well known : x≥log<sub>states</sub>buckets. To simplify the code let&rsquo;s rewrite the equation with the help of natural logarithms:</p>
+<p>The solution is well known : x≥log<sub>states</sub>buckets. To simplify the code let's rewrite the equation with the help of natural logarithms:</p>
 <p>x ≥ log bucket / log states
 ​</p>
 <div class="tabs"></div>

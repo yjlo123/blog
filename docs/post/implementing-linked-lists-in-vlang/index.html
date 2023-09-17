@@ -66,9 +66,9 @@
   
 </ul>
 <div class="blog-post-content">
-    <p>In V&rsquo;s documentation, it says:</p>
+    <p>In V's documentation, it says:</p>
 <blockquote>
-<p>V&rsquo;s references are similar to Go pointers and C++ references.<br>
+<p>V's references are similar to Go pointers and C++ references.<br>
 For example, a generic tree structure definition would look like this:</p>
 </blockquote>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -91,7 +91,7 @@ For example, a generic tree structure definition would look like this:</p>
 <p>For most of the scenarios, we only want to create a new node with its children undefined, and then assign values to them after some preparations. But this is not feasible in V, since, for the safety purpose, V has no null, no undefined values.</p>
 <p>It seems to me that all the other programing languages have ways to represent empty values or null pointers. At least there should be a constant that can be recognized as an empty value.</p>
 <h2 id="first-attempt">First Attempt</h2>
-<p>Since V&rsquo;s reference is similar to C++ reference, I was wondering if I can set the integer <code>0</code> as the null pointer, and then found it worked.</p>
+<p>Since V's reference is similar to C++ reference, I was wondering if I can set the integer <code>0</code> as the null pointer, and then found it worked.</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -120,7 +120,7 @@ For example, a generic tree structure definition would look like this:</p>
 </div>
 <p>But obviously, it is tricky and also unsafe to do so. With no surprise, this is prohibited since V 0.2.</p>
 <h2 id="second-attempt">Second Attempt</h2>
-<p>I have to find another way to represent <code>empty</code> in V. After going through the V doc, the only &ldquo;empty thing&rdquo; I could found is an empty array. So here we go:</p>
+<p>I have to find another way to represent <code>empty</code> in V. After going through the V doc, the only &quot;empty thing&quot; I could found is an empty array. So here we go:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -206,7 +206,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#00a">type</span> <span style="color:#0a0;text-decoration:underline">Node</span><span style="color:#bbb"> </span>=<span style="color:#bbb"> </span>EmptyNode<span style="color:#bbb"> </span>|<span style="color:#bbb"> </span>ValueNode</span></span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Similar to the previous attempt, let&rsquo;s define its <code>checker</code>, <code>getter</code> and <code>setter</code>:</p>
+<p>Similar to the previous attempt, let's define its <code>checker</code>, <code>getter</code> and <code>setter</code>:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -237,7 +237,7 @@ For example, a generic tree structure definition would look like this:</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Next step, let&rsquo;s do some testing:
+<p>Next step, let's do some testing:
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1

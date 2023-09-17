@@ -81,7 +81,7 @@
 <li><code>FileSystem()</code> Initializes the object of the system.</li>
 <li><code>List&lt;String&gt; ls(String path)</code>
 <ul>
-<li>If <code>path</code> is a file path, returns a list that only contains this file&rsquo;s name.</li>
+<li>If <code>path</code> is a file path, returns a list that only contains this file's name.</li>
 <li>If <code>path</code> is a directory path, returns the list of file and directory names <strong>in this directory</strong>.</li>
 <li>The answer should in <strong>lexicographic order</strong>.</li>
 </ul>
@@ -116,23 +116,23 @@
 <td>Initially, directory <code>/</code> has nothing. So return empty list.</td>
 </tr>
 <tr>
-<td>fs.mkdir(&ldquo;a/b/c&rdquo;)</td>
+<td>fs.mkdir(&quot;a/b/c&quot;)</td>
 <td>null</td>
 <td>Create directory <code>a</code> in directory <code>/</code>. Then create directory <code>b</code> in directory <code>a</code>. Finally, create directory <code>c</code> in directory <code>b</code>.</td>
 </tr>
 <tr>
-<td>fs.addContentToFile(&ldquo;a/b/c/d&rdquo;,&ldquo;hello&rdquo;)</td>
+<td>fs.addContentToFile(&quot;a/b/c/d&quot;,&quot;hello&quot;)</td>
 <td>null</td>
 <td>Create a file named <code>d</code> with content <code>&quot;hello&quot;</code> in directory <code>a/b/c</code>.</td>
 </tr>
 <tr>
 <td>fs.ls(&quot;/&quot;)</td>
-<td>[&ldquo;a&rdquo;]</td>
+<td>[&quot;a&quot;]</td>
 <td>Only directory <code>a</code> is in directory <code>/</code>.</td>
 </tr>
 <tr>
-<td>fs.readContentFromFile(&ldquo;a/b/c/d&rdquo;)</td>
-<td>&ldquo;hello&rdquo;</td>
+<td>fs.readContentFromFile(&quot;a/b/c/d&quot;)</td>
+<td>&quot;hello&quot;</td>
 <td>Output the file content.</td>
 </tr>
 </tbody>

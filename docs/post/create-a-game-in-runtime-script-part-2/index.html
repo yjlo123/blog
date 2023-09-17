@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>My New PC</title>
+        <title>Create a Game in Runtime Script (Part 2)</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -49,113 +49,103 @@
 
 
 <div class="blog-post">
-  <h1>My New PC</h1>
+  <h1>Create a Game in Runtime Script (Part 2)</h1>
   <div class="blog-post-subheader">
     
-    <time>08 Sep 2020</time>
+    <time>17 Sep 2023</time>
     
   </div><ul class="tags">
   
    <li>
-     <a href="/tags/pc">pc</a>
+     <a href="/tags/runtime-script">runtime script</a>
    </li>
   
 </ul>
 <div class="blog-post-content">
-    <table>
-<thead>
-<tr>
-<th>Part</th>
-<th>Name</th>
-<th>Price (SGD)</th>
-<th>Bought From</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CPU</td>
-<td><a href="https://www.amd.com/en/products/cpu/amd-ryzen-5-3600x">AMD Ryzen 5 3600X</a></td>
-<td>289.34</td>
-<td>Amazon</td>
-</tr>
-<tr>
-<td>MB</td>
-<td><a href="https://www.asus.com/Motherboards-Components/Motherboards/All-series/TUF-GAMING-B550M-PLUS/">ASUS TUF Gaming B550M-PLUS</a></td>
-<td>221.40</td>
-<td>Amazon</td>
-</tr>
-<tr>
-<td>MEM</td>
-<td><a href="https://www.corsair.com/uk/en/Categories/Products/Memory/VENGEANCE-LPX/p/CMK32GX4M2B3200C16#tab-overview">Corsair Vengeance 3200 C16 16GB*2</a></td>
-<td>152.21</td>
-<td>Amazon</td>
-</tr>
-<tr>
-<td>PSU</td>
-<td><a href="https://www.coolermaster.com/catalog/power-supplies/mwe-series/mwe-gold-550-full-modular/">Cooler Master Gold 550 Full Modular</a></td>
-<td>105.00</td>
-<td>Shopee</td>
-</tr>
-<tr>
-<td>GPU</td>
-<td><a href="https://www.zotac.com/us/product/graphics_card/zotac-gaming-geforce-gtx-1660-super-twin-fan">ZOTAC Gaming GTX 1660 Super</a></td>
-<td>324.00</td>
-<td>Shopee</td>
-</tr>
-<tr>
-<td>SSD</td>
-<td><a href="https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-970-evo-plus-nvme-m-2-500gb-mz-v7s500b-am/">Samsung 970 EVO Plus 500GB</a></td>
-<td>138.37</td>
-<td>Amazon</td>
-</tr>
-<tr>
-<td>SSD</td>
-<td><a href="https://www.kingston.com/en/ssd/a2000-nvme-pcie-ssd">Kingston A 2000 Nvme Pcie 500G</a></td>
-<td>76.37</td>
-<td>Shopee</td>
-</tr>
-<tr>
-<td>CASE</td>
-<td><a href="https://www.coolermaster.com/us/en-us/catalog/cases/mini-tower/masterbox-nr400-without-odd/">Cooler Master MASTERBOX NR400</a></td>
-<td>89.00</td>
-<td>Shopee</td>
-</tr>
-<tr>
-<td>FAN</td>
-<td><a href="https://www.bequiet.com/en/casefans/448">be quiet! PURE WINGS 2 140mm</a> * 2</td>
-<td>35.00</td>
-<td>Shopee</td>
-</tr>
-<tr>
-<td>FAN</td>
-<td>30cm PWM Fan Splitter Cable * 2</td>
-<td>4.03</td>
-<td>Shopee</td>
-</tr>
-<tr>
-<td>Total</td>
-<td></td>
-<td>1434.72</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p> </p>
-<p>Some thoughts before the purchase:</p>
-<ol>
-<li><strong>An mATX casing</strong><br>
-prefer a smaller size PC, but not ITX, which is usually poorly ventilated and more restricted to configure</li>
-<li><strong>A cost-effective CPU</strong><br>
-AMD Ryzen 3000 series is a good option</li>
-<li><strong>A budget GPU</strong><br>
-I'm not a serious gamer</li>
-<li><strong>SSD(Nvme) only</strong><br>
-SSD is not way too expensive compared to HDD nowadays</li>
-<li><strong>32GB memory</strong><br>
-should be more than enough</li>
-<li><strong>Adequate and quiet cooling</strong><br>
-just don't want my PC to be overheated</li>
-</ol>
+    <script src="https://runtime.siwei.dev/ui/main/jquery-1.12.4.js"></script>
+<script src="https://runtime.siwei.dev/ui/console/jqconsole.js"></script>
+<link rel="stylesheet" href="https://siwei.dev/doc/runtime/css/styles.css">
+<link rel="stylesheet" href="https://runtime.siwei.dev/ui/console/jqconsole-embedded.css">
+<link rel="stylesheet" href="https://runtime.siwei.dev/ui/main/style.css"/>
+<p>In the previous part, we have implemented a simple game template that allowes users to control a pixel on the canvas by pressing arrow keys, in this part, we are going to add two more features to make it more like a game:</p>
+<ul>
+<li>physics (gravity)</li>
+<li>drawing charactures with bitmaps</li>
+</ul>
+<p>First let's resieze our canvas. By default, its size is 24 by 24, and we can add an optional argument to the <code>cls</code> command to change its resolution.</p>
+<pre tabindex="0"><code>cls 32
+</code></pre><p>This will change the canvas to 32 pixels in width and 32 pixels in height.</p>
+<p>v = v' + gt</p>
+<h2 id="free-fall">Free Fall</h2>
+<div class="runtime-embedded-box runtime-show-canvas" style="width: 100%; height: 310px;">let CANVAS_SIZE 32
+let x 10
+let y 10
+<p>let v 0
+let G 1</p>
+<p>jmp draw</p>
+<p>#main_loop</p>
+<p>/ -- calculate velocity --
+add v $v $G
+add y $y $v
+jlt $y 30 velocity_done
+sub v 0 $v
+let y 30
+#velocity_done</p>
+<p>/ -- draw --
+#draw
+clr $CANVAS_SIZE
+drw $x $y 1</p>
+<p>slp 50
+jmp main_loop</p>
+</div>
+<h3 id="bit-map">Bit Map</h3>
+<div class="runtime-embedded-box runtime-show-canvas" style="width: 100%; height: 310px;">let CANVAS_SIZE 64
+let x 10
+let y 0
+<p>let v 0
+let G 1</p>
+<p>def draw_bit_map
+let left $0
+let top $1
+let map '00044444000000444444444000ccc22020000c2c222022200c2cc222022200c2222000000002222220000044744744000444744744404444777744442247277274222227777772222277777777220077700777000bbb0000bbb0bbbb0000bbbb'
+for i 16
+for j 12
+pol $map c
+sub c $c $nil
+ifg $c 96
+sub c $c 87
+els
+sub c $c 48
+fin
+add xx $top $i
+add yy $left $j
+drw $yy $xx $c
+nxt
+nxt
+end</p>
+<p>jmp draw</p>
+<p>#main_loop</p>
+<p>/ -- calculate velocity --
+add v $v $G
+add y $y $v
+jlt $y 48 velocity_done
+sub v 0 $v
+let y 48
+#velocity_done</p>
+<p>/ -- draw --
+#draw
+clr $CANVAS_SIZE
+cal draw_bit_map $x $y</p>
+<p>slp 50
+jmp main_loop</p>
+</div>
+<script src="https://runtime.siwei.dev/runtime-init.js"></script>
+<script src="https://runtime.siwei.dev/ui/editor/ace.js"></script>
+<script src="https://runtime.siwei.dev/src/parser.js"></script>
+<script src="https://runtime.siwei.dev/src/canvas.js"></script>
+<script src="https://runtime.siwei.dev/src/evaluator.js"></script>
+<script src="https://runtime.siwei.dev/src/executer.js"></script>
+<script src="https://runtime.siwei.dev/runtime.js"></script>
 
   </div>
 </div>
