@@ -5,11 +5,10 @@ draft: false
 tags: ["runtime script"]
 ---
 
-<script src="https://runtime.siwei.dev/ui/main/jquery-1.12.4.js"></script>
-<script src="https://runtime.siwei.dev/ui/console/jqconsole.js"></script>
-<link rel="stylesheet" href="https://siwei.dev/doc/runtime/css/styles.css">
 <link rel="stylesheet" href="https://runtime.siwei.dev/ui/console/jqconsole-embedded.css">
 <link rel="stylesheet" href="https://runtime.siwei.dev/ui/main/style.css"/>
+<script src="https://runtime.siwei.dev/ui/main/jquery-1.12.4.js"></script>
+<script src="https://runtime.siwei.dev/ui/console/jqconsole.js"></script>
 
 In the previous part, we have implemented a simple game template that allowes users to control a pixel on the canvas by pressing arrow keys, in this part, we are going to add two more features to make it more like a game:
 - physics (gravity)
