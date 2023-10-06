@@ -6,6 +6,8 @@ draft: false
 tags: ["leetcode", "lc_easy", "lc_hash_table"]
 ---
 
+
+
 Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to _`target`_.
 
 You may assume that each input would have _**exactly**_ **one solution**, and you may not use the same element twice.
@@ -36,6 +38,8 @@ Output: [0,1]
 * <code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code>
 * <code>-10<sup>9</sup> <= target <= 10<sup>9</sup></code>
 * **Only one valid answer exists.**
+
+**Follow-up:** Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code> time complexity?
 
 <div class="tabs"></div>
 <div class="tab-content">
@@ -81,6 +85,23 @@ public int[] twoSum(int[] nums, int target) {
 {{< / highlight >}}
 </div>
 
+<div id="kotlin" class="lang">
+{{< highlight kotlin "linenos=table" >}}
+class Solution {
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        val diffMap = mutableMapOf<Int, Int>()
+        nums.forEachIndexed { i, num ->
+            diffMap[num]?.let {
+                return intArrayOf(it, i)
+            }
+            diffMap[target - num] = i
+        }
+        return intArrayOf()
+    }
+}
+{{< / highlight >}}
+</div>
+
 <div id="c++" class="lang">
 {{< highlight cpp "linenos=table" >}}
 vector<int> twoSum(vector<int>& nums, int target) {
@@ -117,7 +138,35 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 
 <div id="runtime" class="lang">
     <div class="code-link">
-        <a href="https://runtime.siwei.dev/?src=leetcode1" target="_blank">https://runtime.siwei.dev/?src=leetcode1</a>
+        <div class="runtime-embedded-box" style="width: 100%; height: 450px;">let input []
+psh $input 2 7 11 15
+cal two_sum $input 22
+prt $ret
+<pre></pre>
+def two_sum
+ let _list $0
+ let _target $1
+ let _result []
+ let _map {}
+ let _idx 0
+ <pre></pre>
+ #loop
+ pol $_list _num
+ jeq $_num $nil done
+ get $_map $_num _v
+ ife $_v $nil
+  sub _key $_target $_num
+  put $_map $_key $_idx
+ els
+  psh $_result $_v $_idx
+  ret $_result
+ fin
+ add _idx $_idx 1
+ jmp loop
+ #done
+ ret $_result
+end
+        </div>
     </div>
 </div>
 </div>
