@@ -119,6 +119,26 @@ vector<int> twoSum(vector<int>& nums, int target) {
 {{< / highlight >}}
 </div>
 
+<div id="swift" class="lang">
+{{< highlight swift "linenos=table" >}}
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var dict = [Int: Int]()
+
+        for (index, value) in nums.enumerated() {
+          if let i = dict[value] {
+            return [i, index]
+          } else {
+            dict[target - value] = index
+          }
+        }
+
+        return []
+    }
+}
+{{< / highlight >}}
+</div>
+
 <div id="rust" class="lang">
 {{< highlight rust "linenos=table" >}}
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
@@ -133,6 +153,29 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     }
     vec![]
 }
+{{< / highlight >}}
+</div>
+
+<div id="javascript" class="lang">
+{{< highlight javascript "linenos=table" >}}
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let map = {};
+
+    for (let i = 0; i < nums.length; i++) {
+      const comp = target - nums[i];
+      if (map[comp] !== undefined) {
+        return [map[comp], i]
+      }
+      map[nums[i]] = i
+    }
+
+    return []
+};
 {{< / highlight >}}
 </div>
 
