@@ -138,7 +138,7 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 
 <div id="runtime" class="lang">
     <div class="code-link">
-        <div class="runtime-embedded-box" style="width: 100%; height: 450px;">let input []
+        <div class="runtime-embedded-box" style="width: 100%; height: 420px;">let input []
 psh $input 2 7 11 15
 cal two_sum $input 22
 prt $ret

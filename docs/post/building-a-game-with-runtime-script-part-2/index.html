@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.101.0" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
@@ -17,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>Siwei&#39;s Blog</title>
+        <title>Building a Game with Runtime Script (Part 2)</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
     </head>
@@ -36,7 +35,7 @@
 
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="/">Home</a>
+              <a class="nav-item nav-link " href="/">Home</a>
               <a class="nav-item nav-link " href="/leetcode">Leetcode</a>
               
               <a class="nav-item nav-link " href="/about/">About</a>
@@ -49,112 +48,122 @@
         </section>
 
 
-<section>
-  <ul class="posts_listing">
+
+<link rel="stylesheet" href="https://runtime.siwei.dev/ui/console/jqconsole-embedded.css">
+<link rel="stylesheet" href="https://runtime.siwei.dev/ui/main/style.css"/>
+<script src="https://runtime.siwei.dev/ui/main/jquery-1.12.4.js"></script>
+<script src="https://runtime.siwei.dev/ui/console/jqconsole.js"></script>
+
+<div class="blog-post">
+  <h1>Building a Game with Runtime Script (Part 2)</h1>
+  <div class="blog-post-subheader">
     
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>17 Sep 2023</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/building-a-game-with-runtime-script-part-2/">Building a Game with Runtime Script (Part 2)</a>
-          </div>
-        </div>
-      </li>
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>28 Mar 2021</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/building-a-game-with-runtime-script-part-1/">Building a Game with Runtime Script (Part 1)</a>
-          </div>
-        </div>
-      </li>
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>15 Jan 2021</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/%E8%A3%85%E6%9C%BA%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%E5%8F%8A%E6%9B%B4%E6%96%B0/">装机问题总结（及更新）</a>
-          </div>
-        </div>
-      </li>
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>25 Dec 2020</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/implementing-linked-lists-in-vlang/">Implementing Linked Lists in Vlang</a>
-          </div>
-        </div>
-      </li>
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>08 Sep 2020</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/my-new-pc/">My New PC</a>
-          </div>
-        </div>
-      </li>
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>26 Jan 2020</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/why-i-created-runtime-script/">Why I Created Runtime Script</a>
-          </div>
-        </div>
-      </li>
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>02 Mar 2019</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/things-to-do-after-purchasing-a-domain/">Things to do After Purchasing a Domain</a>
-          </div>
-        </div>
-      </li>
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>17 Feb 2019</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/captcha-service-with-python-and-redis/">Captcha Service With Python and Redis</a>
-          </div>
-        </div>
-      </li>
-      
-      <li>
-        <div class="row" id="posts">
-          <div class="d-none d-sm-block col-sm-3 date-time-title">
-            <time>16 Feb 2019</time>
-          </div>
-          <div class="col-sm date-time-title post">
-            <a href="/post/hello-world/">Hello World</a>
-          </div>
-        </div>
-      </li>
-      
+    <time>17 Sep 2023</time>
     
-  </ul>
-</section>
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/runtime-script">runtime script</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <p>In the previous part, we have implemented a simple game template that allowes users to control a pixel on the canvas by pressing arrow keys, in this part, we are going to add two more features to make it more like a game:</p>
+<ul>
+<li>physics (gravity)</li>
+<li>drawing charactures with bitmaps</li>
+</ul>
+<p>First let's resieze our canvas. By default, its size is 24 by 24, and we can add an optional argument to the <code>cls</code> command to change its resolution.</p>
+<pre tabindex="0"><code>cls 32
+</code></pre><p>This will change the canvas to 32 pixels in width and 32 pixels in height.</p>
+<p>v = v' + gt</p>
+<h2 id="free-fall">Free Fall</h2>
+<div class="runtime-embedded-box runtime-show-canvas" style="width: 100%; height: 400px;">let CANVAS_SIZE 32
+let x 10
+let y 10
+<pre></pre>
+let v 0
+let G 1
+<pre></pre>
+jmp draw
+<pre></pre>
+#main_loop
+<pre></pre>
+/ -- calculate velocity --
+add v $v $G
+add y $y $v
+jlt $y 30 velocity_done
+sub v 0 $v
+let y 30
+#velocity_done
+<pre></pre>
+/ -- draw --
+#draw
+clr $CANVAS_SIZE
+drw $x $y 1
+<pre></pre>
+slp 50
+jmp main_loop
+</div>
+<h3 id="bit-map">Bit Map</h3>
+<div class="runtime-embedded-box runtime-show-canvas" style="width: 100%; height: 680px;">let CANVAS_SIZE 64
+let x 10
+let y 0
+<pre></pre>
+let v 0
+let G 1
+<pre></pre>
+def draw_bit_map
+ let left $0
+ let top $1
+ let map '00044444000000444444444000ccc22020000c2c222022200c2cc222022200c2222000000002222220000044744744000444744744404444777744442247277274222227777772222277777777220077700777000bbb0000bbb0bbbb0000bbbb'
+ for i 16
+  for j 12
+   pol $map c
+   sub c $c $nil
+   ifg $c 96
+    sub c $c 87
+   els
+    sub c $c 48
+   fin
+   add xx $top $i
+   add yy $left $j
+   drw $yy $xx $c
+  nxt
+ nxt
+end
+<pre></pre>
+jmp draw
+<pre></pre>
+#main_loop
+<pre></pre>
+/ -- calculate velocity --
+add v $v $G
+add y $y $v
+jlt $y 48 velocity_done
+sub v 0 $v
+let y 48
+#velocity_done
+<pre></pre>
+/ -- draw --
+#draw
+clr $CANVAS_SIZE
+cal draw_bit_map $x $y
+<pre></pre>
+slp 50
+jmp main_loop
+</div>
+
+  </div>
+</div>
+
+<script src="https://runtime.siwei.dev/runtime-init.js"></script>
+<script src="https://runtime.siwei.dev/ui/editor/ace.js"></script>
+<script src="https://runtime.siwei.dev/src/parser.js"></script>
+<script src="https://runtime.siwei.dev/src/canvas.js"></script>
+<script src="https://runtime.siwei.dev/src/evaluator.js"></script>
+<script src="https://runtime.siwei.dev/src/executer.js"></script>
+<script src="https://runtime.siwei.dev/runtime.js"></script>
 
       <footer>
         <hr>

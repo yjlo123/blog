@@ -1,14 +1,9 @@
 ---
-title: "Create a Game in Runtime Script (Part 1)"
+title: "Building a Game with Runtime Script (Part 1)"
 date: 2021-03-28T00:00:00+08:00
 draft: false
 tags: ["runtime script"]
 ---
-
-<link rel="stylesheet" href="https://runtime.siwei.dev/ui/console/jqconsole-embedded.css">
-<link rel="stylesheet" href="https://runtime.siwei.dev/ui/main/style.css"/>
-<script src="https://runtime.siwei.dev/ui/console/jqconsole.js"></script>
-
 
 Creating mini-games is one of the purposes of developing Runtime Script. Although it is not a convenient language to write games, Runtime Script provides the basic features, such as drawing pixels and monitoring key events, for building playable and publishable games.
 
@@ -102,51 +97,43 @@ The final program:
 <div class="runtime-embedded-box runtime-show-canvas" style="width: 100%; height: 340px;">
 let cur_c 10
 let cur_r 10
-
+<pre></pre>
 jmp draw
-
+<pre></pre>
 #begin
-
+<pre></pre>
 / -- check key --
 let key $lastkey
-
+<pre></pre>
 ife $key 37
  / left
  sub cur_c $cur_c 1
  prt 'left'
 fin
-
+<pre></pre>
 ife $key 38
  / up
  sub cur_r $cur_r 1
  prt 'up'
 fin
-
+<pre></pre>
 ife $key 39
  / right
  add cur_c $cur_c 1
  prt 'right'
 fin
-
+<pre></pre>
 ife $key 40
  / down
  add cur_r $cur_r 1
  prt 'down'
 fin
-
+<pre></pre>
 / -- draw --
 #draw
 clr
 drw $cur_c $cur_r 1
-
+<pre></pre>
 slp 10
 jmp begin
 </div>
-
-<script src="https://runtime.siwei.dev/runtime-init.js"></script>
-<script src="https://runtime.siwei.dev/ui/editor/ace.js"></script>
-<script src="https://runtime.siwei.dev/src/parser.js"></script>
-<script src="https://runtime.siwei.dev/src/canvas.js"></script>
-<script src="https://runtime.siwei.dev/src/evaluator.js"></script>
-<script src="https://runtime.siwei.dev/src/executer.js"></script>
-<script src="https://runtime.siwei.dev/runtime.js"></script>
