@@ -19,6 +19,11 @@
         <title>129 Sum Root to Leaf Numbers</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
+
+        <link rel="stylesheet" href="https://runtime.siwei.dev/ui/console/jqconsole-embedded.css">
+        <link rel="stylesheet" href="https://runtime.siwei.dev/ui/main/style.css"/>
+        <script src="https://runtime.siwei.dev/ui/main/jquery-1.12.4.js"></script>
+        <script src="https://runtime.siwei.dev/ui/console/jqconsole.js"></script>
     </head>
     <body>
       <div class="container-fluid">
@@ -47,12 +52,6 @@
           
         </section>
 
-
-
-<link rel="stylesheet" href="https://runtime.siwei.dev/ui/console/jqconsole-embedded.css">
-<link rel="stylesheet" href="https://runtime.siwei.dev/ui/main/style.css"/>
-<script src="https://runtime.siwei.dev/ui/main/jquery-1.12.4.js"></script>
-<script src="https://runtime.siwei.dev/ui/console/jqconsole.js"></script>
 
 <div class="blog-post">
   <h1>129 Sum Root to Leaf Numbers</h1>
@@ -176,14 +175,6 @@ Therefore, sum = 495 + 491 + 40 = 1026.
   </div>
 </div>
 
-<script src="https://runtime.siwei.dev/runtime-init.js"></script>
-<script src="https://runtime.siwei.dev/ui/editor/ace.js"></script>
-<script src="https://runtime.siwei.dev/src/parser.js"></script>
-<script src="https://runtime.siwei.dev/src/canvas.js"></script>
-<script src="https://runtime.siwei.dev/src/evaluator.js"></script>
-<script src="https://runtime.siwei.dev/src/executer.js"></script>
-<script src="https://runtime.siwei.dev/runtime.js"></script>
-
       <footer>
         <hr>
         <small>
@@ -194,6 +185,14 @@ Therefore, sum = 495 + 491 + 40 = 1026.
       <br/>
     </div> 
 
+    <script src="https://runtime.siwei.dev/runtime-init.js"></script>
+    <script src="https://runtime.siwei.dev/ui/editor/ace.js"></script>
+    <script src="https://runtime.siwei.dev/src/parser.js"></script>
+    <script src="https://runtime.siwei.dev/src/canvas.js"></script>
+    <script src="https://runtime.siwei.dev/src/evaluator.js"></script>
+    <script src="https://runtime.siwei.dev/src/executer.js"></script>
+    <script src="https://runtime.siwei.dev/runtime.js"></script>
+
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -202,12 +201,14 @@ Therefore, sum = 495 + 491 + 40 = 1026.
 
       (function(){
         let first = true;
+        let tabRow = $("<div class='tab-row'></div>");
         $(".tab-content").children(".lang").each(function () {
           let tabId = $(this).attr("id");
           let tabName = tabId.charAt(0).toUpperCase() + tabId.slice(1);
-          $(".tabs").append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
+          tabRow.append($(`<div class="tab-btn ${first?"tab-btn-active":""}" onclick="showLang(event, '${tabId}')">${tabName}</div>`));
           first = false;
         });
+        $(".tabs").append(tabRow);
 
         $(".lang").slice(1).each(function() {
           $(this).hide();
