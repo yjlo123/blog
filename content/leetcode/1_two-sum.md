@@ -193,20 +193,17 @@ def two_sum
  let _map {}
  let _idx 0
  <pre></pre>
- #loop
- pol $_list _num
- jeq $_num $nil done
- get $_map $_num _v
- ife $_v $nil
-  sub _key $_target $_num
-  put $_map $_key $_idx
- els
-  psh $_result $_v $_idx
-  ret $_result
- fin
- add _idx $_idx 1
- jmp loop
- #done
+ for _num $_list
+  get $_map $_num _v
+  ife $_v $nil
+   sub _key $_target $_num
+   put $_map $_key $_idx
+  els
+   psh $_result $_v $_idx
+   ret $_result
+  fin
+  add _idx $_idx 1
+ nxt
  ret $_result
 end
         </div>
