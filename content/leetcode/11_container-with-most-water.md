@@ -50,4 +50,21 @@ class Solution:
         return max_val
 {{< / highlight >}}
 </div>
+<div id="golang" class="lang">
+{{< highlight golang "linenos=table" >}}
+func maxArea(height []int) int {
+    res := 0
+    i, j := 0, len(height) - 1
+    for i < j {
+        res = max(res, min(height[i], height[j]) * (j - i))
+        if height[i] < height[j] {
+            i++
+        } else {
+            j--
+        }
+    }
+    return res
+}
+{{< / highlight >}}
+</div>
 </div>
