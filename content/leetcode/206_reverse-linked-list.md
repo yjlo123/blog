@@ -70,4 +70,40 @@ class Solution:
         return prev
 {{< / highlight >}}
 </div>
+
+<div id="golang" class="lang">
+{{< highlight golang "linenos=table" >}}
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+
+ /* Recursive */
+func reverseList(head *ListNode) *ListNode {
+    if head == nil || head.Next == nil{
+        return head
+    }
+    newHead := reverseList(head.Next)
+    head.Next.Next = head
+    head.Next = nil
+    return newHead
+}
+
+/* Iterative */
+func reverseList(head *ListNode) *ListNode {
+	var prev *ListNode
+	nextHead := head
+	for head != nil {
+		nextHead = head.Next
+		head.Next = prev
+		prev = head
+		head = nextHead
+	}
+	return prev
+}
+{{< / highlight >}}
+</div>
 </div>
