@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        <title>programming language</title>
+        <title>Python Algorithm Cheatsheet</title>
 
         <link rel="stylesheet" href="/css/stylesheet.css">
 
@@ -53,40 +53,46 @@
         </section>
 
 
-  <article class="cf pa3 pa4-m pa4-l">
-    <div>
-      <p class="page-title">#programming language</p>
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section>
-      <ul class="posts_listing">
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>20 Apr 2024</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/post/python-algorithm-cheatsheet/">Python Algorithm Cheatsheet</a>
-              </div>
-            </div>
-          </li>
-          
-          <li>
-            <div class="row" id="posts">
-              <div class="d-none d-sm-block col-sm-3 date-time-title">
-                <time>26 Jan 2020</time>
-              </div>
-              <div class="col-sm date-time-title post">
-                <a href="/post/why-i-created-runtime-script/">Why I Created Runtime Script</a>
-              </div>
-            </div>
-          </li>
-          
-        </ul>
-    </section>
+<div class="blog-post">
+  <h1>Python Algorithm Cheatsheet</h1>
+  <div class="blog-post-subheader">
+    
+    <time>20 Apr 2024</time>
+    
+  </div><ul class="tags">
+  
+   <li>
+     <a href="/tags/programming-language">programming language</a>
+   </li>
+  
+   <li>
+     <a href="/tags/algorithm">algorithm</a>
+   </li>
+  
+</ul>
+<div class="blog-post-content">
+    <h2 id="list">List</h2>
+<h3 id="new-list">new list</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lst = []
+</span></span></code></pre></div><h3 id="methods">methods</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lst.append(<span style="color:#099">3</span>)
+</span></span><span style="display:flex;"><span>lst.extend([<span style="color:#099">5</span>, <span style="color:#099">6</span>])
+</span></span><span style="display:flex;"><span>last = lst.pop()      <span style="color:#aaa;font-style:italic"># last element is removed</span>
+</span></span><span style="display:flex;"><span>count = lst.count(<span style="color:#099">2</span>)  <span style="color:#aaa;font-style:italic"># number of elements equal to 2</span>
+</span></span><span style="display:flex;"><span>lst.sort(reverse=<span style="color:#00a">True</span>)
+</span></span></code></pre></div><h3 id="others">others</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># concatenate</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#099">1</span>, <span style="color:#099">2</span>] + [<span style="color:#099">3</span>, <span style="color:#099">4</span>]
+</span></span></code></pre></div><h3 id="slicing">slicing</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>lst[<span style="color:#099">3</span>:<span style="color:#099">6</span>] <span style="color:#aaa;font-style:italic"># from index 3 (included) to index 6 (not included)</span>
+</span></span><span style="display:flex;"><span>lst[:<span style="color:#099">4</span>]  <span style="color:#aaa;font-style:italic"># from start to index 4 (not included)</span>
+</span></span><span style="display:flex;"><span>lst[<span style="color:#099">3</span>:]  <span style="color:#aaa;font-style:italic"># from index 3 (included) to the end</span>
+</span></span><span style="display:flex;"><span>lst[:]   <span style="color:#aaa;font-style:italic"># copy of the list</span>
+</span></span><span style="display:flex;"><span>lst[:-<span style="color:#099">1</span>] <span style="color:#aaa;font-style:italic"># from start to the second last (included)</span>
+</span></span></code></pre></div><h3 id="built-in-functions-for-array">built-in functions for array</h3>
+
   </div>
+</div>
 
       <footer>
         <hr>
